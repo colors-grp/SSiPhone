@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CardAudio" representedClassName="CardAudio" syncable="YES">
+        <attribute name="audioName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyCard" inverseName="hasAudio" inverseEntity="MyCard" syncable="YES"/>
+    </entity>
+    <entity name="CardGame" representedClassName="CardGame" syncable="YES"/>
+    <entity name="CardImage" representedClassName="CardImage" syncable="YES">
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyCard" inverseName="hasImages" inverseEntity="MyCard" syncable="YES"/>
+    </entity>
+    <entity name="CardVideo" representedClassName="CardVideo" syncable="YES"/>
+    <entity name="MyCard" representedClassName="MyCard" syncable="YES">
+        <attribute name="cardId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="cardName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardPrice" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="cardScore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isAvailble" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isBought" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyCategory" inverseName="hasCards" inverseEntity="MyCategory" syncable="YES"/>
+        <relationship name="hasAudio" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardAudio" inverseName="belongsTo" inverseEntity="CardAudio" syncable="YES"/>
+        <relationship name="hasImages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardImage" inverseName="belongsTo" inverseEntity="CardImage" syncable="YES"/>
+    </entity>
+    <entity name="MyCategory" representedClassName="MyCategory" syncable="YES">
+        <attribute name="binaryData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="categoryId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFavourite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="userCards" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userScore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="belongsToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasCategory" inverseEntity="User" syncable="YES"/>
+        <relationship name="hasCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MyCard" inverseName="belongsTo" inverseEntity="MyCard" syncable="YES"/>
+    </entity>
+    <entity name="Notification" representedClassName="Notification" syncable="YES">
+        <attribute name="notificationDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notificationId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="SponsorPrograms" representedClassName="SponsorPrograms" syncable="YES">
+        <attribute name="describtion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="from" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="staring" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="to" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="userBirthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="userCredit" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="userFacebookId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userGender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="hasCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MyCategory" inverseName="belongsToUser" inverseEntity="MyCategory" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CardAudio" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="CardGame" positionX="0" positionY="0" width="128" height="45"/>
+        <element name="CardImage" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="CardVideo" positionX="0" positionY="0" width="128" height="45"/>
+        <element name="MyCard" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="MyCategory" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="Notification" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="SponsorPrograms" positionX="9" positionY="144" width="128" height="135"/>
+        <element name="User" positionX="0" positionY="0" width="128" height="165"/>
+    </elements>
+</model>
