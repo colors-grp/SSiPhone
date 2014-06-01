@@ -95,10 +95,7 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"categoryCell" forIndexPath:indexPath];
     UIImageView *image = (UIImageView*)[cell viewWithTag:17];
     myCat = [myCategories objectAtIndex:indexPath.row];
-    NSString *imagePath = [NSString stringWithFormat:@"categories/%@/main_icon.png",[myCat valueForKey:@"categoryName"]];
-    NSLog(@"path = %@" , imagePath);
-    image.image = [UIImage imageNamed:@"CategoriesIcons/1.png"];
-
+    image.image = [UIImage imageNamed:[NSString stringWithFormat:@"CategoriesIcons/%@.png" , [myCat valueForKey:@"categoryId"]]];
     return cell;
 }
 
@@ -162,7 +159,6 @@
     NSLog(@"%@" , url);
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSDictionary *tmp = JSON;
-//        NSLog(@"%@" , tmp);
         int size = [[tmp objectForKey:@"size"] intValue];
         for(int i = 0 ; i < size ; i++) {
             NSDictionary *dect = [tmp objectForKey:[NSString stringWithFormat:@"%d" , i]];
@@ -264,7 +260,6 @@
 
     }];
     [request start];
-
 }
 
 @end

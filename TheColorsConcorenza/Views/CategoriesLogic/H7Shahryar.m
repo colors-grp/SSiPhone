@@ -8,6 +8,11 @@
 
 #import "H7Shahryar.h"
 #import "H7ShahryarStory.h"
+#import "H7AppDelegate.h"
+
+#import "H7ConstantsModel.h"
+
+#import <AFNetworking/AFNetworking.h>
 
 @interface H7Shahryar ()
 
@@ -15,6 +20,7 @@
 
 @implementation H7Shahryar {
     NSArray * cards;
+    NSDictionary *cardStatus;
 }
 
 - (void)viewDidLoad
@@ -24,8 +30,15 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
     [self.view insertSubview: imageView atIndex:0];
     
+    // Get cards status
+    [self getOpenedCards];
+    
     [super viewDidLoad];
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -40,14 +53,25 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 35;
+    NSLog(@"%@" , self.currentCategory.categoryName);
+
+    return [self.currentCategory.hasCards count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"shahryarCardCell" forIndexPath:indexPath];
     UIImageView *image = (UIImageView*)[cell viewWithTag:200];
-    NSString *imagePath = [NSString stringWithFormat:@"Categories/shahryar/cards/%d/img.png" , indexPath.row + 1];
-    NSLog(@"%@" , imagePath);
+    bool inLoop =false;
+    NSString *imagePath;
+    for (int i=0 ; i < [cardStatus count]; i++) {
+        if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
+           imagePath = [NSString stringWithFormat:@"Categories/shahryar/cards/%d/img.png" , indexPath.row + 1];
+            inLoop = true;
+        }
+    }
+    if(!inLoop)
+        imagePath = [NSString stringWithFormat:@"Playbutton.png"];
+    
     image.image = [UIImage imageNamed:imagePath];
     return  cell;
 }
@@ -57,6 +81,20 @@
     NSArray *indexPaths = [self.cardsCollection indexPathsForSelectedItems];
     NSIndexPath *index = [indexPaths objectAtIndex:0];
     story.cardId = index.row + 1;
+}
+
+-(void)getOpenedCards {
+    NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@cards_status/format/json/categoryId/%@", PLATFORM_URL ,self.currentCategory.categoryId]];
+    NSLog(@"%@" , url);
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        cardStatus = JSON;
+        [self.cardsCollection reloadData];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+
+        NSLog(@"Failed to get scores");
+    }];
+    [request start];
 }
 
 

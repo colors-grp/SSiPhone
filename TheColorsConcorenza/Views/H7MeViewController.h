@@ -13,5 +13,9 @@
 @interface H7MeViewController : H7UIViewController
 
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *fbProfilePicture;
+@property (weak, nonatomic) IBOutlet UILabel *sallySyamakScore;
+@property (weak, nonatomic) IBOutlet UILabel *mosalslatScore;
+@property (weak, nonatomic) IBOutlet UILabel *manElQatelScore;
+@property (weak, nonatomic) IBOutlet UILabel *shahryarScore;
 
 @end

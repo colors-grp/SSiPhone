@@ -22,6 +22,9 @@
     // Customizing the tabbar
     UITabBar *tabBar = self.tabBar;
     
+    // Setting tabbar background color
+    tabBar.barTintColor =[UIColor colorWithRed:(253/255.0) green:(223/255.0) blue:(50/255.0) alpha:1];
+    
     // Get tabBar items
     UITabBarItem *item1 = [tabBar.items objectAtIndex:0];
     UITabBarItem *item2 = [tabBar.items objectAtIndex:1];
@@ -45,10 +48,9 @@
     item5.selectedImage = [[UIImage imageNamed:@"TabIcons30/guide_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
     //Change Navigation bar title color to red
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:(212/255.0) green:(39/255.0) blue:(51/255.0) alpha:1]}];
     
-    // Change Navigation Bar background color
-//    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(212/255.0) green:(39/255.0) blue:(51/255.0) alpha:1]];
+    // Change Navigation Bar background image
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
