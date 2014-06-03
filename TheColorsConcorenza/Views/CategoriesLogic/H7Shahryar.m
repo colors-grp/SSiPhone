@@ -10,8 +10,10 @@
 #import "H7ShahryarStory.h"
 #import "H7AppDelegate.h"
 
+#import "MyCard.h"
 #import "H7ConstantsModel.h"
 
+#import <CoreData+MagicalRecord.h>
 #import <AFNetworking/AFNetworking.h>
 
 @interface H7Shahryar ()
@@ -53,8 +55,6 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSLog(@"%@" , self.currentCategory.categoryName);
-
     return [self.currentCategory.hasCards count];
 }
 

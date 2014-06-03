@@ -34,7 +34,6 @@
 		EB1A3C0118E22487009F51BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1A3C0018E22487009F51BA /* main.m */; };
 		EB1A3C0518E22487009F51BA /* H7AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1A3C0418E22487009F51BA /* H7AppDelegate.m */; };
 		EB1A3C0818E22487009F51BA /* TheColorsConcorenza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB1A3C0618E22487009F51BA /* TheColorsConcorenza.xcdatamodeld */; };
-		EB1A3C0A18E22487009F51BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB1A3C0918E22487009F51BA /* Images.xcassets */; };
 		EB1A3C1118E22487009F51BA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1A3C1018E22487009F51BA /* XCTest.framework */; };
 		EB1A3C1218E22487009F51BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1A3BF218E22486009F51BA /* Foundation.framework */; };
 		EB1A3C1318E22487009F51BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1A3BF618E22487009F51BA /* UIKit.framework */; };
@@ -65,6 +64,37 @@
 		EB9C41B4193765C600549830 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B3193765C500549830 /* cards.json */; };
 		EB9C41B6193765E100549830 /* sponsor.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B5193765E100549830 /* sponsor.json */; };
 		EB9C41B819394E0700549830 /* CategoriesIcons in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B719394E0700549830 /* CategoriesIcons */; };
+		EB9C4413193C66F900549830 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9C4412193C66F900549830 /* SpriteKit.framework */; };
+		EB9C4442193C673B00549830 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4420193C673B00549830 /* Level_0.json */; };
+		EB9C4443193C673B00549830 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4421193C673B00549830 /* Level_1.json */; };
+		EB9C4444193C673B00549830 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4422193C673B00549830 /* Level_2.json */; };
+		EB9C4445193C673B00549830 /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4423193C673B00549830 /* Level_3.json */; };
+		EB9C4446193C673B00549830 /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4424193C673B00549830 /* Level_4.json */; };
+		EB9C4448193C673B00549830 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C4427193C673B00549830 /* MyScene.m */; };
+		EB9C4449193C673B00549830 /* RWTChain.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C4429193C673B00549830 /* RWTChain.m */; };
+		EB9C444A193C673B00549830 /* RWTCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C442B193C673B00549830 /* RWTCookie.m */; };
+		EB9C444B193C673B00549830 /* RWTLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C442D193C673B00549830 /* RWTLevel.m */; };
+		EB9C444C193C673B00549830 /* RWTSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C442F193C673B00549830 /* RWTSwap.m */; };
+		EB9C444D193C673B00549830 /* RWTTile.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C4431193C673B00549830 /* RWTTile.m */; };
+		EB9C444E193C673B00549830 /* Chomp.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4433193C673B00549830 /* Chomp.wav */; };
+		EB9C444F193C673B00549830 /* Drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4434193C673B00549830 /* Drip.wav */; };
+		EB9C4450193C673B00549830 /* Error.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4435193C673B00549830 /* Error.wav */; };
+		EB9C4451193C673B00549830 /* Ka-Ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4436193C673B00549830 /* Ka-Ching.wav */; };
+		EB9C4452193C673B00549830 /* Mining by Moonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4437193C673B00549830 /* Mining by Moonlight.mp3 */; };
+		EB9C4453193C673B00549830 /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4438193C673B00549830 /* Scrape.wav */; };
+		EB9C4455193C673B00549830 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C443B193C673B00549830 /* ViewController.m */; };
+		EB9C4457193C6F9100549830 /* categories in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4456193C6F9100549830 /* categories */; };
+		EB9C4459193C70E700549830 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4458193C70E700549830 /* Images.xcassets */; };
+		EB9C445C193C887B00549830 /* Grid.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB9C445A193C887B00549830 /* Grid.atlas */; };
+		EB9C445D193C887B00549830 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB9C445B193C887B00549830 /* Sprites.atlas */; };
+		EB9C4497193CBFD000549830 /* Bird1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C448D193CBFD000549830 /* Bird1.png */; };
+		EB9C4498193CBFD000549830 /* Bird2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C448E193CBFD000549830 /* Bird2.png */; };
+		EB9C449A193CBFD000549830 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4491193CBFD000549830 /* Ground.png */; };
+		EB9C449C193CBFD000549830 /* Pipe1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4494193CBFD000549830 /* Pipe1.png */; };
+		EB9C449D193CBFD000549830 /* Pipe2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4495193CBFD000549830 /* Pipe2.png */; };
+		EB9C449E193CBFD000549830 /* Skyline.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4496193CBFD000549830 /* Skyline.png */; };
+		EB9C44A1193CC14B00549830 /* FFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C44A0193CC14B00549830 /* FFViewController.m */; };
+		EB9C44A4193CC26600549830 /* FFScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C44A3193CC26600549830 /* FFScene.m */; };
 		EBAA09E118F591AD00C6985B /* H7ConstantsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA09E018F591AD00C6985B /* H7ConstantsModel.m */; };
 		EBAA09F318F6C24C00C6985B /* H7AddDataToManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA09F218F6C24C00C6985B /* H7AddDataToManagedObject.m */; };
 		EBAA09F918F6E27000C6985B /* H7UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA09F818F6E27000C6985B /* H7UIViewController.m */; };
@@ -98,7 +128,6 @@
 		EBAE3EBF1934C74500416880 /* Playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3E0E1934C74500416880 /* Playbutton.png */; };
 		EBAE3ECF1934C78000416880 /* TabIcons30 in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3ECC1934C78000416880 /* TabIcons30 */; };
 		EBAE3ED01934CA3A00416880 /* Categories in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3ECA1934C78000416880 /* Categories */; };
-		EBAE3ED41934DEC600416880 /* categories in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3ED21934DE9000416880 /* categories */; };
 		EBB1779B18F0A0C000E0DA3A /* 1467210_748325908515087_1110498616_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBB1779A18F0A0C000E0DA3A /* 1467210_748325908515087_1110498616_n.jpg */; };
 		EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2AC54192A221900FE4844 /* H7SponsorViewController.m */; };
 		EBB2AC58192A228E00FE4844 /* H7SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2AC57192A228E00FE4844 /* H7SponsorTableViewCell.m */; };
@@ -152,7 +181,6 @@
 		EB1A3C0318E22487009F51BA /* H7AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H7AppDelegate.h; sourceTree = "<group>"; };
 		EB1A3C0418E22487009F51BA /* H7AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H7AppDelegate.m; sourceTree = "<group>"; };
 		EB1A3C0718E22487009F51BA /* TheColorsConcorenza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheColorsConcorenza.xcdatamodel; sourceTree = "<group>"; };
-		EB1A3C0918E22487009F51BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EB1A3C0F18E22487009F51BA /* TheColorsConcorenzaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheColorsConcorenzaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1A3C1018E22487009F51BA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EB1A3C1918E22487009F51BA /* TheColorsConcorenzaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TheColorsConcorenzaTests-Info.plist"; sourceTree = "<group>"; };
@@ -187,6 +215,46 @@
 		EB9C41B3193765C500549830 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		EB9C41B5193765E100549830 /* sponsor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sponsor.json; sourceTree = "<group>"; };
 		EB9C41B719394E0700549830 /* CategoriesIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CategoriesIcons; sourceTree = "<group>"; };
+		EB9C4412193C66F900549830 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		EB9C4420193C673B00549830 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_0.json; sourceTree = "<group>"; };
+		EB9C4421193C673B00549830 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
+		EB9C4422193C673B00549830 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_2.json; sourceTree = "<group>"; };
+		EB9C4423193C673B00549830 /* Level_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_3.json; sourceTree = "<group>"; };
+		EB9C4424193C673B00549830 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
+		EB9C4426193C673B00549830 /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		EB9C4427193C673B00549830 /* MyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		EB9C4428193C673B00549830 /* RWTChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTChain.h; sourceTree = "<group>"; };
+		EB9C4429193C673B00549830 /* RWTChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTChain.m; sourceTree = "<group>"; };
+		EB9C442A193C673B00549830 /* RWTCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTCookie.h; sourceTree = "<group>"; };
+		EB9C442B193C673B00549830 /* RWTCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTCookie.m; sourceTree = "<group>"; };
+		EB9C442C193C673B00549830 /* RWTLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTLevel.h; sourceTree = "<group>"; };
+		EB9C442D193C673B00549830 /* RWTLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTLevel.m; sourceTree = "<group>"; };
+		EB9C442E193C673B00549830 /* RWTSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTSwap.h; sourceTree = "<group>"; };
+		EB9C442F193C673B00549830 /* RWTSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTSwap.m; sourceTree = "<group>"; };
+		EB9C4430193C673B00549830 /* RWTTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTTile.h; sourceTree = "<group>"; };
+		EB9C4431193C673B00549830 /* RWTTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTTile.m; sourceTree = "<group>"; };
+		EB9C4433193C673B00549830 /* Chomp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chomp.wav; sourceTree = "<group>"; };
+		EB9C4434193C673B00549830 /* Drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drip.wav; sourceTree = "<group>"; };
+		EB9C4435193C673B00549830 /* Error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Error.wav; sourceTree = "<group>"; };
+		EB9C4436193C673B00549830 /* Ka-Ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ka-Ching.wav"; sourceTree = "<group>"; };
+		EB9C4437193C673B00549830 /* Mining by Moonlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mining by Moonlight.mp3"; sourceTree = "<group>"; };
+		EB9C4438193C673B00549830 /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
+		EB9C443A193C673B00549830 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EB9C443B193C673B00549830 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EB9C4456193C6F9100549830 /* categories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = categories; sourceTree = "<group>"; };
+		EB9C4458193C70E700549830 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EB9C445A193C887B00549830 /* Grid.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Grid.atlas; path = "../../iphone-workspace/Bonjour/SS/TheColorsConcorenza-2/Grid.atlas"; sourceTree = "<group>"; };
+		EB9C445B193C887B00549830 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Sprites.atlas; path = "../../iphone-workspace/Bonjour/SS/TheColorsConcorenza-2/Sprites.atlas"; sourceTree = "<group>"; };
+		EB9C448D193CBFD000549830 /* Bird1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bird1.png; sourceTree = "<group>"; };
+		EB9C448E193CBFD000549830 /* Bird2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bird2.png; sourceTree = "<group>"; };
+		EB9C4491193CBFD000549830 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
+		EB9C4494193CBFD000549830 /* Pipe1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pipe1.png; sourceTree = "<group>"; };
+		EB9C4495193CBFD000549830 /* Pipe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pipe2.png; sourceTree = "<group>"; };
+		EB9C4496193CBFD000549830 /* Skyline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skyline.png; sourceTree = "<group>"; };
+		EB9C449F193CC14B00549830 /* FFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFViewController.h; sourceTree = "<group>"; };
+		EB9C44A0193CC14B00549830 /* FFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFViewController.m; sourceTree = "<group>"; };
+		EB9C44A2193CC26600549830 /* FFScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFScene.h; sourceTree = "<group>"; };
+		EB9C44A3193CC26600549830 /* FFScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFScene.m; sourceTree = "<group>"; };
 		EBAA09DF18F591AD00C6985B /* H7ConstantsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ConstantsModel.h; sourceTree = "<group>"; };
 		EBAA09E018F591AD00C6985B /* H7ConstantsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ConstantsModel.m; sourceTree = "<group>"; };
 		EBAA09F118F6C24C00C6985B /* H7AddDataToManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7AddDataToManagedObject.h; sourceTree = "<group>"; };
@@ -227,7 +295,6 @@
 		EBAE3E0E1934C74500416880 /* Playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Playbutton.png; sourceTree = "<group>"; };
 		EBAE3ECA1934C78000416880 /* Categories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Categories; sourceTree = "<group>"; };
 		EBAE3ECC1934C78000416880 /* TabIcons30 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TabIcons30; sourceTree = "<group>"; };
-		EBAE3ED21934DE9000416880 /* categories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = categories; sourceTree = "<group>"; };
 		EBB1779A18F0A0C000E0DA3A /* 1467210_748325908515087_1110498616_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1467210_748325908515087_1110498616_n.jpg; sourceTree = "<group>"; };
 		EBB2AC53192A221900FE4844 /* H7SponsorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H7SponsorViewController.h; path = TheColorsConcorenza/Views/H7SponsorViewController.h; sourceTree = SOURCE_ROOT; };
 		EBB2AC54192A221900FE4844 /* H7SponsorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = H7SponsorViewController.m; path = TheColorsConcorenza/Views/H7SponsorViewController.m; sourceTree = SOURCE_ROOT; };
@@ -273,6 +340,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9C4413193C66F900549830 /* SpriteKit.framework in Frameworks */,
 				EBAE3C62192CF58600416880 /* SystemConfiguration.framework in Frameworks */,
 				EBAE3C61192CF58100416880 /* StoreKit.framework in Frameworks */,
 				EBAE3C5F192CF57A00416880 /* Security.framework in Frameworks */,
@@ -335,6 +403,7 @@
 			children = (
 				EB9C41B5193765E100549830 /* sponsor.json */,
 				EB9C41B3193765C500549830 /* cards.json */,
+				EB9C41BF193B78CB00549830 /* Games */,
 				EBAE3CD21934C74300416880 /* Assets */,
 				EB1A3BFA18E22487009F51BA /* TheColorsConcorenza */,
 				EB1A3C1718E22487009F51BA /* TheColorsConcorenzaTests */,
@@ -356,6 +425,7 @@
 		EB1A3BF118E22486009F51BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB9C4412193C66F900549830 /* SpriteKit.framework */,
 				EBAE3C60192CF58100416880 /* StoreKit.framework */,
 				EBAE3C5E192CF57A00416880 /* Security.framework */,
 				EBAE3C5C192CF57500416880 /* QuartzCore.framework */,
@@ -389,7 +459,6 @@
 				EB1A3C0318E22487009F51BA /* H7AppDelegate.h */,
 				EB1A3C0418E22487009F51BA /* H7AppDelegate.m */,
 				EB10DDD3190CFBB900427874 /* Coredata */,
-				EB1A3C0918E22487009F51BA /* Images.xcassets */,
 				EB1A3C0618E22487009F51BA /* TheColorsConcorenza.xcdatamodeld */,
 				EB1A3C2718E2249E009F51BA /* Main.storyboard */,
 				EB1A3BFB18E22487009F51BA /* Supporting Files */,
@@ -429,7 +498,7 @@
 		EB1A3C2A18E225B0009F51BA /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				EBAE3ED21934DE9000416880 /* categories */,
+				EB9C4456193C6F9100549830 /* categories */,
 				EB7BBA8419177E8900280FAB /* Default.png */,
 				EB10DDD0190C581B00427874 /* bohahahaha.mp3 */,
 				EB65A1F618FFF8C300AAAAB4 /* picframe.jpg */,
@@ -458,6 +527,7 @@
 				EBC457E318FADDCB005ECE37 /* H7FacebookLoginView.m */,
 				EB65A1F318FC25C700AAAAB4 /* H7TabBarController.h */,
 				EB65A1F418FC25C700AAAAB4 /* H7TabBarController.m */,
+				EB9C4458193C70E700549830 /* Images.xcassets */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -522,6 +592,84 @@
 				EBAE3CD01934BA5000416880 /* H7ShahryarStory.m */,
 			);
 			path = MediaViews;
+			sourceTree = "<group>";
+		};
+		EB9C41BF193B78CB00549830 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				EB9C448C193CBFD000549830 /* FlappyBirdClone */,
+				EB9C4414193C673B00549830 /* CookieCrunch */,
+			);
+			name = Games;
+			path = TheColorsConcorenza/Games;
+			sourceTree = "<group>";
+		};
+		EB9C4414193C673B00549830 /* CookieCrunch */ = {
+			isa = PBXGroup;
+			children = (
+				EB9C445B193C887B00549830 /* Sprites.atlas */,
+				EB9C445A193C887B00549830 /* Grid.atlas */,
+				EB9C441F193C673B00549830 /* Levels */,
+				EB9C4426193C673B00549830 /* MyScene.h */,
+				EB9C4427193C673B00549830 /* MyScene.m */,
+				EB9C4428193C673B00549830 /* RWTChain.h */,
+				EB9C4429193C673B00549830 /* RWTChain.m */,
+				EB9C442A193C673B00549830 /* RWTCookie.h */,
+				EB9C442B193C673B00549830 /* RWTCookie.m */,
+				EB9C442C193C673B00549830 /* RWTLevel.h */,
+				EB9C442D193C673B00549830 /* RWTLevel.m */,
+				EB9C442E193C673B00549830 /* RWTSwap.h */,
+				EB9C442F193C673B00549830 /* RWTSwap.m */,
+				EB9C4430193C673B00549830 /* RWTTile.h */,
+				EB9C4431193C673B00549830 /* RWTTile.m */,
+				EB9C4432193C673B00549830 /* Sounds */,
+				EB9C443A193C673B00549830 /* ViewController.h */,
+				EB9C443B193C673B00549830 /* ViewController.m */,
+			);
+			name = CookieCrunch;
+			path = "../../../../../../CookieCrunch-Final/CookieCrunch";
+			sourceTree = "<group>";
+		};
+		EB9C441F193C673B00549830 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				EB9C4420193C673B00549830 /* Level_0.json */,
+				EB9C4421193C673B00549830 /* Level_1.json */,
+				EB9C4422193C673B00549830 /* Level_2.json */,
+				EB9C4423193C673B00549830 /* Level_3.json */,
+				EB9C4424193C673B00549830 /* Level_4.json */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		EB9C4432193C673B00549830 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EB9C4433193C673B00549830 /* Chomp.wav */,
+				EB9C4434193C673B00549830 /* Drip.wav */,
+				EB9C4435193C673B00549830 /* Error.wav */,
+				EB9C4436193C673B00549830 /* Ka-Ching.wav */,
+				EB9C4437193C673B00549830 /* Mining by Moonlight.mp3 */,
+				EB9C4438193C673B00549830 /* Scrape.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		EB9C448C193CBFD000549830 /* FlappyBirdClone */ = {
+			isa = PBXGroup;
+			children = (
+				EB9C449F193CC14B00549830 /* FFViewController.h */,
+				EB9C44A0193CC14B00549830 /* FFViewController.m */,
+				EB9C44A2193CC26600549830 /* FFScene.h */,
+				EB9C44A3193CC26600549830 /* FFScene.m */,
+				EB9C448D193CBFD000549830 /* Bird1.png */,
+				EB9C448E193CBFD000549830 /* Bird2.png */,
+				EB9C4491193CBFD000549830 /* Ground.png */,
+				EB9C4494193CBFD000549830 /* Pipe1.png */,
+				EB9C4495193CBFD000549830 /* Pipe2.png */,
+				EB9C4496193CBFD000549830 /* Skyline.png */,
+			);
+			path = FlappyBirdClone;
 			sourceTree = "<group>";
 		};
 		EBAA09DE18F5914900C6985B /* Models */ = {
@@ -628,7 +776,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = H7;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Heba Gamal";
 				TargetAttributes = {
 					EB1A3BEE18E22486009F51BA = {
@@ -645,6 +793,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = EB1A3BE618E22486009F51BA;
 			productRefGroup = EB1A3BF018E22486009F51BA /* Products */;
@@ -662,47 +811,66 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBAE3ED41934DEC600416880 /* categories in Resources */,
 				EBAE3ED01934CA3A00416880 /* Categories in Resources */,
 				EBAE3ECF1934C78000416880 /* TabIcons30 in Resources */,
+				EB9C4457193C6F9100549830 /* categories in Resources */,
 				EB1A3C6618E2C1E5009F51BA /* Collection_Selected.png in Resources */,
 				EBB2AF14192CA0D200FE4844 /* kbeer.jpeg in Resources */,
 				EBAE3E1C1934C74500416880 /* appicon_80.png in Resources */,
 				EB9C41B6193765E100549830 /* sponsor.json in Resources */,
+				EB9C449A193CBFD000549830 /* Ground.png in Resources */,
 				EB1A3C2818E2249E009F51BA /* Main.storyboard in Resources */,
+				EB9C449D193CBFD000549830 /* Pipe2.png in Resources */,
+				EB9C449C193CBFD000549830 /* Pipe1.png in Resources */,
+				EB9C445C193C887B00549830 /* Grid.atlas in Resources */,
 				EB1A3C6518E2C1E5009F51BA /* Collection.png in Resources */,
+				EB9C4459193C70E700549830 /* Images.xcassets in Resources */,
 				EB633CF4192220D200143D81 /* defaultPP.jpeg in Resources */,
 				EBB1779B18F0A0C000E0DA3A /* 1467210_748325908515087_1110498616_n.jpg in Resources */,
+				EB9C4497193CBFD000549830 /* Bird1.png in Resources */,
+				EB9C444F193C673B00549830 /* Drip.wav in Resources */,
+				EB9C4446193C673B00549830 /* Level_4.json in Resources */,
 				EBB2AF13192CA0D200FE4844 /* tamer.jpeg in Resources */,
 				EBAE3EBC1934C74500416880 /* me_bg_4_logo.png in Resources */,
 				EB1A3C6E18E2C1E5009F51BA /* Scoreboards_Selected.png in Resources */,
 				EB1A3C6A18E2C1E5009F51BA /* Me_Selected.png in Resources */,
 				EB10DDD1190C581B00427874 /* bohahahaha.mp3 in Resources */,
+				EB9C4453193C673B00549830 /* Scrape.wav in Resources */,
 				EBAE3E1D1934C74500416880 /* bg_4.png in Resources */,
+				EB9C4451193C673B00549830 /* Ka-Ching.wav in Resources */,
+				EB9C4450193C673B00549830 /* Error.wav in Resources */,
 				EB1A3C6D18E2C1E5009F51BA /* Scoreboards.png in Resources */,
 				EB1A3C6C18E2C1E5009F51BA /* Notifications_Selected.png in Resources */,
 				EB1A3C6718E2C1E5009F51BA /* Market.png in Resources */,
 				EB1A3C8218E2EC09009F51BA /* backgroundlarge.png in Resources */,
 				EB1A3C7018E2E114009F51BA /* background.png in Resources */,
 				EBAE3EBF1934C74500416880 /* Playbutton.png in Resources */,
+				EB9C4445193C673B00549830 /* Level_3.json in Resources */,
+				EB9C444E193C673B00549830 /* Chomp.wav in Resources */,
 				EB9C41B4193765C600549830 /* cards.json in Resources */,
 				EB1A3C6B18E2C1E5009F51BA /* Notifications.png in Resources */,
+				EB9C4443193C673B00549830 /* Level_1.json in Resources */,
+				EB9C4452193C673B00549830 /* Mining by Moonlight.mp3 in Resources */,
+				EB9C4444193C673B00549830 /* Level_2.json in Resources */,
 				EBAE3EBD1934C74500416880 /* me_bg_4_logo_2.png in Resources */,
 				EB1A3BFF18E22487009F51BA /* InfoPlist.strings in Resources */,
 				EBB2AF15192CA0D200FE4844 /* fara7.jpg in Resources */,
 				EB65A1F718FFF8C300AAAAB4 /* picframe.jpg in Resources */,
 				EBAE3E1F1934C74500416880 /* bg_all_4.png in Resources */,
+				EB9C445D193C887B00549830 /* Sprites.atlas in Resources */,
 				EB1CD22718ED9AD7009000B3 /* media_icons in Resources */,
 				EB1A3C6818E2C1E5009F51BA /* Market_Selected.png in Resources */,
+				EB9C449E193CBFD000549830 /* Skyline.png in Resources */,
 				EBAE3EBE1934C74500416880 /* nav_bg.png in Resources */,
 				EB9C41B819394E0700549830 /* CategoriesIcons in Resources */,
-				EB1A3C0A18E22487009F51BA /* Images.xcassets in Resources */,
 				EBAE3E1B1934C74500416880 /* appicon_58.png in Resources */,
 				EBAE3E1E1934C74500416880 /* bg_5.png in Resources */,
 				EB1A3C8318E2EC09009F51BA /* backgroundsmall.png in Resources */,
 				EBAE3E1A1934C74500416880 /* appicon_120.png in Resources */,
+				EB9C4442193C673B00549830 /* Level_0.json in Resources */,
 				EB7BBA8519177E8900280FAB /* Default.png in Resources */,
 				EBAE3EBB1934C74500416880 /* me_bg_4.png in Resources */,
+				EB9C4498193CBFD000549830 /* Bird2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,9 +946,12 @@
 				EBC3BBD51920ADDD00BCD2B0 /* Notification.m in Sources */,
 				EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */,
 				EBC3BBE11920AE0700BCD2B0 /* CardGame.m in Sources */,
+				EB9C444A193C673B00549830 /* RWTCookie.m in Sources */,
 				EBB2AC6E192A7A8D00FE4844 /* SponsorPrograms.m in Sources */,
 				EB1A3C0118E22487009F51BA /* main.m in Sources */,
 				EBC3BBD81920ADDE00BCD2B0 /* User.m in Sources */,
+				EB9C44A1193CC14B00549830 /* FFViewController.m in Sources */,
+				EB9C444D193C673B00549830 /* RWTTile.m in Sources */,
 				EBAE3CBE1933576300416880 /* H7Mosalslat.m in Sources */,
 				EB633CF21922155000143D81 /* MyCategory.m in Sources */,
 				EBAE3CB8193356F200416880 /* H7Shahryar.m in Sources */,
@@ -788,6 +959,7 @@
 				EBB2AC65192A764A00FE4844 /* H7ProgramViewController.m in Sources */,
 				EBAE3CCE1934A9CC00416880 /* H7MosalslatQuiz.m in Sources */,
 				EBB2ACC5192B5BE300FE4844 /* H7MeViewController.m in Sources */,
+				EB9C444B193C673B00549830 /* RWTLevel.m in Sources */,
 				EBAE3CC11933577300416880 /* H7SallySyamak.m in Sources */,
 				EBC3BBDB1920AE0600BCD2B0 /* CardAudio.m in Sources */,
 				EBC3BBD21920ADDD00BCD2B0 /* MyCard.m in Sources */,
@@ -800,11 +972,16 @@
 				EBAE3CBB1933571E00416880 /* H7ManElQatel.m in Sources */,
 				EBC3BBE41920AE0700BCD2B0 /* CardVideo.m in Sources */,
 				EB1A3C0818E22487009F51BA /* TheColorsConcorenza.xcdatamodeld in Sources */,
+				EB9C4449193C673B00549830 /* RWTChain.m in Sources */,
+				EB9C44A4193CC26600549830 /* FFScene.m in Sources */,
 				EBB2ACC7192B5BE300FE4844 /* H7ScoreboardViewController.m in Sources */,
 				EB9933E118F2EF9000EE700C /* H7NotificationCell.m in Sources */,
 				EBAA09F318F6C24C00C6985B /* H7AddDataToManagedObject.m in Sources */,
 				EB65A1F518FC25C800AAAAB4 /* H7TabBarController.m in Sources */,
 				EBAE3CC81934853600416880 /* H7ManElQatelAudio.m in Sources */,
+				EB9C444C193C673B00549830 /* RWTSwap.m in Sources */,
+				EB9C4455193C673B00549830 /* ViewController.m in Sources */,
+				EB9C4448193C673B00549830 /* MyScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,7 +1027,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -889,7 +1065,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -935,9 +1110,12 @@
 				GCC_PREFIX_HEADER = "TheColorsConcorenza/TheColorsConcorenza-Prefix.pch";
 				INFOPLIST_FILE = "TheColorsConcorenza/TheColorsConcorenza-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "11949963-99AE-46C6-A442-449C90FD6B5E";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -959,8 +1137,10 @@
 				GCC_PREFIX_HEADER = "TheColorsConcorenza/TheColorsConcorenza-Prefix.pch";
 				INFOPLIST_FILE = "TheColorsConcorenza/TheColorsConcorenza-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "11949963-99AE-46C6-A442-449C90FD6B5E";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -969,7 +1149,6 @@
 		EB1A3C2518E22487009F51BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TheColorsConcorenza.app/TheColorsConcorenza";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -992,7 +1171,6 @@
 		EB1A3C2618E22487009F51BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TheColorsConcorenza.app/TheColorsConcorenza";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
