@@ -239,7 +239,7 @@ CGFloat clamp(CGFloat min, CGFloat max, CGFloat value) {
             
             _score++;
             _scoreLabelNode.text = [NSString stringWithFormat:@"%d", _score];
-
+            NSLog(@"%d" , _score);
             // Add a little visual feedback for the score increment
             [_scoreLabelNode runAction:[SKAction sequence:@[[SKAction scaleTo:1.5 duration:0.1], [SKAction scaleTo:1.0 duration:0.1]]]];
         } else {

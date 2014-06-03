@@ -61,41 +61,66 @@
                 NSLog(@"cards set size = %d" , [cardsSet count]);
             }
             
-//            if([newCat.categoryName isEqualToString:@"blue"]) {
-//                //images for cards
-//                CardImage *image1 = [CardImage MR_createEntity];
-//                CardImage *image2 = [CardImage MR_createEntity];
-//                CardImage *image3 = [CardImage MR_createEntity];
-//                CardImage *image4 = [CardImage MR_createEntity];
-//                image1.imageName = @"grid_view.png";
-//                image2.imageName = @"list_view.png";
-//                image3.imageName = @"grid_view.png";
-//                image4.imageName = @"list_view.png";
-//                NSSet *imageSet = [NSSet setWithObjects:image1,image2, nil];
-//                NSSet *imageSet1 = [NSSet setWithObjects:image3,image4, nil];
-//                
-//                //cards for category
-//                MyCard *card1 = [MyCard MR_createEntity];
-//                MyCard *card2 = [MyCard MR_createEntity];
-//                MyCard *card3 = [MyCard MR_createEntity];
-//                
-//                card1.cardId =[NSNumber numberWithInt:1];
-//                card2.cardId =[NSNumber numberWithInt:2];
-//                card3.cardId =[NSNumber numberWithInt:3];
-//                
-//                card1.cardName = @"rowing card";
-//                card2.cardName = @"cloud card";
-//                card3.cardName = @"iceman card";
-//                
-//                card1.isBought = favourite;
-//                card2.isBought = favourite;
-//                card3.isBought = favourite;
-//                
-//                card1.hasImages = imageSet;
-//                card2.hasImages = imageSet1;
-//                
-//                newCat.hasCards = [NSSet setWithObjects:card1, card2,card3, nil];
-//            }
+            
+            if([newCat.categoryName isEqualToString:@"manElQatel"]) {
+                NSMutableSet *cardsSet = [[NSMutableSet alloc] init];
+                for (int j=0 ; j<[cardsArray count]; j++) {
+                    NSString *curCatId = @"3";
+                    NSDictionary *dict = [cardsArray objectAtIndex:j];
+                    if([[dict objectForKey:@"category"] isEqualToString:curCatId]) {
+                        MyCard *newCard = [MyCard MR_createEntity];
+                        newCard.cardId = [NSNumber numberWithInt:[[dict objectForKey:@"id"] intValue]];
+                        newCard.cardName = [dict objectForKey:@"name"];
+                        newCard.cardScore = [NSNumber numberWithInt:[[dict objectForKey:@"score"] intValue]];
+                        [cardsSet addObject:newCard];
+                    }
+                }
+                //Testing 3dd l elements fe cardset
+                //Testing if scoreboard hatla3 l images l sa7 wla la2
+                newCat.hasCards = [NSSet setWithArray:[cardsSet allObjects]];
+                NSLog(@"cards set size = %d" , [cardsSet count]);
+            }
+            
+            
+            if([newCat.categoryName isEqualToString:@"mosalslat"]) {
+                NSMutableSet *cardsSet = [[NSMutableSet alloc] init];
+                for (int j=0 ; j<[cardsArray count]; j++) {
+                    NSString *curCatId = @"2";
+                    NSDictionary *dict = [cardsArray objectAtIndex:j];
+                    if([[dict objectForKey:@"category"] isEqualToString:curCatId]) {
+                        MyCard *newCard = [MyCard MR_createEntity];
+                        newCard.cardId = [NSNumber numberWithInt:[[dict objectForKey:@"id"] intValue]];
+                        newCard.cardName = [dict objectForKey:@"name"];
+                        newCard.cardScore = [NSNumber numberWithInt:[[dict objectForKey:@"score"] intValue]];
+                        [cardsSet addObject:newCard];
+                    }
+                }
+                //Testing 3dd l elements fe cardset
+                //Testing if scoreboard hatla3 l images l sa7 wla la2
+                newCat.hasCards = [NSSet setWithArray:[cardsSet allObjects]];
+                NSLog(@"cards set size = %d" , [cardsSet count]);
+            }
+            
+            
+            if([newCat.categoryName isEqualToString:@"sallySyamak"]) {
+                NSMutableSet *cardsSet = [[NSMutableSet alloc] init];
+                for (int j=0 ; j<[cardsArray count]; j++) {
+                    NSString *curCatId = @"1";
+                    NSDictionary *dict = [cardsArray objectAtIndex:j];
+                    if([[dict objectForKey:@"category"] isEqualToString:curCatId]) {
+                        MyCard *newCard = [MyCard MR_createEntity];
+                        newCard.cardId = [NSNumber numberWithInt:[[dict objectForKey:@"id"] intValue]];
+                        newCard.cardName = [dict objectForKey:@"name"];
+                        newCard.cardScore = [NSNumber numberWithInt:[[dict objectForKey:@"score"] intValue]];
+                        [cardsSet addObject:newCard];
+                    }
+                }
+                //Testing 3dd l elements fe cardset
+                //Testing if scoreboard hatla3 l images l sa7 wla la2
+                newCat.hasCards = [NSSet setWithArray:[cardsSet allObjects]];
+                NSLog(@"cards set size = %d" , [cardsSet count]);
+            }
+            
             [userCategories addObject:newCat];
         }
         user.hasCategory =[NSSet setWithArray:[userCategories allObjects]];

@@ -53,6 +53,20 @@
 		EB1A3C7018E2E114009F51BA /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1A3C6F18E2E114009F51BA /* background.png */; };
 		EB1A3C8218E2EC09009F51BA /* backgroundlarge.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1A3C8018E2EC09009F51BA /* backgroundlarge.png */; };
 		EB1A3C8318E2EC09009F51BA /* backgroundsmall.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1A3C8118E2EC09009F51BA /* backgroundsmall.png */; };
+		EB1AD500193DC80C00F84229 /* Bird1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1AD4FF193DC80C00F84229 /* Bird1.png */; };
+		EB1AD504193DC8E200F84229 /* Bird2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1AD503193DC8E200F84229 /* Bird2.png */; };
+		EB1AD585193DCD8D00F84229 /* F3HNumberTileGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD56B193DCD8D00F84229 /* F3HNumberTileGameViewController.m */; };
+		EB1AD586193DCD8D00F84229 /* F3HTileAppearanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD56D193DCD8D00F84229 /* F3HTileAppearanceProvider.m */; };
+		EB1AD587193DCD8D00F84229 /* F3HViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD56F193DCD8D00F84229 /* F3HViewController.m */; };
+		EB1AD588193DCD8D00F84229 /* F3HGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD572193DCD8D00F84229 /* F3HGameModel.m */; };
+		EB1AD589193DCD8D00F84229 /* F3HMergeTile.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD574193DCD8D00F84229 /* F3HMergeTile.m */; };
+		EB1AD58A193DCD8D00F84229 /* F3HMoveOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD576193DCD8D00F84229 /* F3HMoveOrder.m */; };
+		EB1AD58B193DCD8D00F84229 /* F3HQueueCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD578193DCD8D00F84229 /* F3HQueueCommand.m */; };
+		EB1AD58C193DCD8D00F84229 /* F3HTileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD57A193DCD8D00F84229 /* F3HTileModel.m */; };
+		EB1AD58D193DCD8D00F84229 /* F3HControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD57D193DCD8D00F84229 /* F3HControlView.m */; };
+		EB1AD58E193DCD8D00F84229 /* F3HGameboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD57F193DCD8D00F84229 /* F3HGameboardView.m */; };
+		EB1AD58F193DCD8D00F84229 /* F3HScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD581193DCD8D00F84229 /* F3HScoreView.m */; };
+		EB1AD590193DCD8D00F84229 /* F3HTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD583193DCD8D00F84229 /* F3HTileView.m */; };
 		EB1CD22718ED9AD7009000B3 /* media_icons in Resources */ = {isa = PBXBuildFile; fileRef = EB1CD22618ED9AD7009000B3 /* media_icons */; };
 		EB633CF21922155000143D81 /* MyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB633CF11922155000143D81 /* MyCategory.m */; };
 		EB633CF4192220D200143D81 /* defaultPP.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EB633CF3192220D200143D81 /* defaultPP.jpeg */; };
@@ -87,8 +101,6 @@
 		EB9C4459193C70E700549830 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4458193C70E700549830 /* Images.xcassets */; };
 		EB9C445C193C887B00549830 /* Grid.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB9C445A193C887B00549830 /* Grid.atlas */; };
 		EB9C445D193C887B00549830 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB9C445B193C887B00549830 /* Sprites.atlas */; };
-		EB9C4497193CBFD000549830 /* Bird1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C448D193CBFD000549830 /* Bird1.png */; };
-		EB9C4498193CBFD000549830 /* Bird2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C448E193CBFD000549830 /* Bird2.png */; };
 		EB9C449A193CBFD000549830 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4491193CBFD000549830 /* Ground.png */; };
 		EB9C449C193CBFD000549830 /* Pipe1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4494193CBFD000549830 /* Pipe1.png */; };
 		EB9C449D193CBFD000549830 /* Pipe2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4495193CBFD000549830 /* Pipe2.png */; };
@@ -200,6 +212,32 @@
 		EB1A3C6F18E2E114009F51BA /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		EB1A3C8018E2EC09009F51BA /* backgroundlarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundlarge.png; sourceTree = "<group>"; };
 		EB1A3C8118E2EC09009F51BA /* backgroundsmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundsmall.png; sourceTree = "<group>"; };
+		EB1AD4FF193DC80C00F84229 /* Bird1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bird1.png; sourceTree = "<group>"; };
+		EB1AD503193DC8E200F84229 /* Bird2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bird2.png; sourceTree = "<group>"; };
+		EB1AD56A193DCD8D00F84229 /* F3HNumberTileGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HNumberTileGameViewController.h; sourceTree = "<group>"; };
+		EB1AD56B193DCD8D00F84229 /* F3HNumberTileGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HNumberTileGameViewController.m; sourceTree = "<group>"; };
+		EB1AD56C193DCD8D00F84229 /* F3HTileAppearanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HTileAppearanceProvider.h; sourceTree = "<group>"; };
+		EB1AD56D193DCD8D00F84229 /* F3HTileAppearanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HTileAppearanceProvider.m; sourceTree = "<group>"; };
+		EB1AD56E193DCD8D00F84229 /* F3HViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HViewController.h; sourceTree = "<group>"; };
+		EB1AD56F193DCD8D00F84229 /* F3HViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HViewController.m; sourceTree = "<group>"; };
+		EB1AD571193DCD8D00F84229 /* F3HGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HGameModel.h; sourceTree = "<group>"; };
+		EB1AD572193DCD8D00F84229 /* F3HGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HGameModel.m; sourceTree = "<group>"; };
+		EB1AD573193DCD8D00F84229 /* F3HMergeTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HMergeTile.h; sourceTree = "<group>"; };
+		EB1AD574193DCD8D00F84229 /* F3HMergeTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HMergeTile.m; sourceTree = "<group>"; };
+		EB1AD575193DCD8D00F84229 /* F3HMoveOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HMoveOrder.h; sourceTree = "<group>"; };
+		EB1AD576193DCD8D00F84229 /* F3HMoveOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HMoveOrder.m; sourceTree = "<group>"; };
+		EB1AD577193DCD8D00F84229 /* F3HQueueCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HQueueCommand.h; sourceTree = "<group>"; };
+		EB1AD578193DCD8D00F84229 /* F3HQueueCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HQueueCommand.m; sourceTree = "<group>"; };
+		EB1AD579193DCD8D00F84229 /* F3HTileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HTileModel.h; sourceTree = "<group>"; };
+		EB1AD57A193DCD8D00F84229 /* F3HTileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HTileModel.m; sourceTree = "<group>"; };
+		EB1AD57C193DCD8D00F84229 /* F3HControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HControlView.h; sourceTree = "<group>"; };
+		EB1AD57D193DCD8D00F84229 /* F3HControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HControlView.m; sourceTree = "<group>"; };
+		EB1AD57E193DCD8D00F84229 /* F3HGameboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HGameboardView.h; sourceTree = "<group>"; };
+		EB1AD57F193DCD8D00F84229 /* F3HGameboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HGameboardView.m; sourceTree = "<group>"; };
+		EB1AD580193DCD8D00F84229 /* F3HScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HScoreView.h; sourceTree = "<group>"; };
+		EB1AD581193DCD8D00F84229 /* F3HScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HScoreView.m; sourceTree = "<group>"; };
+		EB1AD582193DCD8D00F84229 /* F3HTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HTileView.h; sourceTree = "<group>"; };
+		EB1AD583193DCD8D00F84229 /* F3HTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HTileView.m; sourceTree = "<group>"; };
 		EB1CD22618ED9AD7009000B3 /* media_icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = media_icons; sourceTree = "<group>"; };
 		EB633CF01922155000143D81 /* MyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCategory.h; path = TheColorsConcorenza/MyCategory.h; sourceTree = SOURCE_ROOT; };
 		EB633CF11922155000143D81 /* MyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCategory.m; path = TheColorsConcorenza/MyCategory.m; sourceTree = SOURCE_ROOT; };
@@ -245,8 +283,6 @@
 		EB9C4458193C70E700549830 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EB9C445A193C887B00549830 /* Grid.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Grid.atlas; path = "../../iphone-workspace/Bonjour/SS/TheColorsConcorenza-2/Grid.atlas"; sourceTree = "<group>"; };
 		EB9C445B193C887B00549830 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Sprites.atlas; path = "../../iphone-workspace/Bonjour/SS/TheColorsConcorenza-2/Sprites.atlas"; sourceTree = "<group>"; };
-		EB9C448D193CBFD000549830 /* Bird1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bird1.png; sourceTree = "<group>"; };
-		EB9C448E193CBFD000549830 /* Bird2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bird2.png; sourceTree = "<group>"; };
 		EB9C4491193CBFD000549830 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
 		EB9C4494193CBFD000549830 /* Pipe1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pipe1.png; sourceTree = "<group>"; };
 		EB9C4495193CBFD000549830 /* Pipe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pipe2.png; sourceTree = "<group>"; };
@@ -581,6 +617,53 @@
 			path = TabsController;
 			sourceTree = "<group>";
 		};
+		EB1AD567193DCD8D00F84229 /* NumberTileGame */ = {
+			isa = PBXGroup;
+			children = (
+				EB1AD56A193DCD8D00F84229 /* F3HNumberTileGameViewController.h */,
+				EB1AD56B193DCD8D00F84229 /* F3HNumberTileGameViewController.m */,
+				EB1AD56C193DCD8D00F84229 /* F3HTileAppearanceProvider.h */,
+				EB1AD56D193DCD8D00F84229 /* F3HTileAppearanceProvider.m */,
+				EB1AD56E193DCD8D00F84229 /* F3HViewController.h */,
+				EB1AD56F193DCD8D00F84229 /* F3HViewController.m */,
+				EB1AD570193DCD8D00F84229 /* Models */,
+				EB1AD57B193DCD8D00F84229 /* Views */,
+			);
+			path = NumberTileGame;
+			sourceTree = "<group>";
+		};
+		EB1AD570193DCD8D00F84229 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB1AD571193DCD8D00F84229 /* F3HGameModel.h */,
+				EB1AD572193DCD8D00F84229 /* F3HGameModel.m */,
+				EB1AD573193DCD8D00F84229 /* F3HMergeTile.h */,
+				EB1AD574193DCD8D00F84229 /* F3HMergeTile.m */,
+				EB1AD575193DCD8D00F84229 /* F3HMoveOrder.h */,
+				EB1AD576193DCD8D00F84229 /* F3HMoveOrder.m */,
+				EB1AD577193DCD8D00F84229 /* F3HQueueCommand.h */,
+				EB1AD578193DCD8D00F84229 /* F3HQueueCommand.m */,
+				EB1AD579193DCD8D00F84229 /* F3HTileModel.h */,
+				EB1AD57A193DCD8D00F84229 /* F3HTileModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB1AD57B193DCD8D00F84229 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB1AD57C193DCD8D00F84229 /* F3HControlView.h */,
+				EB1AD57D193DCD8D00F84229 /* F3HControlView.m */,
+				EB1AD57E193DCD8D00F84229 /* F3HGameboardView.h */,
+				EB1AD57F193DCD8D00F84229 /* F3HGameboardView.m */,
+				EB1AD580193DCD8D00F84229 /* F3HScoreView.h */,
+				EB1AD581193DCD8D00F84229 /* F3HScoreView.m */,
+				EB1AD582193DCD8D00F84229 /* F3HTileView.h */,
+				EB1AD583193DCD8D00F84229 /* F3HTileView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EB5A901018EDABBE00C94597 /* MediaViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,6 +680,7 @@
 		EB9C41BF193B78CB00549830 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				EB1AD567193DCD8D00F84229 /* NumberTileGame */,
 				EB9C448C193CBFD000549830 /* FlappyBirdClone */,
 				EB9C4414193C673B00549830 /* CookieCrunch */,
 			);
@@ -658,12 +742,12 @@
 		EB9C448C193CBFD000549830 /* FlappyBirdClone */ = {
 			isa = PBXGroup;
 			children = (
+				EB1AD503193DC8E200F84229 /* Bird2.png */,
+				EB1AD4FF193DC80C00F84229 /* Bird1.png */,
 				EB9C449F193CC14B00549830 /* FFViewController.h */,
 				EB9C44A0193CC14B00549830 /* FFViewController.m */,
 				EB9C44A2193CC26600549830 /* FFScene.h */,
 				EB9C44A3193CC26600549830 /* FFScene.m */,
-				EB9C448D193CBFD000549830 /* Bird1.png */,
-				EB9C448E193CBFD000549830 /* Bird2.png */,
 				EB9C4491193CBFD000549830 /* Ground.png */,
 				EB9C4494193CBFD000549830 /* Pipe1.png */,
 				EB9C4495193CBFD000549830 /* Pipe2.png */,
@@ -827,7 +911,6 @@
 				EB9C4459193C70E700549830 /* Images.xcassets in Resources */,
 				EB633CF4192220D200143D81 /* defaultPP.jpeg in Resources */,
 				EBB1779B18F0A0C000E0DA3A /* 1467210_748325908515087_1110498616_n.jpg in Resources */,
-				EB9C4497193CBFD000549830 /* Bird1.png in Resources */,
 				EB9C444F193C673B00549830 /* Drip.wav in Resources */,
 				EB9C4446193C673B00549830 /* Level_4.json in Resources */,
 				EBB2AF13192CA0D200FE4844 /* tamer.jpeg in Resources */,
@@ -843,6 +926,7 @@
 				EB1A3C6C18E2C1E5009F51BA /* Notifications_Selected.png in Resources */,
 				EB1A3C6718E2C1E5009F51BA /* Market.png in Resources */,
 				EB1A3C8218E2EC09009F51BA /* backgroundlarge.png in Resources */,
+				EB1AD504193DC8E200F84229 /* Bird2.png in Resources */,
 				EB1A3C7018E2E114009F51BA /* background.png in Resources */,
 				EBAE3EBF1934C74500416880 /* Playbutton.png in Resources */,
 				EB9C4445193C673B00549830 /* Level_3.json in Resources */,
@@ -869,8 +953,8 @@
 				EBAE3E1A1934C74500416880 /* appicon_120.png in Resources */,
 				EB9C4442193C673B00549830 /* Level_0.json in Resources */,
 				EB7BBA8519177E8900280FAB /* Default.png in Resources */,
+				EB1AD500193DC80C00F84229 /* Bird1.png in Resources */,
 				EBAE3EBB1934C74500416880 /* me_bg_4.png in Resources */,
-				EB9C4498193CBFD000549830 /* Bird2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -945,23 +1029,31 @@
 				EBAA09E118F591AD00C6985B /* H7ConstantsModel.m in Sources */,
 				EBC3BBD51920ADDD00BCD2B0 /* Notification.m in Sources */,
 				EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */,
+				EB1AD58A193DCD8D00F84229 /* F3HMoveOrder.m in Sources */,
 				EBC3BBE11920AE0700BCD2B0 /* CardGame.m in Sources */,
 				EB9C444A193C673B00549830 /* RWTCookie.m in Sources */,
 				EBB2AC6E192A7A8D00FE4844 /* SponsorPrograms.m in Sources */,
+				EB1AD588193DCD8D00F84229 /* F3HGameModel.m in Sources */,
 				EB1A3C0118E22487009F51BA /* main.m in Sources */,
 				EBC3BBD81920ADDE00BCD2B0 /* User.m in Sources */,
+				EB1AD590193DCD8D00F84229 /* F3HTileView.m in Sources */,
 				EB9C44A1193CC14B00549830 /* FFViewController.m in Sources */,
 				EB9C444D193C673B00549830 /* RWTTile.m in Sources */,
 				EBAE3CBE1933576300416880 /* H7Mosalslat.m in Sources */,
 				EB633CF21922155000143D81 /* MyCategory.m in Sources */,
 				EBAE3CB8193356F200416880 /* H7Shahryar.m in Sources */,
 				EBAA09F918F6E27000C6985B /* H7UIViewController.m in Sources */,
+				EB1AD58B193DCD8D00F84229 /* F3HQueueCommand.m in Sources */,
+				EB1AD586193DCD8D00F84229 /* F3HTileAppearanceProvider.m in Sources */,
 				EBB2AC65192A764A00FE4844 /* H7ProgramViewController.m in Sources */,
 				EBAE3CCE1934A9CC00416880 /* H7MosalslatQuiz.m in Sources */,
 				EBB2ACC5192B5BE300FE4844 /* H7MeViewController.m in Sources */,
 				EB9C444B193C673B00549830 /* RWTLevel.m in Sources */,
 				EBAE3CC11933577300416880 /* H7SallySyamak.m in Sources */,
+				EB1AD589193DCD8D00F84229 /* F3HMergeTile.m in Sources */,
 				EBC3BBDB1920AE0600BCD2B0 /* CardAudio.m in Sources */,
+				EB1AD587193DCD8D00F84229 /* F3HViewController.m in Sources */,
+				EB1AD58E193DCD8D00F84229 /* F3HGameboardView.m in Sources */,
 				EBC3BBD21920ADDD00BCD2B0 /* MyCard.m in Sources */,
 				EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */,
 				EBC3BBDE1920AE0600BCD2B0 /* CardImage.m in Sources */,
@@ -969,8 +1061,10 @@
 				EBB2AC58192A228E00FE4844 /* H7SponsorTableViewCell.m in Sources */,
 				EBAE3CD11934BA5000416880 /* H7ShahryarStory.m in Sources */,
 				EB1A3C0518E22487009F51BA /* H7AppDelegate.m in Sources */,
+				EB1AD58D193DCD8D00F84229 /* F3HControlView.m in Sources */,
 				EBAE3CBB1933571E00416880 /* H7ManElQatel.m in Sources */,
 				EBC3BBE41920AE0700BCD2B0 /* CardVideo.m in Sources */,
+				EB1AD58C193DCD8D00F84229 /* F3HTileModel.m in Sources */,
 				EB1A3C0818E22487009F51BA /* TheColorsConcorenza.xcdatamodeld in Sources */,
 				EB9C4449193C673B00549830 /* RWTChain.m in Sources */,
 				EB9C44A4193CC26600549830 /* FFScene.m in Sources */,
@@ -981,7 +1075,9 @@
 				EBAE3CC81934853600416880 /* H7ManElQatelAudio.m in Sources */,
 				EB9C444C193C673B00549830 /* RWTSwap.m in Sources */,
 				EB9C4455193C673B00549830 /* ViewController.m in Sources */,
+				EB1AD58F193DCD8D00F84229 /* F3HScoreView.m in Sources */,
 				EB9C4448193C673B00549830 /* MyScene.m in Sources */,
+				EB1AD585193DCD8D00F84229 /* F3HNumberTileGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@
         <attribute name="cardName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cardPrice" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="cardScore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="gameId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isAvailble" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isBought" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyCategory" inverseName="hasCards" inverseEntity="MyCategory" syncable="YES"/>
@@ -58,7 +59,7 @@
         <element name="CardGame" positionX="0" positionY="0" width="128" height="45"/>
         <element name="CardImage" positionX="0" positionY="0" width="128" height="75"/>
         <element name="CardVideo" positionX="0" positionY="0" width="128" height="45"/>
-        <element name="MyCard" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="MyCard" positionX="0" positionY="0" width="128" height="195"/>
         <element name="MyCategory" positionX="0" positionY="0" width="128" height="165"/>
         <element name="Notification" positionX="0" positionY="0" width="128" height="75"/>
         <element name="SponsorPrograms" positionX="9" positionY="144" width="128" height="135"/>
