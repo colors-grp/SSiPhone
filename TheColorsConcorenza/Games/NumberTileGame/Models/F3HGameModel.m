@@ -13,6 +13,8 @@
 #import "F3HMergeTile.h"
 #import "F3HQueueCommand.h"
 
+#import "H7CardSinglton.h"
+
 // Command queue
 #define MAX_COMMANDS      100
 #define QUEUE_DELAY       0.3
@@ -374,6 +376,11 @@
             }
         }
     }
+
+    // Saving card score in core data
+    H7CardSinglton *singlton = [H7CardSinglton sharedInstance];
+    [singlton updateScore:[NSNumber numberWithInteger:_score]];
+    
     return YES;
 }
 

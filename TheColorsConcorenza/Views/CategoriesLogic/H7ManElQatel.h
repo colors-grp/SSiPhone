@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface H7ManElQatel : UIViewController
+@interface H7ManElQatel : UIViewController<UICollectionViewDataSource , UICollectionViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *cardsCollection;
 
 @end

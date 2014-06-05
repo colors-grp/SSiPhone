@@ -7,6 +7,7 @@
 //
 
 #import "FFScene.h"
+#import "H7CardSinglton.h"
 
 @interface FFScene () <SKPhysicsContactDelegate> {
     SKSpriteNode* _bird;
@@ -262,6 +263,11 @@ CGFloat clamp(CGFloat min, CGFloat max, CGFloat value) {
             }], [SKAction waitForDuration:0.05]]] count:4], [SKAction runBlock:^{
                 _canRestart = YES;
             }]]] withKey:@"flash"];
+            
+            // Saving card score in core data
+            H7CardSinglton *singlton = [H7CardSinglton sharedInstance];
+            [singlton updateScore:[NSNumber numberWithInteger:_score]];
+            
         }
     }
 }

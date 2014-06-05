@@ -59,6 +59,7 @@
     // Put global user info in app delegate
     H7AppDelegate *appDel = (H7AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDel.userFbId = user.id;
+    appDel.userName = user.first_name;
 }
 
 

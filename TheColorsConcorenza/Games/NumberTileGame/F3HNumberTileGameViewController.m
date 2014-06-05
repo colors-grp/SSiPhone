@@ -209,7 +209,6 @@
 
 - (void)scoreChanged:(NSInteger)newScore {
     self.scoreView.score = newScore;
-    NSLog(@"%d" ,newScore);
 }
 
 

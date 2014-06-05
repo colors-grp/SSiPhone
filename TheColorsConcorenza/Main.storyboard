@@ -21,8 +21,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heba Gamal Saad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuv-ob-QSt">
-                                <rect key="frame" x="90" y="372" width="161" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heba Gamal Saad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuv-ob-QSt">
+                                <rect key="frame" x="78" y="375" width="161" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -63,6 +63,7 @@
                         <outlet property="mosalslatScore" destination="O5S-2E-fm7" id="Dbd-BD-Rpq"/>
                         <outlet property="sallySyamakScore" destination="tRL-qG-boK" id="r2d-Ms-Xoh"/>
                         <outlet property="shahryarScore" destination="mef-lX-CP0" id="xyU-RU-zff"/>
+                        <outlet property="userNameLabel" destination="vuv-ob-QSt" id="gjk-Ox-cQX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WH4-7F-B3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -431,9 +432,6 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="145" height="187"/>
-                                        <connections>
-                                            <segue destination="fFB-zp-WKA" kind="push" id="5ce-9t-TdI"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -445,6 +443,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VrU-zY-elU"/>
+                    <connections>
+                        <outlet property="cardsCollection" destination="7jf-nx-BBo" id="h5p-Tc-lKV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPq-PI-5RL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -978,13 +979,13 @@
         <!--View Controller-->
         <scene sceneID="Qnq-Wu-01N">
             <objects>
-                <viewController id="fFB-zp-WKA" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fanoosCrunch" id="fFB-zp-WKA" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1hR-uN-hlh"/>
                         <viewControllerLayoutGuide type="bottom" id="LSy-8t-m0Y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6f6-Vz-dTm" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Target:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcw-4g-El1">
@@ -1042,7 +1043,7 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qve-Kc-WiF">
-                                <rect key="frame" x="0.0" y="141" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="166" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boY-6A-GlM">
@@ -1077,7 +1078,7 @@
         <!--View Controller-->
         <scene sceneID="iIi-3r-duc">
             <objects>
-                <viewController id="zcH-it-Bi6" customClass="FFViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="flappyFanoos" id="zcH-it-Bi6" customClass="FFViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IvH-cd-8rk"/>
                         <viewControllerLayoutGuide type="bottom" id="GOX-ux-JXe"/>
@@ -1096,7 +1097,7 @@
         <!--View Controller-->
         <scene sceneID="TyZ-CL-inZ">
             <objects>
-                <viewController id="CHB-Z6-F4Q" customClass="F3HViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fanoos2048" id="CHB-Z6-F4Q" customClass="F3HViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O5z-Sh-uOk"/>
                         <viewControllerLayoutGuide type="bottom" id="ovz-05-N6p"/>

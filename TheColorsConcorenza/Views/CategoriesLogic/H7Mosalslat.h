@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface H7Mosalslat : UIViewController
+@interface H7Mosalslat : UIViewController<UICollectionViewDataSource , UICollectionViewDelegate>
+
 
 @end

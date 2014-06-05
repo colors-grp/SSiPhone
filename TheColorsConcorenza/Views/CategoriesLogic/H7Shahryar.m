@@ -32,6 +32,13 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
     [self.view insertSubview: imageView atIndex:0];
     
+    // Get Cards of salySyamak category sorted according to cardId
+    cards = [[self.currentCategory.hasCards allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSNumber *first = [obj1 valueForKey:@"cardId"];
+        NSNumber *second = [obj2 valueForKey:@"cardId"];
+        return [first compare:second];
+    }];
+    
     // Get cards status
     [self getOpenedCards];
     
@@ -70,7 +77,7 @@
         }
     }
     if(!inLoop)
-        imagePath = [NSString stringWithFormat:@"Playbutton.png"];
+        imagePath = [NSString stringWithFormat:@"locked_card.png"];
     
     image.image = [UIImage imageNamed:imagePath];
     return  cell;
@@ -85,13 +92,12 @@
 
 -(void)getOpenedCards {
     NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@cards_status/format/json/categoryId/%@", PLATFORM_URL ,self.currentCategory.categoryId]];
-    NSLog(@"%@" , url);
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         cardStatus = JSON;
         [self.cardsCollection reloadData];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-
+        // Get from core data
         NSLog(@"Failed to get scores");
     }];
     [request start];

@@ -43,13 +43,16 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
     [self.view insertSubview: imageView atIndex:0];
     
+    // Set segment contorol color to red
+    self.segmentControl.tintColor =[UIColor colorWithRed:(212/255.0) green:(39/255.0) blue:(51/255.0) alpha:1];
+    
     names = [[NSMutableArray alloc] init];
     facebookIds = [[NSMutableArray alloc] init];
     ranks = [[NSMutableArray alloc] init];
     scores = [[NSMutableArray alloc] init];
     
     // Get my favourite categories
-    myCategories = [[MyCategory MR_findAll] mutableCopy];
+    myCategories = [[MyCategory MR_findAllSortedBy:@"categoryId" ascending:YES] mutableCopy];
     
     // Set default selected segment
     selectedSegment = 0;

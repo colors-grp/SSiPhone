@@ -43,6 +43,9 @@
     H7AppDelegate *appDel = [[UIApplication sharedApplication] delegate];
     self.fbProfilePicture.profileID = appDel.userFbId;
     
+    /* getting user name */
+    self.userNameLabel.text = appDel.userName;
+    
     //Setting score labels color
     self.sallySyamakScore.textColor = [UIColor whiteColor];
     self.mosalslatScore.textColor = [UIColor whiteColor];
@@ -72,7 +75,6 @@
 -(void)getCategoryScores {
     H7AppDelegate *appDel = [[UIApplication sharedApplication] delegate];
     NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@score/format/json/facebookId/%@", PLATFORM_URL ,appDel.userFbId]];
-    NSLog(@"%@" , url);
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSDictionary *dict = JSON;
@@ -81,6 +83,7 @@
         self.manElQatelScore.text = [dict objectForKey:@"manElQatel"];
         self.shahryarScore.text = [dict objectForKey:@"shahryar"];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        // Get score from core data
         NSLog(@"Failed to get scores");
     }];
     [request start];

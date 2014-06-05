@@ -2,7 +2,7 @@
 //  MyCard.m
 //  TheColorsConcorenza
 //
-//  Created by Heba Gamal on 5/12/14.
+//  Created by Heba Gamal on 6/4/14.
 //  Copyright (c) 2014 Heba Gamal. All rights reserved.
 //
 
@@ -18,6 +18,8 @@
 @dynamic cardName;
 @dynamic cardPrice;
 @dynamic cardScore;
+@dynamic gameId;
+@dynamic isAvailble;
 @dynamic isBought;
 @dynamic belongsTo;
 @dynamic hasAudio;

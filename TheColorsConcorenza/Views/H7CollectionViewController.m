@@ -69,7 +69,14 @@
         
     }
     if([[segue identifier] isEqualToString:@"goToSallySyamak"]) {
-        
+        for (int i = 0; i < [favouriteArray count]; i++) {
+            MyCategory *curCat = [favouriteArray objectAtIndex:i];
+            if([[curCat categoryName] isEqualToString:@"sallySyamak"]) {
+                H7Shahryar *view = [segue destinationViewController];
+                view.currentCategory = curCat;
+                break;
+            }
+        }
     }
 }
 

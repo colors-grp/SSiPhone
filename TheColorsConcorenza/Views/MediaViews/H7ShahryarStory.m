@@ -37,7 +37,7 @@
     [self.view addGestureRecognizer:swiperight];
     
     // Set first page
-    self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"Categories/shahryar/cards/%d/%d.png" , self.cardId , curPanel]];
+    self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"Categories/shahryar/cards/%d/%d.tif" , self.cardId , curPanel]];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

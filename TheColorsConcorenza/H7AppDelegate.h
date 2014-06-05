@@ -22,5 +22,6 @@
 
 //Application's global variables
 @property (strong, nonatomic) NSString *userFbId;
+@property (strong , nonatomic)NSString *userName;
 
 @end

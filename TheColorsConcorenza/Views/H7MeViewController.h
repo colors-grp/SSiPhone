@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *mosalslatScore;
 @property (weak, nonatomic) IBOutlet UILabel *manElQatelScore;
 @property (weak, nonatomic) IBOutlet UILabel *shahryarScore;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 
 @end
