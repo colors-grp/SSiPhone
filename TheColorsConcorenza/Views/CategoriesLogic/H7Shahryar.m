@@ -70,24 +70,33 @@
     UIImageView *image = (UIImageView*)[cell viewWithTag:200];
     bool inLoop =false;
     NSString *imagePath;
-    for (int i=0 ; i < [cardStatus count]; i++) {
-        if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
-           imagePath = [NSString stringWithFormat:@"Categories/shahryar/cards/%d/img.png" , indexPath.row + 1];
-            inLoop = true;
-        }
+    MyCard *curCard = [cards objectAtIndex:indexPath.row];
+    if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"] && [curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:NO]]) {
+        [self downloadCard:curCard SetImage:image];
+        inLoop = YES;
+    }else if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"] &&  [curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+        NSData *imgData = curCard.imageBinary;
+        UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];
+        [image setImage:thumbNail];
+        inLoop = YES;
     }
-    if(!inLoop)
+    if(!inLoop) {
         imagePath = [NSString stringWithFormat:@"locked_card.png"];
-    
-    image.image = [UIImage imageNamed:imagePath];
+        image.image = [UIImage imageNamed:imagePath];
+    }
     return  cell;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    H7ShahryarStory *story = [segue destinationViewController];
-    NSArray *indexPaths = [self.cardsCollection indexPathsForSelectedItems];
-    NSIndexPath *index = [indexPaths objectAtIndex:0];
-    story.cardId = index.row + 1;
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if([[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        H7ShahryarStory *story = [storyboard instantiateViewControllerWithIdentifier:@"shahryarStory"];
+        story.currentCard = [cards objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController: story animated:YES];
+    }else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Card not open yet!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 -(void)getOpenedCards {
@@ -102,6 +111,48 @@
     }];
     [request start];
 }
+
+- (void)downloadCard:(MyCard*)card SetImage:(UIImageView*)image {
+    // Set URL for image
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/shahryar/%@/img.png" ,ASSETS_URL,card.cardId]];
+    
+    // Set the request
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    // Get directory to save & retrieve image
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"cards/shahryar/%@" , card.cardId]];
+    
+    // Create directory
+    NSFileManager *filemgr;
+    filemgr =[NSFileManager defaultManager];
+    if ([filemgr createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES
+                            attributes:nil error: NULL] == NO){
+        NSLog(@"Failed to create local directory");
+    }
+    
+    // Save file
+    NSString *fullPath = [NSString stringWithFormat:@"%@/img.png", documentsDirectory];
+    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:fullPath append:NO]];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSData *imgData = [[NSData alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fullPath]];
+        [imgData writeToFile:fullPath atomically:YES];
+        UIImage *thumbNail = [[UIImage alloc] initWithData:imgData];
+        //Set image with thumbnail here
+        image.image = thumbNail;
+        //Set card.isAvailble to be true & save to coredata & binary image
+        card.imageBinary = imgData;
+        card.isAvailble = [NSNumber numberWithBool:YES];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"ERR: %@", [error description]);
+    }];
+    [operation start];
+}
+
 
 
 @end

@@ -63,10 +63,26 @@
         }
     }
     if([[segue identifier] isEqualToString:@"goToManElQatel"]) {
-        
+        for (int i = 0; i < [favouriteArray count]; i++) {
+            MyCategory *curCat = [favouriteArray objectAtIndex:i];
+            if([[curCat categoryName] isEqualToString:@"manElQatel"]) {
+                H7Shahryar *view = [segue destinationViewController];
+                view.currentCategory = curCat;
+                break;
+            }
+        }
+
     }
     if([[segue identifier] isEqualToString:@"goToMosalslat"]) {
-        
+        for (int i = 0; i < [favouriteArray count]; i++) {
+            MyCategory *curCat = [favouriteArray objectAtIndex:i];
+            if([[curCat categoryName] isEqualToString:@"mosalslat"]) {
+                H7Shahryar *view = [segue destinationViewController];
+                view.currentCategory = curCat;
+                break;
+            }
+        }
+
     }
     if([[segue identifier] isEqualToString:@"goToSallySyamak"]) {
         for (int i = 0; i < [favouriteArray count]; i++) {

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyCard.h"
 
 @interface H7ManElQatelAudio : UIViewController
 
-@property int cardId;
+@property (strong , nonatomic) MyCard *currentCard;
 
 @end

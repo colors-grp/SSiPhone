@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyCard.h"
 @interface H7MosalslatQuiz : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIImageView *mosalsalImage;
 @property (weak, nonatomic) IBOutlet UITextView *questionText;
 @property (weak, nonatomic) IBOutlet UIButton *choice1;
 @property (weak, nonatomic) IBOutlet UIButton *choice2;
 @property (weak, nonatomic) IBOutlet UIButton *choice3;
+@property (strong , nonatomic) MyCard *currentCard;
 
 @end

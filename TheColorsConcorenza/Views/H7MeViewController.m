@@ -60,7 +60,8 @@
     
     // get categories scores
     [self getCategoryScores];
-    
+    [self downloadFile];
+        
     [super viewDidLoad];
 }
 
@@ -87,6 +88,53 @@
         NSLog(@"Failed to get scores");
     }];
     [request start];
+}
+
+- (void)downloadFile {
+    
+    NSURL *url = [NSURL URLWithString:@"http://gloryette.org/mobile/assets/fara7.jpg"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:@"Cards/lol"];
+    
+    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:@"MyCard"];
+    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:@"xx"];
+    
+    NSFileManager *filemgr;
+    filemgr =[NSFileManager defaultManager];
+    
+    if ([filemgr createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES
+                            attributes:nil error: NULL] == NO)
+    {
+        // Failed to create directory
+    }
+    
+    
+    NSString *fullPath = [NSString stringWithFormat:@"%@/a.jpeg",
+                          documentsDirectory];
+    NSLog(@"full path = %@" , fullPath);
+    
+    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:fullPath append:NO]];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:fullPath error:&error];
+        NSData *imgData = [[NSData alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fullPath]];
+        UIImage *thumbNail = [[UIImage alloc] initWithData:imgData];
+        if (error) {
+            NSLog(@"ERR: %@", [error description]);
+        }
+        self.temp.image = thumbNail;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"ERR: %@", [error description]);
+    }];
+    
+    [operation start];
 }
 
 @end

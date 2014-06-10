@@ -85,7 +85,6 @@
         selectedSegment = 1;
         [self getScoreboardFriendsWithChange:YES];
     }
-    
 }
 
 // Collection view data source

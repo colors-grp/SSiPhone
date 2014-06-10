@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyCategory.h"
 
 @interface H7Mosalslat : UIViewController<UICollectionViewDataSource , UICollectionViewDelegate>
 
+@property (strong) MyCategory *currentCategory;
+@property (weak, nonatomic) IBOutlet UICollectionView *cardsCollection;
 
 @end

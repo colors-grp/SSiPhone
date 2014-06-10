@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyCard.h"
 @interface H7ShahryarStory : UIViewController <UIGestureRecognizerDelegate>
 
-@property int cardId;
+@property (strong , nonatomic) MyCard *currentCard;
 @property (weak, nonatomic) IBOutlet UIImageView *storyPanel;
 
 

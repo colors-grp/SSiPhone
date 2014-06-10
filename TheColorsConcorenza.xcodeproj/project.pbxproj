@@ -10,7 +10,6 @@
 		8F753E3A3AD7453B84B997E0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A9E11FB0845E7B39C747D /* libPods.a */; };
 		EB0C5288193F25E500B621AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0C5287193F25E500B621AD /* Images.xcassets */; };
 		EB0C528A193F346600B621AD /* locked_card.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0C5289193F346600B621AD /* locked_card.png */; };
-		EB0C5293193F58D300B621AD /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0C5292193F58D300B621AD /* MyCard.m */; };
 		EB0C52961940994200B621AD /* H7CardSinglton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0C52951940994200B621AD /* H7CardSinglton.m */; };
 		EB0C529C1940A6C500B621AD /* Categories in Resources */ = {isa = PBXBuildFile; fileRef = EB0C529A1940A65F00B621AD /* Categories */; };
 		EB10DDB71909042600427874 /* media_icons in Resources */ = {isa = PBXBuildFile; fileRef = EB1CD22618ED9AD7009000B3 /* media_icons */; };
@@ -82,7 +81,6 @@
 		EB9933E118F2EF9000EE700C /* H7NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9933E018F2EF9000EE700C /* H7NotificationCell.m */; };
 		EB9C41B4193765C600549830 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B3193765C500549830 /* cards.json */; };
 		EB9C41B6193765E100549830 /* sponsor.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B5193765E100549830 /* sponsor.json */; };
-		EB9C41B819394E0700549830 /* CategoriesIcons in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B719394E0700549830 /* CategoriesIcons */; };
 		EB9C4413193C66F900549830 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9C4412193C66F900549830 /* SpriteKit.framework */; };
 		EB9C4442193C673B00549830 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4420193C673B00549830 /* Level_0.json */; };
 		EB9C4443193C673B00549830 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4421193C673B00549830 /* Level_1.json */; };
@@ -154,6 +152,8 @@
 		EBB2AF13192CA0D200FE4844 /* tamer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EBB2AF10192CA0D200FE4844 /* tamer.jpeg */; };
 		EBB2AF14192CA0D200FE4844 /* kbeer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EBB2AF11192CA0D200FE4844 /* kbeer.jpeg */; };
 		EBB2AF15192CA0D200FE4844 /* fara7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBB2AF12192CA0D200FE4844 /* fara7.jpg */; };
+		EBBF04801944463900AFA2FC /* CategoriesIcons in Resources */ = {isa = PBXBuildFile; fileRef = EBBF047F1944463900AFA2FC /* CategoriesIcons */; };
+		EBBF048C1946106700AFA2FC /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBF048B1946106700AFA2FC /* MyCard.m */; };
 		EBC3BBD51920ADDD00BCD2B0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBD41920ADDD00BCD2B0 /* Notification.m */; };
 		EBC3BBD81920ADDE00BCD2B0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBD71920ADDE00BCD2B0 /* User.m */; };
 		EBC3BBDB1920AE0600BCD2B0 /* CardAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBDA1920AE0600BCD2B0 /* CardAudio.m */; };
@@ -183,8 +183,6 @@
 		EB0502FB1924BF0100CDE84E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EB0C5287193F25E500B621AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EB0C5289193F346600B621AD /* locked_card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locked_card.png; sourceTree = "<group>"; };
-		EB0C5291193F58D300B621AD /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCard.h; path = TheColorsConcorenza/MyCard.h; sourceTree = SOURCE_ROOT; };
-		EB0C5292193F58D300B621AD /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCard.m; path = TheColorsConcorenza/MyCard.m; sourceTree = SOURCE_ROOT; };
 		EB0C52941940994200B621AD /* H7CardSinglton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7CardSinglton.h; sourceTree = "<group>"; };
 		EB0C52951940994200B621AD /* H7CardSinglton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7CardSinglton.m; sourceTree = "<group>"; };
 		EB0C529A1940A65F00B621AD /* Categories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Categories; sourceTree = "<group>"; };
@@ -260,7 +258,6 @@
 		EB9933E018F2EF9000EE700C /* H7NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7NotificationCell.m; sourceTree = "<group>"; };
 		EB9C41B3193765C500549830 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		EB9C41B5193765E100549830 /* sponsor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sponsor.json; sourceTree = "<group>"; };
-		EB9C41B719394E0700549830 /* CategoriesIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CategoriesIcons; sourceTree = "<group>"; };
 		EB9C4412193C66F900549830 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		EB9C4420193C673B00549830 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_0.json; sourceTree = "<group>"; };
 		EB9C4421193C673B00549830 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
@@ -356,6 +353,9 @@
 		EBB2AF10192CA0D200FE4844 /* tamer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tamer.jpeg; sourceTree = "<group>"; };
 		EBB2AF11192CA0D200FE4844 /* kbeer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kbeer.jpeg; sourceTree = "<group>"; };
 		EBB2AF12192CA0D200FE4844 /* fara7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fara7.jpg; sourceTree = "<group>"; };
+		EBBF047F1944463900AFA2FC /* CategoriesIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CategoriesIcons; sourceTree = "<group>"; };
+		EBBF048A1946106700AFA2FC /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCard.h; path = TheColorsConcorenza/MyCard.h; sourceTree = SOURCE_ROOT; };
+		EBBF048B1946106700AFA2FC /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCard.m; path = TheColorsConcorenza/MyCard.m; sourceTree = SOURCE_ROOT; };
 		EBC3BBD31920ADDD00BCD2B0 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notification.h; path = TheColorsConcorenza/Notification.h; sourceTree = SOURCE_ROOT; };
 		EBC3BBD41920ADDD00BCD2B0 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notification.m; path = TheColorsConcorenza/Notification.m; sourceTree = SOURCE_ROOT; };
 		EBC3BBD61920ADDE00BCD2B0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = TheColorsConcorenza/User.h; sourceTree = SOURCE_ROOT; };
@@ -415,8 +415,6 @@
 		EB10DDD3190CFBB900427874 /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
-				EB0C5291193F58D300B621AD /* MyCard.h */,
-				EB0C5292193F58D300B621AD /* MyCard.m */,
 				EB633CF01922155000143D81 /* MyCategory.h */,
 				EB633CF11922155000143D81 /* MyCategory.m */,
 				EBC3BBD61920ADDE00BCD2B0 /* User.h */,
@@ -433,6 +431,8 @@
 				EBC3BBD41920ADDD00BCD2B0 /* Notification.m */,
 				EBB2AC6C192A7A8D00FE4844 /* SponsorPrograms.h */,
 				EBB2AC6D192A7A8D00FE4844 /* SponsorPrograms.m */,
+				EBBF048A1946106700AFA2FC /* MyCard.h */,
+				EBBF048B1946106700AFA2FC /* MyCard.m */,
 			);
 			path = Coredata;
 			sourceTree = "<group>";
@@ -790,8 +790,8 @@
 		EBAE3CD21934C74300416880 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EBBF047F1944463900AFA2FC /* CategoriesIcons */,
 				EB0C529A1940A65F00B621AD /* Categories */,
-				EB9C41B719394E0700549830 /* CategoriesIcons */,
 				EBAE3ECC1934C78000416880 /* TabIcons30 */,
 				EBAE3CD31934C74300416880 /* appicon_120.png */,
 				EBAE3CD41934C74300416880 /* appicon_58.png */,
@@ -921,6 +921,7 @@
 				EBAE3EBC1934C74500416880 /* me_bg_4_logo.png in Resources */,
 				EB1A3C6E18E2C1E5009F51BA /* Scoreboards_Selected.png in Resources */,
 				EB1A3C6A18E2C1E5009F51BA /* Me_Selected.png in Resources */,
+				EBBF04801944463900AFA2FC /* CategoriesIcons in Resources */,
 				EB0C5288193F25E500B621AD /* Images.xcassets in Resources */,
 				EB10DDD1190C581B00427874 /* bohahahaha.mp3 in Resources */,
 				EB9C4453193C673B00549830 /* Scrape.wav in Resources */,
@@ -951,7 +952,6 @@
 				EB1A3C6818E2C1E5009F51BA /* Market_Selected.png in Resources */,
 				EB9C449E193CBFD000549830 /* Skyline.png in Resources */,
 				EBAE3EBE1934C74500416880 /* nav_bg.png in Resources */,
-				EB9C41B819394E0700549830 /* CategoriesIcons in Resources */,
 				EBAE3E1B1934C74500416880 /* appicon_58.png in Resources */,
 				EBAE3E1E1934C74500416880 /* bg_5.png in Resources */,
 				EB1A3C8318E2EC09009F51BA /* backgroundsmall.png in Resources */,
@@ -1031,7 +1031,6 @@
 				EBC457E418FADDCB005ECE37 /* H7FacebookLoginView.m in Sources */,
 				EBB2ACC6192B5BE300FE4844 /* H7NotificationViewController.m in Sources */,
 				EBB2ACC3192B5BE300FE4844 /* H7CollectionViewController.m in Sources */,
-				EB0C5293193F58D300B621AD /* MyCard.m in Sources */,
 				EBAA09E118F591AD00C6985B /* H7ConstantsModel.m in Sources */,
 				EBC3BBD51920ADDD00BCD2B0 /* Notification.m in Sources */,
 				EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */,
@@ -1080,6 +1079,7 @@
 				EBAE3CC81934853600416880 /* H7ManElQatelAudio.m in Sources */,
 				EB0C52961940994200B621AD /* H7CardSinglton.m in Sources */,
 				EB9C444C193C673B00549830 /* RWTSwap.m in Sources */,
+				EBBF048C1946106700AFA2FC /* MyCard.m in Sources */,
 				EB9C4455193C673B00549830 /* ViewController.m in Sources */,
 				EB1AD58F193DCD8D00F84229 /* F3HScoreView.m in Sources */,
 				EB9C4448193C673B00549830 /* MyScene.m in Sources */,

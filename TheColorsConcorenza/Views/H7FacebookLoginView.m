@@ -39,7 +39,6 @@
 
 -(FBProfilePictureView*)getProfilePicture {
     FBProfilePictureView *view =[[FBProfilePictureView alloc] initWithProfileID:loggedInUser.id pictureCropping:FBProfilePictureCroppingSquare];
-    NSLog(@"%@" , loggedInUser.id);
     return view;
 }
 

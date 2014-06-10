@@ -12,5 +12,6 @@
 
 extern NSString *CORE_URL;
 extern NSString *PLATFORM_URL;
+extern NSString *ASSETS_URL;
 
 @end

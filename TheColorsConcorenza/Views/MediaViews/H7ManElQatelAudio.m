@@ -33,7 +33,7 @@
     // This will send the audio to the speaker. If you just want the audio to go to the headset, change the Category to AVAudioSessionCategoryPlayAndRecord
     [audioSession setCategory:AVAudioSessionCategoryPlayback error:&error];
 	[audioSession setActive:YES error:&error];
-    NSString *dir = [NSString stringWithFormat:@"Categories/manElQatel/cards/%d" , self.cardId];
+    NSString *dir = [NSString stringWithFormat:@"Categories/manElQatel/cards/%@" , self.currentCard.cardId];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"audio" ofType:@"mp3" inDirectory:dir];
     NSLog(@"dir = %@ && path = %@" , dir , path);
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];

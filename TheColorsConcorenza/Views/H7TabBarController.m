@@ -35,11 +35,11 @@
     item1.image = [[UIImage imageNamed:@"TabIcons30/me.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     item1.selectedImage = [[UIImage imageNamed:@"TabIcons30/me_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    item2.image = [[UIImage imageNamed:@"TabIcons30/scoreboard.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    item2.selectedImage = [[UIImage imageNamed:@"TabIcons30/scoreboard_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item2.image = [[UIImage imageNamed:@"TabIcons30/collections.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    item2.selectedImage = [[UIImage imageNamed:@"TabIcons30/collections_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    item3.image = [[UIImage imageNamed:@"TabIcons30/collections.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    item3.selectedImage = [[UIImage imageNamed:@"TabIcons30/collections_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item3.image = [[UIImage imageNamed:@"TabIcons30/scoreboard.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    item3.selectedImage = [[UIImage imageNamed:@"TabIcons30/scoreboard_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     item4.image = [[UIImage imageNamed:@"TabIcons30/notifications.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     item4.selectedImage = [[UIImage imageNamed:@"TabIcons30/notifications_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

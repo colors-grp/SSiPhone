@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *manElQatelScore;
 @property (weak, nonatomic) IBOutlet UILabel *shahryarScore;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *temp;
 
 @end

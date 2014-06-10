@@ -2,7 +2,7 @@
 //  MyCard.h
 //  TheColorsConcorenza
 //
-//  Created by Heba Gamal on 6/4/14.
+//  Created by Heba Gamal on 6/9/14.
 //  Copyright (c) 2014 Heba Gamal. All rights reserved.
 //
 
@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSString * gameId;
 @property (nonatomic, retain) NSNumber * isAvailble;
 @property (nonatomic, retain) NSNumber * isBought;
+@property (nonatomic, retain) NSData * imageBinary;
 @property (nonatomic, retain) MyCategory *belongsTo;
 @property (nonatomic, retain) NSSet *hasAudio;
 @property (nonatomic, retain) NSSet *hasImages;
