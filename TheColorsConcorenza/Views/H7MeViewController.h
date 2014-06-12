@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "H7UIViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface H7MeViewController : H7UIViewController
 
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *manElQatelScore;
 @property (weak, nonatomic) IBOutlet UILabel *shahryarScore;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *temp;
+
+@property (strong, nonatomic) MPMoviePlayerViewController *player;
 
 @end

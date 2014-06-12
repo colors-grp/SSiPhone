@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UITableView *scoreBoardTable;
-
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 -(IBAction)segmentControllValueChanged:(id)sender;
 

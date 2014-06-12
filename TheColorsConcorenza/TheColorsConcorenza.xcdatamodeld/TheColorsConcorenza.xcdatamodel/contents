@@ -52,6 +52,7 @@
         <attribute name="userGender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userProfilePicture" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="userScore" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="hasCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MyCategory" inverseName="belongsToUser" inverseEntity="MyCategory" syncable="YES"/>
     </entity>
@@ -64,6 +65,6 @@
         <element name="MyCategory" positionX="0" positionY="0" width="128" height="165"/>
         <element name="Notification" positionX="0" positionY="0" width="128" height="75"/>
         <element name="SponsorPrograms" positionX="9" positionY="144" width="128" height="135"/>
-        <element name="User" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="User" positionX="0" positionY="0" width="128" height="180"/>
     </elements>
 </model>

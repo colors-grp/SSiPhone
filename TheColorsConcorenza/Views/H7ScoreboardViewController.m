@@ -31,7 +31,6 @@
     NSMutableArray *facebookIds;
     NSMutableArray *scores;
     NSMutableArray *ranks;
-
     
     Boolean isConnected;
 }
@@ -45,6 +44,11 @@
     
     // Set segment contorol color to red
     self.segmentControl.tintColor =[UIColor colorWithRed:(212/255.0) green:(39/255.0) blue:(51/255.0) alpha:1];
+    
+    // Set activity indicator to hidden
+    [self.view setUserInteractionEnabled:NO];
+    [self.activityIndicator setHidden:NO];
+    [self.activityIndicator startAnimating];
     
     names = [[NSMutableArray alloc] init];
     facebookIds = [[NSMutableArray alloc] init];
@@ -63,7 +67,7 @@
     curCategoryName = myCat.categoryName;
     
     // temp set data
-    [self getScoreBoardAllWithChane:NO];
+    [self getScoreBoardAllWithChange:NO];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -78,10 +82,20 @@
 
 -(IBAction)segmentControllValueChanged:(id)sender {
     if([self.segmentControl selectedSegmentIndex] == 0) {
+        // Set activity indicator to hidden
+        [self.view setUserInteractionEnabled:NO];
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+
         selectedSegment = 0;
-        [self getScoreBoardAllWithChane:YES];
+        [self getScoreBoardAllWithChange:YES];
     }
     else if([self.segmentControl selectedSegmentIndex] == 1) {
+        // Set activity indicator to hidden
+        [self.view setUserInteractionEnabled:NO];
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+
         selectedSegment = 1;
         [self getScoreboardFriendsWithChange:YES];
     }
@@ -103,11 +117,17 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     myCat = [myCategories objectAtIndex:indexPath.row];
-    [[collectionView cellForItemAtIndexPath:indexPath] setBackgroundColor:[UIColor lightGrayColor]];
+    [[collectionView cellForItemAtIndexPath:indexPath] setBackgroundColor:[UIColor redColor]];
     curCategoryId = [NSString stringWithFormat:@"%@" , myCat.categoryId];
     curCategoryName = myCat.categoryName;
+    
+    // Handle activity indicator actions
+    [self.view setUserInteractionEnabled:NO];
+    [self.activityIndicator setHidden:NO];
+    [self.activityIndicator startAnimating];
+    
     if(selectedSegment == 0)
-        [self getScoreBoardAllWithChane:YES];
+        [self getScoreBoardAllWithChange:YES];
     if(selectedSegment == 1)
         [self getScoreboardFriendsWithChange:YES];
 }
@@ -134,21 +154,33 @@
         cell.profileImage.profileID = [facebookIds objectAtIndex:indexPath.row];
     else
         cell.profileImage.profileID = nil;
+    
     return cell;
 }
 
 
-
 //to load more friends use willDisplayCell
 - (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(selectedSegment == 0 && (indexPath.row + 1)% 10 == 7 && [names count] - indexPath.row < 10)
-        [self getScoreBoardAllWithChane:NO];
-    else if (selectedSegment == 1 && (indexPath.row + 1)% 10 == 7 && [names count] - indexPath.row < 10)
+    if(selectedSegment == 0 && (indexPath.row + 1)% 10 == 7 && [names count] - indexPath.row < 10) {
+        // Handle activity indicator actions
+        [self.view setUserInteractionEnabled:NO];
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+        
+        [self getScoreBoardAllWithChange:NO];
+    }
+    else if (selectedSegment == 1 && (indexPath.row + 1)% 10 == 7 && [names count] - indexPath.row < 10) {
+        // Handle activity indicator actions
+        [self.view setUserInteractionEnabled:NO];
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+        
         [self getScoreboardFriendsWithChange:NO];
+    }
 }
 
 // Get Scoreboard from web service
--(void)getScoreBoardAllWithChane:(Boolean)changed{
+-(void)getScoreBoardAllWithChange:(Boolean)changed{
     if(changed == YES) {
         names = [[NSMutableArray alloc] init];
         facebookIds = [[NSMutableArray alloc] init];
@@ -179,6 +211,13 @@
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         }
         isConnected = YES;
+        
+        // Handle activity indicator actions
+        [self.view setUserInteractionEnabled:YES];
+        [self.activityIndicator stopAnimating];
+        [self.activityIndicator setHidden:YES];
+
+        
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Failed to get scoreboard all !!!");
         names = [[NSMutableArray alloc] init];
@@ -200,6 +239,11 @@
         }
         [self.scoreBoardTable reloadData];
         isConnected = NO;
+        
+        // Handle activity indicator actions
+        [self.view setUserInteractionEnabled:YES];
+        [self.activityIndicator stopAnimating];
+        [self.activityIndicator setHidden:YES];
 
     }];
     [request start];
@@ -238,6 +282,12 @@
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         }
         isConnected = YES;
+        
+        // Handle activity indicator actions
+        [self.view setUserInteractionEnabled:YES];
+        [self.activityIndicator stopAnimating];
+        [self.activityIndicator setHidden:YES];
+
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Failed to get scoreboard all !!!");
         names = [[NSMutableArray alloc] init];
@@ -259,6 +309,11 @@
         }
         [self.scoreBoardTable reloadData];
         isConnected = NO;
+        
+        // Handle activity indicator actions
+        [self.view setUserInteractionEnabled:YES];
+        [self.activityIndicator stopAnimating];
+        [self.activityIndicator setHidden:YES];
 
     }];
     [request start];

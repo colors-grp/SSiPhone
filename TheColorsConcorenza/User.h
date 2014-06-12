@@ -1,9 +1,9 @@
 //
 //  User.h
-//  TheColorsConcorenza
+//  
 //
-//  Created by Heba Gamal on 5/12/14.
-//  Copyright (c) 2014 Heba Gamal. All rights reserved.
+//  Created by Heba Gamal on 6/10/14.
+//
 //
 
 #import <Foundation/Foundation.h>
@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSNumber * userId;
 @property (nonatomic, retain) NSString * userName;
 @property (nonatomic, retain) NSNumber * userScore;
+@property (nonatomic, retain) NSData * userProfilePicture;
 @property (nonatomic, retain) NSSet *hasCategory;
 @end
 

@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heba Gamal Saad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuv-ob-QSt">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuv-ob-QSt">
                                 <rect key="frame" x="78" y="375" width="161" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -51,10 +51,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="665-e3-V6s">
-                                <rect key="frame" x="40" y="275" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-LB-7Sh">
+                                <rect key="frame" x="135" y="325" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="WRY-0k-MyP" eventType="touchUpInside" id="7KN-KD-6F3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -62,12 +68,11 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="SVz-fh-2Rd"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="fbProfilePicture" destination="6th-rY-VVe" id="y95-n5-oAh"/>
+                        <outlet property="fbProfilePicture" destination="6th-rY-VVe" id="GDj-WP-IFR"/>
                         <outlet property="manElQatelScore" destination="sOo-LV-vzx" id="Zkc-Bd-3pZ"/>
                         <outlet property="mosalslatScore" destination="O5S-2E-fm7" id="Dbd-BD-Rpq"/>
                         <outlet property="sallySyamakScore" destination="tRL-qG-boK" id="r2d-Ms-Xoh"/>
                         <outlet property="shahryarScore" destination="mef-lX-CP0" id="xyU-RU-zff"/>
-                        <outlet property="temp" destination="665-e3-V6s" id="aeA-zz-NCf"/>
                         <outlet property="userNameLabel" destination="vuv-ob-QSt" id="gjk-Ox-cQX"/>
                     </connections>
                 </viewController>
@@ -625,16 +630,16 @@
                                     <outlet property="delegate" destination="4aX-XT-x0H" id="BNt-Xw-ble"/>
                                 </connections>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cLE-20-epw">
-                                <rect key="frame" x="20" y="181" width="280" height="230"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cLE-20-epw">
+                                <rect key="frame" x="20" y="181" width="280" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreboardCell" rowHeight="105" id="P7x-4K-ou0" customClass="H7ScoreboardCell">
-                                        <rect key="frame" x="0.0" y="22" width="280" height="105"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreboardCell" rowHeight="101" id="P7x-4K-ou0" customClass="H7ScoreboardCell">
+                                        <rect key="frame" x="0.0" y="22" width="280" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P7x-4K-ou0" id="G4a-6t-ocW">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="104"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="82" translatesAutoresizingMaskIntoConstraints="NO" id="L6C-lK-nyO">
@@ -665,7 +670,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="X9K-Ib-iwI">
-                                                    <rect key="frame" x="0.0" y="102" width="280" height="2"/>
+                                                    <rect key="frame" x="0.0" y="98" width="280" height="2"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.80050223214285721" green="0.053692750204963877" blue="0.088453026987381597" alpha="1" colorSpace="calibratedRGB"/>
                                                 </progressView>
@@ -690,11 +695,17 @@
                                     <outlet property="delegate" destination="4aX-XT-x0H" id="3aT-Gy-S3z"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CXF-YN-vEX">
+                                <rect key="frame" x="150" y="405" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.58543925379999995" green="0.0" blue="0.0063526050530000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Scoreboard" id="tpz-12-hSp"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="CXF-YN-vEX" id="7wJ-CS-5N6"/>
                         <outlet property="scoreBoardTable" destination="cLE-20-epw" id="qAd-p9-0V2"/>
                         <outlet property="segmentControl" destination="ZXu-OJ-nwo" id="3KF-Ar-m6l"/>
                     </connections>

@@ -8,6 +8,9 @@
 
 #import "H7FacebookLoginView.h"
 #import "H7AppDelegate.h"
+#import "H7ConstantsModel.h"
+
+#import <AFNetworking/AFNetworking.h>
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface H7FacebookLoginView () <FBLoginViewDelegate>
@@ -51,7 +54,6 @@
 #pragma mark - FBLoginViewDelegate
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    [self performSegueWithIdentifier:@"startApp" sender:self];
 }
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
@@ -59,7 +61,10 @@
     H7AppDelegate *appDel = (H7AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDel.userFbId = user.id;
     appDel.userName = user.first_name;
+    [self performSegueWithIdentifier:@"startApp" sender:self];
 }
+
+
 
 
 @end

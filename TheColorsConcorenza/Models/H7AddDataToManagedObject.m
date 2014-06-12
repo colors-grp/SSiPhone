@@ -31,8 +31,6 @@
         NSArray *tmp1  = [NSArray arrayWithObjects:[NSNumber numberWithInt:1] , [NSNumber numberWithInt:2], [NSNumber numberWithInt:3] , [NSNumber numberWithInt:4] , nil];
         NSMutableSet *userCategories = [[NSMutableSet alloc] init];
         User *user = [User MR_createEntity];
-        user.userName = @"Heba";
-        user.userCredit = [NSNumber numberWithInt:0];
         NSNumber *favourite = [NSNumber numberWithBool:NO];
         for (int i=0 ; i < [tmp count]; i++) {
             MyCategory *newCat = [MyCategory MR_createEntity];
@@ -151,70 +149,6 @@
     }
 }
 
-
--(void) saveData1 {
-    
-    NSError* err = nil;
-    NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"cards" ofType:@"json"];
-    NSArray* cardsArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]options:kNilOptions error:&err];
-    
-    NSArray *check = [MyCategory MR_findAll];
-    if([check count] == 0) {
-        //save data with magical record
-        NSArray *tmp  = [NSArray arrayWithObjects:@"blue" , @"green", @"indigo" , @"orange" , @"red" , @"violet" , @"yellow" , nil];
-        NSArray *tmp1  = [NSArray arrayWithObjects:[NSNumber numberWithInt:1] , [NSNumber numberWithInt:2], [NSNumber numberWithInt:3] , [NSNumber numberWithInt:4] , [NSNumber numberWithInt:5] ,[NSNumber numberWithInt:6], [NSNumber numberWithInt:7] , nil];
-        NSMutableSet *userCategories = [[NSMutableSet alloc] init];
-        User *user = [User MR_createEntity];
-        user.userName = @"Heba";
-        user.userCredit = [NSNumber numberWithInt:0];
-        NSNumber *favourite = [NSNumber numberWithBool:NO];
-        for (int i=0 ; i < [tmp count]; i++) {
-            MyCategory *newCat = [MyCategory MR_createEntity];
-            newCat.categoryId = [tmp1 objectAtIndex:i];
-            newCat.categoryName = [tmp objectAtIndex:i];
-            newCat.isFavourite = favourite;
-            newCat.userScore = [NSNumber numberWithInt:0];
-            newCat.userCards = [NSNumber numberWithInt:0];
-            
-            // not complete yet
-            if([newCat.categoryName isEqualToString:@"orange"]) {
-                for (int j=0 ; j<[cardsArray count]; j++) {
-                    NSString *curCatId = [NSString stringWithFormat:@"%@" , [tmp1 objectAtIndex:i]];
-                    NSDictionary *dict = [cardsArray objectAtIndex:j];
-                    if([[dict objectForKey:@"category"] isEqualToString:curCatId]) {
-                        MyCard *newCard = [MyCard MR_createEntity];
-                        newCard.cardId = [NSNumber numberWithInt:[[dict objectForKey:@"id"] intValue]];
-                        newCard.cardName = [dict objectForKey:@"name"];
-                        newCard.cardScore = [NSNumber numberWithInt:[[dict objectForKey:@"score"] intValue]];
-                    }
-                }
-            }
-            
-            [userCategories addObject:newCat];
-        }
-        
-        user.hasCategory =[NSSet setWithArray:[userCategories allObjects]];
-        SponsorPrograms *s1 = [SponsorPrograms MR_createEntity];
-        s1.title = @"فرح ليلي";
-        s1.imageName = @"fara7.jpg";
-        s1.staring = @"ليلى علوي، فراس سعيد، عبد الرحمن أبو زهرة، دعاء طعيمة، نادية خيري، نرمين ماهر، أحمد كمال ،شريف باهر";
-        s1.describtion = @"تدور أحداث المسلسل حول 'ليلى' الفتاة المصرية المنتمية إلى الطبقة المتوسطة التي تجاوزت الأربعين من عمرها دون زواج بسبب خوفها من أن تصاب بمرض 'سرطان الثدي' الذي أصاب معظم نساء عائلتها وتسبب في وفاتهم في سن مبكرة مما كون لدى 'ليلى' عقدة من الزواج جعلتها تتفرغ تماما لعملها كمصممة أفراح إلى أن يظهر في حياتها الحب الذي يجعلها تفكر من جديد.";
-        
-        SponsorPrograms *s2 = [SponsorPrograms MR_createEntity];
-        s2.title = @"الكبير قوي";
-        s2.imageName = @"kbeer.jpeg";
-        s2.staring = @"أحمد مكي، دنيا سمير غانم، هشام إسماعيل ومحمد شاهين وإخراج إسلام خيرى وأحمد الجندي";
-        s2.describtion = @"وتدور أحداث المسلسل حول عمدة قرية 'المزاريطة'، الذي تزوّج من امرأة أمريكية، وأنجب منها ولدين توأمين؛ أحدهما تربى في الصعيد، والآخر في أمريكا، وتحدث مواقف كوميدية ومفارقات بين الأخوين عندما يلتقيا ويتنافسا على العمودية خلفا لوالدهما ويجسد مكى الأدوار الثلاثة الأب والتوأمين (الكبير وجوني)";
-        
-        SponsorPrograms *s3 = [SponsorPrograms MR_createEntity];
-        s3.title = @"تامر و شوقية";
-        s3.imageName = @"tamer.jpeg";
-        s3.staring = @"أحمد الفيشاوي ،مى كساب ،جمال إسماعيل ،رجاء الجداوي ،انعام سالوسة ،لطفى لبيب ،نضال الشافعي ،أحمد مكي ،إنجى وجدان";
-        s3.describtion = @"تامر وشوقية مسلسل مصري كوميدي ينتمي لنوعية السيت كوم، يحكى عن شوقية التي تعمل مدرسة وتسكن في حي العمرانية والتي تزوجت من تامر المحامي ابن الطبقة الأرستقراطية وساكن حى مصر الجديدة ويتناول المسلسل الفوارق الطبقية بين العائلتين والمشاكل التي قد تواجه حديثي الزواج في إطار كوميدى.";
-        
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    }
-}
 
 
 @end

@@ -40,6 +40,7 @@
 		EB1AD58E193DCD8D00F84229 /* F3HGameboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD57F193DCD8D00F84229 /* F3HGameboardView.m */; };
 		EB1AD58F193DCD8D00F84229 /* F3HScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD581193DCD8D00F84229 /* F3HScoreView.m */; };
 		EB1AD590193DCD8D00F84229 /* F3HTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD583193DCD8D00F84229 /* F3HTileView.m */; };
+		EB4A13EC1949C1F900A10889 /* bg_all_5.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4A13EB1949C1F900A10889 /* bg_all_5.png */; };
 		EB633CF21922155000143D81 /* MyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB633CF11922155000143D81 /* MyCategory.m */; };
 		EB65A1F518FC25C800AAAAB4 /* H7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB65A1F418FC25C700AAAAB4 /* H7TabBarController.m */; };
 		EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */; };
@@ -117,8 +118,10 @@
 		EBB2AF15192CA0D200FE4844 /* fara7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBB2AF12192CA0D200FE4844 /* fara7.jpg */; };
 		EBBF04801944463900AFA2FC /* CategoriesIcons in Resources */ = {isa = PBXBuildFile; fileRef = EBBF047F1944463900AFA2FC /* CategoriesIcons */; };
 		EBBF048C1946106700AFA2FC /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBF048B1946106700AFA2FC /* MyCard.m */; };
+		EBBF048E1947312F00AFA2FC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBF048D1947312F00AFA2FC /* MediaPlayer.framework */; };
+		EBBF0494194739B800AFA2FC /* vid in Resources */ = {isa = PBXBuildFile; fileRef = EBBF0493194739B800AFA2FC /* vid */; };
+		EBBF04A019474CA900AFA2FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBF049F19474CA900AFA2FC /* User.m */; };
 		EBC3BBD51920ADDD00BCD2B0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBD41920ADDD00BCD2B0 /* Notification.m */; };
-		EBC3BBD81920ADDE00BCD2B0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBD71920ADDE00BCD2B0 /* User.m */; };
 		EBC3BBDB1920AE0600BCD2B0 /* CardAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBDA1920AE0600BCD2B0 /* CardAudio.m */; };
 		EBC3BBDE1920AE0600BCD2B0 /* CardImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBDD1920AE0600BCD2B0 /* CardImage.m */; };
 		EBC3BBE11920AE0700BCD2B0 /* CardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBE01920AE0700BCD2B0 /* CardGame.m */; };
@@ -192,6 +195,7 @@
 		EB1AD581193DCD8D00F84229 /* F3HScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HScoreView.m; sourceTree = "<group>"; };
 		EB1AD582193DCD8D00F84229 /* F3HTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HTileView.h; sourceTree = "<group>"; };
 		EB1AD583193DCD8D00F84229 /* F3HTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HTileView.m; sourceTree = "<group>"; };
+		EB4A13EB1949C1F900A10889 /* bg_all_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_all_5.png; sourceTree = "<group>"; };
 		EB633CF01922155000143D81 /* MyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCategory.h; path = TheColorsConcorenza/MyCategory.h; sourceTree = SOURCE_ROOT; };
 		EB633CF11922155000143D81 /* MyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCategory.m; path = TheColorsConcorenza/MyCategory.m; sourceTree = SOURCE_ROOT; };
 		EB65A1F318FC25C700AAAAB4 /* H7TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7TabBarController.h; sourceTree = "<group>"; };
@@ -298,10 +302,13 @@
 		EBBF047F1944463900AFA2FC /* CategoriesIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CategoriesIcons; sourceTree = "<group>"; };
 		EBBF048A1946106700AFA2FC /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCard.h; path = TheColorsConcorenza/MyCard.h; sourceTree = SOURCE_ROOT; };
 		EBBF048B1946106700AFA2FC /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCard.m; path = TheColorsConcorenza/MyCard.m; sourceTree = SOURCE_ROOT; };
+		EBBF048D1947312F00AFA2FC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		EBBF04921947342900AFA2FC /* samir2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = samir2.mp4; sourceTree = "<group>"; };
+		EBBF0493194739B800AFA2FC /* vid */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vid; sourceTree = "<group>"; };
+		EBBF049E19474CA900AFA2FC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = TheColorsConcorenza/User.h; sourceTree = SOURCE_ROOT; };
+		EBBF049F19474CA900AFA2FC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = TheColorsConcorenza/User.m; sourceTree = SOURCE_ROOT; };
 		EBC3BBD31920ADDD00BCD2B0 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notification.h; path = TheColorsConcorenza/Notification.h; sourceTree = SOURCE_ROOT; };
 		EBC3BBD41920ADDD00BCD2B0 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notification.m; path = TheColorsConcorenza/Notification.m; sourceTree = SOURCE_ROOT; };
-		EBC3BBD61920ADDE00BCD2B0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = TheColorsConcorenza/User.h; sourceTree = SOURCE_ROOT; };
-		EBC3BBD71920ADDE00BCD2B0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = TheColorsConcorenza/User.m; sourceTree = SOURCE_ROOT; };
 		EBC3BBD91920AE0600BCD2B0 /* CardAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardAudio.h; path = TheColorsConcorenza/CardAudio.h; sourceTree = SOURCE_ROOT; };
 		EBC3BBDA1920AE0600BCD2B0 /* CardAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardAudio.m; path = TheColorsConcorenza/CardAudio.m; sourceTree = SOURCE_ROOT; };
 		EBC3BBDC1920AE0600BCD2B0 /* CardImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardImage.h; path = TheColorsConcorenza/CardImage.h; sourceTree = SOURCE_ROOT; };
@@ -321,6 +328,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBBF048E1947312F00AFA2FC /* MediaPlayer.framework in Frameworks */,
 				EB9C4413193C66F900549830 /* SpriteKit.framework in Frameworks */,
 				EBAE3C62192CF58600416880 /* SystemConfiguration.framework in Frameworks */,
 				EBAE3C61192CF58100416880 /* StoreKit.framework in Frameworks */,
@@ -357,10 +365,10 @@
 		EB10DDD3190CFBB900427874 /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
+				EBBF049E19474CA900AFA2FC /* User.h */,
+				EBBF049F19474CA900AFA2FC /* User.m */,
 				EB633CF01922155000143D81 /* MyCategory.h */,
 				EB633CF11922155000143D81 /* MyCategory.m */,
-				EBC3BBD61920ADDE00BCD2B0 /* User.h */,
-				EBC3BBD71920ADDE00BCD2B0 /* User.m */,
 				EBC3BBE21920AE0700BCD2B0 /* CardVideo.h */,
 				EBC3BBE31920AE0700BCD2B0 /* CardVideo.m */,
 				EBC3BBDF1920AE0600BCD2B0 /* CardGame.h */,
@@ -406,6 +414,7 @@
 		EB1A3BF118E22486009F51BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBBF048D1947312F00AFA2FC /* MediaPlayer.framework */,
 				EB9C4412193C66F900549830 /* SpriteKit.framework */,
 				EBAE3C60192CF58100416880 /* StoreKit.framework */,
 				EBAE3C5E192CF57A00416880 /* Security.framework */,
@@ -431,6 +440,7 @@
 		EB1A3BFA18E22487009F51BA /* TheColorsConcorenza */ = {
 			isa = PBXGroup;
 			children = (
+				EBBF04921947342900AFA2FC /* samir2.mp4 */,
 				EB0C5287193F25E500B621AD /* Images.xcassets */,
 				EBAA09DE18F5914900C6985B /* Models */,
 				EBB2AF10192CA0D200FE4844 /* tamer.jpeg */,
@@ -696,6 +706,7 @@
 		EBAE3CD21934C74300416880 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EBBF0493194739B800AFA2FC /* vid */,
 				EBBF047F1944463900AFA2FC /* CategoriesIcons */,
 				EBAE3ECC1934C78000416880 /* TabIcons30 */,
 				EBAE3CD31934C74300416880 /* appicon_120.png */,
@@ -704,6 +715,7 @@
 				EBAE3CD61934C74300416880 /* bg_4.png */,
 				EBAE3CD71934C74300416880 /* bg_5.png */,
 				EBAE3CD81934C74300416880 /* bg_all_4.png */,
+				EB4A13EB1949C1F900A10889 /* bg_all_5.png */,
 				EBAE3E0B1934C74500416880 /* me_bg_4_logo.png */,
 				EBAE3E0A1934C74500416880 /* me_bg_4.png */,
 				EBAE3E0C1934C74500416880 /* me_bg_4_logo_2.png */,
@@ -813,6 +825,7 @@
 				EB1A3C2818E2249E009F51BA /* Main.storyboard in Resources */,
 				EB9C449D193CBFD000549830 /* Pipe2.png in Resources */,
 				EB9C449C193CBFD000549830 /* Pipe1.png in Resources */,
+				EBBF0494194739B800AFA2FC /* vid in Resources */,
 				EB9C445C193C887B00549830 /* Grid.atlas in Resources */,
 				EB9C444F193C673B00549830 /* Drip.wav in Resources */,
 				EB9C4446193C673B00549830 /* Level_4.json in Resources */,
@@ -826,6 +839,7 @@
 				EB9C4450193C673B00549830 /* Error.wav in Resources */,
 				EB1AD504193DC8E200F84229 /* Bird2.png in Resources */,
 				EB9C4445193C673B00549830 /* Level_3.json in Resources */,
+				EB4A13EC1949C1F900A10889 /* bg_all_5.png in Resources */,
 				EB9C444E193C673B00549830 /* Chomp.wav in Resources */,
 				EB9C41B4193765C600549830 /* cards.json in Resources */,
 				EB9C4443193C673B00549830 /* Level_1.json in Resources */,
@@ -904,11 +918,11 @@
 				EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */,
 				EB1AD58A193DCD8D00F84229 /* F3HMoveOrder.m in Sources */,
 				EBC3BBE11920AE0700BCD2B0 /* CardGame.m in Sources */,
+				EBBF04A019474CA900AFA2FC /* User.m in Sources */,
 				EB9C444A193C673B00549830 /* RWTCookie.m in Sources */,
 				EBB2AC6E192A7A8D00FE4844 /* SponsorPrograms.m in Sources */,
 				EB1AD588193DCD8D00F84229 /* F3HGameModel.m in Sources */,
 				EB1A3C0118E22487009F51BA /* main.m in Sources */,
-				EBC3BBD81920ADDE00BCD2B0 /* User.m in Sources */,
 				EB1AD590193DCD8D00F84229 /* F3HTileView.m in Sources */,
 				EB9C44A1193CC14B00549830 /* FFViewController.m in Sources */,
 				EB9C444D193C673B00549830 /* RWTTile.m in Sources */,
@@ -1069,8 +1083,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.colors.TheColorsConcorenza";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Heba Gamal (9B48AATZWB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/hebagamal/Desktop/iphone-workspace/Bonjour/TheColorsConcorenza-2",
@@ -1082,7 +1096,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "11949963-99AE-46C6-A442-449C90FD6B5E";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
@@ -1096,8 +1110,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.colors.TheColorsConcorenza";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Heba Gamal (9B48AATZWB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/hebagamal/Desktop/iphone-workspace/Bonjour/TheColorsConcorenza-2",
@@ -1109,7 +1123,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "11949963-99AE-46C6-A442-449C90FD6B5E";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

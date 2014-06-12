@@ -1,9 +1,9 @@
 //
 //  User.m
-//  TheColorsConcorenza
+//  
 //
-//  Created by Heba Gamal on 5/12/14.
-//  Copyright (c) 2014 Heba Gamal. All rights reserved.
+//  Created by Heba Gamal on 6/10/14.
+//
 //
 
 #import "User.h"
@@ -19,6 +19,7 @@
 @dynamic userId;
 @dynamic userName;
 @dynamic userScore;
+@dynamic userProfilePicture;
 @dynamic hasCategory;
 
 @end
