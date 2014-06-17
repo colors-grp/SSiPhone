@@ -43,6 +43,8 @@
 		EB4A13EC1949C1F900A10889 /* bg_all_5.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4A13EB1949C1F900A10889 /* bg_all_5.png */; };
 		EB633CF21922155000143D81 /* MyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB633CF11922155000143D81 /* MyCategory.m */; };
 		EB65A1F518FC25C800AAAAB4 /* H7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB65A1F418FC25C700AAAAB4 /* H7TabBarController.m */; };
+		EB66170C194EF85400E33FA5 /* H7MosalslatQuizStart.m in Sources */ = {isa = PBXBuildFile; fileRef = EB66170B194EF85400E33FA5 /* H7MosalslatQuizStart.m */; };
+		EB75D3ED194F3E200076628E /* H7choicesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75D3EC194F3E200076628E /* H7choicesCell.m */; };
 		EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */; };
 		EB9933E118F2EF9000EE700C /* H7NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9933E018F2EF9000EE700C /* H7NotificationCell.m */; };
 		EB9C41B4193765C600549830 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B3193765C500549830 /* cards.json */; };
@@ -121,6 +123,7 @@
 		EBBF048E1947312F00AFA2FC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBF048D1947312F00AFA2FC /* MediaPlayer.framework */; };
 		EBBF0494194739B800AFA2FC /* vid in Resources */ = {isa = PBXBuildFile; fileRef = EBBF0493194739B800AFA2FC /* vid */; };
 		EBBF04A019474CA900AFA2FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBF049F19474CA900AFA2FC /* User.m */; };
+		EBC0E777194DAEBE0081D761 /* H7ShahryarFindTheBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC0E776194DAEBE0081D761 /* H7ShahryarFindTheBottle.m */; };
 		EBC3BBD51920ADDD00BCD2B0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBD41920ADDD00BCD2B0 /* Notification.m */; };
 		EBC3BBDB1920AE0600BCD2B0 /* CardAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBDA1920AE0600BCD2B0 /* CardAudio.m */; };
 		EBC3BBDE1920AE0600BCD2B0 /* CardImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBDD1920AE0600BCD2B0 /* CardImage.m */; };
@@ -200,6 +203,10 @@
 		EB633CF11922155000143D81 /* MyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCategory.m; path = TheColorsConcorenza/MyCategory.m; sourceTree = SOURCE_ROOT; };
 		EB65A1F318FC25C700AAAAB4 /* H7TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7TabBarController.h; sourceTree = "<group>"; };
 		EB65A1F418FC25C700AAAAB4 /* H7TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7TabBarController.m; sourceTree = "<group>"; };
+		EB66170A194EF85400E33FA5 /* H7MosalslatQuizStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7MosalslatQuizStart.h; sourceTree = "<group>"; };
+		EB66170B194EF85400E33FA5 /* H7MosalslatQuizStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7MosalslatQuizStart.m; sourceTree = "<group>"; };
+		EB75D3EB194F3E200076628E /* H7choicesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7choicesCell.h; sourceTree = "<group>"; };
+		EB75D3EC194F3E200076628E /* H7choicesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7choicesCell.m; sourceTree = "<group>"; };
 		EB7BBA861917A32C00280FAB /* H7ScoreboardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ScoreboardCell.h; sourceTree = "<group>"; };
 		EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ScoreboardCell.m; sourceTree = "<group>"; };
 		EB9933DF18F2EF9000EE700C /* H7NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7NotificationCell.h; sourceTree = "<group>"; };
@@ -307,6 +314,8 @@
 		EBBF0493194739B800AFA2FC /* vid */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vid; sourceTree = "<group>"; };
 		EBBF049E19474CA900AFA2FC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = TheColorsConcorenza/User.h; sourceTree = SOURCE_ROOT; };
 		EBBF049F19474CA900AFA2FC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = TheColorsConcorenza/User.m; sourceTree = SOURCE_ROOT; };
+		EBC0E775194DAEBE0081D761 /* H7ShahryarFindTheBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ShahryarFindTheBottle.h; sourceTree = "<group>"; };
+		EBC0E776194DAEBE0081D761 /* H7ShahryarFindTheBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ShahryarFindTheBottle.m; sourceTree = "<group>"; };
 		EBC3BBD31920ADDD00BCD2B0 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notification.h; path = TheColorsConcorenza/Notification.h; sourceTree = SOURCE_ROOT; };
 		EBC3BBD41920ADDD00BCD2B0 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notification.m; path = TheColorsConcorenza/Notification.m; sourceTree = SOURCE_ROOT; };
 		EBC3BBD91920AE0600BCD2B0 /* CardAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardAudio.h; path = TheColorsConcorenza/CardAudio.h; sourceTree = SOURCE_ROOT; };
@@ -515,6 +524,8 @@
 				EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */,
 				EBB2AC56192A228E00FE4844 /* H7SponsorTableViewCell.h */,
 				EBB2AC57192A228E00FE4844 /* H7SponsorTableViewCell.m */,
+				EB75D3EB194F3E200076628E /* H7choicesCell.h */,
+				EB75D3EC194F3E200076628E /* H7choicesCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -592,6 +603,10 @@
 				EBAE3CCD1934A9CC00416880 /* H7MosalslatQuiz.m */,
 				EBAE3CCF1934BA5000416880 /* H7ShahryarStory.h */,
 				EBAE3CD01934BA5000416880 /* H7ShahryarStory.m */,
+				EBC0E775194DAEBE0081D761 /* H7ShahryarFindTheBottle.h */,
+				EBC0E776194DAEBE0081D761 /* H7ShahryarFindTheBottle.m */,
+				EB66170A194EF85400E33FA5 /* H7MosalslatQuizStart.h */,
+				EB66170B194EF85400E33FA5 /* H7MosalslatQuizStart.m */,
 			);
 			path = MediaViews;
 			sourceTree = "<group>";
@@ -921,6 +936,7 @@
 				EBBF04A019474CA900AFA2FC /* User.m in Sources */,
 				EB9C444A193C673B00549830 /* RWTCookie.m in Sources */,
 				EBB2AC6E192A7A8D00FE4844 /* SponsorPrograms.m in Sources */,
+				EB66170C194EF85400E33FA5 /* H7MosalslatQuizStart.m in Sources */,
 				EB1AD588193DCD8D00F84229 /* F3HGameModel.m in Sources */,
 				EB1A3C0118E22487009F51BA /* main.m in Sources */,
 				EB1AD590193DCD8D00F84229 /* F3HTileView.m in Sources */,
@@ -943,8 +959,10 @@
 				EB1AD58E193DCD8D00F84229 /* F3HGameboardView.m in Sources */,
 				EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */,
 				EBC3BBDE1920AE0600BCD2B0 /* CardImage.m in Sources */,
+				EBC0E777194DAEBE0081D761 /* H7ShahryarFindTheBottle.m in Sources */,
 				EBC4F4F718E85A4C00555416 /* H7FavouriteCategoryCell.m in Sources */,
 				EBB2AC58192A228E00FE4844 /* H7SponsorTableViewCell.m in Sources */,
+				EB75D3ED194F3E200076628E /* H7choicesCell.m in Sources */,
 				EBAE3CD11934BA5000416880 /* H7ShahryarStory.m in Sources */,
 				EB1A3C0518E22487009F51BA /* H7AppDelegate.m in Sources */,
 				EB1AD58D193DCD8D00F84229 /* F3HControlView.m in Sources */,

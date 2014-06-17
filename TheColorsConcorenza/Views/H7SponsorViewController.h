@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface H7SponsorViewController : UIViewController <UITableViewDataSource , UITableViewDelegate>
+
 @property (strong, nonatomic) IBOutlet UITableView *programsTable;
 
 @end

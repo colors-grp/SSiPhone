@@ -8,6 +8,7 @@
 
 #import "H7NotificationViewController.h"
 #import "H7NotificationCell.h"
+
 @interface H7NotificationViewController ()
 
 @end
@@ -33,7 +34,7 @@
 
 /* Table Data source */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -41,7 +42,7 @@
     if(cell == nil) {
         cell = (H7NotificationCell*)[[H7NotificationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"notificationCell"];
     }
-    cell.notificationDescription.text = @"heba w 5ayri w noor a3do 3'ano shwyt a3'any";
+    cell.notificationDescription.text = @"No notifications now";
     cell.notificationProfilePicture.image = [UIImage imageNamed:@"1467210_748325908515087_1110498616_n.jpg"];
     return cell;
 }

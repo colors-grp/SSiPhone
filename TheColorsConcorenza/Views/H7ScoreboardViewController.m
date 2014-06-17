@@ -112,12 +112,14 @@
     UIImageView *image = (UIImageView*)[cell viewWithTag:17];
     myCat = [myCategories objectAtIndex:indexPath.row];
     image.image = [UIImage imageNamed:[NSString stringWithFormat:@"CategoriesIcons/%@.png" , [myCat valueForKey:@"categoryId"]]];
+    if([curCategoryId isEqualToString:[NSString stringWithFormat:@"%ld" , indexPath.row +1]]) {
+        image.image = [UIImage imageNamed:[NSString stringWithFormat:@"CategoriesIcons/%@_selected.png" , [myCat valueForKey:@"categoryId"]]];
+    }
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     myCat = [myCategories objectAtIndex:indexPath.row];
-    [[collectionView cellForItemAtIndexPath:indexPath] setBackgroundColor:[UIColor redColor]];
     curCategoryId = [NSString stringWithFormat:@"%@" , myCat.categoryId];
     curCategoryName = myCat.categoryName;
     
@@ -130,10 +132,8 @@
         [self getScoreBoardAllWithChange:YES];
     if(selectedSegment == 1)
         [self getScoreboardFriendsWithChange:YES];
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-    [[collectionView cellForItemAtIndexPath:indexPath] setBackgroundColor:[UIColor clearColor]];
+    // Reload collection view of categories to highlight the selected category
+    [self.categoriesCollection reloadData];
 }
 
 // Table view data source

@@ -22,8 +22,6 @@
     [self.view insertSubview: imageView atIndex:0];
     
     self.programImage.image = [UIImage imageNamed:[self.currentProgram imageName]];
-    NSString *str = [NSString stringWithFormat:@"%@\n\n%@" , [self.currentProgram staring] , [self.currentProgram describtion]];
-    self.programInfoTextView.text = str;
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.

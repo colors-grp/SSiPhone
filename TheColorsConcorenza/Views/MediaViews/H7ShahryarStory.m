@@ -8,6 +8,7 @@
 //
 
 #import "H7ShahryarStory.h"
+#import "H7ShahryarFindTheBottle.h"
 
 @interface H7ShahryarStory ()
 
@@ -50,9 +51,17 @@
 
 -(void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer
 {
+
     if(curPanel < maxPanel) {
         curPanel++;
-        self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"Categories/shahryar/cards/%@/%d.png" , self.currentCard.cardId , curPanel]];    }
+        self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"Categories/shahryar/cards/%@/%d.png" , self.currentCard.cardId , curPanel]];
+    }
+    else if(curPanel == maxPanel) {
+        NSLog(@"aha");
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        H7ShahryarFindTheBottle *findTheBottle = [storyboard instantiateViewControllerWithIdentifier:@"shahryarFindTheBottle"];
+        [self.navigationController pushViewController:findTheBottle animated:YES];
+    }
 }
 
 -(void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer

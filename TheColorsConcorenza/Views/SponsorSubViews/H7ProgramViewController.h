@@ -12,7 +12,6 @@
 @interface H7ProgramViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *programImage;
 @property (strong) SponsorPrograms *currentProgram;
-@property (weak, nonatomic) IBOutlet UITextView *programInfoTextView;
 
 
 @end

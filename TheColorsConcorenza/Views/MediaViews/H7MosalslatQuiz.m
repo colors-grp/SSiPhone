@@ -7,6 +7,7 @@
 //
 
 #import "H7MosalslatQuiz.h"
+#import "H7MosalslatQuizStart.h"
 
 @interface H7MosalslatQuiz ()
 
@@ -21,6 +22,10 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
     [self.view insertSubview: imageView atIndex:0];
     
+    // Set the image of the mosalsal
+    [self getImage];
+
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -29,6 +34,20 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([[segue identifier]isEqualToString:@"startMosalslatQuiz"]) {
+        H7MosalslatQuizStart *start = [segue destinationViewController];
+        start.currentCard = self.currentCard;
+    }
+}
+
+-(void) getImage{
+    NSData *imgData = self.currentCard.imageBinary;
+    UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];
+    [self.mosalsalImage setImage:thumbNail];
+
 }
 
 @end
