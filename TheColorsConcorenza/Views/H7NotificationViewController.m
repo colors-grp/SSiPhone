@@ -13,14 +13,29 @@
 
 @end
 
-@implementation H7NotificationViewController
+@implementation H7NotificationViewController {
+    NSMutableArray *notifications;
+}
 
 - (void)viewDidLoad
 {
     /* Setting background image */
-    UIImage *background = [UIImage imageNamed: @"bg_all_4.png"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
-    [self.view insertSubview: imageView atIndex:0];
+    int height =  [[UIScreen mainScreen] bounds].size.height;
+    if(height > 480){
+        UIImage *background = [UIImage imageNamed: @"bg_all_5.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
+    else{
+        UIImage *background = [UIImage imageNamed: @"bg_all_4.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
+    
+    notifications = [[NSMutableArray alloc] init];
+    
+    // Get from core data
+    
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -34,6 +49,8 @@
 
 /* Table Data source */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if([notifications count])
+        return [notifications count];
     return 1;
 }
 
@@ -42,8 +59,8 @@
     if(cell == nil) {
         cell = (H7NotificationCell*)[[H7NotificationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"notificationCell"];
     }
-    cell.notificationDescription.text = @"No notifications now";
-    cell.notificationProfilePicture.image = [UIImage imageNamed:@"1467210_748325908515087_1110498616_n.jpg"];
+    if([notifications count])
+        cell.notificationDescription.text =[notifications objectAtIndex:indexPath.row];
     return cell;
 }
 

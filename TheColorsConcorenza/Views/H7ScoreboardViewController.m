@@ -11,6 +11,7 @@
 #import "H7ScoreboardCell.h"
 #import "H7ConstantsModel.h"
 #import "H7AppDelegate.h"
+#import "User.h"
 
 #import <CoreData+MagicalRecord.h>
 #import <AFNetworking.h>
@@ -38,9 +39,17 @@
 - (void)viewDidLoad
 {
     /* Setting background image */
-    UIImage *background = [UIImage imageNamed: @"bg_all_4.png"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
-    [self.view insertSubview: imageView atIndex:0];
+    int height =  [[UIScreen mainScreen] bounds].size.height;
+    if(height > 480){
+        UIImage *background = [UIImage imageNamed: @"bg_all_5.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
+    else{
+        UIImage *background = [UIImage imageNamed: @"bg_all_4.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
     
     // Set segment contorol color to red
     self.segmentControl.tintColor =[UIColor colorWithRed:(212/255.0) green:(39/255.0) blue:(51/255.0) alpha:1];
@@ -148,12 +157,12 @@
         cell = (H7ScoreboardCell*)[[H7ScoreboardCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"scoreboardCell"];
     }
     cell.nameLabel.text = [names objectAtIndex:indexPath.row];
-    cell.scoreLabel.text = [scores objectAtIndex:indexPath.row];
+    cell.scoreLabel.text = [NSString stringWithFormat:@"Score = %@" , [scores objectAtIndex:indexPath.row]];
     cell.rankLabel.text = [NSString stringWithFormat:@"%@" , [ranks objectAtIndex:indexPath.row]];
-    if(isConnected == YES)
-        cell.profileImage.profileID = [facebookIds objectAtIndex:indexPath.row];
-    else
-        cell.profileImage.profileID = nil;
+//    if(isConnected == YES)
+//        cell.profileImage.profileID = [facebookIds objectAtIndex:indexPath.row];
+//    else
+//        cell.profileImage.profileID = nil;
     
     return cell;
 }
@@ -197,9 +206,9 @@
         for(int i = 0 ; i < size ; i++) {
             NSDictionary *dect = [tmp objectForKey:[NSString stringWithFormat:@"%d" , i]];
             [names addObject:[dect objectForKey:@"name"]];
-            [facebookIds addObject:[dect objectForKey:@"fbid"]];
-            [ranks addObject:[dect objectForKey:@"rank"]];
-            [scores addObject:[dect objectForKey:@"score"]];
+            [facebookIds addObject:[NSString stringWithFormat:@"%@" , [dect objectForKey:@"fbid"]]];
+            [ranks addObject:[NSString stringWithFormat:@"%@",[dect objectForKey:@"rank"]]];
+            [scores addObject:[NSString stringWithFormat:@"%@",[dect objectForKey:@"score"]]];
         }
         [self.scoreBoardTable reloadData];
         if(changed == YES) {
@@ -258,7 +267,10 @@
     }
     int start = [names count] ;
     H7AppDelegate *appDel = [[UIApplication sharedApplication] delegate];
-    NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@friends_scoreboard/format/json/facebookId/%@/categoryId/%@/categoryName/%@/start/%d/size/10" ,PLATFORM_URL, appDel.userFbId , curCategoryId , curCategoryName , start]];
+//    NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+    NSArray *users = [User MR_findAll];
+    User *u = [users firstObject];
+    NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@friends_scoreboard/format/json/facebookId/%@/categoryId/%@/categoryName/%@/start/%d/size/10/userId/%@" ,PLATFORM_URL, appDel.userFbId , curCategoryId , curCategoryName , start, u.userAccountId]];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     NSLog(@"%@" , url);
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -268,9 +280,9 @@
         for(int i = 0 ; i < size ; i++) {
             NSDictionary *dect = [tmp objectForKey:[NSString stringWithFormat:@"%d" , i]];
             [names addObject:[dect objectForKey:@"name"]];
-            [facebookIds addObject:[dect objectForKey:@"fbid"]];
-            [ranks addObject:[dect objectForKey:@"rank"]];
-            [scores addObject:[dect objectForKey:@"score"]];
+            [facebookIds addObject:[NSString stringWithFormat:@"%@" , [dect objectForKey:@"fbid"]]];
+            [ranks addObject:[NSString stringWithFormat:@"%@",[dect objectForKey:@"rank"]]];
+            [scores addObject:[NSString stringWithFormat:@"%@",[dect objectForKey:@"score"]]];
         }
         [self.scoreBoardTable reloadData];
         if(changed == YES) {
@@ -289,7 +301,7 @@
         [self.activityIndicator setHidden:YES];
 
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Failed to get scoreboard all !!!");
+        NSLog(@"Failed to get scoreboard friends !!!");
         names = [[NSMutableArray alloc] init];
         facebookIds = [[NSMutableArray alloc] init];
         ranks = [[NSMutableArray alloc] init];

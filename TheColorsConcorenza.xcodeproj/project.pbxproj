@@ -41,33 +41,15 @@
 		EB1AD58F193DCD8D00F84229 /* F3HScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD581193DCD8D00F84229 /* F3HScoreView.m */; };
 		EB1AD590193DCD8D00F84229 /* F3HTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1AD583193DCD8D00F84229 /* F3HTileView.m */; };
 		EB4A13EC1949C1F900A10889 /* bg_all_5.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4A13EB1949C1F900A10889 /* bg_all_5.png */; };
-		EB633CF21922155000143D81 /* MyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB633CF11922155000143D81 /* MyCategory.m */; };
 		EB65A1F518FC25C800AAAAB4 /* H7TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB65A1F418FC25C700AAAAB4 /* H7TabBarController.m */; };
 		EB66170C194EF85400E33FA5 /* H7MosalslatQuizStart.m in Sources */ = {isa = PBXBuildFile; fileRef = EB66170B194EF85400E33FA5 /* H7MosalslatQuizStart.m */; };
 		EB75D3ED194F3E200076628E /* H7choicesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75D3EC194F3E200076628E /* H7choicesCell.m */; };
+		EB75D3EF1950F38F0076628E /* me_bg_5.png in Resources */ = {isa = PBXBuildFile; fileRef = EB75D3EE1950F38F0076628E /* me_bg_5.png */; };
 		EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */; };
 		EB9933E118F2EF9000EE700C /* H7NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9933E018F2EF9000EE700C /* H7NotificationCell.m */; };
 		EB9C41B4193765C600549830 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B3193765C500549830 /* cards.json */; };
 		EB9C41B6193765E100549830 /* sponsor.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B5193765E100549830 /* sponsor.json */; };
 		EB9C4413193C66F900549830 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9C4412193C66F900549830 /* SpriteKit.framework */; };
-		EB9C4442193C673B00549830 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4420193C673B00549830 /* Level_0.json */; };
-		EB9C4443193C673B00549830 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4421193C673B00549830 /* Level_1.json */; };
-		EB9C4444193C673B00549830 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4422193C673B00549830 /* Level_2.json */; };
-		EB9C4445193C673B00549830 /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4423193C673B00549830 /* Level_3.json */; };
-		EB9C4446193C673B00549830 /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4424193C673B00549830 /* Level_4.json */; };
-		EB9C4448193C673B00549830 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C4427193C673B00549830 /* MyScene.m */; };
-		EB9C4449193C673B00549830 /* RWTChain.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C4429193C673B00549830 /* RWTChain.m */; };
-		EB9C444A193C673B00549830 /* RWTCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C442B193C673B00549830 /* RWTCookie.m */; };
-		EB9C444B193C673B00549830 /* RWTLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C442D193C673B00549830 /* RWTLevel.m */; };
-		EB9C444C193C673B00549830 /* RWTSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C442F193C673B00549830 /* RWTSwap.m */; };
-		EB9C444D193C673B00549830 /* RWTTile.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C4431193C673B00549830 /* RWTTile.m */; };
-		EB9C444E193C673B00549830 /* Chomp.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4433193C673B00549830 /* Chomp.wav */; };
-		EB9C444F193C673B00549830 /* Drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4434193C673B00549830 /* Drip.wav */; };
-		EB9C4450193C673B00549830 /* Error.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4435193C673B00549830 /* Error.wav */; };
-		EB9C4451193C673B00549830 /* Ka-Ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4436193C673B00549830 /* Ka-Ching.wav */; };
-		EB9C4452193C673B00549830 /* Mining by Moonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4437193C673B00549830 /* Mining by Moonlight.mp3 */; };
-		EB9C4453193C673B00549830 /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4438193C673B00549830 /* Scrape.wav */; };
-		EB9C4455193C673B00549830 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9C443B193C673B00549830 /* ViewController.m */; };
 		EB9C445C193C887B00549830 /* Grid.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB9C445A193C887B00549830 /* Grid.atlas */; };
 		EB9C445D193C887B00549830 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB9C445B193C887B00549830 /* Sprites.atlas */; };
 		EB9C449A193CBFD000549830 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9C4491193CBFD000549830 /* Ground.png */; };
@@ -80,6 +62,24 @@
 		EBAA09F318F6C24C00C6985B /* H7AddDataToManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA09F218F6C24C00C6985B /* H7AddDataToManagedObject.m */; };
 		EBAA09F918F6E27000C6985B /* H7UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA09F818F6E27000C6985B /* H7UIViewController.m */; };
 		EBAA09FB18F6EB5D00C6985B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAA09FA18F6EB5D00C6985B /* FacebookSDK.framework */; };
+		EBAA37C81956D05100ED17A3 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37AD1956D05100ED17A3 /* Level_0.json */; };
+		EBAA37C91956D05100ED17A3 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37AE1956D05100ED17A3 /* Level_1.json */; };
+		EBAA37CA1956D05100ED17A3 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37AF1956D05100ED17A3 /* Level_2.json */; };
+		EBAA37CB1956D05100ED17A3 /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37B01956D05100ED17A3 /* Level_3.json */; };
+		EBAA37CC1956D05100ED17A3 /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37B11956D05100ED17A3 /* Level_4.json */; };
+		EBAA37CE1956D05100ED17A3 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA37B41956D05100ED17A3 /* MyScene.m */; };
+		EBAA37CF1956D05100ED17A3 /* RWTChain.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA37B61956D05100ED17A3 /* RWTChain.m */; };
+		EBAA37D01956D05100ED17A3 /* RWTCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA37B81956D05100ED17A3 /* RWTCookie.m */; };
+		EBAA37D11956D05100ED17A3 /* RWTLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA37BA1956D05100ED17A3 /* RWTLevel.m */; };
+		EBAA37D21956D05100ED17A3 /* RWTSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA37BC1956D05100ED17A3 /* RWTSwap.m */; };
+		EBAA37D31956D05100ED17A3 /* RWTTile.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA37BE1956D05100ED17A3 /* RWTTile.m */; };
+		EBAA37D41956D05100ED17A3 /* Chomp.wav in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37C01956D05100ED17A3 /* Chomp.wav */; };
+		EBAA37D51956D05100ED17A3 /* Drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37C11956D05100ED17A3 /* Drip.wav */; };
+		EBAA37D61956D05100ED17A3 /* Error.wav in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37C21956D05100ED17A3 /* Error.wav */; };
+		EBAA37D71956D05100ED17A3 /* Ka-Ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37C31956D05100ED17A3 /* Ka-Ching.wav */; };
+		EBAA37D81956D05100ED17A3 /* Mining by Moonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37C41956D05100ED17A3 /* Mining by Moonlight.mp3 */; };
+		EBAA37D91956D05100ED17A3 /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = EBAA37C51956D05100ED17A3 /* Scrape.wav */; };
+		EBAA37DA1956D05100ED17A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAA37C71956D05100ED17A3 /* ViewController.m */; };
 		EBAE3C55192CF55600416880 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAE3C54192CF55600416880 /* AudioToolbox.framework */; };
 		EBAE3C57192CF55C00416880 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAE3C56192CF55C00416880 /* CFNetwork.framework */; };
 		EBAE3C58192CF56300416880 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0502FB1924BF0100CDE84E /* CoreLocation.framework */; };
@@ -110,7 +110,6 @@
 		EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2AC54192A221900FE4844 /* H7SponsorViewController.m */; };
 		EBB2AC58192A228E00FE4844 /* H7SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2AC57192A228E00FE4844 /* H7SponsorTableViewCell.m */; };
 		EBB2AC65192A764A00FE4844 /* H7ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2AC64192A764A00FE4844 /* H7ProgramViewController.m */; };
-		EBB2AC6E192A7A8D00FE4844 /* SponsorPrograms.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2AC6D192A7A8D00FE4844 /* SponsorPrograms.m */; };
 		EBB2ACC3192B5BE300FE4844 /* H7CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2ACBA192B5BE300FE4844 /* H7CollectionViewController.m */; };
 		EBB2ACC5192B5BE300FE4844 /* H7MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2ACBE192B5BE300FE4844 /* H7MeViewController.m */; };
 		EBB2ACC6192B5BE300FE4844 /* H7NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2ACC0192B5BE300FE4844 /* H7NotificationViewController.m */; };
@@ -122,7 +121,6 @@
 		EBBF048C1946106700AFA2FC /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBF048B1946106700AFA2FC /* MyCard.m */; };
 		EBBF048E1947312F00AFA2FC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBF048D1947312F00AFA2FC /* MediaPlayer.framework */; };
 		EBBF0494194739B800AFA2FC /* vid in Resources */ = {isa = PBXBuildFile; fileRef = EBBF0493194739B800AFA2FC /* vid */; };
-		EBBF04A019474CA900AFA2FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EBBF049F19474CA900AFA2FC /* User.m */; };
 		EBC0E777194DAEBE0081D761 /* H7ShahryarFindTheBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC0E776194DAEBE0081D761 /* H7ShahryarFindTheBottle.m */; };
 		EBC3BBD51920ADDD00BCD2B0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBD41920ADDD00BCD2B0 /* Notification.m */; };
 		EBC3BBDB1920AE0600BCD2B0 /* CardAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBDA1920AE0600BCD2B0 /* CardAudio.m */; };
@@ -131,6 +129,11 @@
 		EBC3BBE41920AE0700BCD2B0 /* CardVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBE31920AE0700BCD2B0 /* CardVideo.m */; };
 		EBC457E418FADDCB005ECE37 /* H7FacebookLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC457E318FADDCB005ECE37 /* H7FacebookLoginView.m */; };
 		EBC4F4F718E85A4C00555416 /* H7FavouriteCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4F4F618E85A4C00555416 /* H7FavouriteCategoryCell.m */; };
+		EBE029FF1951988C00DA76FE /* MyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE029FE1951988C00DA76FE /* MyCategory.m */; };
+		EBE02A051952F3C800DA76FE /* SponsorPrograms.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE02A041952F3C800DA76FE /* SponsorPrograms.m */; };
+		EBE02A0819530C2000DA76FE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE02A0719530C2000DA76FE /* User.m */; };
+		EBE02A0B1954885A00DA76FE /* Channels.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE02A0A1954885A00DA76FE /* Channels.m */; };
+		EBE02A0E19548B2100DA76FE /* H7channelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE02A0D19548B2100DA76FE /* H7channelCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,14 +202,13 @@
 		EB1AD582193DCD8D00F84229 /* F3HTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F3HTileView.h; sourceTree = "<group>"; };
 		EB1AD583193DCD8D00F84229 /* F3HTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F3HTileView.m; sourceTree = "<group>"; };
 		EB4A13EB1949C1F900A10889 /* bg_all_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_all_5.png; sourceTree = "<group>"; };
-		EB633CF01922155000143D81 /* MyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCategory.h; path = TheColorsConcorenza/MyCategory.h; sourceTree = SOURCE_ROOT; };
-		EB633CF11922155000143D81 /* MyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCategory.m; path = TheColorsConcorenza/MyCategory.m; sourceTree = SOURCE_ROOT; };
 		EB65A1F318FC25C700AAAAB4 /* H7TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7TabBarController.h; sourceTree = "<group>"; };
 		EB65A1F418FC25C700AAAAB4 /* H7TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7TabBarController.m; sourceTree = "<group>"; };
 		EB66170A194EF85400E33FA5 /* H7MosalslatQuizStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7MosalslatQuizStart.h; sourceTree = "<group>"; };
 		EB66170B194EF85400E33FA5 /* H7MosalslatQuizStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7MosalslatQuizStart.m; sourceTree = "<group>"; };
 		EB75D3EB194F3E200076628E /* H7choicesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7choicesCell.h; sourceTree = "<group>"; };
 		EB75D3EC194F3E200076628E /* H7choicesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7choicesCell.m; sourceTree = "<group>"; };
+		EB75D3EE1950F38F0076628E /* me_bg_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_bg_5.png; sourceTree = "<group>"; };
 		EB7BBA861917A32C00280FAB /* H7ScoreboardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ScoreboardCell.h; sourceTree = "<group>"; };
 		EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ScoreboardCell.m; sourceTree = "<group>"; };
 		EB9933DF18F2EF9000EE700C /* H7NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7NotificationCell.h; sourceTree = "<group>"; };
@@ -214,31 +216,6 @@
 		EB9C41B3193765C500549830 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		EB9C41B5193765E100549830 /* sponsor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sponsor.json; sourceTree = "<group>"; };
 		EB9C4412193C66F900549830 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		EB9C4420193C673B00549830 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_0.json; sourceTree = "<group>"; };
-		EB9C4421193C673B00549830 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
-		EB9C4422193C673B00549830 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_2.json; sourceTree = "<group>"; };
-		EB9C4423193C673B00549830 /* Level_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_3.json; sourceTree = "<group>"; };
-		EB9C4424193C673B00549830 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
-		EB9C4426193C673B00549830 /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		EB9C4427193C673B00549830 /* MyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		EB9C4428193C673B00549830 /* RWTChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTChain.h; sourceTree = "<group>"; };
-		EB9C4429193C673B00549830 /* RWTChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTChain.m; sourceTree = "<group>"; };
-		EB9C442A193C673B00549830 /* RWTCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTCookie.h; sourceTree = "<group>"; };
-		EB9C442B193C673B00549830 /* RWTCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTCookie.m; sourceTree = "<group>"; };
-		EB9C442C193C673B00549830 /* RWTLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTLevel.h; sourceTree = "<group>"; };
-		EB9C442D193C673B00549830 /* RWTLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTLevel.m; sourceTree = "<group>"; };
-		EB9C442E193C673B00549830 /* RWTSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTSwap.h; sourceTree = "<group>"; };
-		EB9C442F193C673B00549830 /* RWTSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTSwap.m; sourceTree = "<group>"; };
-		EB9C4430193C673B00549830 /* RWTTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTTile.h; sourceTree = "<group>"; };
-		EB9C4431193C673B00549830 /* RWTTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTTile.m; sourceTree = "<group>"; };
-		EB9C4433193C673B00549830 /* Chomp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chomp.wav; sourceTree = "<group>"; };
-		EB9C4434193C673B00549830 /* Drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drip.wav; sourceTree = "<group>"; };
-		EB9C4435193C673B00549830 /* Error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Error.wav; sourceTree = "<group>"; };
-		EB9C4436193C673B00549830 /* Ka-Ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ka-Ching.wav"; sourceTree = "<group>"; };
-		EB9C4437193C673B00549830 /* Mining by Moonlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mining by Moonlight.mp3"; sourceTree = "<group>"; };
-		EB9C4438193C673B00549830 /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
-		EB9C443A193C673B00549830 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EB9C443B193C673B00549830 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EB9C445A193C887B00549830 /* Grid.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Grid.atlas; path = "../../iphone-workspace/Bonjour/SS/TheColorsConcorenza-2/Grid.atlas"; sourceTree = "<group>"; };
 		EB9C445B193C887B00549830 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = Sprites.atlas; path = "../../iphone-workspace/Bonjour/SS/TheColorsConcorenza-2/Sprites.atlas"; sourceTree = "<group>"; };
 		EB9C4491193CBFD000549830 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
@@ -256,6 +233,31 @@
 		EBAA09F718F6E27000C6985B /* H7UIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7UIViewController.h; sourceTree = "<group>"; };
 		EBAA09F818F6E27000C6985B /* H7UIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7UIViewController.m; sourceTree = "<group>"; };
 		EBAA09FA18F6EB5D00C6985B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		EBAA37AD1956D05100ED17A3 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_0.json; sourceTree = "<group>"; };
+		EBAA37AE1956D05100ED17A3 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_1.json; sourceTree = "<group>"; };
+		EBAA37AF1956D05100ED17A3 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_2.json; sourceTree = "<group>"; };
+		EBAA37B01956D05100ED17A3 /* Level_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_3.json; sourceTree = "<group>"; };
+		EBAA37B11956D05100ED17A3 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
+		EBAA37B31956D05100ED17A3 /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyScene.h; path = TheColorsConcorenza/Games/CookieCrunch/MyScene.h; sourceTree = SOURCE_ROOT; };
+		EBAA37B41956D05100ED17A3 /* MyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyScene.m; path = TheColorsConcorenza/Games/CookieCrunch/MyScene.m; sourceTree = SOURCE_ROOT; };
+		EBAA37B51956D05100ED17A3 /* RWTChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTChain.h; path = TheColorsConcorenza/Games/CookieCrunch/RWTChain.h; sourceTree = SOURCE_ROOT; };
+		EBAA37B61956D05100ED17A3 /* RWTChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTChain.m; path = TheColorsConcorenza/Games/CookieCrunch/RWTChain.m; sourceTree = SOURCE_ROOT; };
+		EBAA37B71956D05100ED17A3 /* RWTCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTCookie.h; path = TheColorsConcorenza/Games/CookieCrunch/RWTCookie.h; sourceTree = SOURCE_ROOT; };
+		EBAA37B81956D05100ED17A3 /* RWTCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTCookie.m; path = TheColorsConcorenza/Games/CookieCrunch/RWTCookie.m; sourceTree = SOURCE_ROOT; };
+		EBAA37B91956D05100ED17A3 /* RWTLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTLevel.h; path = TheColorsConcorenza/Games/CookieCrunch/RWTLevel.h; sourceTree = SOURCE_ROOT; };
+		EBAA37BA1956D05100ED17A3 /* RWTLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTLevel.m; path = TheColorsConcorenza/Games/CookieCrunch/RWTLevel.m; sourceTree = SOURCE_ROOT; };
+		EBAA37BB1956D05100ED17A3 /* RWTSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTSwap.h; path = TheColorsConcorenza/Games/CookieCrunch/RWTSwap.h; sourceTree = SOURCE_ROOT; };
+		EBAA37BC1956D05100ED17A3 /* RWTSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTSwap.m; path = TheColorsConcorenza/Games/CookieCrunch/RWTSwap.m; sourceTree = SOURCE_ROOT; };
+		EBAA37BD1956D05100ED17A3 /* RWTTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTTile.h; path = TheColorsConcorenza/Games/CookieCrunch/RWTTile.h; sourceTree = SOURCE_ROOT; };
+		EBAA37BE1956D05100ED17A3 /* RWTTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTTile.m; path = TheColorsConcorenza/Games/CookieCrunch/RWTTile.m; sourceTree = SOURCE_ROOT; };
+		EBAA37C01956D05100ED17A3 /* Chomp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chomp.wav; sourceTree = "<group>"; };
+		EBAA37C11956D05100ED17A3 /* Drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drip.wav; sourceTree = "<group>"; };
+		EBAA37C21956D05100ED17A3 /* Error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Error.wav; sourceTree = "<group>"; };
+		EBAA37C31956D05100ED17A3 /* Ka-Ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ka-Ching.wav"; sourceTree = "<group>"; };
+		EBAA37C41956D05100ED17A3 /* Mining by Moonlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mining by Moonlight.mp3"; sourceTree = "<group>"; };
+		EBAA37C51956D05100ED17A3 /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
+		EBAA37C61956D05100ED17A3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = TheColorsConcorenza/Games/CookieCrunch/ViewController.h; sourceTree = SOURCE_ROOT; };
+		EBAA37C71956D05100ED17A3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = TheColorsConcorenza/Games/CookieCrunch/ViewController.m; sourceTree = SOURCE_ROOT; };
 		EBAE3C54192CF55600416880 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EBAE3C56192CF55C00416880 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EBAE3C59192CF56A00416880 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -293,8 +295,6 @@
 		EBB2AC57192A228E00FE4844 /* H7SponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7SponsorTableViewCell.m; sourceTree = "<group>"; };
 		EBB2AC63192A764A00FE4844 /* H7ProgramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ProgramViewController.h; sourceTree = "<group>"; };
 		EBB2AC64192A764A00FE4844 /* H7ProgramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ProgramViewController.m; sourceTree = "<group>"; };
-		EBB2AC6C192A7A8D00FE4844 /* SponsorPrograms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SponsorPrograms.h; path = TheColorsConcorenza/SponsorPrograms.h; sourceTree = SOURCE_ROOT; };
-		EBB2AC6D192A7A8D00FE4844 /* SponsorPrograms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SponsorPrograms.m; path = TheColorsConcorenza/SponsorPrograms.m; sourceTree = SOURCE_ROOT; };
 		EBB2ACB9192B5BE300FE4844 /* H7CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H7CollectionViewController.h; path = TheColorsConcorenza/Views/H7CollectionViewController.h; sourceTree = SOURCE_ROOT; };
 		EBB2ACBA192B5BE300FE4844 /* H7CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = H7CollectionViewController.m; path = TheColorsConcorenza/Views/H7CollectionViewController.m; sourceTree = SOURCE_ROOT; };
 		EBB2ACBD192B5BE300FE4844 /* H7MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H7MeViewController.h; path = TheColorsConcorenza/Views/H7MeViewController.h; sourceTree = SOURCE_ROOT; };
@@ -312,8 +312,6 @@
 		EBBF048D1947312F00AFA2FC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EBBF04921947342900AFA2FC /* samir2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = samir2.mp4; sourceTree = "<group>"; };
 		EBBF0493194739B800AFA2FC /* vid */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vid; sourceTree = "<group>"; };
-		EBBF049E19474CA900AFA2FC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = TheColorsConcorenza/User.h; sourceTree = SOURCE_ROOT; };
-		EBBF049F19474CA900AFA2FC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = TheColorsConcorenza/User.m; sourceTree = SOURCE_ROOT; };
 		EBC0E775194DAEBE0081D761 /* H7ShahryarFindTheBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ShahryarFindTheBottle.h; sourceTree = "<group>"; };
 		EBC0E776194DAEBE0081D761 /* H7ShahryarFindTheBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ShahryarFindTheBottle.m; sourceTree = "<group>"; };
 		EBC3BBD31920ADDD00BCD2B0 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notification.h; path = TheColorsConcorenza/Notification.h; sourceTree = SOURCE_ROOT; };
@@ -330,6 +328,16 @@
 		EBC457E318FADDCB005ECE37 /* H7FacebookLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7FacebookLoginView.m; sourceTree = "<group>"; };
 		EBC4F4F518E85A4C00555416 /* H7FavouriteCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7FavouriteCategoryCell.h; sourceTree = "<group>"; };
 		EBC4F4F618E85A4C00555416 /* H7FavouriteCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7FavouriteCategoryCell.m; sourceTree = "<group>"; };
+		EBE029FD1951988C00DA76FE /* MyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCategory.h; path = TheColorsConcorenza/MyCategory.h; sourceTree = SOURCE_ROOT; };
+		EBE029FE1951988C00DA76FE /* MyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCategory.m; path = TheColorsConcorenza/MyCategory.m; sourceTree = SOURCE_ROOT; };
+		EBE02A031952F3C800DA76FE /* SponsorPrograms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorPrograms.h; sourceTree = SOURCE_ROOT; };
+		EBE02A041952F3C800DA76FE /* SponsorPrograms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorPrograms.m; sourceTree = SOURCE_ROOT; };
+		EBE02A0619530C2000DA76FE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		EBE02A0719530C2000DA76FE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		EBE02A091954885A00DA76FE /* Channels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channels.h; sourceTree = SOURCE_ROOT; };
+		EBE02A0A1954885A00DA76FE /* Channels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channels.m; sourceTree = SOURCE_ROOT; };
+		EBE02A0C19548B2100DA76FE /* H7channelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7channelCell.h; sourceTree = "<group>"; };
+		EBE02A0D19548B2100DA76FE /* H7channelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7channelCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,10 +382,6 @@
 		EB10DDD3190CFBB900427874 /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
-				EBBF049E19474CA900AFA2FC /* User.h */,
-				EBBF049F19474CA900AFA2FC /* User.m */,
-				EB633CF01922155000143D81 /* MyCategory.h */,
-				EB633CF11922155000143D81 /* MyCategory.m */,
 				EBC3BBE21920AE0700BCD2B0 /* CardVideo.h */,
 				EBC3BBE31920AE0700BCD2B0 /* CardVideo.m */,
 				EBC3BBDF1920AE0600BCD2B0 /* CardGame.h */,
@@ -388,10 +392,14 @@
 				EBC3BBDA1920AE0600BCD2B0 /* CardAudio.m */,
 				EBC3BBD31920ADDD00BCD2B0 /* Notification.h */,
 				EBC3BBD41920ADDD00BCD2B0 /* Notification.m */,
-				EBB2AC6C192A7A8D00FE4844 /* SponsorPrograms.h */,
-				EBB2AC6D192A7A8D00FE4844 /* SponsorPrograms.m */,
 				EBBF048A1946106700AFA2FC /* MyCard.h */,
 				EBBF048B1946106700AFA2FC /* MyCard.m */,
+				EBE029FD1951988C00DA76FE /* MyCategory.h */,
+				EBE029FE1951988C00DA76FE /* MyCategory.m */,
+				EBE02A031952F3C800DA76FE /* SponsorPrograms.h */,
+				EBE02A041952F3C800DA76FE /* SponsorPrograms.m */,
+				EBE02A091954885A00DA76FE /* Channels.h */,
+				EBE02A0A1954885A00DA76FE /* Channels.m */,
 			);
 			path = Coredata;
 			sourceTree = "<group>";
@@ -459,6 +467,8 @@
 				EB1A3C0318E22487009F51BA /* H7AppDelegate.h */,
 				EB1A3C0418E22487009F51BA /* H7AppDelegate.m */,
 				EB10DDD3190CFBB900427874 /* Coredata */,
+				EBE02A0619530C2000DA76FE /* User.h */,
+				EBE02A0719530C2000DA76FE /* User.m */,
 				EB1A3C0618E22487009F51BA /* TheColorsConcorenza.xcdatamodeld */,
 				EB1A3C2718E2249E009F51BA /* Main.storyboard */,
 				EB1A3BFB18E22487009F51BA /* Supporting Files */,
@@ -526,6 +536,8 @@
 				EBB2AC57192A228E00FE4844 /* H7SponsorTableViewCell.m */,
 				EB75D3EB194F3E200076628E /* H7choicesCell.h */,
 				EB75D3EC194F3E200076628E /* H7choicesCell.m */,
+				EBE02A0C19548B2100DA76FE /* H7channelCell.h */,
+				EBE02A0D19548B2100DA76FE /* H7channelCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -533,10 +545,10 @@
 		EB1A3C8B18E42DC2009F51BA /* TabsController */ = {
 			isa = PBXGroup;
 			children = (
-				EBB2ACB9192B5BE300FE4844 /* H7CollectionViewController.h */,
-				EBB2ACBA192B5BE300FE4844 /* H7CollectionViewController.m */,
 				EBB2ACBD192B5BE300FE4844 /* H7MeViewController.h */,
 				EBB2ACBE192B5BE300FE4844 /* H7MeViewController.m */,
+				EBB2ACB9192B5BE300FE4844 /* H7CollectionViewController.h */,
+				EBB2ACBA192B5BE300FE4844 /* H7CollectionViewController.m */,
 				EBB2ACBF192B5BE300FE4844 /* H7NotificationViewController.h */,
 				EBB2ACC0192B5BE300FE4844 /* H7NotificationViewController.m */,
 				EBB2ACC1192B5BE300FE4844 /* H7ScoreboardViewController.h */,
@@ -625,52 +637,27 @@
 		EB9C4414193C673B00549830 /* CookieCrunch */ = {
 			isa = PBXGroup;
 			children = (
+				EBAA37AC1956D05100ED17A3 /* Levels */,
+				EBAA37B31956D05100ED17A3 /* MyScene.h */,
+				EBAA37B41956D05100ED17A3 /* MyScene.m */,
+				EBAA37B51956D05100ED17A3 /* RWTChain.h */,
+				EBAA37B61956D05100ED17A3 /* RWTChain.m */,
+				EBAA37B71956D05100ED17A3 /* RWTCookie.h */,
+				EBAA37B81956D05100ED17A3 /* RWTCookie.m */,
+				EBAA37B91956D05100ED17A3 /* RWTLevel.h */,
+				EBAA37BA1956D05100ED17A3 /* RWTLevel.m */,
+				EBAA37BB1956D05100ED17A3 /* RWTSwap.h */,
+				EBAA37BC1956D05100ED17A3 /* RWTSwap.m */,
+				EBAA37BD1956D05100ED17A3 /* RWTTile.h */,
+				EBAA37BE1956D05100ED17A3 /* RWTTile.m */,
+				EBAA37BF1956D05100ED17A3 /* Sounds */,
+				EBAA37C61956D05100ED17A3 /* ViewController.h */,
+				EBAA37C71956D05100ED17A3 /* ViewController.m */,
 				EB9C445B193C887B00549830 /* Sprites.atlas */,
 				EB9C445A193C887B00549830 /* Grid.atlas */,
-				EB9C441F193C673B00549830 /* Levels */,
-				EB9C4426193C673B00549830 /* MyScene.h */,
-				EB9C4427193C673B00549830 /* MyScene.m */,
-				EB9C4428193C673B00549830 /* RWTChain.h */,
-				EB9C4429193C673B00549830 /* RWTChain.m */,
-				EB9C442A193C673B00549830 /* RWTCookie.h */,
-				EB9C442B193C673B00549830 /* RWTCookie.m */,
-				EB9C442C193C673B00549830 /* RWTLevel.h */,
-				EB9C442D193C673B00549830 /* RWTLevel.m */,
-				EB9C442E193C673B00549830 /* RWTSwap.h */,
-				EB9C442F193C673B00549830 /* RWTSwap.m */,
-				EB9C4430193C673B00549830 /* RWTTile.h */,
-				EB9C4431193C673B00549830 /* RWTTile.m */,
-				EB9C4432193C673B00549830 /* Sounds */,
-				EB9C443A193C673B00549830 /* ViewController.h */,
-				EB9C443B193C673B00549830 /* ViewController.m */,
 			);
 			name = CookieCrunch;
 			path = "../../../../../../CookieCrunch-Final/CookieCrunch";
-			sourceTree = "<group>";
-		};
-		EB9C441F193C673B00549830 /* Levels */ = {
-			isa = PBXGroup;
-			children = (
-				EB9C4420193C673B00549830 /* Level_0.json */,
-				EB9C4421193C673B00549830 /* Level_1.json */,
-				EB9C4422193C673B00549830 /* Level_2.json */,
-				EB9C4423193C673B00549830 /* Level_3.json */,
-				EB9C4424193C673B00549830 /* Level_4.json */,
-			);
-			path = Levels;
-			sourceTree = "<group>";
-		};
-		EB9C4432193C673B00549830 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				EB9C4433193C673B00549830 /* Chomp.wav */,
-				EB9C4434193C673B00549830 /* Drip.wav */,
-				EB9C4435193C673B00549830 /* Error.wav */,
-				EB9C4436193C673B00549830 /* Ka-Ching.wav */,
-				EB9C4437193C673B00549830 /* Mining by Moonlight.mp3 */,
-				EB9C4438193C673B00549830 /* Scrape.wav */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 		EB9C448C193CBFD000549830 /* FlappyBirdClone */ = {
@@ -703,6 +690,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EBAA37AC1956D05100ED17A3 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				EBAA37AD1956D05100ED17A3 /* Level_0.json */,
+				EBAA37AE1956D05100ED17A3 /* Level_1.json */,
+				EBAA37AF1956D05100ED17A3 /* Level_2.json */,
+				EBAA37B01956D05100ED17A3 /* Level_3.json */,
+				EBAA37B11956D05100ED17A3 /* Level_4.json */,
+			);
+			name = Levels;
+			path = TheColorsConcorenza/Games/CookieCrunch/Levels;
+			sourceTree = SOURCE_ROOT;
+		};
+		EBAA37BF1956D05100ED17A3 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EBAA37C01956D05100ED17A3 /* Chomp.wav */,
+				EBAA37C11956D05100ED17A3 /* Drip.wav */,
+				EBAA37C21956D05100ED17A3 /* Error.wav */,
+				EBAA37C31956D05100ED17A3 /* Ka-Ching.wav */,
+				EBAA37C41956D05100ED17A3 /* Mining by Moonlight.mp3 */,
+				EBAA37C51956D05100ED17A3 /* Scrape.wav */,
+			);
+			name = Sounds;
+			path = TheColorsConcorenza/Games/CookieCrunch/Sounds;
+			sourceTree = SOURCE_ROOT;
+		};
 		EBAE3CB5193356C800416880 /* CategoriesLogic */ = {
 			isa = PBXGroup;
 			children = (
@@ -733,6 +747,7 @@
 				EB4A13EB1949C1F900A10889 /* bg_all_5.png */,
 				EBAE3E0B1934C74500416880 /* me_bg_4_logo.png */,
 				EBAE3E0A1934C74500416880 /* me_bg_4.png */,
+				EB75D3EE1950F38F0076628E /* me_bg_5.png */,
 				EBAE3E0C1934C74500416880 /* me_bg_4_logo_2.png */,
 				EBAE3E0D1934C74500416880 /* nav_bg.png */,
 				EB0C5289193F346600B621AD /* locked_card.png */,
@@ -833,47 +848,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBAE3ECF1934C78000416880 /* TabIcons30 in Resources */,
+				EBAA37C91956D05100ED17A3 /* Level_1.json in Resources */,
 				EBB2AF14192CA0D200FE4844 /* kbeer.jpeg in Resources */,
+				EBAA37CA1956D05100ED17A3 /* Level_2.json in Resources */,
 				EBAE3E1C1934C74500416880 /* appicon_80.png in Resources */,
 				EB9C41B6193765E100549830 /* sponsor.json in Resources */,
 				EB9C449A193CBFD000549830 /* Ground.png in Resources */,
 				EB1A3C2818E2249E009F51BA /* Main.storyboard in Resources */,
 				EB9C449D193CBFD000549830 /* Pipe2.png in Resources */,
 				EB9C449C193CBFD000549830 /* Pipe1.png in Resources */,
+				EBAA37D81956D05100ED17A3 /* Mining by Moonlight.mp3 in Resources */,
 				EBBF0494194739B800AFA2FC /* vid in Resources */,
 				EB9C445C193C887B00549830 /* Grid.atlas in Resources */,
-				EB9C444F193C673B00549830 /* Drip.wav in Resources */,
-				EB9C4446193C673B00549830 /* Level_4.json in Resources */,
 				EBB2AF13192CA0D200FE4844 /* tamer.jpeg in Resources */,
 				EBAE3EBC1934C74500416880 /* me_bg_4_logo.png in Resources */,
 				EBBF04801944463900AFA2FC /* CategoriesIcons in Resources */,
 				EB0C5288193F25E500B621AD /* Images.xcassets in Resources */,
-				EB9C4453193C673B00549830 /* Scrape.wav in Resources */,
 				EBAE3E1D1934C74500416880 /* bg_4.png in Resources */,
-				EB9C4451193C673B00549830 /* Ka-Ching.wav in Resources */,
-				EB9C4450193C673B00549830 /* Error.wav in Resources */,
+				EBAA37D51956D05100ED17A3 /* Drip.wav in Resources */,
 				EB1AD504193DC8E200F84229 /* Bird2.png in Resources */,
-				EB9C4445193C673B00549830 /* Level_3.json in Resources */,
 				EB4A13EC1949C1F900A10889 /* bg_all_5.png in Resources */,
-				EB9C444E193C673B00549830 /* Chomp.wav in Resources */,
 				EB9C41B4193765C600549830 /* cards.json in Resources */,
-				EB9C4443193C673B00549830 /* Level_1.json in Resources */,
-				EB9C4452193C673B00549830 /* Mining by Moonlight.mp3 in Resources */,
-				EB9C4444193C673B00549830 /* Level_2.json in Resources */,
+				EBAA37D91956D05100ED17A3 /* Scrape.wav in Resources */,
 				EBAE3EBD1934C74500416880 /* me_bg_4_logo_2.png in Resources */,
+				EBAA37CC1956D05100ED17A3 /* Level_4.json in Resources */,
 				EB1A3BFF18E22487009F51BA /* InfoPlist.strings in Resources */,
+				EBAA37D71956D05100ED17A3 /* Ka-Ching.wav in Resources */,
 				EBB2AF15192CA0D200FE4844 /* fara7.jpg in Resources */,
+				EB75D3EF1950F38F0076628E /* me_bg_5.png in Resources */,
+				EBAA37D61956D05100ED17A3 /* Error.wav in Resources */,
 				EBAE3E1F1934C74500416880 /* bg_all_4.png in Resources */,
 				EB0C528A193F346600B621AD /* locked_card.png in Resources */,
 				EB9C445D193C887B00549830 /* Sprites.atlas in Resources */,
 				EB9C449E193CBFD000549830 /* Skyline.png in Resources */,
 				EBAE3EBE1934C74500416880 /* nav_bg.png in Resources */,
 				EBAE3E1B1934C74500416880 /* appicon_58.png in Resources */,
+				EBAA37D41956D05100ED17A3 /* Chomp.wav in Resources */,
 				EBAE3E1E1934C74500416880 /* bg_5.png in Resources */,
+				EBAA37C81956D05100ED17A3 /* Level_0.json in Resources */,
 				EBAE3E1A1934C74500416880 /* appicon_120.png in Resources */,
-				EB9C4442193C673B00549830 /* Level_0.json in Resources */,
 				EB1AD500193DC80C00F84229 /* Bird1.png in Resources */,
 				EBAE3EBB1934C74500416880 /* me_bg_4.png in Resources */,
+				EBAA37CB1956D05100ED17A3 /* Level_3.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,38 +943,39 @@
 			files = (
 				EBC457E418FADDCB005ECE37 /* H7FacebookLoginView.m in Sources */,
 				EBB2ACC6192B5BE300FE4844 /* H7NotificationViewController.m in Sources */,
+				EBE02A051952F3C800DA76FE /* SponsorPrograms.m in Sources */,
 				EBB2ACC3192B5BE300FE4844 /* H7CollectionViewController.m in Sources */,
 				EBAA09E118F591AD00C6985B /* H7ConstantsModel.m in Sources */,
+				EBAA37CF1956D05100ED17A3 /* RWTChain.m in Sources */,
 				EBC3BBD51920ADDD00BCD2B0 /* Notification.m in Sources */,
 				EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */,
 				EB1AD58A193DCD8D00F84229 /* F3HMoveOrder.m in Sources */,
 				EBC3BBE11920AE0700BCD2B0 /* CardGame.m in Sources */,
-				EBBF04A019474CA900AFA2FC /* User.m in Sources */,
-				EB9C444A193C673B00549830 /* RWTCookie.m in Sources */,
-				EBB2AC6E192A7A8D00FE4844 /* SponsorPrograms.m in Sources */,
 				EB66170C194EF85400E33FA5 /* H7MosalslatQuizStart.m in Sources */,
 				EB1AD588193DCD8D00F84229 /* F3HGameModel.m in Sources */,
 				EB1A3C0118E22487009F51BA /* main.m in Sources */,
+				EBE02A0E19548B2100DA76FE /* H7channelCell.m in Sources */,
 				EB1AD590193DCD8D00F84229 /* F3HTileView.m in Sources */,
 				EB9C44A1193CC14B00549830 /* FFViewController.m in Sources */,
-				EB9C444D193C673B00549830 /* RWTTile.m in Sources */,
+				EBE02A0819530C2000DA76FE /* User.m in Sources */,
 				EBAE3CBE1933576300416880 /* H7Mosalslat.m in Sources */,
-				EB633CF21922155000143D81 /* MyCategory.m in Sources */,
 				EBAE3CB8193356F200416880 /* H7Shahryar.m in Sources */,
 				EBAA09F918F6E27000C6985B /* H7UIViewController.m in Sources */,
 				EB1AD58B193DCD8D00F84229 /* F3HQueueCommand.m in Sources */,
 				EB1AD586193DCD8D00F84229 /* F3HTileAppearanceProvider.m in Sources */,
+				EBAA37D11956D05100ED17A3 /* RWTLevel.m in Sources */,
 				EBB2AC65192A764A00FE4844 /* H7ProgramViewController.m in Sources */,
 				EBAE3CCE1934A9CC00416880 /* H7MosalslatQuiz.m in Sources */,
 				EBB2ACC5192B5BE300FE4844 /* H7MeViewController.m in Sources */,
-				EB9C444B193C673B00549830 /* RWTLevel.m in Sources */,
 				EBAE3CC11933577300416880 /* H7SallySyamak.m in Sources */,
 				EB1AD589193DCD8D00F84229 /* F3HMergeTile.m in Sources */,
 				EBC3BBDB1920AE0600BCD2B0 /* CardAudio.m in Sources */,
 				EB1AD587193DCD8D00F84229 /* F3HViewController.m in Sources */,
 				EB1AD58E193DCD8D00F84229 /* F3HGameboardView.m in Sources */,
+				EBAA37D01956D05100ED17A3 /* RWTCookie.m in Sources */,
 				EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */,
 				EBC3BBDE1920AE0600BCD2B0 /* CardImage.m in Sources */,
+				EBE02A0B1954885A00DA76FE /* Channels.m in Sources */,
 				EBC0E777194DAEBE0081D761 /* H7ShahryarFindTheBottle.m in Sources */,
 				EBC4F4F718E85A4C00555416 /* H7FavouriteCategoryCell.m in Sources */,
 				EBB2AC58192A228E00FE4844 /* H7SponsorTableViewCell.m in Sources */,
@@ -970,20 +987,21 @@
 				EBC3BBE41920AE0700BCD2B0 /* CardVideo.m in Sources */,
 				EB1AD58C193DCD8D00F84229 /* F3HTileModel.m in Sources */,
 				EB1A3C0818E22487009F51BA /* TheColorsConcorenza.xcdatamodeld in Sources */,
-				EB9C4449193C673B00549830 /* RWTChain.m in Sources */,
+				EBAA37D21956D05100ED17A3 /* RWTSwap.m in Sources */,
 				EB9C44A4193CC26600549830 /* FFScene.m in Sources */,
 				EBB2ACC7192B5BE300FE4844 /* H7ScoreboardViewController.m in Sources */,
 				EB9933E118F2EF9000EE700C /* H7NotificationCell.m in Sources */,
 				EBAA09F318F6C24C00C6985B /* H7AddDataToManagedObject.m in Sources */,
 				EB65A1F518FC25C800AAAAB4 /* H7TabBarController.m in Sources */,
 				EBAE3CC81934853600416880 /* H7ManElQatelAudio.m in Sources */,
+				EBAA37CE1956D05100ED17A3 /* MyScene.m in Sources */,
 				EB0C52961940994200B621AD /* H7CardSinglton.m in Sources */,
-				EB9C444C193C673B00549830 /* RWTSwap.m in Sources */,
+				EBE029FF1951988C00DA76FE /* MyCategory.m in Sources */,
 				EBBF048C1946106700AFA2FC /* MyCard.m in Sources */,
-				EB9C4455193C673B00549830 /* ViewController.m in Sources */,
 				EB1AD58F193DCD8D00F84229 /* F3HScoreView.m in Sources */,
-				EB9C4448193C673B00549830 /* MyScene.m in Sources */,
+				EBAA37DA1956D05100ED17A3 /* ViewController.m in Sources */,
 				EB1AD585193DCD8D00F84229 /* F3HNumberTileGameViewController.m in Sources */,
+				EBAA37D31956D05100ED17A3 /* RWTTile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,6 +1130,7 @@
 				GCC_PREFIX_HEADER = "TheColorsConcorenza/TheColorsConcorenza-Prefix.pch";
 				INFOPLIST_FILE = "TheColorsConcorenza/TheColorsConcorenza-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1139,6 +1158,7 @@
 				GCC_PREFIX_HEADER = "TheColorsConcorenza/TheColorsConcorenza-Prefix.pch";
 				INFOPLIST_FILE = "TheColorsConcorenza/TheColorsConcorenza-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

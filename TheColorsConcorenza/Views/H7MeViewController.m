@@ -23,32 +23,51 @@
 @interface H7MeViewController () {
     NSMutableArray *favouriteArray;
     MyCategory *selectedCategory;
-    User *user;
+    NSArray *users;
 }
 
 @end
 
-@implementation H7MeViewController 
+@implementation H7MeViewController {
+    NSData *binaryImage;
+}
 
 - (void)viewDidLoad
 {
     /* Setting background image */
-    UIImage *background = [UIImage imageNamed: @"me_bg_4_logo_2.png"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
-    [self.view insertSubview: imageView atIndex:1];
-    
-    //insert user in DB
-    [self getFbInfo];
-
-    /* Getting User */
-    user = [[User MR_findAll] firstObject];
-    
-    /* getting profile picture */
+    int height =  [[UIScreen mainScreen] bounds].size.height;
+    if(height > 480){
+        UIImage *background = [UIImage imageNamed: @"me_bg_5.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:1];
+    }
+    else{
+        UIImage *background = [UIImage imageNamed: @"me_bg_4.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:1];
+    }
+    // Getting user PP
+    NSArray *a = [User MR_findAll];
+    NSLog(@"%lu" , (unsigned long)[a count]);
     H7AppDelegate *appDel = [[UIApplication sharedApplication] delegate];
-    self.fbProfilePicture.profileID = appDel.userFbId;
+    if([a count] == 0) {
+        self.fbProfilePicture.profileID = appDel.userFbId;
+    }else {
+        User *u = [a firstObject];
+        NSData *imgData = u.userProfilePicture;
+        UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];
+//        NSLog(@"img data = %@" , imgData);
+        self.fbProfilePictureImageView.image = thumbNail;
+        [self getCategoryScoresWithAccountId:u.userAccountId];
+    }
+    
+    // Insert user in DB
+    [self getFbInfo];
     
     /* getting user name */
     self.userNameLabel.text = appDel.userName;
+    self.userNameLabel.transform = CGAffineTransformMakeRotation(-10 * M_PI / 180.0);
+    self.userNameLabel.textColor = [UIColor whiteColor];
     
     //Setting score labels color
     self.sallySyamakScore.textColor = [UIColor whiteColor];
@@ -57,79 +76,144 @@
     self.shahryarScore.textColor = [UIColor whiteColor];
     
     // Putting score labels fel zeina
-    self.sallySyamakScore.transform =  CGAffineTransformMakeRotation(28 * M_PI / 180.0);
+    self.sallySyamakScore.transform =  CGAffineTransformMakeRotation(22 * M_PI / 180.0);
     self.mosalslatScore.transform =CGAffineTransformMakeRotation(8 * M_PI / 180.0);
     self.manElQatelScore.transform = CGAffineTransformMakeRotation(-12 * M_PI / 180.0);
     self.shahryarScore.transform = CGAffineTransformMakeRotation(-15 * M_PI / 180.0);
     
-    
     [super viewDidLoad];
 }
 
+- (void) getUserImageFromFBView:(User*)loggedUser{
+    UIImageView *objImg;
+    for (NSObject *obj in [self.fbProfilePicture subviews]) {
+        if ([obj isMemberOfClass:[UIImageView class]]) {
+            objImg = (UIImageView *)obj;
+            break;
+        }
+    }
+    self.fbProfilePictureImageView.image = objImg.image;
+    loggedUser.userProfilePicture = UIImagePNGRepresentation(objImg.image);
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
 
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)getCategoryScores {
-    H7AppDelegate *appDel = [[UIApplication sharedApplication] delegate];
-    NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@score/format/json/facebookId/%@", PLATFORM_URL ,appDel.userFbId]];
+-(void)getCategoryScoresWithAccountId:(NSString*)accountId {
+        NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@score/format/json/userId/%@", PLATFORM_URL ,accountId]];
+        NSLog(@"url = %@" , url);
+        NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+        AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            NSDictionary *dict = JSON;
+            NSLog(@"scores = %@" , dict );
+            self.sallySyamakScore.text = [NSString stringWithFormat:@"%@",[dict objectForKey:@"sallySyamak"]];
+            self.mosalslatScore.text = [NSString stringWithFormat:@"%@",[dict objectForKey:@"mosalslat"]];
+            self.manElQatelScore.text = [NSString stringWithFormat:@"%@",[dict objectForKey:@"manElQatel"]];
+            self.shahryarScore.text = [NSString stringWithFormat:@"%@",[dict objectForKey:@"shahryar"]];
+            NSArray *categories = [MyCategory MR_findAll];
+            for (int i=0 ; i < [categories count]; i++) {
+                MyCategory *curCat = [categories objectAtIndex:i];
+                if([curCat.categoryName isEqualToString:@"shahryar"])
+                    curCat.userScore =[NSString stringWithFormat:@"%@",[dict objectForKey:@"shahryar"]];
+                if([curCat.categoryName isEqualToString:@"manElQatel"])
+                    curCat.userScore =[NSString stringWithFormat:@"%@",[dict objectForKey:@"manElQatel"]];
+                if([curCat.categoryName isEqualToString:@"mosalslat"])
+                    curCat.userScore =[NSString stringWithFormat:@"%@",[dict objectForKey:@"mosalslat"]];
+                if([curCat.categoryName isEqualToString:@"sallySyamak"])
+                    curCat.userScore =[NSString stringWithFormat:@"%@",[dict objectForKey:@"sallySyamak"]];
+            }
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            // Get score from core data
+            NSArray *categories = [MyCategory MR_findAll];
+            for (int i=0 ; i<[categories count] ; i++) {
+                MyCategory *curCat = [categories objectAtIndex:i];
+                if([curCat.categoryName isEqualToString:@"shahryar"])
+                    self.shahryarScore.text = curCat.userScore;
+                if([curCat.categoryName isEqualToString:@"manElQatel"])
+                    self.manElQatelScore.text= curCat.userScore;
+                if([curCat.categoryName isEqualToString:@"mosalslat"])
+                    self.mosalslatScore.text= curCat.userScore;
+                if([curCat.categoryName isEqualToString:@"sallySyamak"])
+                    self.sallySyamakScore.text= curCat.userScore;
+            }
+        }];
+        [request start];
+}
+
+-(void)insertUserScoresWithAccountId:(NSString*)accountId fullName:(NSString*)fullname {
+    NSString *str = [NSString stringWithFormat:@"%@add_new_usercategories/format/json/user_id/%@/fullname/%@" , PLATFORM_URL , accountId , fullname];
+    NSLog(@"insert user in scoreboard %@",str);
+    NSURL *url = [[NSURL alloc] initWithString:[str stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSDictionary *dict = JSON;
-        self.sallySyamakScore.text = [NSString stringWithFormat:@"%@",[dict objectForKey:@"sallySyamak"]];
-        self.mosalslatScore.text = [NSString stringWithFormat:@"%@",[dict objectForKey:@"mosalslat"]];
-        self.manElQatelScore.text = [NSString stringWithFormat:@"%@",[dict objectForKey:@"manElQatel"]];
-        self.shahryarScore.text = [NSString stringWithFormat:@"%@",[dict objectForKey:@"shahryar"]];
+        NSLog(@"return = %@" , dict);
+        [self getCategoryScoresWithAccountId:accountId];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get score from core data
-        NSLog(@"Failed to get scores");
+        NSLog(@"Failed to insert user to scoreboard");
     }];
     [request start];
 }
 
-
-
 -(void)getFbInfo{
-    [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
-                                       allowLoginUI:YES
-                                  completionHandler:
-     ^(FBSession *session, FBSessionState state, NSError *error) {
-         if(!error && state == FBSessionStateOpen) {
-             { [FBRequestConnection startWithGraphPath:@"me" parameters:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"id,name,first_name,last_name,username,email,birthday",@"fields",nil] HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                     NSDictionary *userData = (NSDictionary *)result;
-                     NSString *userId = [userData objectForKey:@"id"];
-                     NSString *username = [userData objectForKey:@"username"];
-                     NSString *firstName= [userData objectForKey:@"first_name"];
-                     NSString *lastName= [userData objectForKey:@"last_name"];
-                     NSString *birthday  = [userData objectForKey:@"birthday"];
-                     NSString *email= [userData objectForKey:@"email"];
-                     NSLog(@"%@" , userData);
-            
-                     birthday = [birthday stringByReplacingOccurrencesOfString:@"/" withString:@"-"];
-                     email = [email stringByReplacingOccurrencesOfString:@"@" withString:@"%"];
-                     //begining
-                 NSString *str =[ NSString stringWithFormat:@"%@add_new_user/format/json/facebookId/%@/username/%@/firstname/%@/lastname/%@/birthday/%@/email/%@",PLATFORM_URL , userId , username , firstName , lastName , birthday, email];
-                     NSURL *url = [[NSURL alloc] initWithString:[str stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
-                     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
-                     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    users = [User MR_findAll];
+    if([users count] == 0 ) { //REMEBER to set back to ZERO
+        [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"] allowLoginUI:YES completionHandler: ^(FBSession *session, FBSessionState state, NSError *error) {
+             if(!error && state == FBSessionStateOpen) {
+                 {
+                     [FBRequestConnection startWithGraphPath:@"me" parameters:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"id,name,first_name,last_name,username,email,birthday",@"fields",nil] HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                        NSDictionary *userData = (NSDictionary *)result;
+                        NSString *userId = [userData objectForKey:@"id"];
+                        NSString *username = [userData objectForKey:@"username"];
+                        NSString *firstName= [userData objectForKey:@"first_name"];
+                        NSString *lastName= [userData objectForKey:@"last_name"];
+                        NSString *birthday  = [userData objectForKey:@"birthday"];
+                        NSString *email= [userData objectForKey:@"email"];
+                        NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+                        birthday = [birthday stringByReplacingOccurrencesOfString:@"/" withString:@"-"];
+                        email = [email stringByReplacingOccurrencesOfString:@"@" withString:@"%"];
+                        NSLog(@"%@ \n %@" , userData , fbAccessToken);
+                     
+                        // Saving User information in core data
+                        User * loggedUser = [User MR_createEntity];
+                        loggedUser.userName = username;
+                        loggedUser.userId = userId;
+                        loggedUser.userBirthday = birthday;
+                        loggedUser.userFirstName = firstName;
+                        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+                         
+                         NSLog(@"core data %@ %@" , loggedUser.userName , loggedUser.userBirthday);
+                         NSString *str = [NSString stringWithFormat:@"%@mobileAddMe/username/%@/firstname/%@/lastname/%@/email/%@/credit/0/birthday/%@/fb_id/%@/token/%@/format/json" , CORE_URL , username , firstName , lastName , email ,birthday , userId , fbAccessToken];
+                        NSURL *url = [[NSURL alloc] initWithString:[str stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+                        NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+                        AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                          NSDictionary *dict = JSON;
-                         NSLog(@"%@" , dict);
-                         // get categories scores
-                         [self getCategoryScores];
-                     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                         NSLog(@"return = %@" , dict);
+                         loggedUser.userAccountId = [NSString stringWithFormat:@"%@" , [dict objectForKey:@"accountId"]];
+                         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+                        [self performSelector:@selector(getUserImageFromFBView:) withObject:loggedUser afterDelay:2.0];
+                        
+                         // Insert user to scoreboards
+                            [self insertUserScoresWithAccountId:loggedUser.userAccountId fullName:[NSString stringWithFormat:@"%@ %@" , firstName , lastName]];
+                            NSLog(@"here1");
+                        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                          // Get score from core data
                          NSLog(@"Failed");
-                     }];
-                     [request start];
-                 //end
-             }];
+                        }];
+                        [request start];
+                 }];
+                 }
              }
-         }
-     }];
+         }];
+    }else {
+        User *u = [users firstObject];
+        [self getCategoryScoresWithAccountId:u.userAccountId];
+    }
 }
 
 

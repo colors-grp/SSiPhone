@@ -27,9 +27,18 @@
 - (void)viewDidLoad
 {
     /* Setting background image */
-    UIImage *background = [UIImage imageNamed: @"bg_all_4.png"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
-    [self.view insertSubview: imageView atIndex:0];
+    int height =  [[UIScreen mainScreen] bounds].size.height;
+    if(height > 480){
+        UIImage *background = [UIImage imageNamed: @"bg_all_5.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
+    else{
+        UIImage *background = [UIImage imageNamed: @"bg_all_4.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
+
     
     // Get Category Array
     favouriteArray = [[MyCategory MR_findAll] mutableCopy];

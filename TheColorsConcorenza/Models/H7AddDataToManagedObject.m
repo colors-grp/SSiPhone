@@ -19,7 +19,6 @@
 @implementation H7AddDataToManagedObject
 
 -(void) saveData {
-    
     NSError* err = nil;
     NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"cards" ofType:@"json"];
     NSArray* cardsArray = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]options:kNilOptions error:&err];
@@ -30,14 +29,13 @@
         NSArray *tmp  = [NSArray arrayWithObjects:@"sallySyamak" , @"mosalslat", @"manElQatel" , @"shahryar" , nil];
         NSArray *tmp1  = [NSArray arrayWithObjects:[NSNumber numberWithInt:1] , [NSNumber numberWithInt:2], [NSNumber numberWithInt:3] , [NSNumber numberWithInt:4] , nil];
         NSMutableSet *userCategories = [[NSMutableSet alloc] init];
-        User *user = [User MR_createEntity];
         NSNumber *favourite = [NSNumber numberWithBool:NO];
         for (int i=0 ; i < [tmp count]; i++) {
             MyCategory *newCat = [MyCategory MR_createEntity];
             newCat.categoryId = [tmp1 objectAtIndex:i];
             newCat.categoryName = [tmp objectAtIndex:i];
             newCat.isFavourite = favourite;
-            newCat.userScore = [NSNumber numberWithInt:0];
+            newCat.userScore = @"0";
             newCat.userCards = [NSNumber numberWithInt:0];
             
             if([newCat.categoryName isEqualToString:@"shahryar"]) {
@@ -126,25 +124,6 @@
             
             [userCategories addObject:newCat];
         }
-        user.hasCategory =[NSSet setWithArray:[userCategories allObjects]];
-        SponsorPrograms *s1 = [SponsorPrograms MR_createEntity];
-        s1.title = @"فرح ليلي";
-        s1.imageName = @"fara7.jpg";
-        s1.staring = @"ليلى علوي، فراس سعيد، عبد الرحمن أبو زهرة، دعاء طعيمة، نادية خيري، نرمين ماهر، أحمد كمال ،شريف باهر";
-        s1.describtion = @"تدور أحداث المسلسل حول 'ليلى' الفتاة المصرية المنتمية إلى الطبقة المتوسطة التي تجاوزت الأربعين من عمرها دون زواج بسبب خوفها من أن تصاب بمرض 'سرطان الثدي' الذي أصاب معظم نساء عائلتها وتسبب في وفاتهم في سن مبكرة مما كون لدى 'ليلى' عقدة من الزواج جعلتها تتفرغ تماما لعملها كمصممة أفراح إلى أن يظهر في حياتها الحب الذي يجعلها تفكر من جديد.";
-        
-        SponsorPrograms *s2 = [SponsorPrograms MR_createEntity];
-        s2.title = @"الكبير قوي";
-        s2.imageName = @"kbeer.jpeg";
-        s2.staring = @"أحمد مكي، دنيا سمير غانم، هشام إسماعيل ومحمد شاهين وإخراج إسلام خيرى وأحمد الجندي";
-        s2.describtion = @"وتدور أحداث المسلسل حول عمدة قرية 'المزاريطة'، الذي تزوّج من امرأة أمريكية، وأنجب منها ولدين توأمين؛ أحدهما تربى في الصعيد، والآخر في أمريكا، وتحدث مواقف كوميدية ومفارقات بين الأخوين عندما يلتقيا ويتنافسا على العمودية خلفا لوالدهما ويجسد مكى الأدوار الثلاثة الأب والتوأمين (الكبير وجوني)";
-        
-        SponsorPrograms *s3 = [SponsorPrograms MR_createEntity];
-        s3.title = @"تامر و شوقية";
-        s3.imageName = @"tamer.jpeg";
-        s3.staring = @"أحمد الفيشاوي ،مى كساب ،جمال إسماعيل ،رجاء الجداوي ،انعام سالوسة ،لطفى لبيب ،نضال الشافعي ،أحمد مكي ،إنجى وجدان";
-        s3.describtion = @"تامر وشوقية مسلسل مصري كوميدي ينتمي لنوعية السيت كوم، يحكى عن شوقية التي تعمل مدرسة وتسكن في حي العمرانية والتي تزوجت من تامر المحامي ابن الطبقة الأرستقراطية وساكن حى مصر الجديدة ويتناول المسلسل الفوارق الطبقية بين العائلتين والمشاكل التي قد تواجه حديثي الزواج في إطار كوميدى.";
-        
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     }
 }

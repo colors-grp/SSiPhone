@@ -2,7 +2,7 @@
 //  MyCategory.m
 //  TheColorsConcorenza
 //
-//  Created by Heba Gamal on 5/13/14.
+//  Created by Heba Gamal on 6/18/14.
 //  Copyright (c) 2014 Heba Gamal. All rights reserved.
 //
 
@@ -13,22 +13,12 @@
 
 @implementation MyCategory
 
-@dynamic allScoreboard;
+@dynamic binaryData;
 @dynamic categoryId;
 @dynamic categoryName;
-@dynamic friendScoreboard;
 @dynamic isFavourite;
 @dynamic userCards;
 @dynamic userScore;
-@dynamic allScoreboardName;
-@dynamic allScoreboardFbId;
-@dynamic allScoreboardRank;
-@dynamic allScoreboardScore;
-@dynamic friendScoreboardName;
-@dynamic friendScoreboardFbId;
-@dynamic friendScoreboardRank;
-@dynamic friendScoreboardScore;
-@dynamic binaryData;
 @dynamic belongsToUser;
 @dynamic hasCards;
 

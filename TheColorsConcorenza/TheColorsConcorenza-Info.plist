@@ -25,16 +25,16 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb352621514881126</string>
+				<string>fb170161316509571</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>FacebookAppID</key>
-	<string>352621514881126</string>
+	<string>170161316509571</string>
 	<key>FacebookDisplayName</key>
-	<string>The Colors Concorenza</string>
+	<string>Hitseven Ente­r­t­a­i­n­ment</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>

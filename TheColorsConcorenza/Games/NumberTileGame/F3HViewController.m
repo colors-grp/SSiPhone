@@ -15,6 +15,21 @@
 
 @implementation F3HViewController
 
+-(void)viewDidLoad {
+    /* Setting background image */
+    int height =  [[UIScreen mainScreen] bounds].size.height;
+    if(height > 480){
+        UIImage *background = [UIImage imageNamed: @"bg_all_5.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
+    else{
+        UIImage *background = [UIImage imageNamed: @"bg_all_4.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
+}
+
 - (IBAction)playGameButtonTapped:(id)sender {
     F3HNumberTileGameViewController *c = [F3HNumberTileGameViewController numberTileGameWithDimension:4
                                                                                          winThreshold:2048

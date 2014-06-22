@@ -9,7 +9,9 @@
 #import "H7FacebookLoginView.h"
 #import "H7AppDelegate.h"
 #import "H7ConstantsModel.h"
+#import "User.h"
 
+#import <CoreData+MagicalRecord.h>
 #import <AFNetworking/AFNetworking.h>
 #import <FacebookSDK/FacebookSDK.h>
 
@@ -24,9 +26,26 @@
 - (void)viewDidLoad
 {
     /* Setting background image */
-    UIImage *background = [UIImage imageNamed: @"bg_4.png"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
-    [self.view insertSubview: imageView atIndex:0];
+    int height =  [[UIScreen mainScreen] bounds].size.height;
+    if(height > 480){
+        UIImage *background = [UIImage imageNamed: @"bg_5.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
+    else{
+        UIImage *background = [UIImage imageNamed: @"bg_4.png"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+        [self.view insertSubview: imageView atIndex:0];
+    }
+    
+    NSArray *userArr = [User MR_findAll];
+    if([userArr count]!=0) {
+        User *u = [userArr firstObject];
+        H7AppDelegate *appDel = (H7AppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDel.userFbId = u.userId;
+        appDel.userName = u.userName;
+        [self performSegueWithIdentifier:@"startApp" sender:self];
+    }
     [super viewDidLoad];
 }
 
@@ -54,6 +73,7 @@
 #pragma mark - FBLoginViewDelegate
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
+    
 }
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {

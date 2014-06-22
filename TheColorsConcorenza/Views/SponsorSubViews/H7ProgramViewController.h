@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "SponsorPrograms.h"
 
-@interface H7ProgramViewController : UIViewController
+@interface H7ProgramViewController : UIViewController <UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UIImageView *programImage;
 @property (strong) SponsorPrograms *currentProgram;
-
+@property (weak, nonatomic) IBOutlet UITableView *channelsTable;
 
 @end
