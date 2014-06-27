@@ -48,7 +48,7 @@
         NSString *catId = @"1";
         NSString *cardId = [NSString stringWithFormat:@"%@" , currentCard.cardId];
         NSString *Score = [NSString stringWithFormat:@"%@" , score];
-        [self updateScoreInDBWithUserId:userId catId:cardId cardId:catId score:Score];
+        [self updateScoreInDBWithUserId:userId catId:catId cardId:cardId score:Score];
 
     }
 }

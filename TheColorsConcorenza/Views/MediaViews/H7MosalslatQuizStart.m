@@ -10,6 +10,9 @@
 #import "H7ConstantsModel.h"
 #import "H7choicesCell.h"
 
+#import "User.h"
+
+#import <CoreData+MagicalRecord.h>
 #import <AFNetworking/AFNetworking.h>
 
 @interface H7MosalslatQuizStart ()
@@ -22,6 +25,7 @@
     NSMutableArray *c2;
     NSMutableArray *c3;
     NSMutableArray *correct;
+    NSMutableArray *userSelection;
     int curQuestion , size;
 }
 
@@ -43,6 +47,8 @@
     // Set current question index
     curQuestion = 0;
     
+    // Instantiate user array
+    userSelection = [[NSMutableArray alloc] init];
     // Activity indicator to show info is getting fetched from web service
     [self.view setUserInteractionEnabled:NO];
     [self.activityIndicator setHidden:NO];
@@ -84,21 +90,66 @@
     if(indexPath.row == 2) {
         cell.choiceLabel.text = [c3 objectAtIndex:curQuestion];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    curQuestion++;
-    [self reload];
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.choices deselectRowAtIndexPath:indexPath animated:NO];
 }
+
 
 -(void)reload {
     if(curQuestion < size) {
         [self.choices reloadData];
         self.question.text = [questions objectAtIndex:curQuestion];
-    }else if (curQuestion == size) {
+    }else if (curQuestion >= size) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Messege" message:@"Thank you for solving todays Mosalslat Quiz!!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+        int score = [self calculateScore];
+        NSArray *a = [User MR_findAll];
+        User *u = [a firstObject];
+        NSString *userId = u.userAccountId;
+        NSString *catId = @"2";
+        NSString *cardId = [NSString stringWithFormat:@"%@" , self.currentCard.cardId];
+        NSString *Score = [NSString stringWithFormat:@"%d" , score];
+        [self updateScoreInDBWithUserId:userId catId:catId cardId:cardId score:Score];
+    }
+}
+
+-(int)calculateScore {
+    int score = 0;
+    for (int i = 0 ; i < size; i++) {
+        if([[userSelection objectAtIndex:i] isEqualToString:[correct objectAtIndex:i]])
+            score += 10;
+        NSLog(@"%@ %@" , [userSelection objectAtIndex:i] , [correct objectAtIndex:i]);
+        NSLog(@"%d" , score);
+    }
+    return  score;
+}
+
+- (void) updateScoreInDBWithUserId:(NSString*)userId catId:(NSString*)catId cardId:(NSString*)cardId score:(NSString*)score {
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@update_score_for_card/format/json/userId/%@/catId/%@/cardId/%@/score/%@", PLATFORM_URL , userId,catId,cardId,score]];
+    NSLog(@"%@" , url);
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"%@" , JSON);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        // Get from core data
+        NSLog(@"Failed to update score in server");
+    }];
+    [request start];
+}
+
+
+- (IBAction)buttonClicked:(id)sender {
+    NSIndexPath *path = [self.choices indexPathForSelectedRow];
+    if(path) {
+        curQuestion++;
+        [userSelection addObject:[NSString stringWithFormat:@"%d" , path.row + 1]];
+        [self reload];
+    }else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Messege" message:@"You must answer the Question" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
     }
 }
@@ -130,12 +181,47 @@
                 [self reload];
             }
         }
+        NSMutableDictionary *binary = [[NSMutableDictionary alloc] init];
+        [binary setObject:questions forKey:@"questions"];
+        [binary setObject:c1 forKey:@"choice1"];
+        [binary setObject:c2 forKey:@"choice2"];
+        [binary setObject:c3 forKey:@"choice3"];
+        [binary setObject:correct forKey:correct];
+        [binary setObject:[NSNumber numberWithInt:size] forKey:@"sz"];
+        self.currentCard.mosalslatQuestions = [NSKeyedArchiver archivedDataWithRootObject:binary];
+        
+        // Save in core data
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        
+        // Stopping activity indicator
         [self.view setUserInteractionEnabled:YES];
         [self.activityIndicator setHidden:YES];
         [self.activityIndicator stopAnimating];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get from core data
         NSLog(@"Couldn't get Questions");
+        NSData *data = self.currentCard.mosalslatQuestions;
+        NSDictionary *dect = (NSDictionary *) [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        c1 = [[NSMutableArray alloc] init];
+        c2 = [[NSMutableArray alloc] init];
+        c3 = [[NSMutableArray alloc] init];
+        questions = [[NSMutableArray alloc] init];
+        correct = [[NSMutableArray alloc] init];
+
+        questions = [dect objectForKey:@"questions"];
+        c1 =[dect objectForKey:@"choice1"];
+        c2 =[dect objectForKey:@"choice2"];
+        c3 =[dect objectForKey:@"choice3"];
+        correct = [dect objectForKey:@"correct"];
+        NSNumber *tmp =[dect objectForKey:@"sz"];
+        size =tmp.intValue;
+        
+        // Stopping activity indicator
+        [self.view setUserInteractionEnabled:YES];
+        [self.activityIndicator setHidden:YES];
+        [self.activityIndicator stopAnimating];
+        
+        [self reload];
     }];
     [request start];
 

@@ -96,7 +96,6 @@
     }
     return  cell;
 }
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if([[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
         MyCard *selectedCard = [cards objectAtIndex:indexPath.row];

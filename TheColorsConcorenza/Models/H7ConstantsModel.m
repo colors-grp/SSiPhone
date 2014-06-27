@@ -11,8 +11,8 @@
 
 @implementation H7ConstantsModel
 
-NSString *CORE_URL = @"http://hitseven.net/index.php?/api/h7fb/";
-NSString *PLATFORM_URL = @"http://hitseven.net/mobile/index.php?/api/hitcall/";
-NSString *ASSETS_URL = @"http://hitseven.net/mobile/assets/";
+NSString *CORE_URL = @"http://dev.hitseven.net/index.php?/api/h7fb/";
+NSString *PLATFORM_URL = @"http://dev.hitseven.net/mobile/index.php?/api/hitcall/";
+NSString *ASSETS_URL = @"http://dev.hitseven.net/mobile/assets/";
 
 @end

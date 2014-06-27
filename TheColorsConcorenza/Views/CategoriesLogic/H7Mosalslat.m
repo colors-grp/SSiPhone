@@ -46,7 +46,6 @@
     
     // Get cards status
     [self getOpenedCards];
-    
     [super viewDidLoad];
 }
 
