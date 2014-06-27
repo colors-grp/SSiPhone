@@ -66,8 +66,7 @@
     
     /* getting user name */
     self.userNameLabel.text = appDel.userName;
-    self.userNameLabel.transform = CGAffineTransformMakeRotation(-10 * M_PI / 180.0);
-    self.userNameLabel.textColor = [UIColor whiteColor];
+    self.userNameLabel.textColor = [UIColor colorWithRed:(212/255.0) green:(39/255.0) blue:(51/255.0) alpha:1];
     
     //Setting score labels color
     self.sallySyamakScore.textColor = [UIColor whiteColor];
@@ -94,6 +93,7 @@
     }
     self.fbProfilePictureImageView.image = objImg.image;
     loggedUser.userProfilePicture = UIImagePNGRepresentation(objImg.image);
+//    NSLog(@"pic = %@" , loggedUser.userProfilePicture);
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
@@ -196,7 +196,7 @@
                          NSLog(@"return = %@" , dict);
                          loggedUser.userAccountId = [NSString stringWithFormat:@"%@" , [dict objectForKey:@"accountId"]];
                          [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-                        [self performSelector:@selector(getUserImageFromFBView:) withObject:loggedUser afterDelay:2.0];
+                        [self performSelector:@selector(getUserImageFromFBView:) withObject:loggedUser afterDelay:4.0];
                         
                          // Insert user to scoreboards
                             [self insertUserScoresWithAccountId:loggedUser.userAccountId fullName:[NSString stringWithFormat:@"%@ %@" , firstName , lastName]];

@@ -28,12 +28,7 @@
  { "name": "Card27", "id": "27", "score": "0", "category":"4"},
  { "name": "Card28", "id": "28", "score": "0", "category":"4"},
  { "name": "Card29", "id": "29", "score": "0", "category":"4"},
- { "name": "Card30", "id": "30", "score": "0", "category":"4"},
- { "name": "Card31", "id": "31", "score": "0", "category":"4"},
- { "name": "Card32", "id": "32", "score": "0", "category":"4"},
- { "name": "Card33", "id": "33", "score": "0", "category":"4"},
- { "name": "Card34", "id": "34", "score": "0", "category":"4"},
- { "name": "Card35", "id": "35", "score": "0", "category":"4"}
+ { "name": "Card30", "id": "30", "score": "0", "category":"4"}
  
  ,
  
@@ -66,12 +61,7 @@
  { "name": "Card27", "id": "27", "score": "0", "category":"1" , "gameId":"1"},
  { "name": "Card28", "id": "28", "score": "0", "category":"1" , "gameId":"1"},
  { "name": "Card29", "id": "29", "score": "0", "category":"1" , "gameId":"1"},
- { "name": "Card30", "id": "30", "score": "0", "category":"1" , "gameId":"1"},
- { "name": "Card31", "id": "31", "score": "0", "category":"1" , "gameId":"1"},
- { "name": "Card32", "id": "32", "score": "0", "category":"1" , "gameId":"1"},
- { "name": "Card33", "id": "33", "score": "0", "category":"1" , "gameId":"1"},
- { "name": "Card34", "id": "34", "score": "0", "category":"1" , "gameId":"1"},
- { "name": "Card35", "id": "35", "score": "0", "category":"1" , "gameId":"1"}
+ { "name": "Card30", "id": "30", "score": "0", "category":"1" , "gameId":"1"}
  
  ,
  
@@ -104,12 +94,7 @@
  { "name": "Card27", "id": "27", "score": "0", "category":"2"},
  { "name": "Card28", "id": "28", "score": "0", "category":"2"},
  { "name": "Card29", "id": "29", "score": "0", "category":"2"},
- { "name": "Card30", "id": "30", "score": "0", "category":"2"},
- { "name": "Card31", "id": "31", "score": "0", "category":"2"},
- { "name": "Card32", "id": "32", "score": "0", "category":"2"},
- { "name": "Card33", "id": "33", "score": "0", "category":"2"},
- { "name": "Card34", "id": "34", "score": "0", "category":"2"},
- { "name": "Card35", "id": "35", "score": "0", "category":"2"}
+ { "name": "Card30", "id": "30", "score": "0", "category":"2"}
  
  ,
  
@@ -142,10 +127,5 @@
  { "name": "Card27", "id": "27", "score": "0", "category":"3"},
  { "name": "Card28", "id": "28", "score": "0", "category":"3"},
  { "name": "Card29", "id": "29", "score": "0", "category":"3"},
- { "name": "Card30", "id": "30", "score": "0", "category":"3"},
- { "name": "Card31", "id": "31", "score": "0", "category":"3"},
- { "name": "Card32", "id": "32", "score": "0", "category":"3"},
- { "name": "Card33", "id": "33", "score": "0", "category":"3"},
- { "name": "Card34", "id": "34", "score": "0", "category":"3"},
- { "name": "Card35", "id": "35", "score": "0", "category":"3"}
+ { "name": "Card30", "id": "30", "score": "0", "category":"3"}
 ]

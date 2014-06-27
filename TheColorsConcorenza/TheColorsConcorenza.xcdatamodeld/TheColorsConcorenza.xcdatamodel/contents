@@ -24,6 +24,10 @@
         <attribute name="imageBinary" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="isAvailble" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isBought" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isEpisodeDownloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mosalslatQuestions" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="numberOfPanelsShahryar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfQuestionsMosalslat" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyCategory" inverseName="hasCards" inverseEntity="MyCategory" syncable="YES"/>
         <relationship name="hasAudio" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardAudio" inverseName="belongsTo" inverseEntity="CardAudio" syncable="YES"/>
         <relationship name="hasImages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardImage" inverseName="belongsTo" inverseEntity="CardImage" syncable="YES"/>
@@ -65,11 +69,11 @@
         <element name="CardGame" positionX="0" positionY="0" width="128" height="45"/>
         <element name="CardImage" positionX="0" positionY="0" width="128" height="75"/>
         <element name="CardVideo" positionX="0" positionY="0" width="128" height="45"/>
-        <element name="MyCard" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="Channels" positionX="9" positionY="90" width="128" height="90"/>
+        <element name="MyCard" positionX="0" positionY="0" width="128" height="268"/>
         <element name="MyCategory" positionX="0" positionY="0" width="128" height="165"/>
         <element name="Notification" positionX="0" positionY="0" width="128" height="75"/>
         <element name="SponsorPrograms" positionX="9" positionY="144" width="128" height="88"/>
         <element name="User" positionX="0" positionY="0" width="128" height="208"/>
-        <element name="Channels" positionX="9" positionY="90" width="128" height="90"/>
     </elements>
 </model>

@@ -49,6 +49,7 @@
                         newCard.cardName = [dict objectForKey:@"name"];
                         newCard.cardScore = [NSNumber numberWithInt:[[dict objectForKey:@"score"] intValue]];
                         newCard.isAvailble = [NSNumber numberWithBool:NO];
+                        newCard.isEpisodeDownloaded =[NSNumber numberWithBool:NO];
                         [cardsSet addObject:newCard];
                     }
                 }

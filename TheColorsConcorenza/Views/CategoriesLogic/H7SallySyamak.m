@@ -14,6 +14,8 @@
 #import "H7CardSinglton.h"
 
 #import "ViewController.h"
+#import "CCStartView.h"
+#import "FFStartView.h"
 
 #import <CoreData+MagicalRecord.h>
 #import <AFNetworking/AFNetworking.h>
@@ -24,7 +26,7 @@
 
 @implementation H7SallySyamak{
     NSArray * cards;
-    NSDictionary *cardStatus;
+    NSMutableDictionary *cardStatus;
 }
 
 
@@ -101,20 +103,20 @@
         H7CardSinglton *singlton = [H7CardSinglton sharedInstance];
         [singlton setWithCard:[cards objectAtIndex:indexPath.row]];
         NSLog(@"Card highscore till now is %@" , [[cards objectAtIndex:indexPath.row] cardScore]);
-        if(selectedCard.cardId == [NSNumber numberWithInt:1]) {
-            //Fanoos crunch
+        if(selectedCard.cardId == [NSNumber numberWithInt:1] ) {
+            //Fanoos2048
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"fanoosCrunch"];
+            ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"fanoos2048"];
             [self.navigationController pushViewController: myController animated:YES];
         }else if(selectedCard.cardId == [NSNumber numberWithInt:2]) {
             //Flappy fanoos
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"flappyFanoos"];
+            ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"startFlappy"];
             [self.navigationController pushViewController: myController animated:YES];
         }else if(selectedCard.cardId == [NSNumber numberWithInt:3]) {
-            //Fanoos2048
+            //Fanoos crunch
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"fanoos2048"];
+            ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"startKhoshaf"];
             [self.navigationController pushViewController: myController animated:YES];
         }
     }else {
@@ -131,7 +133,17 @@
         [self.cardsCollection reloadData];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get from core data
-        NSLog(@"Failed to get scores");
+        cardStatus = [[NSMutableDictionary alloc] init];
+        for (int i = 0; i < 30; i++) {
+            MyCard *curCard = [cards objectAtIndex:i];
+            NSLog(@"curCard = %d" ,[curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]] );
+            if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]])
+                [cardStatus setObject:@"1" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+            else
+                [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+        }
+        [self.cardsCollection reloadData];
+        NSLog(@"Got opened cards from core data");
     }];
     [request start];
 }

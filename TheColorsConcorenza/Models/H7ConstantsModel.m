@@ -13,6 +13,6 @@
 
 NSString *CORE_URL = @"http://hitseven.net/index.php?/api/h7fb/";
 NSString *PLATFORM_URL = @"http://hitseven.net/mobile/index.php?/api/hitcall/";
-NSString *ASSETS_URL = @"http://gloryette.org/mobile/assets/";
+NSString *ASSETS_URL = @"http://hitseven.net/mobile/assets/";
 
 @end

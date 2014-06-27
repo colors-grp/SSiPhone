@@ -13,7 +13,7 @@
 
 #import <CoreData+MagicalRecord.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import <Parse/Parse.h>
+//#import <Parse/Parse.h>
 
 @implementation H7AppDelegate
 
@@ -24,7 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
     // Parse setup
-    [Parse setApplicationId:@"l3zdrrZUCgwL2tkt5GFjcmRHesHKguCC23NXlIUq" clientKey:@"nJDfpbObr7eWhAcZIqftn87lJxk7byE0F57fV4m6"];
+//    [Parse setApplicationId:@"l3zdrrZUCgwL2tkt5GFjcmRHesHKguCC23NXlIUq" clientKey:@"nJDfpbObr7eWhAcZIqftn87lJxk7byE0F57fV4m6"];
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
      UIRemoteNotificationTypeAlert|
      UIRemoteNotificationTypeSound];
@@ -42,14 +42,14 @@
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     // Store the deviceToken in the current installation and save it to Parse.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation saveInBackground];
+//    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+ //   [currentInstallation setDeviceTokenFromData:deviceToken];
+//    [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
+   // [PFPush handlePush:userInfo];
 }
 - (BOOL)application:(UIApplication *)application
         openURL:(NSURL *)url

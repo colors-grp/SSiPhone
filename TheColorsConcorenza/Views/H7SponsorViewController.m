@@ -105,7 +105,6 @@
     if([[segue identifier] isEqualToString:@"showProgramInfo"]) {
         H7ProgramViewController *view = [segue destinationViewController];
         NSIndexPath *indexPath = [self.programsTable indexPathForSelectedRow];
-        NSLog(@"%d" , indexPath.row);
         view.currentProgram = [coreDataPrograms objectAtIndex:indexPath.row];
     }
 }
@@ -144,7 +143,6 @@
         image.image = thumbNail;
         //Set card.isAvailble to be true & save to coredata & binary image
         program.binaryImage = imgData;
-        NSLog(@"IMG DATA%@" , imgData);
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ERR: %@", [error description]);

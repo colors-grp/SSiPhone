@@ -41,9 +41,16 @@ static const CGFloat TileHeight = 36.0;
 
     // Put an image on the background. Because the scene's anchorPoint is
     // (0.5, 0.5), the background image will always be centered on the screen.
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"Background"];
-    [self addChild:background];
-
+          /* Setting background image */
+          int height =  [[UIScreen mainScreen] bounds].size.height;
+          if(height > 480){
+              SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"bg_all_5"];
+              [self addChild:background];          }
+          else{
+              SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"bg_all_4"];
+              [self addChild:background];
+        }
+      
     // Add a new node that is the container for all other layers on the playing
     // field. This gameLayer is also centered in the screen.
     self.gameLayer = [SKNode node];

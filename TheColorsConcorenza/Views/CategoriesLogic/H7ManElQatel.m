@@ -20,7 +20,7 @@
 
 @implementation H7ManElQatel{
     NSArray * cards;
-    NSDictionary *cardStatus;
+    NSMutableDictionary *cardStatus;
 }
 
 
@@ -112,7 +112,17 @@
         [self.cardsCollection reloadData];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get from core data
-        NSLog(@"Failed to get scores");
+        cardStatus = [[NSMutableDictionary alloc] init];
+        for (int i = 0; i < 30; i++) {
+            MyCard *curCard = [cards objectAtIndex:i];
+            NSLog(@"curCard = %d" ,[curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]] );
+            if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]])
+                [cardStatus setObject:@"1" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+            else
+                [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+        }
+        [self.cardsCollection reloadData];
+        NSLog(@"Got opened cards from core data");
     }];
     [request start];
 }

@@ -81,11 +81,11 @@
   // Present the scene.
   [skView presentScene:self.scene];
 
-  // Load and start background music.
-  NSURL *url = [[NSBundle mainBundle] URLForResource:@"Mining by Moonlight" withExtension:@"mp3"];
-  self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-  self.backgroundMusic.numberOfLoops = -1;
-  [self.backgroundMusic play];
+//  // Load and start background music.
+//  NSURL *url = [[NSBundle mainBundle] URLForResource:@"Mining by Moonlight" withExtension:@"mp3"];
+//  self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+//  self.backgroundMusic.numberOfLoops = -1;
+//  [self.backgroundMusic play];
 
   // Let's start the game!
   [self beginGame];

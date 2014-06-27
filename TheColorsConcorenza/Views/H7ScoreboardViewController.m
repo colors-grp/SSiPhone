@@ -121,7 +121,7 @@
     UIImageView *image = (UIImageView*)[cell viewWithTag:17];
     myCat = [myCategories objectAtIndex:indexPath.row];
     image.image = [UIImage imageNamed:[NSString stringWithFormat:@"CategoriesIcons/%@.png" , [myCat valueForKey:@"categoryId"]]];
-    if([curCategoryId isEqualToString:[NSString stringWithFormat:@"%ld" , indexPath.row +1]]) {
+    if([curCategoryId isEqualToString:[NSString stringWithFormat:@"%ld" , (long int)indexPath.row +1]]) {
         image.image = [UIImage imageNamed:[NSString stringWithFormat:@"CategoriesIcons/%@_selected.png" , [myCat valueForKey:@"categoryId"]]];
     }
     return cell;
@@ -267,7 +267,6 @@
     }
     int start = [names count] ;
     H7AppDelegate *appDel = [[UIApplication sharedApplication] delegate];
-//    NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
     NSArray *users = [User MR_findAll];
     User *u = [users firstObject];
     NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@friends_scoreboard/format/json/facebookId/%@/categoryId/%@/categoryName/%@/start/%d/size/10/userId/%@" ,PLATFORM_URL, appDel.userFbId , curCategoryId , curCategoryName , start, u.userAccountId]];
