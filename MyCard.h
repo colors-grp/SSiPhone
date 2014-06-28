@@ -25,6 +25,7 @@
 @property (nonatomic, retain) NSData * mosalslatQuestions;
 @property (nonatomic, retain) NSString * numberOfPanelsShahryar;
 @property (nonatomic, retain) NSString * numberOfQuestionsMosalslat;
+@property (nonatomic, retain) NSString * mosalsalDescription;
 @property (nonatomic, retain) MyCategory *belongsTo;
 @property (nonatomic, retain) NSSet *hasAudio;
 @property (nonatomic, retain) NSSet *hasImages;

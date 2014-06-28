@@ -20,6 +20,8 @@
 
 @implementation H7ShahryarStory {
     int curPanel , maxPanel , downloadedPanels;
+    UITapGestureRecognizer *singleTap;
+
 }
 
 - (void)viewDidLoad
@@ -44,21 +46,24 @@
         [self downloadEpisode:i];
     }
     
+    singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(screenTapped)];
+    [singleTap setNumberOfTapsRequired:1];
+    [singleTap setDelegate:self];
+    [self.view addGestureRecognizer:singleTap];
+    
     UISwipeGestureRecognizer * swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
-    swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
+    swipeleft.direction=UISwipeGestureRecognizerDirectionDown;
     [self.view addGestureRecognizer:swipeleft];
     
     UISwipeGestureRecognizer * swiperight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
-    swiperight.direction=UISwipeGestureRecognizerDirectionRight;
+    swiperight.direction=UISwipeGestureRecognizerDirectionUp;
     [self.view addGestureRecognizer:swiperight];
     
+
     // Set first page
-//    self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"Categories/shahryar/cards/%@/%d.png" , self.currentCard.cardId , curPanel]];
-    NSLog(@"cur panel = %d" , curPanel);
-    self.storyPanel.frame=CGRectMake(0,0,320,480);
     self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png" , curPanel]];
-//    self.storyPanel.frame=CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height);
-    NSLog(@"cur panel = %d" , curPanel);
+    
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -69,6 +74,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)screenTapped
+{
+    CGFloat alpha = 0.0;
+    
+    if (self.navigationController.navigationBar.alpha < 1.0)
+        alpha = 1.0;
+    
+    //Toggle visible/hidden status bar.
+    //This will only work if the Info.plist file is updated with two additional entries
+    //"View controller-based status bar appearance" set to NO and "Status bar is initially hidden" set to YES or NO
+    //Hiding the status bar turns the gesture shortcuts for Notification Center and Control Center into 2 step gestures
+    [[UIApplication sharedApplication]setStatusBarHidden:![[UIApplication sharedApplication]isStatusBarHidden] withAnimation:UIStatusBarAnimationFade];
+    
+    //Toggle visible/hidden tabbar.
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    [tabBar setHidden:![tabBar isHidden]];
+    
+    [UIView animateWithDuration:0.25 animations:^
+     {
+         [self.navigationController.navigationBar setAlpha:alpha];
+         [self.navigationController.toolbar setAlpha:alpha];
+     } completion:^(BOOL finished)
+     {
+         
+     }];
+    
+}
+
+
 -(void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer
 {
     if(curPanel < maxPanel) {
@@ -76,6 +110,12 @@
         self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", curPanel]];
     }
     else if(curPanel == maxPanel) {
+        if([[UIApplication sharedApplication]isStatusBarHidden])
+            [[UIApplication sharedApplication]setStatusBarHidden:![[UIApplication sharedApplication]isStatusBarHidden] withAnimation:UIStatusBarAnimationFade];
+        UITabBar *tabBar = self.tabBarController.tabBar;
+        if([tabBar isHidden])
+            [tabBar setHidden:![tabBar isHidden]];
+
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         H7ShahryarFindTheBottle *findTheBottle = [storyboard instantiateViewControllerWithIdentifier:@"shahryarFindTheBottle"];
         [self.navigationController pushViewController:findTheBottle animated:YES];

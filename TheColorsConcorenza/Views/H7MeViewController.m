@@ -212,6 +212,7 @@
          }];
     }else {
         User *u = [users firstObject];
+        NSLog(@"%@" , u);
         [self getCategoryScoresWithAccountId:u.userAccountId];
     }
 }

@@ -130,7 +130,8 @@
 		EBC3BBE41920AE0700BCD2B0 /* CardVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBE31920AE0700BCD2B0 /* CardVideo.m */; };
 		EBC457E418FADDCB005ECE37 /* H7FacebookLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC457E318FADDCB005ECE37 /* H7FacebookLoginView.m */; };
 		EBC4F4F718E85A4C00555416 /* H7FavouriteCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4F4F618E85A4C00555416 /* H7FavouriteCategoryCell.m */; };
-		EBC7B62D195E23B500F678DA /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7B62C195E23B500F678DA /* MyCard.m */; };
+		EBC7B630195EC58B00F678DA /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7B62F195EC58B00F678DA /* MyCard.m */; };
+		EBDF1A0E195F285900505D31 /* game1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDF1A0D195F285900505D31 /* game1.png */; };
 		EBDF7440195C30AD004B4704 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDF743B195C30AD004B4704 /* 5.png */; };
 		EBDF7441195C30AD004B4704 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDF743C195C30AD004B4704 /* 2.png */; };
 		EBDF7442195C30AD004B4704 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDF743D195C30AD004B4704 /* 1.png */; };
@@ -338,8 +339,9 @@
 		EBC457E318FADDCB005ECE37 /* H7FacebookLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7FacebookLoginView.m; sourceTree = "<group>"; };
 		EBC4F4F518E85A4C00555416 /* H7FavouriteCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7FavouriteCategoryCell.h; sourceTree = "<group>"; };
 		EBC4F4F618E85A4C00555416 /* H7FavouriteCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7FavouriteCategoryCell.m; sourceTree = "<group>"; };
-		EBC7B62B195E23B500F678DA /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
-		EBC7B62C195E23B500F678DA /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
+		EBC7B62E195EC58B00F678DA /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
+		EBC7B62F195EC58B00F678DA /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
+		EBDF1A0D195F285900505D31 /* game1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game1.png; sourceTree = "<group>"; };
 		EBDF743B195C30AD004B4704 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		EBDF743C195C30AD004B4704 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		EBDF743D195C30AD004B4704 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -414,8 +416,8 @@
 				EBE02A041952F3C800DA76FE /* SponsorPrograms.m */,
 				EBE02A091954885A00DA76FE /* Channels.h */,
 				EBE02A0A1954885A00DA76FE /* Channels.m */,
-				EBC7B62B195E23B500F678DA /* MyCard.h */,
-				EBC7B62C195E23B500F678DA /* MyCard.m */,
+				EBC7B62E195EC58B00F678DA /* MyCard.h */,
+				EBC7B62F195EC58B00F678DA /* MyCard.m */,
 			);
 			path = Coredata;
 			sourceTree = "<group>";
@@ -755,6 +757,7 @@
 		EBAE3CD21934C74300416880 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EBDF1A0D195F285900505D31 /* game1.png */,
 				EBDF743B195C30AD004B4704 /* 5.png */,
 				EBDF743C195C30AD004B4704 /* 2.png */,
 				EBDF743D195C30AD004B4704 /* 1.png */,
@@ -898,6 +901,7 @@
 				EB1AD504193DC8E200F84229 /* Bird2.png in Resources */,
 				EB4A13EC1949C1F900A10889 /* bg_all_5.png in Resources */,
 				EB9C41B4193765C600549830 /* cards.json in Resources */,
+				EBDF1A0E195F285900505D31 /* game1.png in Resources */,
 				EBAA37D91956D05100ED17A3 /* Scrape.wav in Resources */,
 				EBAE3EBD1934C74500416880 /* me_bg_4_logo_2.png in Resources */,
 				EBC0A1A61958663000D0109A /* Sprites.atlas in Resources */,
@@ -983,7 +987,7 @@
 				EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */,
 				EB1AD58A193DCD8D00F84229 /* F3HMoveOrder.m in Sources */,
 				EBC3BBE11920AE0700BCD2B0 /* CardGame.m in Sources */,
-				EBC7B62D195E23B500F678DA /* MyCard.m in Sources */,
+				EBC7B630195EC58B00F678DA /* MyCard.m in Sources */,
 				EB66170C194EF85400E33FA5 /* H7MosalslatQuizStart.m in Sources */,
 				EB1AD588193DCD8D00F84229 /* F3HGameModel.m in Sources */,
 				EB1A3C0118E22487009F51BA /* main.m in Sources */,

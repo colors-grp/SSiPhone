@@ -9,5 +9,6 @@
 #import "ViewController.h"
 
 @interface H7ShahryarFindTheBottle : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *findTheBottleImage;
 
 @end

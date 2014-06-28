@@ -26,6 +26,7 @@
 @dynamic mosalslatQuestions;
 @dynamic numberOfPanelsShahryar;
 @dynamic numberOfQuestionsMosalslat;
+@dynamic mosalsalDescription;
 @dynamic belongsTo;
 @dynamic hasAudio;
 @dynamic hasImages;

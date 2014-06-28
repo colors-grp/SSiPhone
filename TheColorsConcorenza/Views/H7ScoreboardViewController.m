@@ -198,6 +198,7 @@
     }
     int start = [names count];
     NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@all_scoreboard/format/json/categoryId/%@/categoryName/%@/start/%d/size/10", PLATFORM_URL , curCategoryId , curCategoryName , start]];
+    NSLog(@"%@" , url);
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     NSLog(@"%@" , url);
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {

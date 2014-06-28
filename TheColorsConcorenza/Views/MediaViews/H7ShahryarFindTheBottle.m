@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.findTheBottleImage.image = [UIImage imageNamed:@"game1.png"];
     // Do any additional setup after loading the view.
 }
 
