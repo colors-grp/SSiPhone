@@ -11,7 +11,8 @@
 @interface H7ShahryarStory : UIViewController <UIGestureRecognizerDelegate>
 
 @property (strong , nonatomic) MyCard *currentCard;
-@property (weak, nonatomic) IBOutlet UIImageView *storyPanel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *storyPanel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

@@ -21,7 +21,6 @@
 @implementation H7ShahryarStory {
     int curPanel , maxPanel , downloadedPanels;
     UITapGestureRecognizer *singleTap;
-
 }
 
 - (void)viewDidLoad
@@ -38,13 +37,13 @@
         [self.view insertSubview: imageView atIndex:0];
     }
     
+    // Hide Activity Indicator
+    [self.activityIndicator setHidden:YES];
+    NSLog(@"%d" , self.activityIndicator.hidden);
+    
     // Set current panel and maximum number of panels
     curPanel = 1 , downloadedPanels = 0;
     maxPanel = [self.currentCard.numberOfPanelsShahryar intValue];
-    
-    for ( int i = 1; i < maxPanel + 1 ; i++ ) {
-        [self downloadEpisode:i];
-    }
     
     singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(screenTapped)];
     [singleTap setNumberOfTapsRequired:1];
@@ -60,9 +59,15 @@
     [self.view addGestureRecognizer:swiperight];
     
 
-    // Set first page
-    self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png" , curPanel]];
-    
+    if([self.currentCard.isEpisodeDownloaded isEqualToNumber:[NSNumber numberWithBool:YES]])
+        [self loadImage:curPanel];
+    else {
+        [self.view setUserInteractionEnabled:NO];
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+        
+        [self downloadEpisode:0];
+    }
 
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -105,11 +110,13 @@
 
 -(void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer
 {
+    NSLog(@"%d , max = %d" , curPanel , maxPanel);
     if(curPanel < maxPanel) {
         curPanel++;
-        self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", curPanel]];
+        [self loadImage:curPanel];
+//        self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", curPanel]];
     }
-    else if(curPanel == maxPanel) {
+    else if(curPanel >= maxPanel) {
         if([[UIApplication sharedApplication]isStatusBarHidden])
             [[UIApplication sharedApplication]setStatusBarHidden:![[UIApplication sharedApplication]isStatusBarHidden] withAnimation:UIStatusBarAnimationFade];
         UITabBar *tabBar = self.tabBarController.tabBar;
@@ -118,22 +125,55 @@
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         H7ShahryarFindTheBottle *findTheBottle = [storyboard instantiateViewControllerWithIdentifier:@"shahryarFindTheBottle"];
+        findTheBottle.currentCard = self.currentCard;
         [self.navigationController pushViewController:findTheBottle animated:YES];
-    }
+    }NSLog(@"%d" , curPanel);
 }
 
 -(void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer
 {
+    NSLog(@"%d" , curPanel);
     if(curPanel > 1) {
         curPanel--;
-        self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png" , curPanel]];
+        [self loadImage:curPanel];
+//        self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png" , curPanel]];
+    }
+    NSLog(@"%d" , curPanel);
+}
+
+- (void)saveImage: (UIImage*)image imageNum:(int)imageNum
+{
+    if (image != nil)
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                             NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString* path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"cards/shahryar/%@/story/%d.png" , self.currentCard.cardId , imageNum+100]];
+        NSLog(@"saving image path = %@" , path);
+        NSData* data = UIImagePNGRepresentation(image);
+        [data writeToFile:path atomically:YES];
+    }else {
+        NSLog(@"2ool ya 7aqeer");
     }
 }
+
+- (void)loadImage:(int)imageNumber
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithFormat:@"cards/shahryar/%@/story/%d.png" , self.currentCard.cardId , imageNumber+100]];
+    NSLog(@"path = %@" , path);
+    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    self.storyPanel.image = image;
+}
+
 
 - (void)downloadEpisode:(int)panelId {
     // Set URL for image
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/shahryar/%@/story/%d.png" ,ASSETS_URL,self.currentCard.cardId , (int)panelId]];
-    
+    NSLog(@"%@" , url);
     // Set the request
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -158,17 +198,24 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSData *imgData = [[NSData alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fullPath]];
         NSLog(@"img# %d downloaded" , panelId);
-        [imgData writeToFile:fullPath atomically:YES];
         UIImage *thumbNail = [[UIImage alloc] initWithData:imgData];
-//        self.storyPanel.image = thumbNail;
+        [self saveImage:thumbNail imageNum:panelId];
         downloadedPanels ++;
-        if(downloadedPanels == maxPanel) {
+        if(downloadedPanels == maxPanel + 1) {
+            [self.view setUserInteractionEnabled:YES];
+            [self.activityIndicator stopAnimating];
+            [self.activityIndicator setHidden:YES];
             self.currentCard.isEpisodeDownloaded =[NSNumber numberWithBool:YES];
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-            //reload collection view
+        }else {
+            [self downloadEpisode:panelId+1];
+        }
+        if (panelId == 1) {
+            [self loadImage:1];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ERR: %@", [error description]);
+        [self downloadEpisode:panelId];
     }];
     [operation start];
 }

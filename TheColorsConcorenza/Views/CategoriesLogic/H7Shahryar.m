@@ -98,11 +98,13 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if([[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
+//    if([[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
+    if (true) {
+        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         H7ShahryarStory *story = [storyboard instantiateViewControllerWithIdentifier:@"shahryarStory"];
         story.currentCard = [cards objectAtIndex:indexPath.row];
-        [self.navigationController pushViewController: story animated:YES];
+        [self.navigationController pushViewController:story animated:YES];
     }else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Card not open yet!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];

@@ -38,6 +38,7 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
         [self.view insertSubview: imageView atIndex:0];
     }
+
     
     // Get Tv guide
     coreDataPrograms = [[SponsorPrograms MR_findAllSortedBy:@"programId" ascending:YES] mutableCopy];
