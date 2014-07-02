@@ -13,6 +13,7 @@
 #import "H7AppDelegate.h"
 #import "User.h"
 
+
 #import <CoreData+MagicalRecord.h>
 #import <AFNetworking.h>
 #import <FacebookSDK/FacebookSDK.h>
@@ -159,10 +160,10 @@
     cell.nameLabel.text = [names objectAtIndex:indexPath.row];
     cell.scoreLabel.text = [NSString stringWithFormat:@"Score = %@" , [scores objectAtIndex:indexPath.row]];
     cell.rankLabel.text = [NSString stringWithFormat:@"%@" , [ranks objectAtIndex:indexPath.row]];
-//    if(isConnected == YES)
-//        cell.profileImage.profileID = [facebookIds objectAtIndex:indexPath.row];
-//    else
-//        cell.profileImage.profileID = nil;
+    if(isConnected == YES)
+        cell.profileImage.profileID = [facebookIds objectAtIndex:indexPath.row];
+    else
+        cell.profileImage.profileID = nil;
     
     return cell;
 }
@@ -204,6 +205,7 @@
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSDictionary *tmp = JSON;
         int size = [[tmp objectForKey:@"size"] intValue];
+        NSLog(@"%@" , tmp);
         for(int i = 0 ; i < size ; i++) {
             NSDictionary *dect = [tmp objectForKey:[NSString stringWithFormat:@"%d" , i]];
             [names addObject:[dect objectForKey:@"name"]];

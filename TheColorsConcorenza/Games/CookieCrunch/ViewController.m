@@ -11,7 +11,7 @@
 #import "ViewController.h"
 #import "MyScene.h"
 #import "RWTLevel.h"
-
+#import "H7CardSinglton.h"
 @interface ViewController ()
 
 // The level contains the tiles, the cookies, and most of the gameplay logic.
@@ -192,9 +192,13 @@
   if (self.score >= self.level.targetScore) {
 	  self.gameOverPanel.image = [UIImage imageNamed:@"LevelComplete"];
     [self showGameOver];
+      H7CardSinglton *singlton = [H7CardSinglton sharedInstance];
+      [singlton updateScore:[NSNumber numberWithInteger:self.score]];
   } else if (self.movesLeft == 0) {
   	self.gameOverPanel.image = [UIImage imageNamed:@"GameOver"];
     [self showGameOver];
+      H7CardSinglton *singlton = [H7CardSinglton sharedInstance];
+      [singlton updateScore:[NSNumber numberWithInteger:self.score]];
   }
 }
 

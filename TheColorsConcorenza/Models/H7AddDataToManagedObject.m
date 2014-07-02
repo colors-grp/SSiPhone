@@ -92,6 +92,7 @@
                         newCard.cardName = [dict objectForKey:@"name"];
                         newCard.cardScore = [NSNumber numberWithInt:[[dict objectForKey:@"score"] intValue]];
                         newCard.isAvailble = [NSNumber numberWithBool:NO];
+                        newCard.areMosalslatQuestionsDownloaded = [NSNumber numberWithBool:NO];
                         [cardsSet addObject:newCard];
                         
                     }

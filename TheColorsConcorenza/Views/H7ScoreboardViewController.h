@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface H7ScoreboardViewController : UIViewController <UICollectionViewDataSource , UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
