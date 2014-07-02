@@ -66,9 +66,6 @@
         [self setDataForQuestions];
     }
     
-    // Get image for mosalsal
-    [self getImage];
-    
     [super viewDidLoad];
 }
 
@@ -149,8 +146,6 @@
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Messege" message:@"Thank you for solving todays Mosalslat Quiz!!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [alert show];
             NSArray *a = [User MR_findAll];
             User *u = [a firstObject];
             NSString *userId = u.userAccountId;
@@ -162,6 +157,9 @@
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
             myController.score = userScore;
+            self.currentCard.cardScore = [NSNumber numberWithInt:userScore];
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+
             [self.navigationController pushViewController: myController animated:YES];
             
         });
@@ -285,11 +283,5 @@
     NSNumber *tmp =[dect objectForKey:@"sz"];
     size =tmp.intValue;
     [self reload];
-}
-
--(void) getImage{
-    NSData *imgData = self.currentCard.imageBinary;
-    UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];
-    [self.mosalsalImage setImage:thumbNail];
 }
 @end

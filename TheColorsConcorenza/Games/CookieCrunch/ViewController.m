@@ -96,6 +96,12 @@
     return YES;
 }
 
+
+- (BOOL) prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (NSUInteger)supportedInterfaceOrientations
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -109,10 +115,6 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
-}
-
-- (BOOL)prefersStatusBarHidden {
-  return YES;
 }
 
 - (void)beginGame {

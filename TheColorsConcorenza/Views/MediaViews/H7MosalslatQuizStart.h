@@ -13,7 +13,6 @@
 
 @property (strong , nonatomic) MyCard *currentCard;
 
-@property (weak, nonatomic) IBOutlet UIImageView *mosalsalImage;
 @property (weak, nonatomic) IBOutlet UITextView *question;
 @property (weak, nonatomic) IBOutlet UITableView *choices;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
