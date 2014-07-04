@@ -50,6 +50,9 @@
     // Set current question index & user score to 0
     curQuestion = 0;
     
+    // Set navigation bar title
+    self.navigationItem.title = self.currentCard.cardName;
+
     
     // Instantiate user array
     userSelection = [[NSMutableArray alloc] init];
@@ -102,6 +105,18 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [userSelection addObject:[NSString stringWithFormat:@"%d" , indexPath.row]];
+    NSDate *timeNow = [[NSDate alloc] init];
+    int timeTaken = [timeNow timeIntervalSinceDate:currentDate];
+    if([[userSelection objectAtIndex:curQuestion] isEqualToString:[correct objectAtIndex:curQuestion]])
+    {
+        userScore += ( (50 - (5*timeTaken)) > 10 ?(50 - (5*timeTaken))  : 10);
+    }
+    NSLog(@"%d %d" ,timeTaken , (50 - (5*timeTaken)));
+    curQuestion++;
+    [self reload];
+}
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.choices deselectRowAtIndexPath:indexPath animated:NO];
@@ -166,7 +181,6 @@
     }
 }
 
-
 - (void) updateScoreInDBWithUserId:(NSString*)userId catId:(NSString*)catId cardId:(NSString*)cardId score:(NSString*)score {
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@update_score_for_card/format/json/userId/%@/catId/%@/cardId/%@/score/%@", PLATFORM_URL , userId,catId,cardId,score]];
     NSLog(@"%@" , url);
@@ -178,26 +192,6 @@
         NSLog(@"Failed to update score in server");
     }];
     [request start];
-}
-
-
-- (IBAction)buttonClicked:(id)sender {
-    NSIndexPath *path = [self.choices indexPathForSelectedRow];
-    if(path) {
-        [userSelection addObject:[NSString stringWithFormat:@"%d" , path.row]];
-        NSDate *timeNow = [[NSDate alloc] init];
-        int timeTaken = [timeNow timeIntervalSinceDate:currentDate];
-        if([[userSelection objectAtIndex:curQuestion] isEqualToString:[correct objectAtIndex:curQuestion]])
-        {
-            userScore += ( (50 - (5*timeTaken)) > 10 ?(50 - (5*timeTaken))  : 10);
-        }
-        NSLog(@"%d %d" ,timeTaken , (50 - (5*timeTaken)));
-        curQuestion++;
-        [self reload];
-    }else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Messege" message:@"You must answer the Question" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
-    }
 }
 
 -(void)getQuestionsForCard {

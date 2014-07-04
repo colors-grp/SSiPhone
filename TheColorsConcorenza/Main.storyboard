@@ -140,7 +140,7 @@
             </objects>
             <point key="canvasLocation" x="-199" y="2537"/>
         </scene>
-        <!--Collection View Controller - Collection-->
+        <!--Collection View Controller - Episodes-->
         <scene sceneID="eId-hU-RVE">
             <objects>
                 <viewController id="qFg-S6-O9M" customClass="H7CollectionViewController" sceneMemberID="viewController">
@@ -199,7 +199,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Collection" id="alB-Gj-msp">
+                    <navigationItem key="navigationItem" title="Episodes" id="alB-Gj-msp">
                         <barButtonItem key="backBarButtonItem" title="Back" id="IYP-GQ-j24"/>
                     </navigationItem>
                     <connections>
@@ -213,7 +213,7 @@
             </objects>
             <point key="canvasLocation" x="-177" y="1861"/>
         </scene>
-        <!--Man El Qatel-->
+        <!--Man El Qatel - فين السلاح-->
         <scene sceneID="OCf-j2-CJv">
             <objects>
                 <viewController id="xML-F0-hO9" customClass="H7ManElQatel" sceneMemberID="viewController">
@@ -247,6 +247,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="145" height="187"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" tag="301" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dst-IK-0dz">
+                                                    <rect key="frame" x="0.0" y="160" width="145" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -268,7 +276,7 @@
                             <constraint firstItem="GGz-ul-4c2" firstAttribute="top" secondItem="l3D-Y4-WEA" secondAttribute="bottom" id="jYU-XT-AZT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3qa-4h-vST"/>
+                    <navigationItem key="navigationItem" title="فين السلاح" id="3qa-4h-vST"/>
                     <connections>
                         <outlet property="cardsCollection" destination="l3D-Y4-WEA" id="YZh-hN-wMP"/>
                     </connections>
@@ -308,7 +316,7 @@
             </objects>
             <point key="canvasLocation" x="1098" y="1542"/>
         </scene>
-        <!--Shahryar-->
+        <!--Shahryar - الف ليله و ليله-->
         <scene sceneID="ghS-qZ-CbE">
             <objects>
                 <viewController id="Lef-wN-UxC" customClass="H7Shahryar" sceneMemberID="viewController">
@@ -342,6 +350,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="145" height="187"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" tag="201" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZF-f3-u2D">
+                                                    <rect key="frame" x="0.0" y="160" width="145" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -363,7 +379,7 @@
                             <constraint firstItem="rlz-bh-VDZ" firstAttribute="leading" secondItem="I39-ni-ake" secondAttribute="leading" id="h4E-2A-jzv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Cni-Xz-s5s"/>
+                    <navigationItem key="navigationItem" title="الف ليله و ليله" id="Cni-Xz-s5s"/>
                     <connections>
                         <outlet property="cardsCollection" destination="rlz-bh-VDZ" id="FZ7-Uy-jDg"/>
                     </connections>
@@ -375,7 +391,7 @@
         <!--Shahryar Story-->
         <scene sceneID="lLn-Kn-WKM">
             <objects>
-                <viewController storyboardIdentifier="shahryarStory" id="LWl-ei-rXH" customClass="H7ShahryarStory" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shahryarStory" extendedLayoutIncludesOpaqueBars="YES" id="LWl-ei-rXH" customClass="H7ShahryarStory" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qwX-Ik-20E"/>
                         <viewControllerLayoutGuide type="bottom" id="4GC-TG-00Q"/>
@@ -384,19 +400,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQc-GM-ZeB">
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aQc-GM-ZeB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LFJ-YD-s1i">
-                                <rect key="frame" x="142" y="221" width="37" height="37"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LFJ-YD-s1i">
+                                <rect key="frame" x="142" y="222" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.58543925379999995" green="0.0" blue="0.0063526050530000001" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="LFJ-YD-s1i" secondAttribute="centerY" id="1cS-e6-XwX"/>
+                            <constraint firstAttribute="centerX" secondItem="LFJ-YD-s1i" secondAttribute="centerX" id="1za-70-wE3"/>
+                            <constraint firstAttribute="trailing" secondItem="aQc-GM-ZeB" secondAttribute="trailing" id="JOv-oI-gZq"/>
+                            <constraint firstItem="aQc-GM-ZeB" firstAttribute="top" secondItem="Js8-qc-xeh" secondAttribute="top" id="RV5-U8-R7H"/>
+                            <constraint firstAttribute="centerY" secondItem="aQc-GM-ZeB" secondAttribute="centerY" id="jZ7-xl-NAA"/>
+                            <constraint firstItem="aQc-GM-ZeB" firstAttribute="leading" secondItem="Js8-qc-xeh" secondAttribute="leading" id="sqT-Nr-CYV"/>
+                            <constraint firstAttribute="centerX" secondItem="aQc-GM-ZeB" secondAttribute="centerX" id="vOj-tF-mVR"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="7Jq-Re-lmD" appends="YES" id="wiq-rO-IS9"/>
                         </connections>
@@ -432,33 +457,19 @@
                                 <rect key="frame" x="101" y="176" width="118" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZl-h0-T90">
-                                <rect key="frame" x="258" y="348" width="42" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmt-Tg-T39">
-                                <rect key="frame" x="200" y="348" width="42" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="bottleImage" destination="TN1-GP-coE" id="YUc-If-8RV"/>
                         <outlet property="findTheBottleImage" destination="JYG-vT-J3u" id="Hpd-sM-B6I"/>
-                        <outlet property="scoreLabel" destination="gmt-Tg-T39" id="bLY-GX-XN0"/>
-                        <outlet property="timeLabel" destination="hZl-h0-T90" id="Gdj-OL-vSr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uit-yq-a7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1607" y="906"/>
         </scene>
-        <!--Sally Syamak-->
+        <!--Sally Syamak - سلّي صيامك-->
         <scene sceneID="tQt-5K-Zgc">
             <objects>
                 <viewController id="7YN-JF-8q7" customClass="H7SallySyamak" sceneMemberID="viewController">
@@ -492,6 +503,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="145" height="187"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" tag="501" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ2-u6-pHE">
+                                                    <rect key="frame" x="0.0" y="160" width="145" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -513,7 +532,7 @@
                             <constraint firstItem="7jf-nx-BBo" firstAttribute="leading" secondItem="u70-Dy-bCF" secondAttribute="leading" id="tad-IZ-BWk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VrU-zY-elU"/>
+                    <navigationItem key="navigationItem" title="سلّي صيامك" id="VrU-zY-elU"/>
                     <connections>
                         <outlet property="cardsCollection" destination="7jf-nx-BBo" id="h5p-Tc-lKV"/>
                     </connections>
@@ -522,7 +541,7 @@
             </objects>
             <point key="canvasLocation" x="601" y="2778"/>
         </scene>
-        <!--Mosalslat-->
+        <!--Mosalslat - مسلسلات-->
         <scene sceneID="VkB-Mk-Paw">
             <objects>
                 <viewController id="yU7-I9-X7T" customClass="H7Mosalslat" sceneMemberID="viewController">
@@ -556,6 +575,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="145" height="187"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" tag="401" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSg-Tt-mko">
+                                                    <rect key="frame" x="0.0" y="160" width="145" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -577,7 +604,7 @@
                             <constraint firstAttribute="trailing" secondItem="fTX-CH-vPF" secondAttribute="trailing" id="Sr6-qT-zx7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Jmd-xe-tuB"/>
+                    <navigationItem key="navigationItem" title="مسلسلات" id="Jmd-xe-tuB"/>
                     <connections>
                         <outlet property="cardsCollection" destination="fTX-CH-vPF" id="iOp-nE-z1H"/>
                     </connections>
@@ -598,27 +625,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2b5-IC-Kan">
-                                <rect key="frame" x="126" y="387" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Quiz">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonClicked:" destination="QGc-3g-i4v" eventType="touchUpInside" id="M8G-Y8-y1N"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L9z-Va-6sl">
-                                <rect key="frame" x="20" y="79" width="280" height="300"/>
+                                <rect key="frame" x="20" y="74" width="280" height="335"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="xKd-nL-cNs" firstAttribute="top" secondItem="2b5-IC-Kan" secondAttribute="bottom" constant="19" id="PT3-O4-PDQ"/>
-                            <constraint firstAttribute="centerX" secondItem="2b5-IC-Kan" secondAttribute="centerX" id="n1P-0F-wnq"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -648,11 +661,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="choiceCell" rowHeight="54" id="KFH-QA-wRv" customClass="H7choicesCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="choiceCell" rowHeight="54" id="KFH-QA-wRv" customClass="H7choicesCell">
                                         <rect key="frame" x="0.0" y="22" width="280" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KFH-QA-wRv" id="ei7-SC-Xpj">
-                                            <rect key="frame" x="0.0" y="0.0" width="241" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad1-qU-OZe">
@@ -1255,7 +1268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGr-sd-3ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="2775"/>
+            <point key="canvasLocation" x="1098" y="2778"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Qnq-Wu-01N">
@@ -1394,7 +1407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpZ-vQ-fpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="3399"/>
+            <point key="canvasLocation" x="1098" y="3396"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iIi-3r-duc">
@@ -1454,6 +1467,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ga1-va-434" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1146" y="4027"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zrI-BX-fbq">
+            <objects>
+                <viewController id="AmQ-RM-GnF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MCg-4z-OWw"/>
+                        <viewControllerLayoutGuide type="bottom" id="dIX-5D-uoa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K4F-CJ-D9H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIh-k6-ycV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

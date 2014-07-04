@@ -197,7 +197,7 @@
       H7CardSinglton *singlton = [H7CardSinglton sharedInstance];
       [singlton updateScore:[NSNumber numberWithInteger:self.score]];
   } else if (self.movesLeft == 0) {
-  	self.gameOverPanel.image = [UIImage imageNamed:@"GameOver"];
+  	self.gameOverPanel.image = [UIImage imageNamed:@"LevelComplete"];
     [self showGameOver];
       H7CardSinglton *singlton = [H7CardSinglton sharedInstance];
       [singlton updateScore:[NSNumber numberWithInteger:self.score]];
@@ -213,7 +213,7 @@
   self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideGameOver)];
   [self.view addGestureRecognizer:self.tapGestureRecognizer];
 
-  self.shuffleButton.hidden = YES;
+  self.shuffleButton.hidden = YES;  
 }
 
 - (void)hideGameOver {

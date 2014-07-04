@@ -2,7 +2,7 @@
 //  MyCard.h
 //  TheColorsConcorenza
 //
-//  Created by Heba Gamal on 7/2/14.
+//  Created by Heba Gamal on 7/3/14.
 //  Copyright (c) 2014 Heba Gamal. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 
 @interface MyCard : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * areMosalslatQuestionsDownloaded;
 @property (nonatomic, retain) NSNumber * cardId;
 @property (nonatomic, retain) NSString * cardName;
 @property (nonatomic, retain) NSNumber * cardPrice;
@@ -26,7 +27,7 @@
 @property (nonatomic, retain) NSData * mosalslatQuestions;
 @property (nonatomic, retain) NSString * numberOfPanelsShahryar;
 @property (nonatomic, retain) NSString * numberOfQuestionsMosalslat;
-@property (nonatomic, retain) NSNumber * areMosalslatQuestionsDownloaded;
+@property (nonatomic, retain) NSNumber * isShahryarFindTheBottleDownloaded;
 @property (nonatomic, retain) MyCategory *belongsTo;
 @property (nonatomic, retain) NSSet *hasAudio;
 @property (nonatomic, retain) NSSet *hasImages;

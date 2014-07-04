@@ -43,7 +43,9 @@
     
     // Set current panel and maximum number of panels
     curPanel = 1 , downloadedPanels = 0;
-    maxPanel = [self.currentCard.numberOfPanelsShahryar intValue];
+//    maxPanel = [self.currentCard.numberOfPanelsShahryar intValue];
+    maxPanel = 4;
+    maxPanel--;
     
     singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(screenTapped)];
     [singleTap setNumberOfTapsRequired:1];
@@ -172,7 +174,7 @@
 
 - (void)downloadEpisode:(int)panelId {
     // Set URL for image
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/shahryar/%@/story/%d.png" ,ASSETS_URL,self.currentCard.cardId , (int)panelId]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/shahryar/%@/iphone4/story/%d.png" ,ASSETS_URL,self.currentCard.cardId , (int)panelId]];
     NSLog(@"%@" , url);
     // Set the request
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

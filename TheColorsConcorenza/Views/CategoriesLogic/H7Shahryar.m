@@ -78,21 +78,25 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"shahryarCardCell" forIndexPath:indexPath];
     UIImageView *image = (UIImageView*)[cell viewWithTag:200];
+    UILabel *nameLabel = (UILabel*)[cell viewWithTag:201];
     bool inLoop =false;
     NSString *imagePath;
     MyCard *curCard = [cards objectAtIndex:indexPath.row];
     if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"] && [curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:NO]]) {
         [self downloadCard:curCard SetImage:image];
+        nameLabel.text = curCard.cardName;
         inLoop = YES;
     }else if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"] &&  [curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]]) {
         NSData *imgData = curCard.imageBinary;
         UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];
         [image setImage:thumbNail];
+        nameLabel.text = curCard.cardName;
         inLoop = YES;
     }
     if(!inLoop) {
         imagePath = [NSString stringWithFormat:@"locked_card.png"];
         image.image = [UIImage imageNamed:imagePath];
+        nameLabel.text = @"قريباً";
     }
     return  cell;
 }
@@ -112,7 +116,7 @@
 }
 
 -(void)getOpenedCards {
-    NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@cards_status/format/json/categoryId/%@", PLATFORM_URL ,self.currentCategory.categoryId]];
+    NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat:@"%@cards_status/format/json/categoryId/%@/size/iphone4", PLATFORM_URL ,self.currentCategory.categoryId]];
     NSLog(@"%@" , url);
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -121,6 +125,7 @@
             if([cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]]!= nil &&[[cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]] isEqualToString:@"1"]) {
                 MyCard *card = [cards objectAtIndex:i];
                 card.numberOfPanelsShahryar = [NSString stringWithFormat:@"%@" , [cardStatus objectForKey:[NSString stringWithFormat:@"panels_%@" ,card.cardId]]];
+                card.cardName = [NSString stringWithCString:[[cardStatus objectForKey:[NSString stringWithFormat:@"cardname_%@" ,card.cardId]]cStringUsingEncoding:NSUTF8StringEncoding] encoding:NSUTF8StringEncoding];
             }
         }
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
@@ -144,7 +149,7 @@
 
 - (void)downloadCard:(MyCard*)card SetImage:(UIImageView*)image {
     // Set URL for image
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/shahryar/%@/img.png" ,ASSETS_URL,card.cardId]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/shahryar/%@/iphone4/img.png" ,ASSETS_URL,card.cardId]];
     
     // Set the request
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

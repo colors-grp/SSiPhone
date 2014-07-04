@@ -46,8 +46,9 @@
 		EB75D3ED194F3E200076628E /* H7choicesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB75D3EC194F3E200076628E /* H7choicesCell.m */; };
 		EB75D3EF1950F38F0076628E /* me_bg_5.png in Resources */ = {isa = PBXBuildFile; fileRef = EB75D3EE1950F38F0076628E /* me_bg_5.png */; };
 		EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */; };
-		EB7FC70A19643A6000046FAC /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FC70919643A6000046FAC /* MyCard.m */; };
 		EB9933E118F2EF9000EE700C /* H7NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9933E018F2EF9000EE700C /* H7NotificationCell.m */; };
+		EB9A941F19657AD300C1E42E /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9A941E19657AD300C1E42E /* MyCard.m */; };
+		EB9A94211966DA7F00C1E42E /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB9A94201966DA7F00C1E42E /* Sprites.atlas */; };
 		EB9C41B4193765C600549830 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B3193765C500549830 /* cards.json */; };
 		EB9C41B6193765E100549830 /* sponsor.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B5193765E100549830 /* sponsor.json */; };
 		EB9C4413193C66F900549830 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9C4412193C66F900549830 /* SpriteKit.framework */; };
@@ -123,7 +124,6 @@
 		EBBF04801944463900AFA2FC /* CategoriesIcons in Resources */ = {isa = PBXBuildFile; fileRef = EBBF047F1944463900AFA2FC /* CategoriesIcons */; };
 		EBBF0494194739B800AFA2FC /* vid in Resources */ = {isa = PBXBuildFile; fileRef = EBBF0493194739B800AFA2FC /* vid */; };
 		EBC0A1A51958663000D0109A /* Grid.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EBC0A1A31958662F00D0109A /* Grid.atlas */; };
-		EBC0A1A61958663000D0109A /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EBC0A1A41958663000D0109A /* Sprites.atlas */; };
 		EBC0A1AA1959C12300D0109A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC0A1A91959C12300D0109A /* logo.png */; };
 		EBC0E777194DAEBE0081D761 /* H7ShahryarFindTheBottle.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC0E776194DAEBE0081D761 /* H7ShahryarFindTheBottle.m */; };
 		EBC3BBD51920ADDD00BCD2B0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBD41920ADDD00BCD2B0 /* Notification.m */; };
@@ -217,10 +217,11 @@
 		EB75D3EE1950F38F0076628E /* me_bg_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_bg_5.png; sourceTree = "<group>"; };
 		EB7BBA861917A32C00280FAB /* H7ScoreboardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ScoreboardCell.h; sourceTree = "<group>"; };
 		EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ScoreboardCell.m; sourceTree = "<group>"; };
-		EB7FC70819643A6000046FAC /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
-		EB7FC70919643A6000046FAC /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
 		EB9933DF18F2EF9000EE700C /* H7NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7NotificationCell.h; sourceTree = "<group>"; };
 		EB9933E018F2EF9000EE700C /* H7NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7NotificationCell.m; sourceTree = "<group>"; };
+		EB9A941D19657AD300C1E42E /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
+		EB9A941E19657AD300C1E42E /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
+		EB9A94201966DA7F00C1E42E /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = SOURCE_ROOT; };
 		EB9C41B3193765C500549830 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		EB9C41B5193765E100549830 /* sponsor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sponsor.json; sourceTree = "<group>"; };
 		EB9C4412193C66F900549830 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
@@ -323,7 +324,6 @@
 		EBBF04921947342900AFA2FC /* samir2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = samir2.mp4; sourceTree = "<group>"; };
 		EBBF0493194739B800AFA2FC /* vid */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vid; sourceTree = "<group>"; };
 		EBC0A1A31958662F00D0109A /* Grid.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Grid.atlas; sourceTree = SOURCE_ROOT; };
-		EBC0A1A41958663000D0109A /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = SOURCE_ROOT; };
 		EBC0A1A91959C12300D0109A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		EBC0E775194DAEBE0081D761 /* H7ShahryarFindTheBottle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ShahryarFindTheBottle.h; sourceTree = "<group>"; };
 		EBC0E776194DAEBE0081D761 /* H7ShahryarFindTheBottle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ShahryarFindTheBottle.m; sourceTree = "<group>"; };
@@ -413,8 +413,8 @@
 				EBE02A041952F3C800DA76FE /* SponsorPrograms.m */,
 				EBE02A091954885A00DA76FE /* Channels.h */,
 				EBE02A0A1954885A00DA76FE /* Channels.m */,
-				EB7FC70819643A6000046FAC /* MyCard.h */,
-				EB7FC70919643A6000046FAC /* MyCard.m */,
+				EB9A941D19657AD300C1E42E /* MyCard.h */,
+				EB9A941E19657AD300C1E42E /* MyCard.m */,
 			);
 			path = Coredata;
 			sourceTree = "<group>";
@@ -654,8 +654,8 @@
 		EB9C4414193C673B00549830 /* CookieCrunch */ = {
 			isa = PBXGroup;
 			children = (
+				EB9A94201966DA7F00C1E42E /* Sprites.atlas */,
 				EBC0A1A31958662F00D0109A /* Grid.atlas */,
-				EBC0A1A41958663000D0109A /* Sprites.atlas */,
 				EBAA37AC1956D05100ED17A3 /* Levels */,
 				EBAA37B31956D05100ED17A3 /* MyScene.h */,
 				EBAA37B41956D05100ED17A3 /* MyScene.m */,
@@ -885,6 +885,7 @@
 				EBAA37D81956D05100ED17A3 /* Mining by Moonlight.mp3 in Resources */,
 				EBBF0494194739B800AFA2FC /* vid in Resources */,
 				EBB2AF13192CA0D200FE4844 /* tamer.jpeg in Resources */,
+				EB9A94211966DA7F00C1E42E /* Sprites.atlas in Resources */,
 				EBAE3EBC1934C74500416880 /* me_bg_4_logo.png in Resources */,
 				EBBF04801944463900AFA2FC /* CategoriesIcons in Resources */,
 				EB9FAB0A196034EF007595E8 /* bottle.png in Resources */,
@@ -898,7 +899,6 @@
 				EBDF1A0E195F285900505D31 /* game1.png in Resources */,
 				EBAA37D91956D05100ED17A3 /* Scrape.wav in Resources */,
 				EBAE3EBD1934C74500416880 /* me_bg_4_logo_2.png in Resources */,
-				EBC0A1A61958663000D0109A /* Sprites.atlas in Resources */,
 				EBC0A1AA1959C12300D0109A /* logo.png in Resources */,
 				EBAA37CC1956D05100ED17A3 /* Level_4.json in Resources */,
 				EB1A3BFF18E22487009F51BA /* InfoPlist.strings in Resources */,
@@ -980,7 +980,6 @@
 				EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */,
 				EB1AD58A193DCD8D00F84229 /* F3HMoveOrder.m in Sources */,
 				EBC3BBE11920AE0700BCD2B0 /* CardGame.m in Sources */,
-				EB7FC70A19643A6000046FAC /* MyCard.m in Sources */,
 				EB66170C194EF85400E33FA5 /* H7MosalslatQuizStart.m in Sources */,
 				EB1AD588193DCD8D00F84229 /* F3HGameModel.m in Sources */,
 				EB1A3C0118E22487009F51BA /* main.m in Sources */,
@@ -1006,6 +1005,7 @@
 				EB1AD587193DCD8D00F84229 /* F3HViewController.m in Sources */,
 				EB1AD58E193DCD8D00F84229 /* F3HGameboardView.m in Sources */,
 				EBAA37D01956D05100ED17A3 /* RWTCookie.m in Sources */,
+				EB9A941F19657AD300C1E42E /* MyCard.m in Sources */,
 				EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */,
 				EBC3BBDE1920AE0600BCD2B0 /* CardImage.m in Sources */,
 				EBE02A0B1954885A00DA76FE /* Channels.m in Sources */,
