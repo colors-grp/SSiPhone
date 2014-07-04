@@ -134,6 +134,13 @@
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         cardStatus = JSON;
+        for (int i = 0; i < 30; i++) {
+            if([cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]]!= nil &&[[cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]] isEqualToString:@"1"]) {
+                MyCard *card = [cards objectAtIndex:i];
+                card.cardName = [NSString stringWithCString:[[cardStatus objectForKey:[NSString stringWithFormat:@"cardname_%@" ,card.cardId]]cStringUsingEncoding:NSUTF8StringEncoding] encoding:NSUTF8StringEncoding];
+            }
+        }
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         [self.cardsCollection reloadData];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get from core data
@@ -144,9 +151,8 @@
                 [cardStatus setObject:@"1" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
             else
                 [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
-            card.cardName = [NSString stringWithCString:[[cardStatus objectForKey:[NSString stringWithFormat:@"cardname_%@" ,card.cardId]]cStringUsingEncoding:NSUTF8StringEncoding] encoding:NSUTF8StringEncoding];
-        }
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            }
+        
         [self.cardsCollection reloadData];
         NSLog(@"Got opened cards from core data");
     }];
