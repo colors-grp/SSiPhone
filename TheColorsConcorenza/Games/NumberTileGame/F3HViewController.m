@@ -28,6 +28,13 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
         [self.view insertSubview: imageView atIndex:0];
     }
+    UIBarButtonItem *startButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"العب"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(playGameButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = startButton;
+
 }
 
 - (IBAction)playGameButtonTapped:(id)sender {

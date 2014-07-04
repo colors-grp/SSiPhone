@@ -8,7 +8,7 @@
 
 #import "H7ManElQatel.h"
 #import "H7ManElQatelAudio.h"
-
+#import "H7MosalslatScore.h"
 #import "H7ConstantsModel.h"
 
 #import <AFNetworking/AFNetworking.h>
@@ -96,12 +96,21 @@
     return  cell;
 }
 
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if([[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        H7ManElQatelAudio *audio  = [storyboard instantiateViewControllerWithIdentifier:@"manElQatelAudio"];
-        audio.currentCard = [cards objectAtIndex:indexPath.row];
-        [self.navigationController pushViewController: audio animated:YES];
+        MyCard *card = [cards objectAtIndex:indexPath.row];
+        if([card.isFeenElSela7Played isEqualToNumber:[NSNumber numberWithBool:NO]]) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            H7ManElQatelAudio *audio  = [storyboard instantiateViewControllerWithIdentifier:@"manElQatelAudio"];
+            audio.currentCard = [cards objectAtIndex:indexPath.row];
+            [self.navigationController pushViewController: audio animated:YES];
+        }else {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
+            myController.score = [card.cardScore intValue];
+            [self.navigationController pushViewController: myController animated:YES];
+        }
     }else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Card not open yet!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];

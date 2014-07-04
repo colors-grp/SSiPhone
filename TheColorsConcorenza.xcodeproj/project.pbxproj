@@ -47,7 +47,6 @@
 		EB75D3EF1950F38F0076628E /* me_bg_5.png in Resources */ = {isa = PBXBuildFile; fileRef = EB75D3EE1950F38F0076628E /* me_bg_5.png */; };
 		EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */; };
 		EB9933E118F2EF9000EE700C /* H7NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9933E018F2EF9000EE700C /* H7NotificationCell.m */; };
-		EB9A941F19657AD300C1E42E /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9A941E19657AD300C1E42E /* MyCard.m */; };
 		EB9A94211966DA7F00C1E42E /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EB9A94201966DA7F00C1E42E /* Sprites.atlas */; };
 		EB9C41B4193765C600549830 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B3193765C500549830 /* cards.json */; };
 		EB9C41B6193765E100549830 /* sponsor.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9C41B5193765E100549830 /* sponsor.json */; };
@@ -133,6 +132,7 @@
 		EBC3BBE41920AE0700BCD2B0 /* CardVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBE31920AE0700BCD2B0 /* CardVideo.m */; };
 		EBC457E418FADDCB005ECE37 /* H7FacebookLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC457E318FADDCB005ECE37 /* H7FacebookLoginView.m */; };
 		EBC4F4F718E85A4C00555416 /* H7FavouriteCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4F4F618E85A4C00555416 /* H7FavouriteCategoryCell.m */; };
+		EBD9E8FB196735D000702DBE /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E8FA196735D000702DBE /* MyCard.m */; };
 		EBDF1A0E195F285900505D31 /* game1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDF1A0D195F285900505D31 /* game1.png */; };
 		EBE029FF1951988C00DA76FE /* MyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE029FE1951988C00DA76FE /* MyCategory.m */; };
 		EBE02A051952F3C800DA76FE /* SponsorPrograms.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE02A041952F3C800DA76FE /* SponsorPrograms.m */; };
@@ -219,8 +219,6 @@
 		EB7BBA871917A32C00280FAB /* H7ScoreboardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ScoreboardCell.m; sourceTree = "<group>"; };
 		EB9933DF18F2EF9000EE700C /* H7NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7NotificationCell.h; sourceTree = "<group>"; };
 		EB9933E018F2EF9000EE700C /* H7NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7NotificationCell.m; sourceTree = "<group>"; };
-		EB9A941D19657AD300C1E42E /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
-		EB9A941E19657AD300C1E42E /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
 		EB9A94201966DA7F00C1E42E /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = SOURCE_ROOT; };
 		EB9C41B3193765C500549830 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		EB9C41B5193765E100549830 /* sponsor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sponsor.json; sourceTree = "<group>"; };
@@ -341,6 +339,8 @@
 		EBC457E318FADDCB005ECE37 /* H7FacebookLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7FacebookLoginView.m; sourceTree = "<group>"; };
 		EBC4F4F518E85A4C00555416 /* H7FavouriteCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7FavouriteCategoryCell.h; sourceTree = "<group>"; };
 		EBC4F4F618E85A4C00555416 /* H7FavouriteCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7FavouriteCategoryCell.m; sourceTree = "<group>"; };
+		EBD9E8F9196735D000702DBE /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
+		EBD9E8FA196735D000702DBE /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
 		EBDF1A0D195F285900505D31 /* game1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game1.png; sourceTree = "<group>"; };
 		EBE029FD1951988C00DA76FE /* MyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCategory.h; path = TheColorsConcorenza/MyCategory.h; sourceTree = SOURCE_ROOT; };
 		EBE029FE1951988C00DA76FE /* MyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCategory.m; path = TheColorsConcorenza/MyCategory.m; sourceTree = SOURCE_ROOT; };
@@ -413,8 +413,8 @@
 				EBE02A041952F3C800DA76FE /* SponsorPrograms.m */,
 				EBE02A091954885A00DA76FE /* Channels.h */,
 				EBE02A0A1954885A00DA76FE /* Channels.m */,
-				EB9A941D19657AD300C1E42E /* MyCard.h */,
-				EB9A941E19657AD300C1E42E /* MyCard.m */,
+				EBD9E8F9196735D000702DBE /* MyCard.h */,
+				EBD9E8FA196735D000702DBE /* MyCard.m */,
 			);
 			path = Coredata;
 			sourceTree = "<group>";
@@ -1005,7 +1005,7 @@
 				EB1AD587193DCD8D00F84229 /* F3HViewController.m in Sources */,
 				EB1AD58E193DCD8D00F84229 /* F3HGameboardView.m in Sources */,
 				EBAA37D01956D05100ED17A3 /* RWTCookie.m in Sources */,
-				EB9A941F19657AD300C1E42E /* MyCard.m in Sources */,
+				EBD9E8FB196735D000702DBE /* MyCard.m in Sources */,
 				EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */,
 				EBC3BBDE1920AE0600BCD2B0 /* CardImage.m in Sources */,
 				EBE02A0B1954885A00DA76FE /* Channels.m in Sources */,

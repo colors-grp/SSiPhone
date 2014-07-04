@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MyCard.h"
 
-@interface H7ManElQatelAudio : UIViewController
+@interface H7ManElQatelAudio : UIViewController <UIGestureRecognizerDelegate>
 
 @property (strong , nonatomic) MyCard *currentCard;
+@property (weak, nonatomic) IBOutlet UIImageView *findTheObjectImage;
+@property (weak, nonatomic) IBOutlet UIImageView *bottleImage;
 
 @end

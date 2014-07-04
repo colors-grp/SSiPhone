@@ -9,6 +9,9 @@
 #import "H7ShahryarFindTheBottle.h"
 #import "H7ConstantsModel.h"
 #import "User.h"
+#import "H7ConstantsModel.h"
+#import "H7MosalslatScore.h"
+
 #import <AFNetworking/AFNetworking.h>
 #import <CoreData+MagicalRecord.h>
 
@@ -21,6 +24,7 @@
     NSTimer *aTimer;
     int currentScore;
     NSDate *currentDate;
+    float x , y , width;
 }
 
 - (void)viewDidLoad
@@ -44,12 +48,9 @@
     [self.view addGestureRecognizer:singleTap];
     
     aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(elapsedTime) userInfo:nil repeats:YES];
-    if([self.currentCard.isShahryarFindTheBottleDownloaded isEqualToNumber:[NSNumber numberWithBool:NO]])
-        [self downloadFindTheBottleImage];
-    else
-        NSLog(@"already played");
-//    self.findTheBottleImage.image = [UIImage imageNamed:@"game1.png"];
-//    [self loadImage];
+    [self downloadDimensions];
+    [self downloadFindTheBottleImage];
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -67,7 +68,7 @@
     int timeTaken = [timeNow timeIntervalSinceDate:currentDate];
     currentScore =( (100 - (3*timeTaken)) > 10 ?(100 - (3*timeTaken))  : 10);
     NSLog(@"%d" , currentScore);
-    if(true) { // badalo put if in correct zone
+    if(tapPoint.x <= x + 25 && tapPoint.x >= x- 25 && tapPoint.y <= y + 25 && tapPoint.y >= y- 25) {
         NSArray *a = [User MR_findAll];
         User *u = [a firstObject];
         NSString *userId = u.userAccountId;
@@ -77,7 +78,8 @@
         [self updateScoreInDBWithUserId:userId catId:catId cardId:cardId score:Score];
         self.currentCard.cardScore = [NSNumber numberWithInt:currentScore];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        
+
+        NSLog(@"%f, %f",tapPoint.x,tapPoint.y);
 
         NSArray *animationArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"bottle.png"],[UIImage imageNamed:@"bottle_glow.png"], nil];
         [NSTimer scheduledTimerWithTimeInterval:.50 target:self selector:@selector(myAnimate:) userInfo:nil repeats:NO];
@@ -89,6 +91,14 @@
         crossFade.autoreverses = YES;
         crossFade.repeatCount = 0;
         crossFade.duration = .5;
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
+        myController.score = currentScore;
+        self.currentCard.cardScore = [NSNumber numberWithInt:currentScore];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        
+        [self.navigationController pushViewController: myController animated:YES];
     }
 }
 
@@ -126,10 +136,38 @@
     }
 }
 
+-(void)downloadDimensions {
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@find_object_positions/catId/4/cardId/%@/format/json", PLATFORM_URL ,self.currentCard.cardId]];
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"%@" , JSON);
+        NSDictionary *dect = JSON;
+        y = [[dect objectForKey:@"x"] floatValue];
+        x = [[dect objectForKey:@"y"] floatValue];
+        width = [[dect objectForKey:@"width"] floatValue];
+        int height =  [[UIScreen mainScreen] bounds].size.height;
+        if(height > 480){
+            x = 1-x , y = 1-y;
+            x *= 960;
+            y *= 480;
+        }
+        else{
+            x = 1-x , y = 1-y;
+            x *= 960;
+            y *= 480;
+        }
+        NSLog(@"x = %lf , y = %lf" , x , y);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        // Get from core data
+        NSLog(@"Failed to update score in server");
+    }];
+    [request start];
+
+}
+
 - (void)downloadFindTheBottleImage {
     // Set URL for image
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/shahryar/%@/iphone4/find/bg.png" ,ASSETS_URL, self.currentCard.cardId]];
-    NSLog(@"%@" , url);
     // Set the request
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -152,10 +190,8 @@
     [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:fullPath append:NO]];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"downloaded");
         NSData *imgData = [[NSData alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fullPath]];
         UIImage *thumbNail = [[UIImage alloc] initWithData:imgData];
-        NSLog(@"%@" , imgData);
         self.findTheBottleImage.image = thumbNail;
         self.currentCard.isShahryarFindTheBottleDownloaded = [NSNumber numberWithBool:YES];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

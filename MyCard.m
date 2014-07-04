@@ -2,7 +2,7 @@
 //  MyCard.m
 //  TheColorsConcorenza
 //
-//  Created by Heba Gamal on 7/3/14.
+//  Created by Heba Gamal on 7/4/14.
 //  Copyright (c) 2014 Heba Gamal. All rights reserved.
 //
 
@@ -24,11 +24,12 @@
 @dynamic isAvailble;
 @dynamic isBought;
 @dynamic isEpisodeDownloaded;
+@dynamic isShahryarFindTheBottleDownloaded;
 @dynamic mosalsalDescription;
 @dynamic mosalslatQuestions;
 @dynamic numberOfPanelsShahryar;
 @dynamic numberOfQuestionsMosalslat;
-@dynamic isShahryarFindTheBottleDownloaded;
+@dynamic isFeenElSela7Played;
 @dynamic belongsTo;
 @dynamic hasAudio;
 @dynamic hasImages;

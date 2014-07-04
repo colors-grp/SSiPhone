@@ -9,7 +9,7 @@
 
 #import "H7ShahryarStory.h"
 #import "H7ShahryarFindTheBottle.h"
-
+#import "H7MosalslatScore.h"
 #import "H7ConstantsModel.h"
 #import <CoreData+MagicalRecord.h>
 #import <AFNetworking/AFNetworking.h>
@@ -126,10 +126,18 @@
             [tabBar setHidden:![tabBar isHidden]];
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        H7ShahryarFindTheBottle *findTheBottle = [storyboard instantiateViewControllerWithIdentifier:@"shahryarFindTheBottle"];
-        findTheBottle.currentCard = self.currentCard;
-        [self.navigationController pushViewController:findTheBottle animated:YES];
-    }NSLog(@"%d" , curPanel);
+        if([self.currentCard.isShahryarFindTheBottleDownloaded isEqualToNumber:[NSNumber numberWithBool:NO]])
+        {
+            H7ShahryarFindTheBottle *findTheBottle = [storyboard instantiateViewControllerWithIdentifier:@"shahryarFindTheBottle"];
+            findTheBottle.currentCard = self.currentCard;
+            [self.navigationController pushViewController:findTheBottle animated:YES];
+        }else {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
+            myController.score = [self.currentCard.cardScore intValue];
+            [self.navigationController pushViewController: myController animated:YES];
+        }
+    }
 }
 
 -(void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer

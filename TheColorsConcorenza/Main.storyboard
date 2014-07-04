@@ -297,20 +297,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08z-Rd-4RT">
-                                <rect key="frame" x="109" y="188" width="103" height="104"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aMB-qL-PhH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Rg-Ng-0ji">
+                                <rect key="frame" x="111" y="195" width="99" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playAudio:" destination="VBH-8m-oZI" eventType="touchUpInside" id="nkZ-ck-1nv"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="toO-Fg-tFo"/>
+                    <connections>
+                        <outlet property="bottleImage" destination="7Rg-Ng-0ji" id="Tka-cJ-nLv"/>
+                        <outlet property="findTheObjectImage" destination="aMB-qL-PhH" id="6Px-7s-fti"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0v-QC-mRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -467,7 +469,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uit-yq-a7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="906"/>
+            <point key="canvasLocation" x="1591" y="906"/>
         </scene>
         <!--Sally Syamak - سلّي صيامك-->
         <scene sceneID="tQt-5K-Zgc">
@@ -763,7 +765,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIF-Ma-vdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1970" y="2181"/>
+            <point key="canvasLocation" x="2010" y="2181"/>
         </scene>
         <!--Scoreboard View Controller - Scoreboard-->
         <scene sceneID="q2e-dQ-3Li">
@@ -1249,19 +1251,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfP-mf-ebL">
-                                <rect key="frame" x="79" y="332" width="163" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="العب">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonClicked:" destination="Z4z-ow-fKr" eventType="touchUpInside" id="th8-ax-GJ3"/>
-                                    <action selector="playGameButtonTapped:" destination="CHB-Z6-F4Q" eventType="touchUpInside" id="5Cp-zI-A4Y"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1367,7 +1356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0S-kw-yPM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1678" y="2806"/>
+            <point key="canvasLocation" x="1607" y="2778"/>
         </scene>
         <!--Start View-->
         <scene sceneID="smj-J4-eE5">
@@ -1426,7 +1415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxy-q1-fU3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1678" y="3419"/>
+            <point key="canvasLocation" x="1607" y="3396"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="TyZ-CL-inZ">
@@ -1440,18 +1429,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9v-o3-iZz">
-                                <rect key="frame" x="79" y="332" width="163" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="العب">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playGameButtonTapped:" destination="CHB-Z6-F4Q" eventType="touchUpInside" id="881-Zo-DqI"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Game Description" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4e-d2-4xh">
                                 <rect key="frame" x="40" y="82" width="240" height="218"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
