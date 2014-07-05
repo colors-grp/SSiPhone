@@ -139,7 +139,7 @@
 }
 
 -(void)downloadDimensions {
-    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@find_object_positions/catId/2/cardId/%@/format/json", PLATFORM_URL ,self.currentCard.cardId]];
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@find_object_positions/catId/3/cardId/%@/format/json", PLATFORM_URL ,self.currentCard.cardId]];
     NSLog(@"%@" , url);
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
