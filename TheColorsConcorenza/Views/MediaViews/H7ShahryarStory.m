@@ -43,8 +43,7 @@
     
     // Set current panel and maximum number of panels
     curPanel = 1 , downloadedPanels = 0;
-//    maxPanel = [self.currentCard.numberOfPanelsShahryar intValue];
-    maxPanel = 4;
+    maxPanel = [self.currentCard.numberOfPanelsShahryar intValue];
     maxPanel--;
     
     singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(screenTapped)];
@@ -116,7 +115,6 @@
     if(curPanel < maxPanel) {
         curPanel++;
         [self loadImage:curPanel];
-//        self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png", curPanel]];
     }
     else if(curPanel >= maxPanel) {
         if([[UIApplication sharedApplication]isStatusBarHidden])
@@ -146,7 +144,6 @@
     if(curPanel > 1) {
         curPanel--;
         [self loadImage:curPanel];
-//        self.storyPanel.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.png" , curPanel]];
     }
     NSLog(@"%d" , curPanel);
 }
