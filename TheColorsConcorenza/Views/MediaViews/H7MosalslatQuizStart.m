@@ -176,7 +176,7 @@
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 
             [self.navigationController pushViewController: myController animated:YES];
-            
+
         });
     }
 }

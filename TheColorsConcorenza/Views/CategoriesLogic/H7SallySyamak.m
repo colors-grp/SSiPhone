@@ -87,7 +87,7 @@
         [self downloadCard:curCard SetImage:image];
         nameLabel.text = curCard.cardName;
         inLoop = YES;
-    }else if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"] &&  [curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+    }else if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]]) {
         NSData *imgData = curCard.imageBinary;
         UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];
         [image setImage:thumbNail];

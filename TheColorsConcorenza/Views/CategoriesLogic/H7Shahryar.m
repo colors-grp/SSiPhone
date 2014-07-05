@@ -12,7 +12,7 @@
 
 #import "MyCard.h"
 #import "H7ConstantsModel.h"
-
+#import "H7DownloadShahryarEpisode.h"
 
 #import <CoreData+MagicalRecord.h>
 #import <AFNetworking/AFNetworking.h>
@@ -42,22 +42,26 @@
     }
 
     
-    // Get Cards of salySyamak category sorted according to cardId
+    // Get Cards of shahryar category sorted according to cardId
     cards = [[self.currentCategory.hasCards allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSNumber *first = [obj1 valueForKey:@"cardId"];
         NSNumber *second = [obj2 valueForKey:@"cardId"];
         return [first compare:second];
     }];
     
+    for (int i = 0; i < [cards count]; i++) {
+        MyCard *curCard = [cards objectAtIndex:i];
+        if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]])
+            [cardStatus setObject:@"1" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+        else
+            [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+    }
+    
     // Get cards status
     [self getOpenedCards];
     
     [super viewDidLoad];
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -86,7 +90,7 @@
         [self downloadCard:curCard SetImage:image];
         nameLabel.text = curCard.cardName;
         inLoop = YES;
-    }else if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"] &&  [curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+    }else if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]]) {
         NSData *imgData = curCard.imageBinary;
         UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];
         [image setImage:thumbNail];
@@ -104,9 +108,10 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if([[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        H7ShahryarStory *story = [storyboard instantiateViewControllerWithIdentifier:@"shahryarStory"];
-        story.currentCard = [cards objectAtIndex:indexPath.row];
-        [self.navigationController pushViewController:story animated:YES];
+        H7DownloadShahryarEpisode *download = [storyboard instantiateViewControllerWithIdentifier:@"downloadStory"];
+        download.currentCard = [cards objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:download animated:YES];
+
     }else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Card not open yet!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];

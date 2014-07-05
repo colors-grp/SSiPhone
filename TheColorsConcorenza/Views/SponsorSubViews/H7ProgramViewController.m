@@ -36,6 +36,9 @@
         [self.view insertSubview: imageView atIndex:0];
     }
     
+    // Set navigation bar title with mosalsal name
+    self.navigationItem.title = [self.currentProgram programName];
+    
     // Set program image
     NSData *imgData = self.currentProgram.binaryImage;
     UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];

@@ -33,7 +33,7 @@
     }
     
     UIBarButtonItem *quizButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Start Quiz"
+                                   initWithTitle:@"ابدأ"
                                    style:UIBarButtonItemStyleBordered
                                    target:self
                                    action:@selector(startQuiz:)];

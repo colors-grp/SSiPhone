@@ -48,7 +48,6 @@
     }
     // Getting user PP
     NSArray *a = [User MR_findAll];
-    NSLog(@"%lu" , (unsigned long)[a count]);
     H7AppDelegate *appDel = [[UIApplication sharedApplication] delegate];
     if([a count] == 0) {
         self.fbProfilePicture.profileID = appDel.userFbId;
@@ -82,6 +81,15 @@
     
     [super viewDidLoad];
 }
+
+-(void)viewWillAppear:(BOOL)animated {
+    NSArray *a = [User MR_findAll];
+    if([a count]) {
+        User *u = [a firstObject];
+        [self getCategoryScoresWithAccountId:u.userAccountId];
+    }
+}
+
 
 - (void) getUserImageFromFBView:(User*)loggedUser{
     UIImageView *objImg;

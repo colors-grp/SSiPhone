@@ -390,6 +390,47 @@
             </objects>
             <point key="canvasLocation" x="601" y="906"/>
         </scene>
+        <!--Download Shahryar Episode-->
+        <scene sceneID="WbW-tP-C0A">
+            <objects>
+                <viewController storyboardIdentifier="downloadStory" id="PwT-Rx-dba" customClass="H7DownloadShahryarEpisode" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1UR-5g-9hm"/>
+                        <viewControllerLayoutGuide type="bottom" id="nFB-h2-5Qr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y4w-aF-eQD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gm7-4K-For">
+                                <rect key="frame" x="20" y="393" width="280" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.58543925379999995" green="0.0" blue="0.0063526050530000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qyd-Ch-e9E">
+                                <rect key="frame" x="52" y="62" width="223" height="276"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="جاري تنزيل الحلقه" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3U-qS-C0w">
+                                <rect key="frame" x="52" y="353" width="223" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="episodeImage" destination="Qyd-Ch-e9E" id="AcX-xM-ffI"/>
+                        <outlet property="progressBar" destination="Gm7-4K-For" id="s5x-f5-ZoM"/>
+                        <outlet property="statusLabel" destination="t3U-qS-C0w" id="nBu-FP-jGu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJE-kl-K3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="906"/>
+        </scene>
         <!--Shahryar Story-->
         <scene sceneID="lLn-Kn-WKM">
             <objects>
@@ -407,17 +448,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LFJ-YD-s1i">
-                                <rect key="frame" x="142" y="222" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" red="0.58543925379999995" green="0.0" blue="0.0063526050530000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="LFJ-YD-s1i" secondAttribute="centerY" id="1cS-e6-XwX"/>
-                            <constraint firstAttribute="centerX" secondItem="LFJ-YD-s1i" secondAttribute="centerX" id="1za-70-wE3"/>
                             <constraint firstAttribute="trailing" secondItem="aQc-GM-ZeB" secondAttribute="trailing" id="JOv-oI-gZq"/>
                             <constraint firstItem="aQc-GM-ZeB" firstAttribute="top" secondItem="Js8-qc-xeh" secondAttribute="top" id="RV5-U8-R7H"/>
                             <constraint firstAttribute="centerY" secondItem="aQc-GM-ZeB" secondAttribute="centerY" id="jZ7-xl-NAA"/>
@@ -430,14 +464,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="qzI-di-Xqd"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="LFJ-YD-s1i" id="5rJ-Cj-E8F"/>
                         <outlet property="storyPanel" destination="aQc-GM-ZeB" id="Q3u-Zn-bQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qj-ml-BUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="7Jq-Re-lmD"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="906"/>
+            <point key="canvasLocation" x="1591" y="906"/>
         </scene>
         <!--Shahryar Find The Bottle-->
         <scene sceneID="OeL-Y0-BkO">
@@ -469,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uit-yq-a7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="906"/>
+            <point key="canvasLocation" x="2069" y="906"/>
         </scene>
         <!--Sally Syamak - سلّي صيامك-->
         <scene sceneID="tQt-5K-Zgc">
@@ -694,17 +727,6 @@
                                 <rect key="frame" x="150" y="230" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t45-MO-hGl">
-                                <rect key="frame" x="111" y="382" width="98" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next Question">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonClicked:" destination="2Od-fJ-o17" eventType="touchUpInside" id="XFE-47-znN"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="wW7-qf-DSJ">
                                 <rect key="frame" x="20" y="65" width="280" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1061,6 +1083,11 @@
                                     <outlet property="delegate" destination="UWf-Qv-L6D" id="ZoA-wH-utD"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kVV-PL-WUU">
+                                <rect key="frame" x="142" y="197" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.58543925379999995" green="0.0" blue="0.0063526050530000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1068,11 +1095,14 @@
                             <constraint firstItem="Nvu-jm-bt7" firstAttribute="top" secondItem="V7j-U6-dIO" secondAttribute="bottom" id="V5S-4Z-afA"/>
                             <constraint firstAttribute="trailing" secondItem="V7j-U6-dIO" secondAttribute="trailing" id="diy-hA-f86"/>
                             <constraint firstAttribute="centerX" secondItem="V7j-U6-dIO" secondAttribute="centerX" id="kuB-zR-kjQ"/>
+                            <constraint firstAttribute="centerX" secondItem="kVV-PL-WUU" secondAttribute="centerX" id="mfy-xC-gl3"/>
                             <constraint firstItem="V7j-U6-dIO" firstAttribute="leading" secondItem="R6A-Tl-IO8" secondAttribute="leading" id="s61-jy-DiO"/>
+                            <constraint firstAttribute="centerY" secondItem="kVV-PL-WUU" secondAttribute="centerY" id="tLj-UJ-3FR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TV Guide" id="Z6G-0U-Eqp"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="kVV-PL-WUU" id="vsx-HM-wk8"/>
                         <outlet property="programsTable" destination="V7j-U6-dIO" id="aNd-ms-jFl"/>
                     </connections>
                 </viewController>
@@ -1096,13 +1126,13 @@
                                 <rect key="frame" x="100" y="71" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Po-fJ-W2l">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1Po-fJ-W2l">
                                 <rect key="frame" x="20" y="199" width="280" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="channelCell" rowHeight="71" id="VH5-Uv-ezj" customClass="H7channelCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" rowHeight="71" id="VH5-Uv-ezj" customClass="H7channelCell">
                                         <rect key="frame" x="0.0" y="22" width="280" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VH5-Uv-ezj" id="Swc-Fq-OTt">

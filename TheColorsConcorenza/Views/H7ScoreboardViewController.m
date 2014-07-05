@@ -83,6 +83,36 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    // Set segment contorol color to red
+    self.segmentControl.tintColor =[UIColor colorWithRed:(212/255.0) green:(39/255.0) blue:(51/255.0) alpha:1];
+    
+    // Set activity indicator to hidden
+    [self.view setUserInteractionEnabled:NO];
+    [self.activityIndicator setHidden:NO];
+    [self.activityIndicator startAnimating];
+    
+    names = [[NSMutableArray alloc] init];
+    facebookIds = [[NSMutableArray alloc] init];
+    ranks = [[NSMutableArray alloc] init];
+    scores = [[NSMutableArray alloc] init];
+    
+    // Get my favourite categories
+    myCategories = [[MyCategory MR_findAllSortedBy:@"categoryId" ascending:YES] mutableCopy];
+    
+    // Set default selected segment
+    selectedSegment = 0;
+    
+    // Set current selected category
+    myCat = [myCategories objectAtIndex:0];
+    curCategoryId = [NSString stringWithFormat:@"%@" , myCat.categoryId];
+    curCategoryName = myCat.categoryName;
+    
+    // temp set data
+    [self getScoreBoardAllWithChange:NO];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -170,7 +200,7 @@
 
 
 //to load more friends use willDisplayCell
-- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(H7ScoreboardCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     if(selectedSegment == 0 && (indexPath.row + 1)% 10 == 7 && [names count] - indexPath.row < 10) {
         // Handle activity indicator actions
         [self.view setUserInteractionEnabled:NO];
@@ -187,6 +217,7 @@
         
         [self getScoreboardFriendsWithChange:NO];
     }
+    cell.profileImage.profileID = nil;
 }
 
 // Get Scoreboard from web service

@@ -38,13 +38,18 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
         [self.view insertSubview: imageView atIndex:0];
     }
-
+    
+    [self.activityIndicator setHidden:YES];
     
     // Get Tv guide
     coreDataPrograms = [[SponsorPrograms MR_findAllSortedBy:@"programId" ascending:YES] mutableCopy];
-    if([coreDataPrograms count] == 0)
+    if([coreDataPrograms count] == 0) {
+        [self.view setUserInteractionEnabled:NO];
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+        
         [self getTvGuide];
-
+    }
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -94,6 +99,9 @@
         }
         coreDataPrograms = [[SponsorPrograms MR_findAllSortedBy:@"programId" ascending:YES] mutableCopy];
         [self.programsTable reloadData];
+        [self.view setUserInteractionEnabled:YES];
+        [self.activityIndicator setHidden:YES];
+        [self.activityIndicator stopAnimating];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get from core data
         NSLog(@"Failed to get Tv Guide");

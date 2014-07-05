@@ -11,5 +11,6 @@
 @interface H7SponsorViewController : UIViewController <UITableViewDataSource , UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *programsTable;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

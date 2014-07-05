@@ -37,9 +37,8 @@
         [self.view insertSubview: imageView atIndex:0];
     }
     
-    // Hide Activity Indicator
-    [self.activityIndicator setHidden:YES];
-    NSLog(@"%d" , self.activityIndicator.hidden);
+    // Go into full screen mode
+    [self screenTapped];
     
     // Set current panel and maximum number of panels
     curPanel = 1 , downloadedPanels = 0;
@@ -60,15 +59,8 @@
     [self.view addGestureRecognizer:swiperight];
     
 
-    if([self.currentCard.isEpisodeDownloaded isEqualToNumber:[NSNumber numberWithBool:YES]])
-        [self loadImage:curPanel];
-    else {
-        [self.view setUserInteractionEnabled:NO];
-        [self.activityIndicator setHidden:NO];
-        [self.activityIndicator startAnimating];
-        
-        [self downloadEpisode:0];
-    }
+
+    [self loadImage:curPanel];
 
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -148,21 +140,6 @@
     NSLog(@"%d" , curPanel);
 }
 
-- (void)saveImage: (UIImage*)image imageNum:(int)imageNum
-{
-    if (image != nil)
-    {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                             NSUserDomainMask, YES);
-        NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString* path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"cards/shahryar/%@/story/%d.png" , self.currentCard.cardId , imageNum+100]];
-        NSLog(@"saving image path = %@" , path);
-        NSData* data = UIImagePNGRepresentation(image);
-        [data writeToFile:path atomically:YES];
-    }else {
-        NSLog(@"2ool ya 7aqeer");
-    }
-}
 
 - (void)loadImage:(int)imageNumber
 {
@@ -177,54 +154,5 @@
 }
 
 
-- (void)downloadEpisode:(int)panelId {
-    // Set URL for image
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/shahryar/%@/iphone4/story/%d.png" ,ASSETS_URL,self.currentCard.cardId , (int)panelId]];
-    NSLog(@"%@" , url);
-    // Set the request
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    // Get directory to save & retrieve image
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"cards/shahryar/%@/story" , self.currentCard.cardId]];
-    
-    // Create directory
-    NSFileManager *filemgr;
-    filemgr =[NSFileManager defaultManager];
-    if ([filemgr createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES
-                            attributes:nil error: NULL] == NO){
-        NSLog(@"Failed to create local directory");
-    }
-    
-    // Save file
-    NSString *fullPath = [NSString stringWithFormat:@"%@/%d.png", documentsDirectory , curPanel];
-    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:fullPath append:NO]];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSData *imgData = [[NSData alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fullPath]];
-        NSLog(@"img# %d downloaded" , panelId);
-        UIImage *thumbNail = [[UIImage alloc] initWithData:imgData];
-        [self saveImage:thumbNail imageNum:panelId];
-        downloadedPanels ++;
-        if(downloadedPanels == maxPanel + 1) {
-            [self.view setUserInteractionEnabled:YES];
-            [self.activityIndicator stopAnimating];
-            [self.activityIndicator setHidden:YES];
-            self.currentCard.isEpisodeDownloaded =[NSNumber numberWithBool:YES];
-            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        }else {
-            [self downloadEpisode:panelId+1];
-        }
-        if (panelId == 1) {
-            [self loadImage:1];
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"ERR: %@", [error description]);
-        [self downloadEpisode:panelId];
-    }];
-    [operation start];
-}
 
 @end
