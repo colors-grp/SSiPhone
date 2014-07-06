@@ -73,6 +73,7 @@
                         newCard.cardScore = [NSNumber numberWithInt:[[dict objectForKey:@"score"] intValue]];
                         newCard.isAvailble = [NSNumber numberWithBool:NO];
                         newCard.isFeenElSela7Played = [NSNumber numberWithBool:NO];
+                        newCard.isManElQatelObjectDownloaded =[NSNumber numberWithBool:NO];
                         [cardsSet addObject:newCard];
                     }
                 }

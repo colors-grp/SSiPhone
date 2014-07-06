@@ -56,10 +56,10 @@
     if([self.currentCard.isEpisodeDownloaded isEqualToNumber:[NSNumber numberWithBool:NO]]){
         self.progressBar.progress = 0;
         [self downloadEpisode:0];
-        self.statusLabel.text = @"جاري تنزيل الحلقه";
+        self.statusLabel.text = @"بنجيب الحلقه";
     }else{
         self.progressBar.progress = 1;
-        self.statusLabel.text = @"تم التنزيل";
+        self.statusLabel.text = @"جبنا الحلقه";
     }
     
     
@@ -97,8 +97,6 @@
         NSLog(@"saving image path = %@" , path);
         NSData* data = UIImagePNGRepresentation(image);
         [data writeToFile:path atomically:YES];
-    }else {
-        NSLog(@"2ool ya 7aqeer");
     }
 }
 
@@ -137,6 +135,7 @@
         if(downloadedPanels == maxPanel + 1) {
             self.currentCard.isEpisodeDownloaded =[NSNumber numberWithBool:YES];
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            self.statusLabel.text = @"جبنا الحلقه";
             //go to other view
             
         }else {

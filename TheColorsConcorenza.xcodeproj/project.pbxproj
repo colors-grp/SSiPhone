@@ -131,9 +131,10 @@
 		EBC3BBE41920AE0700BCD2B0 /* CardVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3BBE31920AE0700BCD2B0 /* CardVideo.m */; };
 		EBC457E418FADDCB005ECE37 /* H7FacebookLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC457E318FADDCB005ECE37 /* H7FacebookLoginView.m */; };
 		EBC4F4F718E85A4C00555416 /* H7FavouriteCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC4F4F618E85A4C00555416 /* H7FavouriteCategoryCell.m */; };
-		EBD9E8FB196735D000702DBE /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E8FA196735D000702DBE /* MyCard.m */; };
 		EBD9E8FD1968410100702DBE /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EBD9E8FC1968410100702DBE /* Sprites.atlas */; };
 		EBD9E9001968590800702DBE /* H7DownloadShahryarEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E8FF1968590800702DBE /* H7DownloadShahryarEpisode.m */; };
+		EBD9E9031969AD4400702DBE /* H7ManElQatelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E9021969AD4400702DBE /* H7ManElQatelObject.m */; };
+		EBD9E9061969B7F300702DBE /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E9051969B7F300702DBE /* MyCard.m */; };
 		EBDF1A0E195F285900505D31 /* game1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDF1A0D195F285900505D31 /* game1.png */; };
 		EBE029FF1951988C00DA76FE /* MyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE029FE1951988C00DA76FE /* MyCategory.m */; };
 		EBE02A051952F3C800DA76FE /* SponsorPrograms.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE02A041952F3C800DA76FE /* SponsorPrograms.m */; };
@@ -339,11 +340,13 @@
 		EBC457E318FADDCB005ECE37 /* H7FacebookLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7FacebookLoginView.m; sourceTree = "<group>"; };
 		EBC4F4F518E85A4C00555416 /* H7FavouriteCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7FavouriteCategoryCell.h; sourceTree = "<group>"; };
 		EBC4F4F618E85A4C00555416 /* H7FavouriteCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7FavouriteCategoryCell.m; sourceTree = "<group>"; };
-		EBD9E8F9196735D000702DBE /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
-		EBD9E8FA196735D000702DBE /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
 		EBD9E8FC1968410100702DBE /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = SOURCE_ROOT; };
 		EBD9E8FE1968590800702DBE /* H7DownloadShahryarEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7DownloadShahryarEpisode.h; sourceTree = "<group>"; };
 		EBD9E8FF1968590800702DBE /* H7DownloadShahryarEpisode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7DownloadShahryarEpisode.m; sourceTree = "<group>"; };
+		EBD9E9011969AD4400702DBE /* H7ManElQatelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ManElQatelObject.h; sourceTree = "<group>"; };
+		EBD9E9021969AD4400702DBE /* H7ManElQatelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ManElQatelObject.m; sourceTree = "<group>"; };
+		EBD9E9041969B7F300702DBE /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
+		EBD9E9051969B7F300702DBE /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
 		EBDF1A0D195F285900505D31 /* game1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game1.png; sourceTree = "<group>"; };
 		EBE029FD1951988C00DA76FE /* MyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCategory.h; path = TheColorsConcorenza/MyCategory.h; sourceTree = SOURCE_ROOT; };
 		EBE029FE1951988C00DA76FE /* MyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCategory.m; path = TheColorsConcorenza/MyCategory.m; sourceTree = SOURCE_ROOT; };
@@ -416,8 +419,8 @@
 				EBE02A041952F3C800DA76FE /* SponsorPrograms.m */,
 				EBE02A091954885A00DA76FE /* Channels.h */,
 				EBE02A0A1954885A00DA76FE /* Channels.m */,
-				EBD9E8F9196735D000702DBE /* MyCard.h */,
-				EBD9E8FA196735D000702DBE /* MyCard.m */,
+				EBD9E9041969B7F300702DBE /* MyCard.h */,
+				EBD9E9051969B7F300702DBE /* MyCard.m */,
 			);
 			path = Coredata;
 			sourceTree = "<group>";
@@ -641,6 +644,8 @@
 				EBF0107C19644E910014DC55 /* H7MosalslatScore.m */,
 				EBD9E8FE1968590800702DBE /* H7DownloadShahryarEpisode.h */,
 				EBD9E8FF1968590800702DBE /* H7DownloadShahryarEpisode.m */,
+				EBD9E9011969AD4400702DBE /* H7ManElQatelObject.h */,
+				EBD9E9021969AD4400702DBE /* H7ManElQatelObject.m */,
 			);
 			path = MediaViews;
 			sourceTree = "<group>";
@@ -988,12 +993,14 @@
 				EB66170C194EF85400E33FA5 /* H7MosalslatQuizStart.m in Sources */,
 				EB1AD588193DCD8D00F84229 /* F3HGameModel.m in Sources */,
 				EB1A3C0118E22487009F51BA /* main.m in Sources */,
+				EBD9E9061969B7F300702DBE /* MyCard.m in Sources */,
 				EBE02A0E19548B2100DA76FE /* H7channelCell.m in Sources */,
 				EB1AD590193DCD8D00F84229 /* F3HTileView.m in Sources */,
 				EB9C44A1193CC14B00549830 /* FFViewController.m in Sources */,
 				EBE02A0819530C2000DA76FE /* User.m in Sources */,
 				EBB8A110195DA1BC00C83C7F /* CCStartView.m in Sources */,
 				EBB8A10D195DA1AA00C83C7F /* FFStartView.m in Sources */,
+				EBD9E9031969AD4400702DBE /* H7ManElQatelObject.m in Sources */,
 				EBAE3CBE1933576300416880 /* H7Mosalslat.m in Sources */,
 				EBAE3CB8193356F200416880 /* H7Shahryar.m in Sources */,
 				EBAA09F918F6E27000C6985B /* H7UIViewController.m in Sources */,
@@ -1010,7 +1017,6 @@
 				EB1AD587193DCD8D00F84229 /* F3HViewController.m in Sources */,
 				EB1AD58E193DCD8D00F84229 /* F3HGameboardView.m in Sources */,
 				EBAA37D01956D05100ED17A3 /* RWTCookie.m in Sources */,
-				EBD9E8FB196735D000702DBE /* MyCard.m in Sources */,
 				EB7BBA881917A32C00280FAB /* H7ScoreboardCell.m in Sources */,
 				EBC3BBDE1920AE0600BCD2B0 /* CardImage.m in Sources */,
 				EBE02A0B1954885A00DA76FE /* Channels.m in Sources */,

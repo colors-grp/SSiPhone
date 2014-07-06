@@ -10,7 +10,7 @@
 #import "H7ManElQatelAudio.h"
 #import "H7MosalslatScore.h"
 #import "H7ConstantsModel.h"
-
+#import "H7ManElQatelObject.h"
 #import <AFNetworking/AFNetworking.h>
 #import <CoreData+MagicalRecord.h>
 
@@ -45,6 +45,15 @@
         NSNumber *second = [obj2 valueForKey:@"cardId"];
         return [first compare:second];
     }];
+    for (int i = 0; i < [cards count]; i++) {
+        MyCard *curCard = [cards objectAtIndex:i];
+        if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]])
+            [cardStatus setObject:@"1" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+        else
+            [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+    }
+    [self.cardsCollection reloadData];
+
     
     // Get cards status
     [self getOpenedCards];
@@ -102,9 +111,11 @@
         MyCard *card = [cards objectAtIndex:indexPath.row];
         if([card.isFeenElSela7Played isEqualToNumber:[NSNumber numberWithBool:NO]]) {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            H7ManElQatelAudio *audio  = [storyboard instantiateViewControllerWithIdentifier:@"manElQatelAudio"];
+            H7ManElQatelObject *audio  = [storyboard instantiateViewControllerWithIdentifier:@"manElQatelStart"];
             audio.currentCard = [cards objectAtIndex:indexPath.row];
             [self.navigationController pushViewController: audio animated:YES];
+            
+            
         }else {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];

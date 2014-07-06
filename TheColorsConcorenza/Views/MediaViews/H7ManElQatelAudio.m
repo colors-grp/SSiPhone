@@ -20,10 +20,12 @@
 
 @implementation H7ManElQatelAudio {
     UITapGestureRecognizer *singleTap;
+    UITapGestureRecognizer *doubleTap;
+
     NSTimer *aTimer;
     int currentScore;
     NSDate *currentDate;
-    float x , y , width;
+    float x , y ;
 }
 - (void)viewDidLoad
 {
@@ -39,11 +41,21 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
         [self.view insertSubview: imageView atIndex:0];
     }
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    if(![tabBar isHidden]) {
+        [self.navigationController.navigationBar setAlpha:0.0];
+        [tabBar setHidden:YES];
+    }
     
     singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(screenTapped:)];
     [singleTap setNumberOfTapsRequired:1];
     [singleTap setDelegate:self];
     [self.view addGestureRecognizer:singleTap];
+    
+    doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(screenDoubleTapped:)];
+    [doubleTap setNumberOfTapsRequired:2];
+    [doubleTap setDelegate:self];
+    [self.view addGestureRecognizer:doubleTap];
     
     aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(elapsedTime) userInfo:nil repeats:YES];
     [self downloadDimensions];
@@ -61,6 +73,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL) prefersStatusBarHidden
+{
+    return YES;
 }
 
 - (IBAction)screenTapped:(id)sender {
@@ -82,8 +99,8 @@
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         
         NSLog(@"%f, %f",tapPoint.x,tapPoint.y);
-        
-        NSArray *animationArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"bottle.png"],[UIImage imageNamed:@"bottle_glow.png"], nil];
+        UIImage *image = [self loadObject];
+        NSArray *animationArray = [NSArray arrayWithObjects:image, nil];
         [NSTimer scheduledTimerWithTimeInterval:.50 target:self selector:@selector(myAnimate:) userInfo:nil repeats:NO];
         self.bottleImage.animationImages = animationArray;
         self.bottleImage.animationDuration = 0.3;
@@ -94,15 +111,65 @@
         crossFade.repeatCount = 0;
         crossFade.duration = .5;
         
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
-        myController.score = currentScore;
-        self.currentCard.cardScore = [NSNumber numberWithInt:currentScore];
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        
-        [self.navigationController pushViewController: myController animated:YES];
+        double delayInSeconds = 1.7;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
+            myController.score = currentScore;
+            self.currentCard.cardScore = [NSNumber numberWithInt:currentScore];
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            
+            if (self.navigationController.navigationBar.alpha < 1.0) {
+                [self.navigationController.navigationBar setAlpha:1.0];
+                UITabBar *tabBar = self.tabBarController.tabBar;
+                [tabBar setHidden:![tabBar isHidden]];
+            }
+            [self.navigationController pushViewController: myController animated:YES];
+        });
     }
 }
+
+- (UIImage*)loadObject
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithFormat:@"cards/manElQatel/%@/iphone4/find/obj.png" , self.currentCard.cardId]];
+    NSLog(@"path = %@" , path);
+    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    return image;
+}
+
+
+- (IBAction)screenDoubleTapped:(id)sender {
+    CGFloat alpha = 0.0;
+    
+    if (self.navigationController.navigationBar.alpha < 1.0)
+        alpha = 1.0;
+    
+    //Toggle visible/hidden status bar.
+    //This will only work if the Info.plist file is updated with two additional entries
+    //"View controller-based status bar appearance" set to NO and "Status bar is initially hidden" set to YES or NO
+    //Hiding the status bar turns the gesture shortcuts for Notification Center and Control Center into 2 step gestures
+    [[UIApplication sharedApplication]setStatusBarHidden:![[UIApplication sharedApplication]isStatusBarHidden] withAnimation:UIStatusBarAnimationFade];
+    
+    //Toggle visible/hidden tabbar.
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    [tabBar setHidden:![tabBar isHidden]];
+    
+    [UIView animateWithDuration:0.0 animations:^
+     {
+         [self.navigationController.navigationBar setAlpha:alpha];
+         [self.navigationController.toolbar setAlpha:alpha];
+     } completion:^(BOOL finished)
+     {
+         
+     }];
+}
+
+
 
 - (void) updateScoreInDBWithUserId:(NSString*)userId catId:(NSString*)catId cardId:(NSString*)cardId score:(NSString*)score {
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@update_score_for_card/format/json/userId/%@/catId/%@/cardId/%@/score/%@", PLATFORM_URL , userId,catId,cardId,score]];
@@ -145,20 +212,8 @@
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"%@" , JSON);
         NSDictionary *dect = JSON;
-        y = [[dect objectForKey:@"x"] floatValue];
-        x = [[dect objectForKey:@"y"] floatValue];
-        width = [[dect objectForKey:@"width"] floatValue];
-        int height =  [[UIScreen mainScreen] bounds].size.height;
-        if(height > 480){
-            x = 1-x , y = 1-y;
-            x *= 960;
-            y *= 480;
-        }
-        else{
-            x = 1-x , y = 1-y;
-            x *= 960;
-            y *= 480;
-        }
+        x = [[dect objectForKey:@"iphone4x"] floatValue];
+        y = [[dect objectForKey:@"iphone4y"] floatValue];
         NSLog(@"x = %lf , y = %lf" , x , y);
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get from core data
@@ -204,5 +259,7 @@
     }];
     [operation start];
 }
+
+
 
 @end

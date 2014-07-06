@@ -20,11 +20,12 @@
 @end
 
 @implementation H7ShahryarFindTheBottle{
-    UITapGestureRecognizer *singleTap;
+    UITapGestureRecognizer *singleTap ;
+    UITapGestureRecognizer *doubleTap;
     NSTimer *aTimer;
     int currentScore;
     NSDate *currentDate;
-    float x , y , width;
+    float x , y ;
 }
 
 - (void)viewDidLoad
@@ -47,12 +48,23 @@
     [singleTap setDelegate:self];
     [self.view addGestureRecognizer:singleTap];
     
+    doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(screenDoubleTapped:)];
+    [doubleTap setNumberOfTapsRequired:2];
+    [doubleTap setDelegate:self];
+    [self.view addGestureRecognizer:doubleTap];
+
+
     aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(elapsedTime) userInfo:nil repeats:YES];
     [self downloadDimensions];
     [self downloadFindTheBottleImage];
 
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (BOOL) prefersStatusBarHidden
+{
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,7 +79,7 @@
     NSDate *timeNow = [[NSDate alloc] init];
     int timeTaken = [timeNow timeIntervalSinceDate:currentDate];
     currentScore =( (100 - (3*timeTaken)) > 10 ?(100 - (3*timeTaken))  : 10);
-    NSLog(@"%d" , currentScore);
+    NSLog(@"%lf %lf",x , y);
     if(tapPoint.x <= x + 25 && tapPoint.x >= x- 25 && tapPoint.y <= y + 25 && tapPoint.y >= y- 25) {
         NSArray *a = [User MR_findAll];
         User *u = [a firstObject];
@@ -85,21 +97,57 @@
         [NSTimer scheduledTimerWithTimeInterval:.50 target:self selector:@selector(myAnimate:) userInfo:nil repeats:NO];
         self.bottleImage.animationImages = animationArray;
         self.bottleImage.animationDuration = 0.3;
-        self.bottleImage.animationRepeatCount = 1;
+        self.bottleImage.animationRepeatCount = 3;
         [self.bottleImage startAnimating];
         CABasicAnimation *crossFade = [CABasicAnimation animationWithKeyPath:@"contents"];
         crossFade.autoreverses = YES;
         crossFade.repeatCount = 0;
         crossFade.duration = .5;
         
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
-        myController.score = currentScore;
-        self.currentCard.cardScore = [NSNumber numberWithInt:currentScore];
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         
-        [self.navigationController pushViewController: myController animated:YES];
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
+            myController.score = currentScore;
+            self.currentCard.cardScore = [NSNumber numberWithInt:currentScore];
+            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            
+            if (self.navigationController.navigationBar.alpha < 1.0) {
+                [self.navigationController.navigationBar setAlpha:1.0];
+                UITabBar *tabBar = self.tabBarController.tabBar;
+                [tabBar setHidden:![tabBar isHidden]];
+            }
+            [self.navigationController pushViewController: myController animated:YES];
+        });
     }
+}
+
+- (IBAction)screenDoubleTapped:(id)sender {
+    CGFloat alpha = 0.0;
+    
+    if (self.navigationController.navigationBar.alpha < 1.0)
+        alpha = 1.0;
+    
+    //Toggle visible/hidden status bar.
+    //This will only work if the Info.plist file is updated with two additional entries
+    //"View controller-based status bar appearance" set to NO and "Status bar is initially hidden" set to YES or NO
+    //Hiding the status bar turns the gesture shortcuts for Notification Center and Control Center into 2 step gestures
+    [[UIApplication sharedApplication]setStatusBarHidden:![[UIApplication sharedApplication]isStatusBarHidden] withAnimation:UIStatusBarAnimationFade];
+    
+    //Toggle visible/hidden tabbar.
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    [tabBar setHidden:![tabBar isHidden]];
+    
+    [UIView animateWithDuration:0.0 animations:^
+     {
+         [self.navigationController.navigationBar setAlpha:alpha];
+         [self.navigationController.toolbar setAlpha:alpha];
+     } completion:^(BOOL finished)
+     {
+         
+     }];
 }
 
 - (void) updateScoreInDBWithUserId:(NSString*)userId catId:(NSString*)catId cardId:(NSString*)cardId score:(NSString*)score {
@@ -142,21 +190,8 @@
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"%@" , JSON);
         NSDictionary *dect = JSON;
-        y = [[dect objectForKey:@"x"] floatValue];
-        x = [[dect objectForKey:@"y"] floatValue];
-        width = [[dect objectForKey:@"width"] floatValue];
-        int height =  [[UIScreen mainScreen] bounds].size.height;
-        if(height > 480){
-            x = 1-x , y = 1-y;
-            x *= 960;
-            y *= 480;
-        }
-        else{
-            x = 1-x , y = 1-y;
-            x *= 960;
-            y *= 480;
-        }
-        NSLog(@"x = %lf , y = %lf" , x , y);
+        y = [[dect objectForKey:@"iphone4y"] floatValue];
+        x = [[dect objectForKey:@"iphone4x"] floatValue];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get from core data
         NSLog(@"Failed to update score in server");

@@ -89,7 +89,7 @@
     UITabBar *tabBar = self.tabBarController.tabBar;
     [tabBar setHidden:![tabBar isHidden]];
     
-    [UIView animateWithDuration:0.25 animations:^
+    [UIView animateWithDuration:0.0 animations:^
      {
          [self.navigationController.navigationBar setAlpha:alpha];
          [self.navigationController.toolbar setAlpha:alpha];
@@ -115,9 +115,9 @@
         if([tabBar isHidden])
             [tabBar setHidden:![tabBar isHidden]];
 
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         if([self.currentCard.isShahryarFindTheBottleDownloaded isEqualToNumber:[NSNumber numberWithBool:NO]])
         {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             H7ShahryarFindTheBottle *findTheBottle = [storyboard instantiateViewControllerWithIdentifier:@"shahryarFindTheBottle"];
             findTheBottle.currentCard = self.currentCard;
             [self.navigationController pushViewController:findTheBottle animated:YES];

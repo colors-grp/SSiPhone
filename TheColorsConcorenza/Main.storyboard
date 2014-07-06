@@ -285,6 +285,33 @@
             </objects>
             <point key="canvasLocation" x="601" y="1542"/>
         </scene>
+        <!--Man El Qatel Object-->
+        <scene sceneID="IUl-Bb-VvC">
+            <objects>
+                <viewController storyboardIdentifier="manElQatelStart" id="LBw-7a-ru2" customClass="H7ManElQatelObject" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qO8-mU-geG"/>
+                        <viewControllerLayoutGuide type="bottom" id="des-ei-EV6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xXT-tz-DGV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgC-CQ-BZ8">
+                                <rect key="frame" x="100" y="92" width="121" height="114"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="objectImage" destination="ZgC-CQ-BZ8" id="G3F-eE-I1r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWR-vt-pbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043" y="1542"/>
+        </scene>
         <!--Man El Qatel Audio-->
         <scene sceneID="6Uu-zF-YBd">
             <objects>
@@ -316,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0v-QC-mRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="1542"/>
+            <point key="canvasLocation" x="1469" y="1542"/>
         </scene>
         <!--Shahryar - الف ليله و ليله-->
         <scene sceneID="ghS-qZ-CbE">
@@ -402,8 +429,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gm7-4K-For">
-                                <rect key="frame" x="20" y="393" width="280" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gm7-4K-For">
+                                <rect key="frame" x="20" y="393" width="280" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.58543925379999995" green="0.0" blue="0.0063526050530000001" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>

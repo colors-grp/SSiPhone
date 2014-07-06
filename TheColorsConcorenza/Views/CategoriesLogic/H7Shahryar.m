@@ -56,6 +56,7 @@
         else
             [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
     }
+    [self.cardsCollection reloadData];
     
     // Get cards status
     [self getOpenedCards];

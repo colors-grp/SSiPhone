@@ -52,6 +52,14 @@
         NSNumber *second = [obj2 valueForKey:@"cardId"];
         return [first compare:second];
     }];
+    for (int i = 0; i < [cards count]; i++) {
+        MyCard *curCard = [cards objectAtIndex:i];
+        if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]])
+            [cardStatus setObject:@"1" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+        else
+            [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
+    }
+    [self.cardsCollection reloadData];
     
     // Get cards status
     [self getOpenedCards];
