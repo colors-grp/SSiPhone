@@ -10,6 +10,7 @@
 #import "User.h"
 #import "H7ConstantsModel.h"
 #import "H7MosalslatScore.h"
+#import "H7MosalslatScore.h"
 
 #import <AFNetworking/AFNetworking.h>
 #import <CoreData+MagicalRecord.h>
@@ -58,12 +59,24 @@
     [self.view addGestureRecognizer:doubleTap];
     
     aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(elapsedTime) userInfo:nil repeats:YES];
-    [self downloadDimensions];
-    if([self.currentCard.isFeenElSela7Played isEqualToNumber:[NSNumber numberWithBool:NO]])
-        [self downloadfindTheObjectImage];
-    else
-        NSLog(@"already played");
     
+    x = [self.currentCard.iphone4x floatValue];
+    y = [self.currentCard.iphone4y floatValue];
+    
+    if([self.currentCard.isFeenElSela7Played isEqualToNumber:[NSNumber numberWithBool:NO]]) {
+        [self downloadfindTheObjectImage];
+    }
+    else
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
+        myController.score = [self.currentCard.cardScore intValue];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        
+        [self.navigationController pushViewController: myController animated:YES];
+    }
+    currentDate = [[NSDate alloc] init];
+
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -143,6 +156,7 @@
 }
 
 
+
 - (IBAction)screenDoubleTapped:(id)sender {
     CGFloat alpha = 0.0;
     
@@ -205,23 +219,6 @@
     }
 }
 
--(void)downloadDimensions {
-    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@find_object_positions/catId/3/cardId/%@/format/json", PLATFORM_URL ,self.currentCard.cardId]];
-    NSLog(@"%@" , url);
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
-    AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"%@" , JSON);
-        NSDictionary *dect = JSON;
-        x = [[dect objectForKey:@"iphone4x"] floatValue];
-        y = [[dect objectForKey:@"iphone4y"] floatValue];
-        NSLog(@"x = %lf , y = %lf" , x , y);
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        // Get from core data
-        NSLog(@"Failed to get x and y from server");
-    }];
-    [request start];
-    
-}
 
 - (void)downloadfindTheObjectImage {
     // Set URL for image

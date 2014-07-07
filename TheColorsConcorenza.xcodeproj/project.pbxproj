@@ -103,8 +103,6 @@
 		EBAE3E1E1934C74500416880 /* bg_5.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3CD71934C74300416880 /* bg_5.png */; };
 		EBAE3E1F1934C74500416880 /* bg_all_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3CD81934C74300416880 /* bg_all_4.png */; };
 		EBAE3EBB1934C74500416880 /* me_bg_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3E0A1934C74500416880 /* me_bg_4.png */; };
-		EBAE3EBC1934C74500416880 /* me_bg_4_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3E0B1934C74500416880 /* me_bg_4_logo.png */; };
-		EBAE3EBD1934C74500416880 /* me_bg_4_logo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3E0C1934C74500416880 /* me_bg_4_logo_2.png */; };
 		EBAE3EBE1934C74500416880 /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3E0D1934C74500416880 /* nav_bg.png */; };
 		EBAE3ECF1934C78000416880 /* TabIcons30 in Resources */ = {isa = PBXBuildFile; fileRef = EBAE3ECC1934C78000416880 /* TabIcons30 */; };
 		EBB2AC55192A221900FE4844 /* H7SponsorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB2AC54192A221900FE4844 /* H7SponsorViewController.m */; };
@@ -134,8 +132,8 @@
 		EBD9E8FD1968410100702DBE /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EBD9E8FC1968410100702DBE /* Sprites.atlas */; };
 		EBD9E9001968590800702DBE /* H7DownloadShahryarEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E8FF1968590800702DBE /* H7DownloadShahryarEpisode.m */; };
 		EBD9E9031969AD4400702DBE /* H7ManElQatelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E9021969AD4400702DBE /* H7ManElQatelObject.m */; };
-		EBD9E9061969B7F300702DBE /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E9051969B7F300702DBE /* MyCard.m */; };
-		EBDF1A0E195F285900505D31 /* game1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBDF1A0D195F285900505D31 /* game1.png */; };
+		EBD9E90F196B4B0100702DBE /* H7ShahryarDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E90E196B4B0100702DBE /* H7ShahryarDescription.m */; };
+		EBD9E912196B586100702DBE /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E911196B586100702DBE /* MyCard.m */; };
 		EBE029FF1951988C00DA76FE /* MyCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE029FE1951988C00DA76FE /* MyCategory.m */; };
 		EBE02A051952F3C800DA76FE /* SponsorPrograms.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE02A041952F3C800DA76FE /* SponsorPrograms.m */; };
 		EBE02A0819530C2000DA76FE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE02A0719530C2000DA76FE /* User.m */; };
@@ -293,8 +291,6 @@
 		EBAE3CD71934C74300416880 /* bg_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_5.png; sourceTree = "<group>"; };
 		EBAE3CD81934C74300416880 /* bg_all_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_all_4.png; sourceTree = "<group>"; };
 		EBAE3E0A1934C74500416880 /* me_bg_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_bg_4.png; sourceTree = "<group>"; };
-		EBAE3E0B1934C74500416880 /* me_bg_4_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_bg_4_logo.png; sourceTree = "<group>"; };
-		EBAE3E0C1934C74500416880 /* me_bg_4_logo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_bg_4_logo_2.png; sourceTree = "<group>"; };
 		EBAE3E0D1934C74500416880 /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg.png; sourceTree = "<group>"; };
 		EBAE3ECC1934C78000416880 /* TabIcons30 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TabIcons30; sourceTree = "<group>"; };
 		EBB2AC53192A221900FE4844 /* H7SponsorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H7SponsorViewController.h; path = TheColorsConcorenza/Views/H7SponsorViewController.h; sourceTree = SOURCE_ROOT; };
@@ -345,9 +341,10 @@
 		EBD9E8FF1968590800702DBE /* H7DownloadShahryarEpisode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7DownloadShahryarEpisode.m; sourceTree = "<group>"; };
 		EBD9E9011969AD4400702DBE /* H7ManElQatelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ManElQatelObject.h; sourceTree = "<group>"; };
 		EBD9E9021969AD4400702DBE /* H7ManElQatelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ManElQatelObject.m; sourceTree = "<group>"; };
-		EBD9E9041969B7F300702DBE /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
-		EBD9E9051969B7F300702DBE /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
-		EBDF1A0D195F285900505D31 /* game1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game1.png; sourceTree = "<group>"; };
+		EBD9E90D196B4B0100702DBE /* H7ShahryarDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H7ShahryarDescription.h; sourceTree = "<group>"; };
+		EBD9E90E196B4B0100702DBE /* H7ShahryarDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H7ShahryarDescription.m; sourceTree = "<group>"; };
+		EBD9E910196B586100702DBE /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = SOURCE_ROOT; };
+		EBD9E911196B586100702DBE /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = SOURCE_ROOT; };
 		EBE029FD1951988C00DA76FE /* MyCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCategory.h; path = TheColorsConcorenza/MyCategory.h; sourceTree = SOURCE_ROOT; };
 		EBE029FE1951988C00DA76FE /* MyCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCategory.m; path = TheColorsConcorenza/MyCategory.m; sourceTree = SOURCE_ROOT; };
 		EBE02A031952F3C800DA76FE /* SponsorPrograms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorPrograms.h; sourceTree = SOURCE_ROOT; };
@@ -419,8 +416,8 @@
 				EBE02A041952F3C800DA76FE /* SponsorPrograms.m */,
 				EBE02A091954885A00DA76FE /* Channels.h */,
 				EBE02A0A1954885A00DA76FE /* Channels.m */,
-				EBD9E9041969B7F300702DBE /* MyCard.h */,
-				EBD9E9051969B7F300702DBE /* MyCard.m */,
+				EBD9E910196B586100702DBE /* MyCard.h */,
+				EBD9E911196B586100702DBE /* MyCard.m */,
 			);
 			path = Coredata;
 			sourceTree = "<group>";
@@ -630,22 +627,24 @@
 		EB5A901018EDABBE00C94597 /* MediaViews */ = {
 			isa = PBXGroup;
 			children = (
+				EBD9E9011969AD4400702DBE /* H7ManElQatelObject.h */,
+				EBD9E9021969AD4400702DBE /* H7ManElQatelObject.m */,
 				EBAE3CC61934853600416880 /* H7ManElQatelAudio.h */,
 				EBAE3CC71934853600416880 /* H7ManElQatelAudio.m */,
 				EBAE3CCC1934A9CC00416880 /* H7MosalslatQuiz.h */,
 				EBAE3CCD1934A9CC00416880 /* H7MosalslatQuiz.m */,
-				EBAE3CCF1934BA5000416880 /* H7ShahryarStory.h */,
-				EBAE3CD01934BA5000416880 /* H7ShahryarStory.m */,
-				EBC0E775194DAEBE0081D761 /* H7ShahryarFindTheBottle.h */,
-				EBC0E776194DAEBE0081D761 /* H7ShahryarFindTheBottle.m */,
 				EB66170A194EF85400E33FA5 /* H7MosalslatQuizStart.h */,
 				EB66170B194EF85400E33FA5 /* H7MosalslatQuizStart.m */,
 				EBF0107B19644E910014DC55 /* H7MosalslatScore.h */,
 				EBF0107C19644E910014DC55 /* H7MosalslatScore.m */,
 				EBD9E8FE1968590800702DBE /* H7DownloadShahryarEpisode.h */,
 				EBD9E8FF1968590800702DBE /* H7DownloadShahryarEpisode.m */,
-				EBD9E9011969AD4400702DBE /* H7ManElQatelObject.h */,
-				EBD9E9021969AD4400702DBE /* H7ManElQatelObject.m */,
+				EBAE3CCF1934BA5000416880 /* H7ShahryarStory.h */,
+				EBAE3CD01934BA5000416880 /* H7ShahryarStory.m */,
+				EBD9E90D196B4B0100702DBE /* H7ShahryarDescription.h */,
+				EBD9E90E196B4B0100702DBE /* H7ShahryarDescription.m */,
+				EBC0E775194DAEBE0081D761 /* H7ShahryarFindTheBottle.h */,
+				EBC0E776194DAEBE0081D761 /* H7ShahryarFindTheBottle.m */,
 			);
 			path = MediaViews;
 			sourceTree = "<group>";
@@ -768,7 +767,6 @@
 			children = (
 				EB9FAB08196034EF007595E8 /* bottle.png */,
 				EB9FAB09196034EF007595E8 /* bottle_glow.png */,
-				EBDF1A0D195F285900505D31 /* game1.png */,
 				EBC0A1A91959C12300D0109A /* logo.png */,
 				EBBF0493194739B800AFA2FC /* vid */,
 				EBBF047F1944463900AFA2FC /* CategoriesIcons */,
@@ -780,10 +778,8 @@
 				EBAE3CD71934C74300416880 /* bg_5.png */,
 				EBAE3CD81934C74300416880 /* bg_all_4.png */,
 				EB4A13EB1949C1F900A10889 /* bg_all_5.png */,
-				EBAE3E0B1934C74500416880 /* me_bg_4_logo.png */,
 				EBAE3E0A1934C74500416880 /* me_bg_4.png */,
 				EB75D3EE1950F38F0076628E /* me_bg_5.png */,
-				EBAE3E0C1934C74500416880 /* me_bg_4_logo_2.png */,
 				EBAE3E0D1934C74500416880 /* nav_bg.png */,
 				EB0C5289193F346600B621AD /* locked_card.png */,
 			);
@@ -896,7 +892,6 @@
 				EBBF0494194739B800AFA2FC /* vid in Resources */,
 				EBB2AF13192CA0D200FE4844 /* tamer.jpeg in Resources */,
 				EBD9E8FD1968410100702DBE /* Sprites.atlas in Resources */,
-				EBAE3EBC1934C74500416880 /* me_bg_4_logo.png in Resources */,
 				EBBF04801944463900AFA2FC /* CategoriesIcons in Resources */,
 				EB9FAB0A196034EF007595E8 /* bottle.png in Resources */,
 				EB0C5288193F25E500B621AD /* Images.xcassets in Resources */,
@@ -906,9 +901,7 @@
 				EB1AD504193DC8E200F84229 /* Bird2.png in Resources */,
 				EB4A13EC1949C1F900A10889 /* bg_all_5.png in Resources */,
 				EB9C41B4193765C600549830 /* cards.json in Resources */,
-				EBDF1A0E195F285900505D31 /* game1.png in Resources */,
 				EBAA37D91956D05100ED17A3 /* Scrape.wav in Resources */,
-				EBAE3EBD1934C74500416880 /* me_bg_4_logo_2.png in Resources */,
 				EBC0A1AA1959C12300D0109A /* logo.png in Resources */,
 				EBAA37CC1956D05100ED17A3 /* Level_4.json in Resources */,
 				EB1A3BFF18E22487009F51BA /* InfoPlist.strings in Resources */,
@@ -993,7 +986,6 @@
 				EB66170C194EF85400E33FA5 /* H7MosalslatQuizStart.m in Sources */,
 				EB1AD588193DCD8D00F84229 /* F3HGameModel.m in Sources */,
 				EB1A3C0118E22487009F51BA /* main.m in Sources */,
-				EBD9E9061969B7F300702DBE /* MyCard.m in Sources */,
 				EBE02A0E19548B2100DA76FE /* H7channelCell.m in Sources */,
 				EB1AD590193DCD8D00F84229 /* F3HTileView.m in Sources */,
 				EB9C44A1193CC14B00549830 /* FFViewController.m in Sources */,
@@ -1032,6 +1024,7 @@
 				EB1AD58C193DCD8D00F84229 /* F3HTileModel.m in Sources */,
 				EB1A3C0818E22487009F51BA /* TheColorsConcorenza.xcdatamodeld in Sources */,
 				EBAA37D21956D05100ED17A3 /* RWTSwap.m in Sources */,
+				EBD9E912196B586100702DBE /* MyCard.m in Sources */,
 				EB9C44A4193CC26600549830 /* FFScene.m in Sources */,
 				EBB2ACC7192B5BE300FE4844 /* H7ScoreboardViewController.m in Sources */,
 				EB9933E118F2EF9000EE700C /* H7NotificationCell.m in Sources */,
@@ -1039,6 +1032,7 @@
 				EB65A1F518FC25C800AAAAB4 /* H7TabBarController.m in Sources */,
 				EBD9E9001968590800702DBE /* H7DownloadShahryarEpisode.m in Sources */,
 				EBAE3CC81934853600416880 /* H7ManElQatelAudio.m in Sources */,
+				EBD9E90F196B4B0100702DBE /* H7ShahryarDescription.m in Sources */,
 				EBAA37CE1956D05100ED17A3 /* MyScene.m in Sources */,
 				EB0C52961940994200B621AD /* H7CardSinglton.m in Sources */,
 				EBE029FF1951988C00DA76FE /* MyCategory.m in Sources */,

@@ -42,6 +42,9 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
         [self.view insertSubview: imageView atIndex:0];
     }
+    
+    x = [self.currentCard.iphone4x floatValue];
+    y = [self.currentCard.iphone4y floatValue];
 
     singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(screenTapped:)];
     [singleTap setNumberOfTapsRequired:1];
@@ -53,10 +56,10 @@
     [doubleTap setDelegate:self];
     [self.view addGestureRecognizer:doubleTap];
 
-
+    [self screenDoubleTapped:self];
     aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(elapsedTime) userInfo:nil repeats:YES];
-    [self downloadDimensions];
-    [self downloadFindTheBottleImage];
+    [self loadObject];
+    currentDate = [[NSDate alloc] init];
 
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -124,6 +127,19 @@
     }
 }
 
+- (void)loadObject
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithFormat:@"cards/shahryar/%@/iphone4/find/bgg.png" , self.currentCard.cardId]];
+    NSLog(@"path = %@" , path);
+    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    self.findTheBottleImage.image = image;
+}
+
+
 - (IBAction)screenDoubleTapped:(id)sender {
     CGFloat alpha = 0.0;
     
@@ -184,58 +200,7 @@
     }
 }
 
--(void)downloadDimensions {
-    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@find_object_positions/catId/4/cardId/%@/format/json", PLATFORM_URL ,self.currentCard.cardId]];
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
-    AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"%@" , JSON);
-        NSDictionary *dect = JSON;
-        y = [[dect objectForKey:@"iphone4y"] floatValue];
-        x = [[dect objectForKey:@"iphone4x"] floatValue];
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        // Get from core data
-        NSLog(@"Failed to update score in server");
-    }];
-    [request start];
 
-}
-
-- (void)downloadFindTheBottleImage {
-    // Set URL for image
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/shahryar/%@/iphone4/find/bg.png" ,ASSETS_URL, self.currentCard.cardId]];
-    // Set the request
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    // Get directory to save & retrieve image
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"cards/shahryar/%@/iphone4/find/" , self.currentCard.cardId]];
-    
-    // Create directory
-    NSFileManager *filemgr;
-    filemgr =[NSFileManager defaultManager];
-    if ([filemgr createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES
-                            attributes:nil error: NULL] == NO){
-        NSLog(@"Failed to create local directory");
-    }
-    
-    // Save file
-    NSString *fullPath = [NSString stringWithFormat:@"%@/bgg.png", documentsDirectory ];
-    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:fullPath append:NO]];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSData *imgData = [[NSData alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fullPath]];
-        UIImage *thumbNail = [[UIImage alloc] initWithData:imgData];
-        self.findTheBottleImage.image = thumbNail;
-        self.currentCard.isShahryarFindTheBottleDownloaded = [NSNumber numberWithBool:YES];
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        currentDate = [[NSDate alloc] init];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"ERR: %@", [error description]);
-    }];
-    [operation start];
-}
 
 
 @end

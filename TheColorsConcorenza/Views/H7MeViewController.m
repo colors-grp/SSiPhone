@@ -174,47 +174,49 @@
         [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"] allowLoginUI:YES completionHandler: ^(FBSession *session, FBSessionState state, NSError *error) {
              if(!error && state == FBSessionStateOpen) {
                  {
-                     [FBRequestConnection startWithGraphPath:@"me" parameters:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"id,name,first_name,last_name,username,email,birthday",@"fields",nil] HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                        NSDictionary *userData = (NSDictionary *)result;
-                        NSString *userId = [userData objectForKey:@"id"];
-                        NSString *username = [userData objectForKey:@"username"];
-                        NSString *firstName= [userData objectForKey:@"first_name"];
-                        NSString *lastName= [userData objectForKey:@"last_name"];
-                        NSString *birthday  = [userData objectForKey:@"birthday"];
-                        NSString *email= [userData objectForKey:@"email"];
-                        NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
-                        birthday = [birthday stringByReplacingOccurrencesOfString:@"/" withString:@"-"];
-                        email = [email stringByReplacingOccurrencesOfString:@"@" withString:@"%"];
-                        NSLog(@"%@ \n %@" , userData , fbAccessToken);
-                     
-                        // Saving User information in core data
-                        User * loggedUser = [User MR_createEntity];
-                        loggedUser.userName = username;
-                        loggedUser.userId = userId;
-                        loggedUser.userBirthday = birthday;
-                        loggedUser.userFirstName = firstName;
-                        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-                         
-                         NSLog(@"core data %@ %@" , loggedUser.userName , loggedUser.userBirthday);
-                         NSString *str = [NSString stringWithFormat:@"%@mobileAddMe/username/%@/firstname/%@/lastname/%@/email/%@/credit/0/birthday/%@/fb_id/%@/token/%@/format/json" , CORE_URL , username , firstName , lastName , email ,birthday , userId , fbAccessToken];
-                        NSURL *url = [[NSURL alloc] initWithString:[str stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
-                        NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
-                        AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                         NSDictionary *dict = JSON;
-                         NSLog(@"return = %@" , dict);
-                         loggedUser.userAccountId = [NSString stringWithFormat:@"%@" , [dict objectForKey:@"accountId"]];
-                         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-                        [self performSelector:@selector(getUserImageFromFBView:) withObject:loggedUser afterDelay:4.0];
-                        
-                         // Insert user to scoreboards
-                            [self insertUserScoresWithAccountId:loggedUser.userAccountId fullName:[NSString stringWithFormat:@"%@ %@" , firstName , lastName]];
-                            NSLog(@"here1");
-                        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                         // Get score from core data
-                         NSLog(@"Failed");
-                        }];
-                        [request start];
-                 }];
+                     [FBSession openActiveSessionWithPublishPermissions:@[@"publish_actions"] defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                         [FBRequestConnection startWithGraphPath:@"me" parameters:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"id,name,first_name,last_name,username,email,birthday",@"fields",nil] HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                             NSDictionary *userData = (NSDictionary *)result;
+                             NSString *userId = [userData objectForKey:@"id"];
+                             NSString *username = [userData objectForKey:@"username"];
+                             NSString *firstName= [userData objectForKey:@"first_name"];
+                             NSString *lastName= [userData objectForKey:@"last_name"];
+                             NSString *birthday  = [userData objectForKey:@"birthday"];
+                             NSString *email= [userData objectForKey:@"email"];
+                             NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+                             birthday = [birthday stringByReplacingOccurrencesOfString:@"/" withString:@"-"];
+                             email = [email stringByReplacingOccurrencesOfString:@"@" withString:@"%"];
+                             NSLog(@"%@ \n %@" , userData , fbAccessToken);
+                             
+                             // Saving User information in core data
+                             User * loggedUser = [User MR_createEntity];
+                             loggedUser.userName = username;
+                             loggedUser.userId = userId;
+                             loggedUser.userBirthday = birthday;
+                             loggedUser.userFirstName = firstName;
+                             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+                             
+                             NSLog(@"core data %@ %@" , loggedUser.userName , loggedUser.userBirthday);
+                             NSString *str = [NSString stringWithFormat:@"%@mobileAddMe/username/%@/firstname/%@/lastname/%@/email/%@/credit/0/birthday/%@/fb_id/%@/token/%@/format/json" , CORE_URL , username , firstName , lastName , email ,birthday , userId , fbAccessToken];
+                             NSURL *url = [[NSURL alloc] initWithString:[str stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+                             NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+                             AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                 NSDictionary *dict = JSON;
+                                 NSLog(@"return = %@" , dict);
+                                 loggedUser.userAccountId = [NSString stringWithFormat:@"%@" , [dict objectForKey:@"accountId"]];
+                                 [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+                                 [self performSelector:@selector(getUserImageFromFBView:) withObject:loggedUser afterDelay:4.0];
+                                 
+                                 // Insert user to scoreboards
+                                 [self insertUserScoresWithAccountId:loggedUser.userAccountId fullName:[NSString stringWithFormat:@"%@ %@" , firstName , lastName]];
+                                 NSLog(@"here1");
+                             } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                 // Get score from core data
+                                 NSLog(@"Failed");
+                             }];
+                             [request start];
+                         }]; 
+                     }];
                  }
              }
          }];

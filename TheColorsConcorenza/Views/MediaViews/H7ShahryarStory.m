@@ -9,6 +9,7 @@
 
 #import "H7ShahryarStory.h"
 #import "H7ShahryarFindTheBottle.h"
+#import "H7ShahryarDescription.h"
 #import "H7MosalslatScore.h"
 #import "H7ConstantsModel.h"
 #import <CoreData+MagicalRecord.h>
@@ -115,18 +116,11 @@
         if([tabBar isHidden])
             [tabBar setHidden:![tabBar isHidden]];
 
-        if([self.currentCard.isShahryarFindTheBottleDownloaded isEqualToNumber:[NSNumber numberWithBool:NO]])
-        {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            H7ShahryarFindTheBottle *findTheBottle = [storyboard instantiateViewControllerWithIdentifier:@"shahryarFindTheBottle"];
-            findTheBottle.currentCard = self.currentCard;
-            [self.navigationController pushViewController:findTheBottle animated:YES];
-        }else {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
-            myController.score = [self.currentCard.cardScore intValue];
-            [self.navigationController pushViewController: myController animated:YES];
-        }
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        H7ShahryarDescription *findTheBottle = [storyboard instantiateViewControllerWithIdentifier:@"shahryarDownloadBottleContent"];
+        findTheBottle.currentCard = self.currentCard;
+        NSLog(@"played = %@",self.currentCard.isShahrayarFindTheBottlePlayed);
+        [self.navigationController pushViewController:findTheBottle animated:YES];
     }
 }
 
@@ -152,6 +146,7 @@
     UIImage* image = [UIImage imageWithContentsOfFile:path];
     self.storyPanel.image = image;
 }
+    
 
 
 

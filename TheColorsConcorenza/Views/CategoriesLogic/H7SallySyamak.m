@@ -80,7 +80,8 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [cards count];
+//    return [cards count];
+    return 2;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,19 +117,19 @@
         [singlton setWithCard:[cards objectAtIndex:indexPath.row]];
         NSLog(@"Card highscore till now is %@" , [[cards objectAtIndex:indexPath.row] cardScore]);
         if(selectedCard.cardId == [NSNumber numberWithInt:1] ) {
+            //Fanoos crunch
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"startKhoshaf"];
+            [self.navigationController pushViewController: myController animated:YES];
+        }else if(selectedCard.cardId == [NSNumber numberWithInt:2]) {
             //Fanoos2048
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"fanoos2048"];
             [self.navigationController pushViewController: myController animated:YES];
-        }else if(selectedCard.cardId == [NSNumber numberWithInt:2]) {
+        }else if(selectedCard.cardId == [NSNumber numberWithInt:3]) {
             //Flappy fanoos
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"startFlappy"];
-            [self.navigationController pushViewController: myController animated:YES];
-        }else if(selectedCard.cardId == [NSNumber numberWithInt:3]) {
-            //Fanoos crunch
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"startKhoshaf"];
             [self.navigationController pushViewController: myController animated:YES];
         }
     }else {
@@ -145,7 +146,7 @@
         for (int i = 0; i < 30; i++) {
             if([cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]]!= nil &&[[cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]] isEqualToString:@"1"]) {
                 MyCard *card = [cards objectAtIndex:i];
-                card.cardName = [NSString stringWithCString:[[cardStatus objectForKey:[NSString stringWithFormat:@"cardname_%@" ,card.cardId]]cStringUsingEncoding:NSUTF8StringEncoding] encoding:NSUTF8StringEncoding];
+//                card.cardName = [NSString stringWithCString:[[cardStatus objectForKey:[NSString stringWithFormat:@"cardname_%@" ,card.cardId]]cStringUsingEncoding:NSUTF8StringEncoding] encoding:NSUTF8StringEncoding];
             }
         }
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

@@ -21,13 +21,19 @@
         <attribute name="cardName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cardPrice" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="cardScore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="feenElSla7Story" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gameId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageBinary" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="iphone4x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iphone4y" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iphone5x" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iphone5y" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isAvailble" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isBought" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isEpisodeDownloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isFeenElSela7Played" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isManElQatelObjectDownloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isShahrayarFindTheBottlePlayed" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isShahryarFindTheBottleDownloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="mosalsalDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mosalslatQuestions" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -75,7 +81,7 @@
         <element name="CardImage" positionX="0" positionY="0" width="128" height="75"/>
         <element name="CardVideo" positionX="0" positionY="0" width="128" height="45"/>
         <element name="Channels" positionX="9" positionY="90" width="128" height="90"/>
-        <element name="MyCard" positionX="0" positionY="0" width="128" height="345"/>
+        <element name="MyCard" positionX="0" positionY="0" width="128" height="435"/>
         <element name="MyCategory" positionX="0" positionY="0" width="128" height="165"/>
         <element name="Notification" positionX="0" positionY="0" width="128" height="75"/>
         <element name="SponsorPrograms" positionX="9" positionY="144" width="128" height="88"/>

@@ -2,7 +2,7 @@
 //  MyCard.h
 //  TheColorsConcorenza
 //
-//  Created by Heba Gamal on 7/6/14.
+//  Created by Heba Gamal on 7/8/14.
 //  Copyright (c) 2014 Heba Gamal. All rights reserved.
 //
 
@@ -30,6 +30,12 @@
 @property (nonatomic, retain) NSString * numberOfQuestionsMosalslat;
 @property (nonatomic, retain) NSNumber * isFeenElSela7Played;
 @property (nonatomic, retain) NSNumber * isManElQatelObjectDownloaded;
+@property (nonatomic, retain) NSString * feenElSla7Story;
+@property (nonatomic, retain) NSString * iphone4x;
+@property (nonatomic, retain) NSString * iphone4y;
+@property (nonatomic, retain) NSString * iphone5x;
+@property (nonatomic, retain) NSString * iphone5y;
+@property (nonatomic, retain) NSNumber * isShahrayarFindTheBottlePlayed;
 @property (nonatomic, retain) MyCategory *belongsTo;
 @property (nonatomic, retain) NSSet *hasAudio;
 @property (nonatomic, retain) NSSet *hasImages;

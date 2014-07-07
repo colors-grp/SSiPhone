@@ -51,6 +51,8 @@
                         newCard.isAvailble = [NSNumber numberWithBool:NO];
                         newCard.isEpisodeDownloaded = [NSNumber numberWithBool:NO];
                         newCard.isShahryarFindTheBottleDownloaded = [NSNumber numberWithBool:NO];
+                        newCard.isShahrayarFindTheBottlePlayed = [NSNumber numberWithBool:NO];
+                        NSLog(@"zeft = %@" ,                         newCard.isShahrayarFindTheBottlePlayed);
                         [cardsSet addObject:newCard];
                     }
                 }
