@@ -7,6 +7,7 @@
 //
 
 #import "H7MosalslatScore.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface H7MosalslatScore ()
 
@@ -38,7 +39,34 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
     });
     
+    [self FB];
+    
     // Do any additional setup after loading the view.
+}
+
+-(void)FB {
+    
+//    NSMutableDictionary<FBGraphObject> *action = [FBGraphObject graphObject];
+//    action[@"moslsalat_quiz"] = @"http://supersayem.com" ;
+//    action[@"og:title"]=@"سوبر صايم - سلي صيامك";
+//    action[@"og:image"]= @"https://hitseven.net/SuperSayem/h7-assets/resources/img/categories/sally.png";
+//    action[@"og:description"] = @"كل يوم لعبة جديدة تجمع فيها الكلمات وتختبر تركيزك";
+//    [FBRequestConnection startForPostWithGraphPath:@"me/hitsevenapp:solve"
+//                                       graphObject:action
+//                                 completionHandler:^(FBRequestConnection *connection,
+//                                                     id result,
+//                                                     NSError *error) {
+//                                 }];
+    NSMutableDictionary<FBGraphObject> *action = [FBGraphObject graphObject];
+    action[@"moslsalat_quiz"] = @"http://supersayem.com";
+    
+    [FBRequestConnection startForPostWithGraphPath:@"me/hitsevenapp:solve"
+                                       graphObject:action
+                                 completionHandler:^(FBRequestConnection *connection,
+                                                     id result,
+                                                     NSError *error) {
+                                     // handle the result
+                                 }];
 }
 
 - (void)didReceiveMemoryWarning
