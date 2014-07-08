@@ -48,6 +48,11 @@
         [tabBar setHidden:YES];
     }
     
+    // Set activity indicator to hidden
+    [self.view setUserInteractionEnabled:NO];
+    [self.activityIndicator setHidden:NO];
+    [self.activityIndicator startAnimating];
+    
     singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(screenTapped:)];
     [singleTap setNumberOfTapsRequired:1];
     [singleTap setDelegate:self];
@@ -86,11 +91,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (BOOL) prefersStatusBarHidden
-{
-    return YES;
 }
 
 - (IBAction)screenTapped:(id)sender {
@@ -251,6 +251,10 @@
         self.currentCard.isFeenElSela7Played = [NSNumber numberWithBool:YES];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         currentDate = [[NSDate alloc] init];
+        // Set activity indicator to not hidden
+        [self.view setUserInteractionEnabled:YES];
+        [self.activityIndicator setHidden:YES];
+        [self.activityIndicator stopAnimating];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ERR: %@", [error description]);
     }];

@@ -106,7 +106,9 @@
         self.currentCard.iphone4x = [NSString stringWithFormat:@"%@",[dect objectForKey:@"iphone4x"]];
         self.currentCard.iphone4y = [NSString stringWithFormat:@"%@",[dect objectForKey:@"iphone4y"]];
         self.currentCard.feenElSla7Story = [dect objectForKey:@"story"];
-        self.descriptionLabel.text =[dect objectForKey:@"story"];
+        NSString *tmp =[dect objectForKey:@"story"];
+        tmp = [tmp stringByReplacingOccurrencesOfString:@"<br>" withString:@"\n"];
+        self.descriptionLabel.text =tmp;
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
@@ -120,7 +122,7 @@
 
 - (void)downloadfindTheObjectImage {
     // Set URL for image
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/manElQatel/%@/iphone4/find/obj.png" ,ASSETS_URL, self.currentCard.cardId]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/manElQatel/%@/iphone4/find/obj_found.png" ,ASSETS_URL, self.currentCard.cardId]];
     NSLog(@"%@" , url);
     // Set the request
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
