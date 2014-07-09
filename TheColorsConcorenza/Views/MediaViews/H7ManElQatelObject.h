@@ -14,5 +14,6 @@
 @property (strong , nonatomic) MyCard *currentCard;
 @property (weak, nonatomic) IBOutlet UIImageView *objectImage;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

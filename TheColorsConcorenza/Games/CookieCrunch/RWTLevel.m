@@ -372,7 +372,7 @@
 - (void)calculateScores:(NSSet *)chains {
   // 3-chain is 60 pts, 4-chain is 120, 5-chain is 180, and so on
   for (RWTChain *chain in chains) {
-    chain.score = 60 * ([chain.cookies count] - 2) * self.comboMultiplier;
+    chain.score = 10 * ([chain.cookies count] - 2) * self.comboMultiplier;
     self.comboMultiplier++;
   }
 }

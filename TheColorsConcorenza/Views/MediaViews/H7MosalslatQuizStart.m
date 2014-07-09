@@ -87,20 +87,22 @@
     if(cell == nil) {
         cell = (H7choicesCell*)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"choiceCell"];
     }
-    if(indexPath.row == 0) {
-        cell.choiceLabel.text = [c1 objectAtIndex:curQuestion];
-    }
-    
-    if(indexPath.row == 1) {
-        cell.choiceLabel.text = [c2 objectAtIndex:curQuestion];
-    }
-    
-    if(indexPath.row == 2) {
-        cell.choiceLabel.text = [c3 objectAtIndex:curQuestion];
-    }
-    
-    if(indexPath.row == 3) {
-        cell.choiceLabel.text = [c4 objectAtIndex:curQuestion];
+    if (curQuestion < [c1 count]) {
+        if(indexPath.row == 0) {
+            cell.choiceLabel.text = [c1 objectAtIndex:curQuestion];
+        }
+        
+        if(indexPath.row == 1) {
+            cell.choiceLabel.text = [c2 objectAtIndex:curQuestion];
+        }
+        
+        if(indexPath.row == 2) {
+            cell.choiceLabel.text = [c3 objectAtIndex:curQuestion];
+        }
+        
+        if(indexPath.row == 3) {
+            cell.choiceLabel.text = [c4 objectAtIndex:curQuestion];
+        }
     }
     return cell;
 }
@@ -109,7 +111,7 @@
     [userSelection addObject:[NSString stringWithFormat:@"%d" , indexPath.row]];
     NSDate *timeNow = [[NSDate alloc] init];
     int timeTaken = [timeNow timeIntervalSinceDate:currentDate];
-    if([[userSelection objectAtIndex:curQuestion] isEqualToString:[correct objectAtIndex:curQuestion]])
+    if(curQuestion < [userSelection count] && curQuestion < [correct count] &&[[userSelection objectAtIndex:curQuestion] isEqualToString:[correct objectAtIndex:curQuestion]])
     {
         userScore += ( (50 - (5*timeTaken)) > 10 ?(50 - (5*timeTaken))  : 10);
     }
@@ -130,7 +132,7 @@
         int tmp = curQuestion;
         if (tmp) {
             curQuestion--;
-            if([[userSelection objectAtIndex:curQuestion] isEqualToString:[correct objectAtIndex:curQuestion]])
+            if(curQuestion < [userSelection count] && curQuestion < [correct count]&& [[userSelection objectAtIndex:curQuestion] isEqualToString:[correct objectAtIndex:curQuestion]])
                 cell.backgroundColor = [UIColor greenColor];
             else
                 cell.backgroundColor = [UIColor redColor];
@@ -143,7 +145,8 @@
                 curQuestion++;
             cell.backgroundColor = [UIColor clearColor];
             [self.choices reloadData];
-            self.question.text = [questions objectAtIndex:curQuestion];
+            if(curQuestion < [questions count])
+                self.question.text = [questions objectAtIndex:curQuestion];
             currentDate = [[NSDate alloc] init];
         });
     }else if (curQuestion >= size) {
@@ -152,7 +155,7 @@
         int tmp = curQuestion;
         if (tmp) {
             curQuestion--;
-            if([[userSelection objectAtIndex:curQuestion] isEqualToString:[correct objectAtIndex:curQuestion]])
+            if(curQuestion < [userSelection count] && curQuestion < [correct count]&&[[userSelection objectAtIndex:curQuestion] isEqualToString:[correct objectAtIndex:curQuestion]])
                 cell.backgroundColor = [UIColor greenColor];
             else
                 cell.backgroundColor = [UIColor redColor];
@@ -168,7 +171,7 @@
             NSString *cardId = [NSString stringWithFormat:@"%@" , self.currentCard.cardId];
             NSString *Score = [NSString stringWithFormat:@"%d" , userScore];
             [self updateScoreInDBWithUserId:userId catId:catId cardId:cardId score:Score];
-            
+            [self FB];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
             myController.score = userScore;
@@ -278,4 +281,22 @@
     size =tmp.intValue;
     [self reload];
 }
+
+- (void)FB {
+    NSArray *a = [User MR_findAll];
+    User *u = [a firstObject];
+    NSString *userId = u.userAccountId;
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@post_story/format/json/user_id/%@/category_id/2", CORE_URL , userId]];
+    NSLog(@"%@" , url);
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"%@" , JSON);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        // Get from core data
+        NSLog(@"Failed to FB");
+    }];
+    [request start];
+}
+
+
 @end

@@ -88,30 +88,37 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SallySyamakCell" forIndexPath:indexPath];
     UIImageView *image = (UIImageView*)[cell viewWithTag:500];
     UILabel *nameLabel = (UILabel*)[cell viewWithTag:501];
-    
-    bool inLoop =false;
-    NSString *imagePath;
-    MyCard *curCard = [cards objectAtIndex:indexPath.row];
-    if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"] && [curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:NO]]) {
-        [self downloadCard:curCard SetImage:image];
-        nameLabel.text = curCard.cardName;
-        inLoop = YES;
-    }else if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]]) {
-        NSData *imgData = curCard.imageBinary;
-        UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];
-        [image setImage:thumbNail];
-        nameLabel.text = curCard.cardName;
-        inLoop = YES;
+    if(indexPath.row == 0) {
+        image.image = [UIImage imageNamed:@"game1"];
+        nameLabel.text = @"خشاف";
+    }else if (indexPath.row == 1) {
+        
+        image.image = [UIImage imageNamed:@"game2"];
+        nameLabel.text = @"٢٠٤٨";
     }
-    if(!inLoop) {
-        imagePath = [NSString stringWithFormat:@"locked_card.png"];
-        image.image = [UIImage imageNamed:imagePath];
-        nameLabel.text = @"قريباً";
-    }
+//    bool inLoop =false;
+//    NSString *imagePath;
+//    MyCard *curCard = [cards objectAtIndex:indexPath.row];
+//    if([cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]]!= nil && [[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"] && [curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:NO]]) {
+//        [self downloadCard:curCard SetImage:image];
+//        nameLabel.text = curCard.cardName;
+//        inLoop = YES;
+//    }else if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+//        NSData *imgData = curCard.imageBinary;
+//        UIImage *thumbNail = [UIImage imageWithData:imgData scale:1.0f];
+//        [image setImage:thumbNail];
+//        nameLabel.text = curCard.cardName;
+//        inLoop = YES;
+//    }
+//    if(!inLoop) {
+//        imagePath = [NSString stringWithFormat:@"locked_card.png"];
+//        image.image = [UIImage imageNamed:imagePath];
+//        nameLabel.text = @"قريباً";
+//    }
     return  cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if([[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
+//    if([[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
         MyCard *selectedCard = [cards objectAtIndex:indexPath.row];
         H7CardSinglton *singlton = [H7CardSinglton sharedInstance];
         [singlton setWithCard:[cards objectAtIndex:indexPath.row]];
@@ -132,10 +139,10 @@
             ViewController *myController = [storyboard instantiateViewControllerWithIdentifier:@"startFlappy"];
             [self.navigationController pushViewController: myController animated:YES];
         }
-    }else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Card not open yet!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-    }
+//    }else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:@"الحلقه لسه ما نزلتش" delegate:nil cancelButtonTitle:@"تمام" otherButtonTitles:nil];
+//        [alert show];
+//    }
 }
 
 -(void)getOpenedCards {

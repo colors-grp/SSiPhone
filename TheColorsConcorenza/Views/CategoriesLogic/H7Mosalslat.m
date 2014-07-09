@@ -57,6 +57,8 @@
     [super viewDidLoad];
 }
 
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -108,7 +110,7 @@
         quiz.currentCard = [cards objectAtIndex:indexPath.row];
         [self.navigationController pushViewController: quiz animated:YES];
     }else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Card not open yet!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:@"الحلقه لسه ما نزلتش" delegate:nil cancelButtonTitle:@"تمام" otherButtonTitles:nil];
         [alert show];
     }
 }

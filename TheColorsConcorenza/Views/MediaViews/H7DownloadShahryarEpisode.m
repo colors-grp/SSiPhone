@@ -74,7 +74,7 @@
         story.currentCard = self.currentCard;
         [self.navigationController pushViewController:story animated:YES];
     }else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Downloading ..." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:@"لسه بنجيب الحلقه .." delegate:self cancelButtonTitle:@"تمام" otherButtonTitles: nil];
         [alert show];
     }
 }

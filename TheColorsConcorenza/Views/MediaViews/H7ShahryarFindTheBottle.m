@@ -91,6 +91,7 @@
         NSString *cardId = [NSString stringWithFormat:@"%@" , self.currentCard.cardId];
         NSString *Score = [NSString stringWithFormat:@"%d" , currentScore];
         [self updateScoreInDBWithUserId:userId catId:catId cardId:cardId score:Score];
+        [self FB];
         self.currentCard.cardScore = [NSNumber numberWithInt:currentScore];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 
@@ -199,6 +200,23 @@
         aTimer = nil;
     }
 }
+
+- (void)FB {
+    NSArray *a = [User MR_findAll];
+    User *u = [a firstObject];
+    NSString *userId = u.userAccountId;
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@post_story/format/json/user_id/%@/category_id/4", CORE_URL , userId]];
+    NSLog(@"%@" , url);
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"%@" , JSON);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        // Get from core data
+        NSLog(@"Failed to FB");
+    }];
+    [request start];
+}
+
 
 
 

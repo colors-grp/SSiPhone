@@ -7,14 +7,16 @@
 //
 
 #import "H7NotificationViewController.h"
-#import "H7NotificationCell.h"
+#import "MyCategory.h"
 
+#import <CoreData+MagicalRecord.h>
 @interface H7NotificationViewController ()
 
 @end
 
 @implementation H7NotificationViewController {
-    NSMutableArray *notifications;
+    NSMutableArray *myCats;
+    MyCategory *curCat;
 }
 
 - (void)viewDidLoad
@@ -32,11 +34,9 @@
         [self.view insertSubview: imageView atIndex:0];
     }
     
-    notifications = [[NSMutableArray alloc] init];
-    
-    // Get from core data
-    
-    
+    myCats =  [[MyCategory MR_findAllSortedBy:@"categoryId" ascending:YES] mutableCopy];
+    curCat = [myCats objectAtIndex:0];
+    self.helpImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_help.png" , curCat.categoryId]];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -47,27 +47,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/* Table Data source */
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if([notifications count])
-        return [notifications count];
-    return 1;
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [myCats count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    H7NotificationCell *cell = (H7NotificationCell*)[tableView dequeueReusableCellWithIdentifier:@"notificationCell"];
-    if(cell == nil) {
-        cell = (H7NotificationCell*)[[H7NotificationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"notificationCell"];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"helpCell" forIndexPath:indexPath];
+    UIImageView *image = (UIImageView*)[cell viewWithTag:1000];
+    MyCategory* myCat = [myCats objectAtIndex:indexPath.row];
+    image.image = [UIImage imageNamed:[NSString stringWithFormat:@"CategoriesIcons/%@.png" , [myCat valueForKey:@"categoryId"]]];
+    if([[NSString stringWithFormat:@"%@" ,  curCat.categoryId ] isEqualToString:[NSString stringWithFormat:@"%@" , myCat.categoryId]]){
+        image.image = [UIImage imageNamed:[NSString stringWithFormat:@"CategoriesIcons/%@_selected.png" , [myCat valueForKey:@"categoryId"]]];
     }
-    if([notifications count])
-        cell.notificationDescription.text =[notifications objectAtIndex:indexPath.row];
     return cell;
 }
 
-/*  Table Delegate */
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 90.0;
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    curCat = [myCats objectAtIndex:indexPath.row];
+    self.helpImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_help.png" , curCat.categoryId]];
+    [self.categoriesCollection reloadData];
 }
+
 
 
 @end

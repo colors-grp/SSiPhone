@@ -41,6 +41,12 @@
                                    action:@selector(startManElQatel:)];
     self.navigationItem.rightBarButtonItem = quizButton;
     
+    
+    // Set activity indicator to hidden
+    [self.view setUserInteractionEnabled:NO];
+    [self.activityIndicator setHidden:NO];
+    [self.activityIndicator startAnimating];
+    
     [self downloadDimensions];
     [self downloadfindTheObjectImage];
     [super viewDidLoad];
@@ -61,7 +67,7 @@
             audio.currentCard = self.currentCard;
             [self.navigationController pushViewController: audio animated:YES];
     }else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OPSSS!!" message:[NSString stringWithFormat:@"Downloading content"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:@"لسه بنجيب الحلقه .." delegate:self cancelButtonTitle:@"تمام" otherButtonTitles: nil];
         [alert show];
     }
 }
@@ -82,6 +88,20 @@
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [self loadObject];
         });
+    }
+}
+
+- (void)saveBackgroundImage: (UIImage*)image
+{
+    if (image != nil)
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                             NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString* path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"cards/manElQatel/%@/iphone4/find/bg.png" , self.currentCard.cardId]];
+        NSLog(@"saving image path = %@" , path);
+        NSData* data = UIImagePNGRepresentation(image);
+        [data writeToFile:path atomically:YES];
     }
 }
 
@@ -148,9 +168,50 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSData *imgData = [[NSData alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fullPath]];
         UIImage *thumbNail = [[UIImage alloc] initWithData:imgData];
-        self.currentCard.isManElQatelObjectDownloaded = [NSNumber numberWithBool:YES];
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         [self saveImage:thumbNail];
+        [self downloadfindTheObjectBackgroundImage];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"ERR: %@", [error description]);
+    }];
+    [operation start];
+}
+
+- (void)downloadfindTheObjectBackgroundImage {
+    // Set URL for image
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"%@cards/manElQatel/%@/iphone4/find/bg.png" ,ASSETS_URL, self.currentCard.cardId]];
+    // Set the request
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    // Get directory to save & retrieve image
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    documentsDirectory = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"cards/manElQatel/%@/iphone4/find/" , self.currentCard.cardId]];
+    
+    // Create directory
+    NSFileManager *filemgr;
+    filemgr =[NSFileManager defaultManager];
+    if ([filemgr createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES
+                            attributes:nil error: NULL] == NO){
+        NSLog(@"Failed to create local directory");
+    }
+    
+    // Save file
+    NSString *fullPath = [NSString stringWithFormat:@"%@/bgg.png", documentsDirectory ];
+    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:fullPath append:NO]];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSData *imgData = [[NSData alloc] initWithContentsOfURL:[NSURL fileURLWithPath:fullPath]];
+        UIImage *thumbNail = [[UIImage alloc] initWithData:imgData];
+        [self saveBackgroundImage:thumbNail];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        self.currentCard.isManElQatelObjectDownloaded = [NSNumber numberWithBool:YES];
+        
+        // Set activity indicator to not hidden
+        [self.view setUserInteractionEnabled:YES];
+        [self.activityIndicator setHidden:YES];
+        [self.activityIndicator stopAnimating];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ERR: %@", [error description]);
     }];

@@ -30,17 +30,18 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
         [self.view insertSubview: imageView atIndex:0];
     }
-    
+    // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
     // Show score for 1.5 secs
     self.scoreLabel.text = [NSString stringWithFormat:@"%d",self.score];
-    double delayInSeconds = 1.7;
+
+    double delayInSeconds = 1.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-    [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     });
-    
-    
-    // Do any additional setup after loading the view.
 }
 
 //-(void)FB {

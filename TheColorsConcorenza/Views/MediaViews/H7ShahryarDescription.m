@@ -80,9 +80,8 @@
             [self.navigationController pushViewController: myController animated:YES];
         }
     }else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OPSSS!!" message:[NSString stringWithFormat:@"Downloading content"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [alert show];
-    }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:@"لسه بنجيب الحلقه .." delegate:self cancelButtonTitle:@"تمام" otherButtonTitles: nil];
+        [alert show];    }
 }
 
 - (void)saveImage: (UIImage*)image {

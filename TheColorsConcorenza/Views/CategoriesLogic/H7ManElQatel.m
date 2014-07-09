@@ -107,21 +107,14 @@
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%@",cardStatus );
     if([[cardStatus objectForKey:[NSString stringWithFormat:@"%d" , indexPath.row+1]] isEqualToString:@"1"]) {
-        MyCard *card = [cards objectAtIndex:indexPath.row];
-        if([card.isFeenElSela7Played isEqualToNumber:[NSNumber numberWithBool:NO]]) {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            H7ManElQatelObject *audio  = [storyboard instantiateViewControllerWithIdentifier:@"manElQatelStart"];
-            audio.currentCard = [cards objectAtIndex:indexPath.row];
-            [self.navigationController pushViewController: audio animated:YES];
-        }else {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            H7MosalslatScore *myController = [storyboard instantiateViewControllerWithIdentifier:@"mossalslatScore"];
-            myController.score = [card.cardScore intValue];
-            [self.navigationController pushViewController: myController animated:YES];
-        }
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        H7ManElQatelObject *audio  = [storyboard instantiateViewControllerWithIdentifier:@"manElQatelStart"];
+        audio.currentCard = [cards objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController: audio animated:YES];
     }else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Card not open yet!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:@"الحلقه لسه ما نزلتش" delegate:nil cancelButtonTitle:@"تمام" otherButtonTitles:nil];
         [alert show];
     }
 }

@@ -8,6 +8,10 @@
 
 #import "FFScene.h"
 #import "H7CardSinglton.h"
+#import "User.h"
+#import "H7ConstantsModel.h"
+#import <CoreData+MagicalRecord.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface FFScene () <SKPhysicsContactDelegate> {
     SKSpriteNode* _bird;
@@ -267,9 +271,24 @@ CGFloat clamp(CGFloat min, CGFloat max, CGFloat value) {
             // Saving card score in core data
             H7CardSinglton *singlton = [H7CardSinglton sharedInstance];
             [singlton updateScore:[NSNumber numberWithInteger:_score]];
-            
+            [self FB];
         }
     }
+}
+- (void)FB {
+    NSArray *a = [User MR_findAll];
+    User *u = [a firstObject];
+    NSString *userId = u.userAccountId;
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@post_story/format/json/user_id/%@/category_id/1", CORE_URL , userId]];
+    NSLog(@"%@" , url);
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"%@" , JSON);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        // Get from core data
+        NSLog(@"Failed to FB");
+    }];
+    [request start];
 }
 
 @end

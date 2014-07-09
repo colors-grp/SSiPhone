@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface H7NotificationViewController : UIViewController <UITableViewDataSource , UITableViewDelegate>
+@interface H7NotificationViewController : UIViewController <UICollectionViewDataSource >
 
 @property (weak, nonatomic) IBOutlet UITableView *notificationTable;
+@property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollection;
+@property (weak, nonatomic) IBOutlet UIImageView *helpImage;
 
 @end

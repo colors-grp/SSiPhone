@@ -55,7 +55,7 @@
         myController.currentCard = self.currentCard;
         [self.navigationController pushViewController:myController animated:YES];
     }else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"OPSSS!!" message:[NSString stringWithFormat:@"Your already played this game and scored %@ points" , self.currentCard.cardScore] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:[NSString stringWithFormat:@"انت حليت الفزوره دي" ] delegate:self cancelButtonTitle:@"تمام" otherButtonTitles: nil];
         [alert show];
     }
 }
