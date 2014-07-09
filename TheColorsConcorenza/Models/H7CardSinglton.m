@@ -47,6 +47,12 @@
         NSString *userId = u.userAccountId;
         NSString *catId = @"1";
         NSString *cardId = [NSString stringWithFormat:@"%@" , currentCard.cardId];
+        if([currentCard.cardId isEqualToNumber:[NSNumber numberWithInt:1]]) {
+                cardId = @"34";
+        }else if([currentCard.cardId isEqualToNumber:[NSNumber numberWithInt:2]]) {
+            cardId = @"33";
+        }
+       
         NSString *Score = [NSString stringWithFormat:@"%@" , score];
         [self updateScoreInDBWithUserId:userId catId:catId cardId:cardId score:Score];
 

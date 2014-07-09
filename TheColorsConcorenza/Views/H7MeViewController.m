@@ -188,6 +188,9 @@
                              email = [email stringByReplacingOccurrencesOfString:@"@" withString:@"%"];
                              NSLog(@"%@ \n %@" , userData , fbAccessToken);
                              
+                             if(username == NULL || username == nil )
+                                 username = userId;
+                             
                              // Saving User information in core data
                              User * loggedUser = [User MR_createEntity];
                              loggedUser.userName = username;
@@ -199,6 +202,7 @@
                              NSLog(@"core data %@ %@" , loggedUser.userName , loggedUser.userBirthday);
                              NSString *str = [NSString stringWithFormat:@"%@mobileAddMe/username/%@/firstname/%@/lastname/%@/email/%@/credit/0/birthday/%@/fb_id/%@/token/%@/format/json" , CORE_URL , username , firstName , lastName , email ,birthday , userId , fbAccessToken];
                              NSURL *url = [[NSURL alloc] initWithString:[str stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+                             NSLog(@"%@" , url);
                              NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
                              AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                  NSDictionary *dict = JSON;

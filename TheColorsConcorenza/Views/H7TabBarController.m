@@ -41,12 +41,13 @@
     item3.image = [[UIImage imageNamed:@"TabIcons30/scoreboard.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     item3.selectedImage = [[UIImage imageNamed:@"TabIcons30/scoreboard_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    item4.image = [[UIImage imageNamed:@"TabIcons30/notifications.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    item4.selectedImage = [[UIImage imageNamed:@"TabIcons30/notifications_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    item5.image = [[UIImage imageNamed:@"TabIcons30/guide.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    item5.selectedImage = [[UIImage imageNamed:@"TabIcons30/guide_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item4.image = [[UIImage imageNamed:@"TabIcons30/guide.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    item4.selectedImage = [[UIImage imageNamed:@"TabIcons30/guide_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
+    item5.image = [[UIImage imageNamed:@"TabIcons30/notifications.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    item5.selectedImage = [[UIImage imageNamed:@"TabIcons30/notifications_selected.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
     //Change Navigation bar title color to red
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:(212/255.0) green:(39/255.0) blue:(51/255.0) alpha:1]}];
     

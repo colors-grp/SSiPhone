@@ -41,7 +41,6 @@
                                    action:@selector(startManElQatel:)];
     self.navigationItem.rightBarButtonItem = quizButton;
     
-    
     // Set activity indicator to hidden
     [self.view setUserInteractionEnabled:NO];
     [self.activityIndicator setHidden:NO];

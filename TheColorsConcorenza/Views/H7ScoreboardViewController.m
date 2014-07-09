@@ -247,6 +247,7 @@
         [self.scoreBoardTable reloadData];
         if(changed == YES) {
             NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection: 0];
+            if([names count] > 0)
             [self.scoreBoardTable scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: NO];
             myCat.binaryData = [NSKeyedArchiver archivedDataWithRootObject:tmp];
             
@@ -320,6 +321,7 @@
         [self.scoreBoardTable reloadData];
         if(changed == YES) {
             NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection: 0];
+            if([names count] > 0)
             [self.scoreBoardTable scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
             myCat.binaryData = [NSKeyedArchiver archivedDataWithRootObject:tmp];
             

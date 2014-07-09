@@ -41,6 +41,12 @@
     
     [self.activityIndicator setHidden:YES];
     
+    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
     // Get Tv guide
     coreDataPrograms = [[SponsorPrograms MR_findAllSortedBy:@"programId" ascending:YES] mutableCopy];
     if([coreDataPrograms count] == 0) {
@@ -50,8 +56,6 @@
         
         [self getTvGuide];
     }
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,6 +109,11 @@
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get from core data
         NSLog(@"Failed to get Tv Guide");
+        [self.view setUserInteractionEnabled:YES];
+        [self.activityIndicator setHidden:YES];
+        [self.activityIndicator stopAnimating];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:@"حصل مشكله .. حاول مره تانيه" delegate:self cancelButtonTitle:@"تمام" otherButtonTitles: nil];
+        [alert show];
     }];
     [request start];
 }

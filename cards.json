@@ -61,7 +61,12 @@
  { "name": "Card27", "id": "27", "score": "0", "category":"1" , "gameId":"1"},
  { "name": "Card28", "id": "28", "score": "0", "category":"1" , "gameId":"1"},
  { "name": "Card29", "id": "29", "score": "0", "category":"1" , "gameId":"1"},
- { "name": "Card30", "id": "30", "score": "0", "category":"1" , "gameId":"1"}
+ { "name": "Card30", "id": "30", "score": "0", "category":"1" , "gameId":"1"},
+ { "name": "Card30", "id": "31", "score": "0", "category":"1" , "gameId":"1"},
+ { "name": "Card30", "id": "32", "score": "0", "category":"1" , "gameId":"1"},
+ { "name": "Card30", "id": "33", "score": "0", "category":"1" , "gameId":"1"},
+ { "name": "Card30", "id": "34", "score": "0", "category":"1" , "gameId":"1"},
+ { "name": "Card30", "id": "35", "score": "0", "category":"1" , "gameId":"1"}
  
  ,
  

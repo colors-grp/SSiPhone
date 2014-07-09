@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="-262" y="392"/>
         </scene>
-        <!--Notification View Controller - Notifications-->
+        <!--Notification View Controller - Help-->
         <scene sceneID="OCd-ch-VKv">
             <objects>
                 <viewController id="Yc2-w5-FW4" customClass="H7NotificationViewController" sceneMemberID="viewController">
@@ -126,7 +126,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Notifications" id="1oZ-Lw-GXV"/>
+                    <navigationItem key="navigationItem" title="Help" id="1oZ-Lw-GXV"/>
                     <connections>
                         <outlet property="categoriesCollection" destination="dwZ-hA-9Ez" id="2DI-WV-gL1"/>
                         <outlet property="helpImage" destination="9EU-45-SD5" id="WhT-CO-suO"/>
@@ -297,13 +297,6 @@
                                 <rect key="frame" x="40" y="64" width="88" height="77"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-Yo-3pU">
-                                <rect key="frame" x="40" y="176" width="240" height="251"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="سلاح الجريمه" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfI-io-EEb">
                                 <rect key="frame" x="150" y="88" width="150" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -313,7 +306,15 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Oxy-l2-zZk">
                                 <rect key="frame" x="142" y="222" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.58543925379999995" green="0.0" blue="0.0063526050530000001" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vw6-dl-Hx1">
+                                <rect key="frame" x="40" y="186" width="240" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -323,7 +324,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Oxy-l2-zZk" id="C2l-jr-ZTg"/>
-                        <outlet property="descriptionLabel" destination="UcD-Yo-3pU" id="CpE-sk-hED"/>
+                        <outlet property="descriptionLabel" destination="vw6-dl-Hx1" id="Ls8-3d-lbC"/>
                         <outlet property="objectImage" destination="ZgC-CQ-BZ8" id="G3F-eE-I1r"/>
                     </connections>
                 </viewController>
@@ -1098,11 +1099,11 @@
             </objects>
             <point key="canvasLocation" x="-689" y="1861"/>
         </scene>
-        <!--Navigation Controller - Notification-->
+        <!--Navigation Controller - Help-->
         <scene sceneID="MZv-gm-Gn2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MYO-K6-V19" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notification" id="dXQ-K5-F2q"/>
+                    <tabBarItem key="tabBarItem" title="Help" id="dXQ-K5-F2q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ifh-qL-OHt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1334,8 +1335,8 @@
                         <segue destination="sf2-4z-CdF" kind="relationship" relationship="viewControllers" id="poa-rv-jgr"/>
                         <segue destination="lH8-K9-Da2" kind="relationship" relationship="viewControllers" id="VMp-9g-3fw"/>
                         <segue destination="mXn-MZ-Q6X" kind="relationship" relationship="viewControllers" id="4aN-Kp-UHY"/>
-                        <segue destination="MYO-K6-V19" kind="relationship" relationship="viewControllers" id="Vm9-vg-4G8"/>
-                        <segue destination="NSE-A7-4w9" kind="relationship" relationship="viewControllers" id="0ko-Rd-8Th"/>
+                        <segue destination="NSE-A7-4w9" kind="relationship" relationship="viewControllers" id="zGv-zg-3UT"/>
+                        <segue destination="MYO-K6-V19" kind="relationship" relationship="viewControllers" id="AOY-qs-ikB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fj7-gQ-PD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
