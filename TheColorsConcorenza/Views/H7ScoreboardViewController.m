@@ -187,14 +187,15 @@
     if(cell == nil) {
         cell = (H7ScoreboardCell*)[[H7ScoreboardCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"scoreboardCell"];
     }
-    cell.nameLabel.text = [names objectAtIndex:indexPath.row];
-    cell.scoreLabel.text = [NSString stringWithFormat:@"Score = %@" , [scores objectAtIndex:indexPath.row]];
-    cell.rankLabel.text = [NSString stringWithFormat:@"%@" , [ranks objectAtIndex:indexPath.row]];
-    if(isConnected == YES)
-        cell.profileImage.profileID = [facebookIds objectAtIndex:indexPath.row];
-    else
-        cell.profileImage.profileID = nil;
-    
+    if(indexPath.row <[names count] && indexPath.row <[scores count] &&indexPath.row <[ranks count] &&indexPath.row <[facebookIds count] ) {
+        cell.nameLabel.text = [names objectAtIndex:indexPath.row];
+        cell.scoreLabel.text = [NSString stringWithFormat:@"Score = %@" , [scores objectAtIndex:indexPath.row]];
+        cell.rankLabel.text = [NSString stringWithFormat:@"%@" , [ranks objectAtIndex:indexPath.row]];
+        if(isConnected == YES)
+            cell.profileImage.profileID = [facebookIds objectAtIndex:indexPath.row];
+        else
+            cell.profileImage.profileID = nil;
+    }
     return cell;
 }
 

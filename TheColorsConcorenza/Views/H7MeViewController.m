@@ -40,6 +40,32 @@
         UIImage *background = [UIImage imageNamed: @"me_bg_5.png"];
         UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
         [self.view insertSubview: imageView atIndex:1];
+        
+        // Setting labels positions
+        [self.sallySyamakScore removeFromSuperview];
+        [self.sallySyamakScore setTranslatesAutoresizingMaskIntoConstraints:YES];
+        [self.sallySyamakScore setFrame:CGRectMake(10, 166, 59, 42)];
+        [self.view addSubview:self.sallySyamakScore];
+        
+        [self.mosalslatScore removeFromSuperview];
+        [self.mosalslatScore setTranslatesAutoresizingMaskIntoConstraints:YES];
+        [self.mosalslatScore setFrame:CGRectMake(72, 183, 45, 21)];
+        [self.view addSubview:self.mosalslatScore];
+        
+        [self.manElQatelScore removeFromSuperview];
+        [self.manElQatelScore setTranslatesAutoresizingMaskIntoConstraints:YES];
+        [self.manElQatelScore setFrame:CGRectMake(195, 168, 54 , 38)];
+        [self.view addSubview:self.manElQatelScore];
+        
+        [self.shahryarScore removeFromSuperview];
+        [self.shahryarScore setTranslatesAutoresizingMaskIntoConstraints:YES];
+        [self.shahryarScore setFrame:CGRectMake(245, 146, 68, 61)];
+        [self.view addSubview:self.shahryarScore];
+        
+        [self.fbProfilePictureImageView removeFromSuperview];
+        [self.fbProfilePictureImageView setTranslatesAutoresizingMaskIntoConstraints:YES];
+        [self.fbProfilePictureImageView setFrame:CGRectMake(68, 186, 180 ,180)];
+        [self.view insertSubview:self.fbProfilePictureImageView atIndex:0];
     }
     else{
         UIImage *background = [UIImage imageNamed: @"me_bg_4.png"];
