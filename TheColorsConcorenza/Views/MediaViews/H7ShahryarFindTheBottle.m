@@ -31,17 +31,17 @@
 - (void)viewDidLoad
 {
     /* Setting background image */
-    int height =  [[UIScreen mainScreen] bounds].size.height;
-    if(height > 480){
-        UIImage *background = [UIImage imageNamed: @"bg_all_5.png"];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
-        [self.view insertSubview: imageView atIndex:0];
-    }
-    else{
-        UIImage *background = [UIImage imageNamed: @"bg_all_4.png"];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
-        [self.view insertSubview: imageView atIndex:0];
-    }
+//    int height =  [[UIScreen mainScreen] bounds].size.height;
+//    if(height > 480){
+//        UIImage *background = [UIImage imageNamed: @"bg_all_5.png"];
+//        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+//        [self.view insertSubview: imageView atIndex:0];
+//    }
+//    else{
+//        UIImage *background = [UIImage imageNamed: @"bg_all_4.png"];
+//        UIImageView *imageView = [[UIImageView alloc] initWithImage: background];
+//        [self.view insertSubview: imageView atIndex:0];
+//    }
     
     x = [self.currentCard.iphone4x floatValue];
     y = [self.currentCard.iphone4y floatValue];

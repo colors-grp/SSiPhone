@@ -40,11 +40,11 @@
     }
     
     // Get Cards of manElQatel category sorted according to cardId
-//    cards = [[self.currentCategory.hasCards allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-//        NSNumber *first = [obj1 valueForKey:@"cardId"];
-//        NSNumber *second = [obj2 valueForKey:@"cardId"];
-//        return [first compare:second];
-//    }];
+    cards = [[self.currentCategory.hasCards allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSNumber *first = [obj1 valueForKey:@"cardId"];
+        NSNumber *second = [obj2 valueForKey:@"cardId"];
+        return [first compare:second];
+    }];
 //    for (int i = 0; i < [cards count]; i++) {
 //        MyCard *curCard = [cards objectAtIndex:i];
 //        if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]])

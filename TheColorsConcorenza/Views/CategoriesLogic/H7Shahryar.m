@@ -43,12 +43,12 @@
 
     
 //    // Get Cards of shahryar category sorted according to cardId
-//    cards = [[self.currentCategory.hasCards allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-//        NSNumber *first = [obj1 valueForKey:@"cardId"];
-//        NSNumber *second = [obj2 valueForKey:@"cardId"];
-//        return [first compare:second];
-//    }];
-//    
+    cards = [[self.currentCategory.hasCards allObjects] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSNumber *first = [obj1 valueForKey:@"cardId"];
+        NSNumber *second = [obj2 valueForKey:@"cardId"];
+        return [first compare:second];
+    }];
+//
 //    for (int i = 0; i < [cards count]; i++) {
 //        MyCard *curCard = [cards objectAtIndex:i];
 //        if([curCard.isAvailble isEqualToNumber:[NSNumber numberWithBool:YES]])
@@ -144,10 +144,13 @@
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         cardStatus = JSON;
+        NSLog(@"%@" , cardStatus);
         for (int i = 0; i < 30; i++) {
             if([cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]]!= nil &&[[cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]] isEqualToString:@"1"]) {
+                NSLog(@"in");
                 MyCard *card = [cards objectAtIndex:i];
                 card.numberOfPanelsShahryar = [NSString stringWithFormat:@"%@" , [cardStatus objectForKey:[NSString stringWithFormat:@"panels_%@" ,card.cardId]]];
+                NSLog(@"%@",[NSString stringWithFormat:@"cardname_%@" ,card.cardId]);
                 card.cardName = [NSString stringWithCString:[[cardStatus objectForKey:[NSString stringWithFormat:@"cardname_%@" ,card.cardId]]cStringUsingEncoding:NSUTF8StringEncoding] encoding:NSUTF8StringEncoding];
             }
         }

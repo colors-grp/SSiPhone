@@ -38,14 +38,29 @@
 }
 
 - (IBAction)playGameButtonTapped:(id)sender {
-    F3HNumberTileGameViewController *c = [F3HNumberTileGameViewController numberTileGameWithDimension:4
-                                                                                         winThreshold:2048
-                                                                                      backgroundColor:
-                                          [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_all_4.png"]]
-                                                                                          scoreModule:YES
-                                                                                       buttonControls:NO
-                                                                                        swipeControls:YES];
-    [self.navigationController pushViewController:c animated:YES];
+    int height =  [[UIScreen mainScreen] bounds].size.height;
+    if(height > 480){
+        F3HNumberTileGameViewController *c = [F3HNumberTileGameViewController numberTileGameWithDimension:4
+                                                                                             winThreshold:2048
+                                                                                          backgroundColor:
+                                              [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_all_5.png"]]
+                                                                                              scoreModule:YES
+                                                                                           buttonControls:NO
+                                                                                            swipeControls:YES];
+        [self.navigationController pushViewController:c animated:YES];
+    }
+    else{
+        F3HNumberTileGameViewController *c = [F3HNumberTileGameViewController numberTileGameWithDimension:4
+                                                                                             winThreshold:2048
+                                                                                          backgroundColor:
+                                              [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_all_4.png"]]
+                                                                                              scoreModule:YES
+                                                                                           buttonControls:NO
+                                                                                            swipeControls:YES];
+        [self.navigationController pushViewController:c animated:YES];
+
+    }
+
 }
 
 @end

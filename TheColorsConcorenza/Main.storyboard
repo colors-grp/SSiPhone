@@ -449,17 +449,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gm7-4K-For">
-                                <rect key="frame" x="20" y="393" width="280" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gm7-4K-For">
+                                <rect key="frame" x="20" y="402" width="280" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.58543925379999995" green="0.0" blue="0.0063526050530000001" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qyd-Ch-e9E">
-                                <rect key="frame" x="52" y="62" width="223" height="276"/>
+                                <rect key="frame" x="49" y="70" width="223" height="276"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="جاري تنزيل الحلقه" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3U-qS-C0w">
-                                <rect key="frame" x="52" y="353" width="223" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جاري تنزيل الحلقه" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3U-qS-C0w">
+                                <rect key="frame" x="106" y="363" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -467,6 +467,14 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gm7-4K-For" firstAttribute="leading" secondItem="Y4w-aF-eQD" secondAttribute="leading" constant="20" id="4pz-By-gwM"/>
+                            <constraint firstItem="Gm7-4K-For" firstAttribute="top" secondItem="t3U-qS-C0w" secondAttribute="bottom" constant="18" id="B2s-MW-Eyu"/>
+                            <constraint firstAttribute="centerX" secondItem="t3U-qS-C0w" secondAttribute="centerX" id="DAJ-Ik-SUg"/>
+                            <constraint firstItem="nFB-h2-5Qr" firstAttribute="top" secondItem="Gm7-4K-For" secondAttribute="bottom" constant="76" id="HS5-qJ-TXi"/>
+                            <constraint firstAttribute="centerX" secondItem="Gm7-4K-For" secondAttribute="centerX" id="Jii-fg-z2T"/>
+                            <constraint firstAttribute="trailing" secondItem="Gm7-4K-For" secondAttribute="trailing" constant="20" id="TPF-1U-xgx"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="episodeImage" destination="Qyd-Ch-e9E" id="AcX-xM-ffI"/>
@@ -1405,63 +1413,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Target:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcw-4g-El1">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcw-4g-El1">
                                 <rect key="frame" x="136" y="438" width="53" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="7cy-5L-bPW"/>
+                                    <constraint firstAttribute="height" constant="18" id="NKx-Bq-ouB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaa-wX-51e">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaa-wX-51e">
                                 <rect key="frame" x="126" y="455" width="72" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="XId-QB-TIL"/>
+                                    <constraint firstAttribute="width" constant="72" id="hlD-xs-jdH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C0-yB-Zv1">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C0-yB-Zv1">
                                 <rect key="frame" x="24" y="388" width="50" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="gAb-pZ-ilr"/>
+                                    <constraint firstAttribute="width" constant="50" id="pTu-WA-9BQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5M-xC-her">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5M-xC-her">
                                 <rect key="frame" x="13" y="405" width="72" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="224-8t-4iM"/>
+                                    <constraint firstAttribute="width" constant="72" id="bvO-x6-wkM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFR-kN-v7h">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFR-kN-v7h">
                                 <rect key="frame" x="242" y="388" width="44" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="HyL-xJ-tRg"/>
+                                    <constraint firstAttribute="height" constant="18" id="pIr-oY-XXt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpK-oG-NAZ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpK-oG-NAZ">
                                 <rect key="frame" x="228" y="405" width="72" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="gdj-6F-ITl"/>
+                                    <constraint firstAttribute="height" constant="25" id="jk9-wH-SRj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boY-6A-GlM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boY-6A-GlM">
                                 <rect key="frame" x="123" y="394" width="75" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="86h-Xt-eEa"/>
+                                    <constraint firstAttribute="height" constant="36" id="Y5g-6u-0O7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="Shuffle" backgroundImage="Button">
@@ -1478,6 +1514,28 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="boY-6A-GlM" firstAttribute="leading" secondItem="R5M-xC-her" secondAttribute="trailing" constant="38" id="1r5-SE-G0M"/>
+                            <constraint firstItem="NpK-oG-NAZ" firstAttribute="leading" secondItem="boY-6A-GlM" secondAttribute="trailing" constant="30" id="9LE-Nd-HPI"/>
+                            <constraint firstAttribute="trailing" secondItem="Uaa-wX-51e" secondAttribute="trailing" constant="122" id="C0R-Hf-gYx"/>
+                            <constraint firstAttribute="trailing" secondItem="gcw-4g-El1" secondAttribute="trailing" constant="131" id="CPe-ua-PnH"/>
+                            <constraint firstItem="LSy-8t-m0Y" firstAttribute="top" secondItem="jFR-kN-v7h" secondAttribute="bottom" constant="74" id="EYk-8o-PJJ"/>
+                            <constraint firstItem="boY-6A-GlM" firstAttribute="leading" secondItem="R5M-xC-her" secondAttribute="trailing" constant="38" id="JSw-lg-BV0"/>
+                            <constraint firstAttribute="trailing" secondItem="jFR-kN-v7h" secondAttribute="trailing" constant="34" id="KH7-YT-D4O"/>
+                            <constraint firstItem="gcw-4g-El1" firstAttribute="leading" secondItem="6f6-Vz-dTm" secondAttribute="leading" constant="136" id="Wib-w1-oDl"/>
+                            <constraint firstAttribute="trailing" secondItem="NpK-oG-NAZ" secondAttribute="trailing" constant="20" id="XEN-K7-osj"/>
+                            <constraint firstItem="LSy-8t-m0Y" firstAttribute="top" secondItem="NpK-oG-NAZ" secondAttribute="bottom" constant="50" id="dPn-Wo-e7k"/>
+                            <constraint firstItem="Uaa-wX-51e" firstAttribute="leading" secondItem="6f6-Vz-dTm" secondAttribute="leading" constant="126" id="dzV-ey-jFm"/>
+                            <constraint firstItem="LSy-8t-m0Y" firstAttribute="top" secondItem="gcw-4g-El1" secondAttribute="bottom" constant="24" id="ejU-0G-UMa"/>
+                            <constraint firstItem="boY-6A-GlM" firstAttribute="leading" secondItem="0C0-yB-Zv1" secondAttribute="trailing" constant="49" id="k7N-TQ-OeZ"/>
+                            <constraint firstItem="jFR-kN-v7h" firstAttribute="leading" secondItem="boY-6A-GlM" secondAttribute="trailing" constant="44" id="kZ1-sH-5PY"/>
+                            <constraint firstItem="LSy-8t-m0Y" firstAttribute="top" secondItem="Uaa-wX-51e" secondAttribute="bottom" id="lKN-Xv-r8k"/>
+                            <constraint firstItem="R5M-xC-her" firstAttribute="leading" secondItem="6f6-Vz-dTm" secondAttribute="leading" constant="13" id="r3q-Dx-JjM"/>
+                            <constraint firstItem="LSy-8t-m0Y" firstAttribute="top" secondItem="R5M-xC-her" secondAttribute="bottom" constant="50" id="uF5-PE-VUZ"/>
+                            <constraint firstItem="LSy-8t-m0Y" firstAttribute="top" secondItem="0C0-yB-Zv1" secondAttribute="bottom" constant="68" id="uuo-K8-0q7"/>
+                            <constraint firstItem="0C0-yB-Zv1" firstAttribute="leading" secondItem="6f6-Vz-dTm" secondAttribute="leading" constant="24" id="uwx-ae-8sX"/>
+                            <constraint firstItem="gcw-4g-El1" firstAttribute="top" secondItem="boY-6A-GlM" secondAttribute="bottom" constant="8" id="xK8-2b-EQU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o7x-vB-QJW"/>
                     <connections>
@@ -1567,9 +1625,9 @@
                                 <rect key="frame" x="40" y="82" width="240" height="341"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">معاك لوحة فيها مربعات فاضية ومربعات فيها ارقام
+                                <string key="text">معاك لوحة فيها مربعات فاضية ومربعات فيها ارقام
  كل ما تسحب بصباعك على الشاشة المربعات اللى فيها ارقام كلها بتروح في الاتجاه اللي إنت سحبت فيه ولو فيه مربعين فيهم نفس الرقم ودخلوا على بعض بيعملوا مربع جديد مكانهم فيه المجموع بتاعهم.
- كل مرة بتسحب فيها, بيطلع مربع جديد في مكان فاضى بطريقة عشوائية فى اللوحة. لو حاولت تسحب و مفيش اماكن فاضية وإنت لسة مخلصتش اللعبة يبقى إنت كده خسرت. عشان تكسب في اللعبة دى حاول توصل لمربع يكون فيه رقم 2048.</mutableString>
+ كل مرة بتسحب فيها, بيطلع مربع جديد في مكان فاضى بطريقة عشوائية فى اللوحة. لو حاولت تسحب و مفيش اماكن فاضية وإنت لسة مخلصتش اللعبة يبقى إنت كده خسرت. عشان تكسب في اللعبة دى حاول توصل لمربع يكون فيه رقم 2048.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1588,6 +1646,7 @@
         <image name="logo.png" width="258" height="77"/>
         <image name="obj.png" width="60" height="95"/>
     </resources>
+    <color key="tintColor" red="0.58543925379999995" green="0.0" blue="0.0063526050530000001" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

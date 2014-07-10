@@ -172,7 +172,7 @@
     // This is the earliest point the user can win
     if ([self.model userHasWon]) {
         [self.delegate gameFinishedWithVictory:YES score:self.model.score];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Victory!" message:@"You won!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"كسبت!!" message:@"العب مره تانيه و هات سكور اعلي" delegate:nil cancelButtonTitle:@"تمام" otherButtonTitles:nil];
         [alert show];
     }
     else {
@@ -186,7 +186,7 @@
         // At this point, the user may lose
         if ([self.model userHasLost]) {
             [self.delegate gameFinishedWithVictory:NO score:self.model.score];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Defeat!" message:@"You lost..." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"خسرت!!" message:@"حاول مره تانيه" delegate:nil cancelButtonTitle:@"تمام" otherButtonTitles:nil];
             [alert show];
         }
     }
