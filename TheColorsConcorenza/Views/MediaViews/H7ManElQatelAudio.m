@@ -103,17 +103,17 @@
             NSLog(@"%f, %f",tapPoint.x,tapPoint.y);
             UIImage *image = [self loadObject];
             NSArray *animationArray = [NSArray arrayWithObjects:image, nil];
-            [NSTimer scheduledTimerWithTimeInterval:.50 target:self selector:@selector(myAnimate:) userInfo:nil repeats:NO];
-            self.bottleImage.animationImages = animationArray;
-            self.bottleImage.animationDuration = 0.3;
-            self.bottleImage.animationRepeatCount = 1;
-            [self.bottleImage startAnimating];
-            CABasicAnimation *crossFade = [CABasicAnimation animationWithKeyPath:@"contents"];
-            crossFade.autoreverses = YES;
-            crossFade.repeatCount = 0;
-            crossFade.duration = .5;
-            
-            double delayInSeconds = 1.7;
+             [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(myAnimate:) userInfo:nil repeats:NO];
+             self.bottleImage.animationImages = animationArray;
+             self.bottleImage.animationDuration = 1.50;
+             self.bottleImage.animationRepeatCount = 2;
+             [self.bottleImage startAnimating];
+             CABasicAnimation *crossFade = [CABasicAnimation animationWithKeyPath:@"contents"];
+             crossFade.autoreverses = YES;
+             crossFade.repeatCount = 2;
+             crossFade.duration = .1;
+             
+            double delayInSeconds = 2;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -131,23 +131,21 @@
             });
          }else {
              UIImage *image = [self loadObject];
-             NSArray *animationArray = [NSArray arrayWithObjects:image, nil];
-             [NSTimer scheduledTimerWithTimeInterval:.50 target:self selector:@selector(myAnimate:) userInfo:nil repeats:NO];
+
+             NSArray *animationArray = [NSArray arrayWithObjects:image ,nil];
+             [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(myAnimate:) userInfo:nil repeats:NO];
              self.bottleImage.animationImages = animationArray;
-             self.bottleImage.animationDuration = 0.3;
-             self.bottleImage.animationRepeatCount = 1;
+             self.bottleImage.animationDuration = 1.50;
+             self.bottleImage.animationRepeatCount = 2;
              [self.bottleImage startAnimating];
              CABasicAnimation *crossFade = [CABasicAnimation animationWithKeyPath:@"contents"];
              crossFade.autoreverses = YES;
-             crossFade.repeatCount = 0;
-             crossFade.duration = .5;
+             crossFade.repeatCount = 2;
+             crossFade.duration = .1;
              
-             double delayInSeconds = 1;
+             double delayInSeconds = 2;
              dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
              dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-
-                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:@"انت لعبت الفزوره دي قبل كده ... السكور مش هيتغير" delegate:self cancelButtonTitle:@"تمام" otherButtonTitles: nil];
-                 [alert show];
                  UITabBar *tabBar = self.tabBarController.tabBar;
                  if([tabBar isHidden]) {
                      [self.navigationController.navigationBar setAlpha:1.0];
