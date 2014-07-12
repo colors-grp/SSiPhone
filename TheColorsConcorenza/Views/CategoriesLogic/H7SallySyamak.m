@@ -60,10 +60,6 @@
 //            [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
 //    }
 //    [self.cardsCollection reloadData];
-//    
-    // Get cards status
-    [self getOpenedCards];
-
     [super viewDidLoad];
 }
 
@@ -85,6 +81,7 @@
             [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
     }
     [self.cardsCollection reloadData];
+    [self getOpenedCards];
 }
 
 

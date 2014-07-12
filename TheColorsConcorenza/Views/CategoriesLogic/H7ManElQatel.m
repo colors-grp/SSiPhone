@@ -55,10 +55,6 @@
 //    NSLog(@"%@" , cardStatus);
 //    [self.cardsCollection reloadData];
 
-    
-    // Get cards status
-    [self getOpenedCards];
-    
     [super viewDidLoad];
 }
 
@@ -79,6 +75,7 @@
             [cardStatus setObject:@"0" forKey:[NSString stringWithFormat:@"%d" , i + 1]];
     }
     [self.cardsCollection reloadData];
+    [self getOpenedCards];
 }
 
 
@@ -145,6 +142,7 @@
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         cardStatus = JSON;
+        NSLog(@"%@" , cardStatus);
         for (int i = 0; i < 30; i++) {
             if([cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]]!= nil &&[[cardStatus objectForKey:[NSString stringWithFormat:@"%d", i+1]] isEqualToString:@"1"]) {
                 MyCard *card = [cards objectAtIndex:i];

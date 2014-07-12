@@ -189,7 +189,13 @@
     NSLog(@"%@" , url);
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *request = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"%@" , JSON);
+        NSDictionary *dect = JSON;
+        NSLog(@"%@" , dect);
+        NSString *status = [NSString stringWithFormat:@"%@",[dect objectForKey:@"status"]];
+        if([status isEqualToString:@"-1"]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"تحذير" message:@"انت لعبت الفزوره دي علي الويب سيت .. السكور مش هيتغير" delegate:self cancelButtonTitle:@"تمام" otherButtonTitles: nil];
+            [alert show];
+        }
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         // Get from core data
         NSLog(@"Failed to update score in server");
